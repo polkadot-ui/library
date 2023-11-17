@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "rootDir": ".",
+    "declaration": true,
+    "declarationMap": false,
+    "incremental": true,
+    "noEmitOnError": true,
+    "skipLibCheck": true,
+    "resolveJsonModule": true,
+    "paths": {
+      "@packages/*": ["./packages/*"],
+      "@docs/*": ["./app/src/docs/lib/*"],
+    }
+  },
+  "include": [
+    "./packages/**/*", "app", "scripts"
+  ],
+  "exclude": [
+    "**/*/node_modules",
+    "**/*/dist",
+    "**/*.test.tsx",
+    "vite.config.js",
+  ],
+}

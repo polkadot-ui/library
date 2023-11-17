@@ -1,0 +1,19 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "baseUrl": "./",
+    "composite": true,
+    "declarationDir": ".",
+    "rootDir": "./lib",
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "target": "es5",
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    "sourceMap": false,
+    "jsx": "react-jsx",
+    "allowSyntheticDefaultImports": true,
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+  },
+  "include": ["./**/*", "./lib/ecosystem/json/*.json"],
+}
