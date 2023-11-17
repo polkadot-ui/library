@@ -44,7 +44,7 @@ import westendJson from "./Westend.json";
 
 // To add a validator operator to this list, refer to the instructions hosted in this package's
 // README file:
-// https://github.com/paritytech/polkadot-cloud/tree/main/packages/assets#adding-validator-operators
+// https://github.com/polkadot-cloud/polkadot-cloud/tree/main/packages/assets#adding-validator-operators
 const acala: NetworkInformation = acalaJson;
 const ajuna: NetworkInformation = ajunaJson;
 const aleph_Zero_Testnet: NetworkInformation = aleph_Zero_TestnetJson;
