@@ -1,7 +1,7 @@
-/* @license Copyright 2023 @polkadot-cloud/polkadot-cloud authors & contributors
-SPDX-License-Identifier: GPL-3.0-only */
-/* eslint-disable @typescript-eslint/no-var-requires */
+// Copyright 2023 @polkadot-cloud/polkadot-cloud authors & contributors
+// SPDX-License-Identifier: GPL-3.0-only
 
+/* eslint-disable @typescript-eslint/no-var-requires */
 const gulp = require("gulp");
 const ts = require("gulp-typescript");
 const strip = require("gulp-strip-comments");
