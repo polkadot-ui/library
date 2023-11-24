@@ -18,7 +18,7 @@ import {
   connectInfo,
   ConnectConfigProvider,
 } from "@polkadot-cloud/recipes/Connect";
-import type { ConnectType, DappInfo } from "@polkadot-cloud/react/recipes/Connect";
+import type { ConnectType, DappInfo } from "@polkadot-cloud/recipes/Connect";
 
 export const ModalConnectWalletSettings = () => {
   const dappInfo: DappInfo = {
@@ -50,6 +50,8 @@ export const ModalConnectWalletSettings = () => {
 
   const { openModal } = useOverlay().modal;
   const { activeAccount } = useActiveAccounts();
+
+  console.log("openModal", useOverlay());
 
   return (
     <>
