@@ -4,7 +4,7 @@ SPDX-License-Identifier: GPL-3.0-only */
 import {
   AccountCard,
   IconProps,
-} from "@packages/cloud-react/lib/recipes/AccountCard";
+} from "@packages/cloud-recipes/lib/AccountCard";
 import { SimpleEditor } from "@docs/SimpleEditor";
 import { Demo } from "@docs/Demo";
 

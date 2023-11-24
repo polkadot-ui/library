@@ -3,19 +3,23 @@ SPDX-License-Identifier: GPL-3.0-only */
 
 import { JSX, useEffect, useState } from "react";
 
-import { Grid } from "../../base/structure/Grid";
-import { Card } from "../../base/structure/Card";
-import { GridJustify, GridSizes, GridItemsAlignment } from "../../base/types";
-import { valEmpty } from "../../utils";
+import { Grid, Card, Polkicon } from "@polkadot-cloud/react";
+import {
+  GridJustify,
+  GridSizes,
+  GridItemsAlignment,
+} from "@polkadot-cloud/react/types";
+import { valEmpty } from "@polkadot-cloud/react/utils";
 import { ellipsisFn } from "@polkadot-cloud/utils";
 import {
   HPositionLR,
   HPosition,
   ComponentBaseWithClassName,
-} from "../../utils/types";
+} from "@polkadot-cloud/react/utils/types";
 
 import "@polkadot-cloud/core/css/recipes/AccountCard/index.css";
-import { Polkicon } from "../../icons/Polkicon";
+
+import "./index.scss";
 
 type FontType =
   | "xx-small"
