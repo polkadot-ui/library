@@ -8,7 +8,7 @@ import { useOverlay } from "@packages/cloud-react/lib/overlay/OverlayProvider/us
 import {
   Overlays,
   useActiveAccounts,
-} from "@packages/cloud-react/lib/recipes/Connect";
+} from "@packages/cloud-recipes/lib/Connect";
 
 export const ModalConnect = () => {
   const codeEntry = `
@@ -65,10 +65,6 @@ const { activeAccount } = useActiveAccounts();
 
   const { openModal } = useOverlay().modal;
   const { activeAccount } = useActiveAccounts();
-
-  console.log("useOverlay", useOverlay);
-  console.log("useOverlay().modal", useOverlay().modal);
-  console.log("openModal", openModal);
 
   return (
     <>
