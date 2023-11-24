@@ -11,7 +11,7 @@ jobs:
       - uses: google-github-actions/release-please-action@v3
         with:
           # Commit to start releases from. This can be removed after the first release PR is merged.
-          last-release-sha: d7c5aa387aa1ec4fda8e9992925c1331bd5fad79
+          last-release-sha: 27283aff707ce928deb4440d80512fbdc1b04e83
           command: manifest
           monorepo-tags: true
           release-type: node

@@ -1,4 +1,4 @@
-/* @license Copyright 2023 @paritytech/polkadot-cloud authors & contributors
+/* @license Copyright 2023 @polkadot-cloud/polkadot-cloud authors & contributors
 SPDX-License-Identifier: GPL-3.0-only */
 
 import { Edit } from "@docs/Edit";
@@ -27,7 +27,7 @@ export const Doc = ({ folder, npm }: DocProps) => {
           <code>Odeometer</code>
         </a>{" "}
         is a component that can be used to display numbers and balances. It has
-        a smooth animation when the value changes, and adopts a 2-tone design
+        a smooth animation when its value changes, and adopts a 2-tone design
         for whole and decimal figures.
       </p>
       <p>Comma formatted numbers and decimals are supported.</p>
