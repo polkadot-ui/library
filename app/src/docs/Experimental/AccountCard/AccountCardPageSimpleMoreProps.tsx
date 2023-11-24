@@ -10,7 +10,7 @@ import { Demo } from "@docs/Demo";
 
 export const AccountCardPageSimpleMoreProps = () => {
   const code = `
-import { AccountCard, IconProps, } from "@polkadot-cloud/react/recipes/AccountCard";
+import { AccountCard, IconProps, } from "@polkadot-cloud/recipes/AccountCard";
 ...
 const iconProps: IconProps = {
   copy: true,

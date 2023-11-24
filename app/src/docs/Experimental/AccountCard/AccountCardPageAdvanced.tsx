@@ -10,7 +10,7 @@ import { SimpleEditor } from "@docs/SimpleEditor";
 import { Demo } from "@docs/Demo";
 
 export const AccountCardPageAdvanced = () => {
-  const code = `import { AccountCard, IconProps, } from "@polkadot-cloud/react/recipes/AccountCard";
+  const code = `import { AccountCard, IconProps, } from "@polkadot-cloud/recipes/AccountCard";
 ...
 const iconProps: IconProps = {
   copy: false,

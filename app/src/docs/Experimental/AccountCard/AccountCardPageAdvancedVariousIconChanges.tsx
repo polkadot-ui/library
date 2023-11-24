@@ -9,7 +9,7 @@ import { SimpleEditor } from "@docs/SimpleEditor";
 import { Demo } from "@docs/Demo";
 
 export const AccountCardPageAdvancedVariousIconChanges = () => {
-  const codeF = `import { AccountCard, IconProps, ExtraComponentProps } from "@polkadot-cloud/react/recipes/AccountCard";
+  const codeF = `import { AccountCard, IconProps, ExtraComponentProps } from "@polkadot-cloud/recipes/AccountCard";
 ...
 
 const iconProps: IconProps = {

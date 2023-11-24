@@ -11,7 +11,7 @@ import { Demo } from "@docs/Demo";
 
 export const AccountCardPageSimple = () => {
   const code = `
-import { AccountCard, IconProps, } from "@polkadot-cloud/react/recipes/AccountCard";
+import { AccountCard, IconProps } from "@polkadot-cloud/react/AccountCard";
 ...
 const iconProps: IconProps = {}; // or { position = "left" }; <- "left" is the default option
 ...

@@ -17,8 +17,6 @@ import {
   ComponentBaseWithClassName,
 } from "@polkadot-cloud/react/utils/types";
 
-import "@polkadot-cloud/core/css/recipes/AccountCard/index.css";
-
 import "./index.scss";
 
 type FontType =

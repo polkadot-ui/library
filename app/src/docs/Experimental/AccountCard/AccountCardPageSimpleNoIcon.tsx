@@ -7,7 +7,7 @@ import { Demo } from "@docs/Demo";
 
 export const AccountCardPageSimpleNoIcon = () => {
   const code = `
-import { AccountCard } from "@polkadot-cloud/react/recipes/AccountCard";
+import { AccountCard } from "@polkadot-cloud/recipes/AccountCard";
 ...
 return (
   <AccountCard style={{ padding: "1rem" }} title={{ address: "1f1yYj2bCFhJCTVdeWLDueUsrZynLAaj6jeMy18fjZ7Cr73" }} />

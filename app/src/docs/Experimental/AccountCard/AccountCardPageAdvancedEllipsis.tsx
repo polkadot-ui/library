@@ -10,7 +10,7 @@ import { SimpleEditor } from "@docs/SimpleEditor";
 import { Demo } from "@docs/Demo";
 
 export const AccountCardPageAdvancedEllipsis = () => {
-  const codeB = `import { AccountCard, IconProps, } from "@polkadot-cloud/react/recipes/AccountCard";
+  const codeB = `import { AccountCard, IconProps, } from "@polkadot-cloud/recipes/AccountCard";
 ...
 const iconPropsLeft: IconProps = {
   // position defaults to "left"

@@ -8,7 +8,7 @@ import { Demo } from "@docs/Demo";
 
 export const AccountCardPageAdvancedEllipsisExtreme = () => {
   const code = `
-import { AccountCard, IconProps, } from "@polkadot-cloud/react/recipes/AccountCard";
+import { AccountCard, IconProps, } from "@polkadot-cloud/recipes/AccountCard";
 ...
 
 return (
