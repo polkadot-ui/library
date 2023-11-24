@@ -21,8 +21,8 @@
   "homepage": "https://github.com/polkadot-cloud/polkadot-cloud#readme",
   "scripts": {
     "build:mock": "node ../../scripts/generatePackageJson.mjs -p cloud-recipes -m index.js",
-    "prebuild": "node ./scripts/prebuild.mjs && yarn --cwd='../cloud-core/' build",
-    "build": "rm -fr dist && gulp && mv dist/README.npm.md dist/README.md",
+    "prebuild": "node ./scripts/prebuild.mjs",
+    "build": "rm -fr dist && gulp --gulpfile gulpfile.cjs && mv dist/README.npm.md dist/README.md",
     "postbuild": "node ./scripts/postbuild.mjs",
     "clear": "rm -rf node_modules dist tsconfig.tsbuildinfo"
   },
