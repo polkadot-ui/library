@@ -21,7 +21,7 @@
 **Functional case-specific combination of components for Polkadot dapps.**
 
 - Fully functional UI implementations of headless components.
-- Useful UI combnation of components (recipes) for Polkadot dapps.
+- Useful combinations of UI components and static assets for Polkadot dapps.
 
 ## License
 
