@@ -2,7 +2,7 @@
 
 # Polkadot Cloud: Recipes
 
-Core React components. Using SCSS, Typescript etc. Built using Rollup, and publishable to NPM.
+Example functional components derived from the Polkadot Cloud library.
 
 ## Managing the Package
 
