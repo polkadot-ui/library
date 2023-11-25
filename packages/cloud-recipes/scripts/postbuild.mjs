@@ -18,8 +18,6 @@ const main = async () => {
   const pathsToRemove = [
     { path: "./lib/index.tsx", options: {} },
     { path: "./lib/types", options: { recursive: true, force: true } },
-    { path: "./lib/providers", options: { recursive: true, force: true } },
-    { path: "./lib/hooks", options: { recursive: true, force: true } },
   ];
   for (const { path, options } of pathsToRemove) {
     if (existsSync(path)) fs.rmSync(path, options);
