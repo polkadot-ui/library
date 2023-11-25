@@ -4,16 +4,3 @@
 
 Example functional components derived from the Polkadot Cloud library.
 
-## Managing the Package
-
-#### Start the development server for real-time component feedback.
-
-```
-yarn dev
-```
-
-#### Build the package into an optimised Rollup build.
-
-```
-yarn build
-```
