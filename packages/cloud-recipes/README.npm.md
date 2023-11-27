@@ -18,7 +18,7 @@
 
 # Polkadot Cloud: Recipes
 
-**Functional case-specific combination of components for Polkadot dapps.**
+**Example functional components derived from the Polkadot Cloud library.**
 
 - Fully functional UI implementations of headless components.
 - Useful combinations of UI components and static assets for Polkadot dapps.

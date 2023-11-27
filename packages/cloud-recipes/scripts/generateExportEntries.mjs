@@ -43,38 +43,9 @@ export const generateExportEntries = async ({ ignore }) => {
 
   // Iterate through all files and construct entries.
   const components = [];
-  const providers = [];
-  const hooks = [];
   for (let name of await getDirFolders("./lib")) {
     let isComponent = true;
 
-    // If folder contains a `Provider`, add to providers.
-    if (name.endsWith("Provider")) {
-      const split = name.split("/");
-      providers.push({
-        export: split.pop(),
-        from: name,
-      });
-      isComponent = false;
-    }
-
-    // Add hook if folder name starts with `use`.
-    if (name.split("/").pop().startsWith("use")) {
-      hooks.push({
-        export: name.split("/").pop(),
-        from: name,
-      });
-    }
-    // Add hooks to `hooks` if present in the folder.
-    for (let file of await fs.readdir(name)) {
-      if (file.startsWith("use")) {
-        const split = file.split("/");
-        hooks.push({
-          export: split[0].split(".")[0],
-          from: name + "/" + file.split(".")[0],
-        });
-      }
-    }
     // If not provider or hook, add `name`'s index.tsx to component exports.
     if (isComponent) {
       components.push({
@@ -90,18 +61,6 @@ export const generateExportEntries = async ({ ignore }) => {
     generateExportLines(components, "./")
   );
 
-  await fs.mkdir("./lib/providers");
-  await writeFormattedFile(
-    "./lib/providers/index.tsx",
-    generateExportLines(providers, "../")
-  );
-
-  await fs.mkdir("./lib/hooks");
-  await writeFormattedFile(
-    "./lib/hooks/index.tsx",
-    generateExportLines(hooks, "../")
-  );
-};
 
 // Generate export lines for an array of items.
 const generateExportLines = (items, basePath) =>
