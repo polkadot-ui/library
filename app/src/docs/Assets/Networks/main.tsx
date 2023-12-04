@@ -32,33 +32,26 @@ export const Doc = ({ folder, npm }: DocProps) => {
         repository and chainspec links, contact information, rpc and/or api
         endpoints etc.
       </p>
+      <p>
+        The information is retrieved from [Polkadot
+        Directory](https://github.com/paritytech/polkadot_network_directory) of
+        ParityTech, who are maintaining the directory and information in it;
+      </p>
+      <p>
+        Once retrieved (<code>YAML</code> format) it is converted to{" "}
+        <code>JSON</code> and exported from `assets`
+      </p>
       <Note>
         <p>
           To open a PR to{" "}
           <a
-            href="https://github.com/polkadot-cloud/library/tree/main/packages/assets#adding-network"
+            href="https://github.com/paritytech/polkadot_network_directory/tree/master/chain_info"
             target="_blank"
             rel="noreferrer"
           >
-            add to this list
+            add to this list or edit a network
           </a>{" "}
-          or{" "}
-          <a
-            href="https://github.com/polkadot-cloud/library/tree/main/packages/assets#edit-network-information"
-            target="_blank"
-            rel="noreferrer"
-          >
-            edit a network
-          </a>{" "}
-          of this list, refer to the instructions hosted in this package's{" "}
-          <a
-            href="https://github.com/polkadot-cloud/library/tree/main/packages/assets"
-            target="_blank"
-            rel="noreferrer"
-          >
-            README file
-          </a>
-          .
+          from this list.
         </p>
       </Note>
       <p>
