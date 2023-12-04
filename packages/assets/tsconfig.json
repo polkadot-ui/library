@@ -17,4 +17,5 @@
     "esModuleInterop": true,
   },
   "include": ["./**/*", "lib/ecosystem/json"],
+  "exclude": ["./lib/ecosystem/yaml/*.yaml"]
 }

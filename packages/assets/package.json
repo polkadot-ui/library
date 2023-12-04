@@ -21,7 +21,7 @@
   },
   "homepage": "https://github.com/polkadot-cloud/library#readme",
   "scripts": {
-    "prebuild": "node ./lib/ecosystem/get_yaml_and_gen_json.js",
+    "prebuild": "node ./lib/ecosystem/get_yaml_and_gen_json.js && rm -rf ./lib/ecosystem/yaml",
     "build:mock": "node ../../scripts/generatePackageJson.mjs -p assets",
     "build": "rm -rf dist && gulp && cp LICENSE dist && cp README.npm.md dist && mv dist/README.npm.md dist/README.md && node ../../scripts/generatePackageJson.mjs -p assets",
     "clear": "rm -rf node_modules dist tsconfig.tsbuildinfo"
