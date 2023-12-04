@@ -1,4 +1,4 @@
-/* @license Copyright 2023 @polkadot-cloud/polkadot-cloud authors & contributors
+/* @license Copyright 2023 @polkadot-cloud/library authors & contributors
 SPDX-License-Identifier: GPL-3.0-only */
 
 import { SimpleEditor } from "@docs/SimpleEditor";
@@ -12,7 +12,7 @@ export const ProviderExample = () => {
 const AppWithProviders = () => {
 
   // Dapp identifier.
-  const dappName = "My Dapp Name";
+  const dappName = "My dApp Name";
   // Active network, in lower case.
   const network = "polkadot";
   // SS58 prefix of the current network.

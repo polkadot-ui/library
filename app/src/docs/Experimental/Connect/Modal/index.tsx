@@ -1,4 +1,4 @@
-/* @license Copyright 2023 @polkadot-cloud/polkadot-cloud authors & contributors
+/* @license Copyright 2023 @polkadot-cloud/library authors & contributors
 SPDX-License-Identifier: GPL-3.0-only */
 
 import { Doc } from "./main";
@@ -6,7 +6,7 @@ import { Doc } from "./main";
 export const ModalConnect = () => {
   return (
     <div className="doc">
-      <Doc npm="@polkadot-cloud/react" folder="Recipes/ModalConnect" />
+      <Doc npm="@polkadot-cloud/recipes" folder="ModalConnect" />
     </div>
   );
 };

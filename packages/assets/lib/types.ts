@@ -1,4 +1,4 @@
-/* @license Copyright 2023 @polkadot-cloud/polkadot-cloud authors & contributors
+/* @license Copyright 2023 @polkadot-cloud/library authors & contributors
 SPDX-License-Identifier: GPL-3.0-only */
 
 import { CSSProperties, FC } from "react";
@@ -44,7 +44,7 @@ export type ExtensionIcon = FC<{
   className?: string;
 }>;
 
-// Miscellaneous types.
+// Global types.
 declare global {
   interface Window {
     // Nova Wallet will have this window property.

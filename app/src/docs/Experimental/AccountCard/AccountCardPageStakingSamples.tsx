@@ -1,4 +1,4 @@
-/* @license Copyright 2023 @polkadot-cloud/polkadot-cloud authors & contributors
+/* @license Copyright 2023 @polkadot-cloud/library authors & contributors
 SPDX-License-Identifier: GPL-3.0-only */
 
 import {
@@ -7,7 +7,7 @@ import {
   ExtraComponentProps,
   IconProps,
   TitleProps,
-} from "@packages/cloud-react/lib/recipes/AccountCard";
+} from "@packages/cloud-recipes/lib/AccountCard";
 import { SimpleEditor } from "@docs/SimpleEditor";
 import { Grid } from "@packages/cloud-react/lib/base/structure/Grid";
 import { HPosition } from "@packages/cloud-react/lib/utils/types";

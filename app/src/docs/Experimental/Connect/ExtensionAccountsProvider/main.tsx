@@ -1,4 +1,4 @@
-/* @license Copyright 2023 @polkadot-cloud/polkadot-cloud authors & contributors
+/* @license Copyright 2023 @polkadot-cloud/library authors & contributors
 SPDX-License-Identifier: GPL-3.0-only */
 
 import { Edit } from "@docs/Edit";
@@ -42,7 +42,7 @@ export const Doc = ({ folder, npm }: DocProps) => {
       />
       <p>
         <a
-          href="https://github.com/polkadot-cloud/polkadot-cloud/blob/main/packages/cloud-react/lib/connect/ExtensionAccountsProvider/index.tsx"
+          href="https://github.com/polkadot-cloud/library/blob/main/packages/cloud-react/lib/connect/ExtensionAccountsProvider/index.tsx"
           target="_blank"
           rel="noreferrer"
         >
@@ -51,7 +51,7 @@ export const Doc = ({ folder, npm }: DocProps) => {
         provides a simple means of connecting to web3 extensions that implement
         the <code>window.injectedWeb3</code> interface, and subscribes to their
         accounts. It automatically re-connects to extensions on subsequent
-        visits, and allows dapps to set an active account if found in an
+        visits, and allows dApps to set an active account if found in an
         extension.
       </p>
       <Note>
@@ -124,7 +124,7 @@ export const Doc = ({ folder, npm }: DocProps) => {
         <p>string</p>
       </div>
       <p>
-        A dapp identifier that is provided to the web3 extension(s) being
+        A dApp identifier that is provided to the web3 extension(s) being
         connected to.
       </p>
       <H3 id="network">network</H3>
@@ -147,7 +147,7 @@ export const Doc = ({ folder, npm }: DocProps) => {
         <p>string | null</p>
       </div>
       <p>
-        The current active account on your dapp, if any.{" "}
+        The current active account on your dApp, if any.{" "}
         <code>ExtensionAccountsProvider</code> will automatically connect to
         this active account, if found, when subscribing to extension account.
         See the next prop for more details.

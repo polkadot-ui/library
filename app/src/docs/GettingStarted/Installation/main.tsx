@@ -1,4 +1,4 @@
-/* @license Copyright 2023 @polkadot-cloud/polkadot-cloud authors & contributors
+/* @license Copyright 2023 @polkadot-cloud/library authors & contributors
 SPDX-License-Identifier: GPL-3.0-only */
 
 import { Link } from "react-router-dom";
@@ -18,7 +18,7 @@ export const Doc = ({ folder }: DocProps) => {
       <Edit folder={folder} />
       <Header
         title="Installation"
-        subtitle="Install Polkadot Cloud packages and super charge your Polkadot dapp."
+        subtitle="Install Polkadot Cloud packages and super charge your Polkadot dApp."
         npm={undefined}
       />
       <H2 id="basic-installation">Basic Installation</H2>

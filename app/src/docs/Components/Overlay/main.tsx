@@ -1,4 +1,4 @@
-/* @license Copyright 2023 @polkadot-cloud/polkadot-cloud authors & contributors
+/* @license Copyright 2023 @polkadot-cloud/library authors & contributors
 SPDX-License-Identifier: GPL-3.0-only */
 
 import { Edit } from "@docs/Edit";
@@ -24,7 +24,7 @@ export const Doc = ({ folder, npm }: DocProps) => {
       <p>
         An{" "}
         <a
-          href="https://github.com/polkadot-cloud/polkadot-cloud/blob/main/packages/cloud-react/lib/overlay/OverlayProvider/index.tsx"
+          href="https://github.com/polkadot-cloud/library/blob/main/packages/cloud-react/lib/overlay/OverlayProvider/index.tsx"
           target="_blank"
           rel="noreferrer"
         >
@@ -32,7 +32,7 @@ export const Doc = ({ folder, npm }: DocProps) => {
         </a>{" "}
         context and{" "}
         <a
-          href="https://github.com/polkadot-cloud/polkadot-cloud/blob/main/packages/cloud-react/lib/overlay/Overlay/index.tsx"
+          href="https://github.com/polkadot-cloud/library/blob/main/packages/cloud-react/lib/overlay/Overlay/index.tsx"
           target="_blank"
           rel="noreferrer"
         >

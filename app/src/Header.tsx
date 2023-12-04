@@ -1,4 +1,4 @@
-// Copyright 2023 @polkadot-cloud/polkadot-cloud authors & contributors
+// Copyright 2023 @polkadot-cloud/library authors & contributors
 // SPDX-License-Identifier: GPL-3.0-only
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -51,7 +51,7 @@ export const Header = () => {
           Dark
         </button>
         <a
-          href="https://github.com/polkadot-cloud/polkadot-cloud"
+          href="https://github.com/polkadot-cloud/library"
           target="_blank"
           rel="noreferrer"
         >

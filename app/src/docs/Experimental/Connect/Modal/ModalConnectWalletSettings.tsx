@@ -1,4 +1,4 @@
-/* @license Copyright 2023 @polkadot-cloud/polkadot-cloud authors & contributors
+/* @license Copyright 2023 @polkadot-cloud/library authors & contributors
 SPDX-License-Identifier: GPL-3.0-only */
 
 import { SimpleEditor } from "@docs/SimpleEditor";
@@ -8,7 +8,7 @@ import { useOverlay } from "@packages/cloud-react/lib/overlay/OverlayProvider/us
 import {
   Overlays,
   useActiveAccounts,
-} from "@packages/cloud-react/lib/recipes/Connect";
+} from "@packages/cloud-recipes/lib/Connect";
 
 export const ModalConnectWalletSettings = () => {
   const code = `
@@ -18,7 +18,7 @@ import {
   connectInfo,
   ConnectConfigProvider,
 } from "@polkadot-cloud/recipes/Connect";
-import type { ConnectType, DappInfo } from "@polkadot-cloud/react/recipes/Connect";
+import type { ConnectType, DappInfo } from "@polkadot-cloud/recipes/Connect";
 
 export const ModalConnectWalletSettings = () => {
   const dappInfo: DappInfo = {

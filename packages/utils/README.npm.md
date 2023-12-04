@@ -1,24 +1,24 @@
 <br />
 <p align="center">
-  <a href="https://github.com/polkadot-cloud/polkadot-cloud">
-    <img alt="polkadot-cloud" title="polkadot-cloud" src="https://raw.githubusercontent.com/polkadot-cloud/polkadot-cloud/main/app/public/img/cloud.png" width="80" />
+  <a href="https://github.com/polkadot-cloud/library">
+    <img alt="polkadot-cloud" title="polkadot-cloud" src="https://raw.githubusercontent.com/polkadot-cloud/library/main/app/public/img/cloud.png" width="80" />
   </a>
 </p>
 
 <p align="center">
   <b>Polkadot Cloud</b> is a library and platform <br />
-  for <b>developing</b> and <b>publishing</b> assets for <b>Polkadot dapps</b>.
+  for <b>developing</b> and <b>publishing</b> assets for <b>Polkadot dApps</b>.
 </p>
 
 <div align="center">
-<a href="https://polkadot.cloud/overview">📖 Documentation</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://github.com/polkadot-cloud/polkadot-cloud"">GitHub</a>
+<a href="https://polkadot.cloud/overview">📖 Documentation</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://github.com/polkadot-cloud/library"">GitHub</a>
 </div>
 
 <hr>
 
 # Polkadot Cloud: Utils
 
-**Common utility functions to aid in Polkadot dapp development.**
+**Common utility functions to aid in Polkadot dApp development.**
 
 - Base utilities: Collection of reusable utilities for manipulating string / number / arrays etc.
 - Unit utilities: A collection of reusable utilities for manipulating chain units.
