@@ -1,7 +1,7 @@
 {
   "name": "polkadot-cloud-assets",
   "license": "GPL-3.0-only",
-  "version": "0.1.35",
+  "version": "0.1.36",
   "type": "module",
   "contributors": [
     "Ross Bulat<ross@parity.io>",
@@ -17,9 +17,9 @@
     "UI"
   ],
   "bugs": {
-    "url": "https://github.com/polkadot-cloud/polkadot-cloud/issues"
+    "url": "https://github.com/polkadot-cloud/library/issues"
   },
-  "homepage": "https://github.com/polkadot-cloud/polkadot-cloud#readme",
+  "homepage": "https://github.com/polkadot-cloud/library#readme",
   "scripts": {
     "build:mock": "node ../../scripts/generatePackageJson.mjs -p assets",
     "build": "rm -fr dist && gulp && cp LICENSE dist && cp README.npm.md dist && mv dist/README.npm.md dist/README.md && node ../../scripts/generatePackageJson.mjs -p assets",

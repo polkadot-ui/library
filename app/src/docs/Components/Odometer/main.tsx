@@ -1,4 +1,4 @@
-/* @license Copyright 2023 @polkadot-cloud/polkadot-cloud authors & contributors
+/* @license Copyright 2023 @polkadot-cloud/library authors & contributors
 SPDX-License-Identifier: GPL-3.0-only */
 
 import { Edit } from "@docs/Edit";
@@ -20,7 +20,7 @@ export const Doc = ({ folder, npm }: DocProps) => {
       />
       <p>
         <a
-          href="https://github.com/polkadot-cloud/polkadot-cloud/blob/main/packages/cloud-react/lib/complex/Odometer/index.tsx"
+          href="https://github.com/polkadot-cloud/library/blob/main/packages/cloud-react/lib/complex/Odometer/index.tsx"
           target="_blank"
           rel="noreferrer"
         >

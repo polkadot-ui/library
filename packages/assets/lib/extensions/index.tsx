@@ -1,4 +1,4 @@
-/* @license Copyright 2023 @polkadot-cloud/polkadot-cloud authors & contributors
+/* @license Copyright 2023 @polkadot-cloud/library authors & contributors
 SPDX-License-Identifier: GPL-3.0-only */
 
 import {
@@ -20,7 +20,7 @@ import PolkadotVault from "./jsx/PolkadotVault";
 import WalletConnect from "./jsx/WalletConnect";
 
 // To add items to this list, refer to the instructions hosted in this package's README file:
-// https://github.com/polkadot-cloud/polkadot-cloud/tree/main/packages/assets#adding-web-extension-wallets
+// https://github.com/polkadot-cloud/library/tree/main/packages/assets#adding-web-extension-wallets
 
 // List of web3 wallet extensions and their metadata.
 export const Extensions: Record<string, ExtensionConfig> = {

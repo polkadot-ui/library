@@ -12,9 +12,9 @@
     "Utilities"
   ],
   "bugs": {
-    "url": "https://github.com/polkadot-cloud/polkadot-cloud/issues"
+    "url": "https://github.com/polkadot-cloud/library/issues"
   },
-  "homepage": "https://github.com/polkadot-cloud/polkadot-cloud#readme",
+  "homepage": "https://github.com/polkadot-cloud/library#readme",
   "scripts": {
     "build:mock": "node ../../scripts/generatePackageJson.mjs -p utils",
     "build": "rm -fr dist && tsup && yarn run copy",

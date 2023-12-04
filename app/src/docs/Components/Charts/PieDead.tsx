@@ -1,4 +1,4 @@
-/* @license Copyright 2023 @polkadot-cloud/polkadot-cloud authors & contributors
+/* @license Copyright 2023 @polkadot-cloud/library authors & contributors
 SPDX-License-Identifier: GPL-3.0-only */
 
 import { Chart } from "@packages/cloud-react/lib/base/structure/Chart";

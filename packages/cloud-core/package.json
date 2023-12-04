@@ -1,7 +1,7 @@
 {
   "name": "polkadot-cloud-core",
   "license": "GPL-3.0-only",
-  "version": "1.0.48",
+  "version": "1.0.49",
   "contributors": [
     "Ross Bulat<ross@parity.io>",
     "Nikolaos Kontakis<wirednkod@gmail.com>"
@@ -13,9 +13,9 @@
     "UI"
   ],
   "bugs": {
-    "url": "https://github.com/polkadot-cloud/polkadot-cloud/issues"
+    "url": "https://github.com/polkadot-cloud/library/issues"
   },
-  "homepage": "https://github.com/polkadot-cloud/polkadot-cloud#readme",
+  "homepage": "https://github.com/polkadot-cloud/library#readme",
   "scripts": {
     "build:mock": "node ../../scripts/generatePackageJson.mjs -p cloud-core",
     "build": "rm -fr dist && gulp && mv dist/README.npm.md dist/README.md && node ../../scripts/generatePackageJson.mjs -p cloud-core",

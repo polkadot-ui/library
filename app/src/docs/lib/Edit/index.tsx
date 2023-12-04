@@ -1,4 +1,4 @@
-/* @license Copyright 2023 @polkadot-cloud/polkadot-cloud authors & contributors
+/* @license Copyright 2023 @polkadot-cloud/library authors & contributors
 SPDX-License-Identifier: GPL-3.0-only */
 
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
@@ -8,7 +8,7 @@ export const Edit = ({ folder }: { folder: string }) => {
   return (
     <div className="edit-on-github">
       <a
-        href={`https://github.com/polkadot-cloud/polkadot-cloud/edit/main/app/src/docs/${folder}/main.tsx`}
+        href={`https://github.com/polkadot-cloud/library/edit/main/app/src/docs/${folder}/main.tsx`}
         target="_blank"
         rel="noreferrer"
       >
