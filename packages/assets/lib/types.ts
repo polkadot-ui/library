@@ -44,7 +44,7 @@ export type ExtensionIcon = FC<{
   className?: string;
 }>;
 
-// Miscellaneous types.
+// Global types.
 declare global {
   interface Window {
     // Nova Wallet will have this window property.
