@@ -17,7 +17,7 @@ export interface NetworkInformation {
   documentation: string[];
   expectations: any[];
   features: string[];
-  notes: any[];
+  notes?: any[];
 }
 
 export interface Chain {

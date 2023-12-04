@@ -22,7 +22,7 @@ export const NetworkInterface = () => {
     documentation: string[];
     expectations: any[];
     features: string[];
-    notes: any[];
+    notes?: any[];
   }
 `;
 
