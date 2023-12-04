@@ -24,7 +24,7 @@
     "prebuild": "node ./lib/ecosystem/get_yaml_and_gen_json.js",
     "build:mock": "node ../../scripts/generatePackageJson.mjs -p assets",
     "build": "rm -rf dist && gulp && cp LICENSE dist && cp README.npm.md dist && mv dist/README.npm.md dist/README.md && node ../../scripts/generatePackageJson.mjs -p assets",
-    "postbuild": "rm -rf ./lib/ecosystem/yaml && rm -rd ./lib/ecosystem/json",
+    "postbuild": "rm -rf ./lib/ecosystem/yaml",
     "clear": "rm -rf node_modules dist tsconfig.tsbuildinfo"
   }
 }
