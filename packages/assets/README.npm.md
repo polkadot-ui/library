@@ -7,7 +7,7 @@
 
 <p align="center">
   <b>Polkadot Cloud</b> is a library and platform <br />
-  for <b>developing</b> and <b>publishing</b> assets for <b>Polkadot dapps</b>.
+  for <b>developing</b> and <b>publishing</b> assets for <b>Polkadot dApps</b>.
 </p>
 
 <div align="center">

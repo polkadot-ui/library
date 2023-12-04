@@ -33,7 +33,7 @@ export const Doc = ({ folder }: DocProps) => {
           >
             <code>@polkadot-cloud/core</code>
           </a>
-          : Core styles and themes for Polkadot dapps.
+          : Core styles and themes for Polkadot dApps.
         </li>
         <li>
           <a
@@ -43,7 +43,7 @@ export const Doc = ({ folder }: DocProps) => {
           >
             <code>@polkadot-cloud/react</code>
           </a>
-          : Functional React components for Polkadot dapps.
+          : Functional React components for Polkadot dApps.
         </li>
         <li>
           <a
@@ -64,7 +64,7 @@ export const Doc = ({ folder }: DocProps) => {
           >
             <code>@polkadot-cloud/utils</code>
           </a>
-          : Common utility functions to aid in Polkadot dapp development.
+          : Common utility functions to aid in Polkadot dApp development.
         </li>
       </ul>
 

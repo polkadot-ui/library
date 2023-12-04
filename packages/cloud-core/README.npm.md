@@ -7,7 +7,7 @@
 
 <p align="center">
   <b>Polkadot Cloud</b> is a library and platform <br />
-  for <b>developing</b> and <b>publishing</b> assets for <b>Polkadot dapps</b>.
+  for <b>developing</b> and <b>publishing</b> assets for <b>Polkadot dApps</b>.
 </p>
 
 <div align="center">
@@ -18,7 +18,7 @@
 
 # Polkadot Cloud: Core
 
-**Core styles and themes for Polkadot dapps.**
+**Core styles and themes for Polkadot dApps.**
 
 - Plug and play 2-dimensional themes, comprised of CSS variables.
 - Fonts are provided with theme templates.
@@ -26,7 +26,7 @@
 
 ## Docs
 
-- [Polkadot Cloud Docs: Using Themes](https://polkadot.cloud/using-themes): How to use core themes in your Polkadot dapp.
+- [Polkadot Cloud Docs: Using Themes](https://polkadot.cloud/using-themes): How to use core themes in your Polkadot dApps.
 
 ## License
 

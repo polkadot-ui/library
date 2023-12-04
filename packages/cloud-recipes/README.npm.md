@@ -7,7 +7,7 @@
 
 <p align="center">
   <b>Polkadot Cloud</b> is a library and platform <br />
-  for <b>developing</b> and <b>publishing</b> assets for <b>Polkadot dapps</b>.
+  for <b>developing</b> and <b>publishing</b> assets for <b>Polkadot dApps</b>.
 </p>
 
 <div align="center">
@@ -21,7 +21,7 @@
 **Example functional components derived from the Polkadot Cloud library.**
 
 - Fully functional UI implementations of headless components.
-- Useful combinations of UI components and static assets for Polkadot dapps.
+- Useful combinations of UI components and static assets for Polkadot dApps.
 
 ## License
 

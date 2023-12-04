@@ -2,19 +2,19 @@
 
 # Polkadot Cloud
 
-<b>Polkadot Cloud</b> is a library and platform for developing and publishing assets for Polkadot dapps.
+<b>Polkadot Cloud</b> is a library and platform for developing and publishing assets for Polkadot dApps.
 
 ## Directory
 
 ### `@polkadot-cloud/core` &nbsp;[[source](https://github.com/polkadot-cloud/library/tree/main/packages/cloud-core) &nbsp;|&nbsp; [npm](https://www.npmjs.com/package/@polkadot-cloud/core)]
 
-Core styles and themes for Polkadot dapps.
+Core styles and themes for Polkadot dApps.
 
 - [Using Polkadot Cloud Themes](https://polkadot.cloud/using-themes)
 
 ### `@polkadot-cloud/react` &nbsp;[[source](https://github.com/polkadot-cloud/library/tree/main/packages/cloud-react) &nbsp;|&nbsp; [npm](https://www.npmjs.com/package/@polkadot-cloud/react)]
 
-Functional React components for Polkadot dapps.
+Functional React components for Polkadot dApps.
 
 - [Polkicon](https://polkadot.cloud/polkicon): A light-weight and customisable Polkadot Icon.
 
@@ -32,7 +32,7 @@ Functional React components for Polkadot dapps.
 
 ### `@polkadot-cloud/assets` &nbsp;[[source](https://github.com/polkadot-cloud/library/tree/main/packages/assets) &nbsp;|&nbsp; [npm](https://www.npmjs.com/package/@polkadot-cloud/assets)]
 
-Data sources and static assets for Polkadot dapps. 
+Data sources and static assets for Polkadot dApps. 
 
 - [Web3 Wallet Extensions](https://polkadot.cloud/extensions): A list of popular Web3 wallet extensions with metadata and icons.
 
@@ -41,7 +41,7 @@ Data sources and static assets for Polkadot dapps.
 ### `@polkadot-cloud/utils` &nbsp;[[source](https://github.com/polkadot-cloud/library/tree/main/packages/utils) &nbsp;|&nbsp; [npm](https://www.npmjs.com/package/@polkadot-cloud/utils)]
 
 
-Common utility functions to aid in Polkadot dapp development.
+Common utility functions to aid in Polkadot dApp development.
 
 - [Base](https://polkadot.cloud/base-utilities): A collection of reusable utilities for manipulating string / number / arrays etc.
 

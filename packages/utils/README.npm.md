@@ -7,7 +7,7 @@
 
 <p align="center">
   <b>Polkadot Cloud</b> is a library and platform <br />
-  for <b>developing</b> and <b>publishing</b> assets for <b>Polkadot dapps</b>.
+  for <b>developing</b> and <b>publishing</b> assets for <b>Polkadot dApps</b>.
 </p>
 
 <div align="center">
@@ -18,7 +18,7 @@
 
 # Polkadot Cloud: Utils
 
-**Common utility functions to aid in Polkadot dapp development.**
+**Common utility functions to aid in Polkadot dApp development.**
 
 - Base utilities: Collection of reusable utilities for manipulating string / number / arrays etc.
 - Unit utilities: A collection of reusable utilities for manipulating chain units.

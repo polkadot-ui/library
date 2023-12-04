@@ -7,7 +7,7 @@
 
 <p align="center">
   <b>Polkadot Cloud</b> is a library and platform <br />
-  for <b>developing</b> and <b>publishing</b> assets for <b>Polkadot dapps</b>.
+  for <b>developing</b> and <b>publishing</b> assets for <b>Polkadot dApps</b>.
 </p>
 
 <div align="center">
@@ -18,11 +18,11 @@
 
 # Polkadot Cloud: React
 
-**Functional React components for Polkadot dapps.**
+**Functional React components for Polkadot dApps.**
 
 - Headless components provided as React context providers and hooks.
 - Fully functional UI implementations of headless components.
-- Useful UI components for Polkadot dapps.
+- Useful UI components for Polkadot dApps.
 
 ## Docs
 
