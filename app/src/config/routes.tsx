@@ -7,6 +7,7 @@ import { Loaders } from "../docs/Experimental/Loaders";
 import { Charts } from "../docs/Components/Charts";
 import { Polkicon } from "../docs/Components/Polkicon";
 import { Extensions } from "../docs/Assets/Extensions";
+import { Networks } from "../docs/Assets/Networks";
 import { Validators } from "../docs/Assets/Validators";
 import { Grid } from "../docs/Experimental/Grid";
 import { Card } from "../docs/Experimental/Cards";
@@ -140,6 +141,11 @@ const assetsRoutes = [
     element: <Extensions />,
   },
   {
+    path: "networks",
+    name: "Νetworks' information",
+    element: <Networks />,
+  },
+  {
     path: "validators",
     name: "Validator Operators",
     element: <Validators />,
@@ -219,6 +225,9 @@ export const routeCategories: RouteCategories = [
     paths: [
       {
         paths: ["extensions"],
+      },
+      {
+        paths: ["networks"],
       },
       {
         paths: ["validators"],
