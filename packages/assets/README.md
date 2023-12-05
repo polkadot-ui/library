@@ -85,7 +85,7 @@ export interface NetworkInformation {
   network_type: string;
   chain: Chain;
   chainspec: Chainspec;
-  goals: any[];
+  goals: string[];
   repository: string;
   validators: string[];
   release_cycle: string;

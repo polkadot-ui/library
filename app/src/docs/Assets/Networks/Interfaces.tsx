@@ -9,7 +9,7 @@ export const NetworkInterface = () => {
     network_type: string;
     chain: Chain;
     chainspec: Chainspec;
-    goals: any[];
+    goals: string[];
     repository: string;
     validators: string[];
     release_cycle: string;
@@ -26,11 +26,7 @@ export const NetworkInterface = () => {
   }
 `;
 
-  return (
-    <>
-      <SimpleEditor code={code} standalone />
-    </>
-  );
+  return <SimpleEditor code={code} standalone />;
 };
 
 export const Chain = () => {
@@ -43,11 +39,7 @@ export const Chain = () => {
   }
 `;
 
-  return (
-    <>
-      <SimpleEditor code={code} standalone />
-    </>
-  );
+  return <SimpleEditor code={code} standalone />;
 };
 
 export const Chainspec = () => {
@@ -56,11 +48,7 @@ export const Chainspec = () => {
   }
 `;
 
-  return (
-    <>
-      <SimpleEditor code={code} standalone />
-    </>
-  );
+  return <SimpleEditor code={code} standalone />;
 };
 
 export const Specs = () => {
@@ -75,11 +63,7 @@ export const Specs = () => {
   }
 `;
 
-  return (
-    <>
-      <SimpleEditor code={code} standalone />
-    </>
-  );
+  return <SimpleEditor code={code} standalone />;
 };
 
 export const Contact = () => {
@@ -89,11 +73,7 @@ export const Contact = () => {
   }
 `;
 
-  return (
-    <>
-      <SimpleEditor code={code} standalone />
-    </>
-  );
+  return <SimpleEditor code={code} standalone />;
 };
 
 export const Endpoints = () => {
@@ -107,9 +87,5 @@ export const Endpoints = () => {
   }
 `;
 
-  return (
-    <>
-      <SimpleEditor code={code} standalone />
-    </>
-  );
+  return <SimpleEditor code={code} standalone />;
 };

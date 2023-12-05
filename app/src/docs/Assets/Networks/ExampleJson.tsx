@@ -5,12 +5,12 @@ import { SimpleEditor } from "@docs/SimpleEditor";
 import { Demo } from "@docs/Demo";
 import ReactJson from "react-json-view";
 
-import { polkadot } from "@packages/assets/lib/ecosystem";
+import { polkadot } from "@packages/assets/dist/external";
 
 export const Example = () => {
   const code = `// Import Polkadot's information object.
 
-import { polkadot } from '@polkadot-cloud/assets/ecosystem';
+import { polkadot } from '@polkadot-cloud/assets/external';
 
 console.log(polkadot);
 `;
