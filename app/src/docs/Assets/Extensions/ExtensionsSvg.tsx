@@ -25,10 +25,10 @@ import PolkadotJSSVG from "@polkadot-cloud/assets/extensions/svg/polkadotjs.svg?
 import PolkaGateSVG from "@polkadot-cloud/assets/extensions/svg/polkagate.svg?react";
 import SubwalletJSSVG from "@polkadot-cloud/assets/extensions/svg/subwalletjs.svg?react";
 import TalismanSVG from "@polkadot-cloud/assets/extensions/svg/talisman.svg?react";
-import LedgerSVG from "@packages/assets/lib/extensions/svg/ledger.svg?react";
-import LedgerSquareSVG from "@packages/assets/lib/extensions/svg/ledgersquare.svg?react";
-import PolkadotVaultSVG from "@packages/assets/lib/extensions/svg/polkadotvault.svg?react";
-import WalletConnectSVG from "@packages/assets/lib/extensions/svg/walletconnect.svg?react";
+import LedgerSVG from "@polkadot-cloud/assets/extensions/svg/ledger.svg?react";
+import LedgerSquareSVG from "@polkadot-cloud/assets/extensions/svg/ledgersquare.svg?react";
+import PolkadotVaultSVG from "@polkadot-cloud/assets/extensions/polkadotvault.svg?react";
+import WalletConnectSVG from "@polkadot-cloud/assets/extensions/walletconnect.svg?react";
 
 const App = () => (
   <>
