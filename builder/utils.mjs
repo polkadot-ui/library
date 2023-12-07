@@ -139,7 +139,9 @@ export const addTypescriptPropertiesIfMain = (main, json) => {
 
 // Creates a package output directory if it does not exist.
 export const ensurePackageOutputExists = async (path) => {
-  if (!(await fs.stat(`${path}/${PACKAGE_OUTPUT}`))) {
+  try {
+    await fs.stat(`${path}/${PACKAGE_OUTPUT}`);
+  } catch (_) {
     await fs.mkdir(`${path}/${PACKAGE_OUTPUT}`);
   }
 };
