@@ -13,9 +13,9 @@
     "build:production": "cd app && tsc && vite build --base='/'",
     "build:mock": "npm run build:mock --workspaces --if-present",
     "test": "npm run test --workspaces --if-present",
-    "prebuild": "node scripts/prebuild.mjs",
+    "prebuild": "node builder/run.mjs -t prebuild",
     "build": "npm run build --workspaces --if-present",
-    "postbuild": "node scripts/postbuild.mjs",
+    "postbuild": "node builder/run.mjs -t postbuild",
     "clear": "npm run --workspaces clear && rm -rf node_modules",
     "lint": "eslint './**' --fix && npx prettier --write . && npx stylelint '**/*.scss' --fix",
     "app": "npm run dev -w app"
@@ -72,6 +72,7 @@
     "stylelint-config-standard-scss": "^11.1.0",
     "tiny-lr": "^2.0.0",
     "tslib": "^2.6.2",
+    "tsup": "^8.0.1",
     "typescript": "^5.3.2",
     "vitest": "^1.0.1"
   },
@@ -82,7 +83,7 @@
     "packages/cloud-recipes",
     "packages/assets",
     "app",
-    "scripts"
+    "builder"
   ],
   "repository": {
     "type": "git",
