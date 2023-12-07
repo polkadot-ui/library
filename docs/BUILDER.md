@@ -23,7 +23,7 @@ The entire package build process is handled by the builder.
 The builder's `build` task takes the package name and an optional main file:
 
 ```
-node builder/run.mjs -t build -p cloud-core -m index.js.
+node builder/run.mjs -t package:build -p cloud-core -m index.js.
 ```
 
 The above command will build the `@polkadot-cloud/core` package, with its entry point set to `index.js`.
@@ -34,8 +34,8 @@ The builder also has `prebuild` and `postbuild` tasks designed to run integrity 
 
 ```
 // prebuild
-node builder/run.mjs -t prebuild
+node builder/run.mjs -t packages:prebuild
 
 // postbuild
-node builder/run.mjs -t postbuild
+node builder/run.mjs -t packages:postbuild
 ```
