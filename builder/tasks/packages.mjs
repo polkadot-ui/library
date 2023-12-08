@@ -83,7 +83,7 @@ export const build = async ({ p: packageName, m: main }) => {
 
     // Source package.json as a parsed JSON object.
     // ----------------------------------------------
-    const sourcePackageJson = await getSourcePackageJson(packagePath);
+    const sourcePackageJson = await getSourcePackageJson(packageName);
 
     // Required properties to be copied to the npm build package.json file.
     // --------------------------------------------------------------------
