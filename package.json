@@ -9,6 +9,7 @@
   "description": "Polkadot Cloud",
   "private": "true",
   "scripts": {
+    "build:directory": "node builder/run.mjs -t directory:build",
     "build:pages": "cd app && tsc && vite build --base='/library/'",
     "build:production": "cd app && tsc && vite build --base='/'",
     "build:mock": "npm run build:mock --workspaces --if-present",
@@ -75,7 +76,8 @@
     "tslib": "^2.6.2",
     "tsup": "^8.0.1",
     "typescript": "^5.3.3",
-    "vitest": "^1.0.2"
+    "vitest": "^1.0.2",
+    "yaml": "2.3.4"
   },
   "workspaces": [
     "packages/cloud-core",

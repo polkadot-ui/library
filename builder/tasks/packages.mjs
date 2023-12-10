@@ -43,6 +43,7 @@ export const prebuild = async () => {
     }
 
     // Check required files exist for each package.
+    // --------------------------------------------
     if (!(await checkFilesExistInPackages(packages, PACKAGE_REQUIRED_FILES))) {
       throw `❌ Required files missing in packages. Must have ${PACKAGE_REQUIRED_FILES.join(
         ", "
@@ -82,7 +83,7 @@ export const build = async ({ p: packageName, m: main }) => {
     const packagePath = join(getPackagesDirectory(), packageName);
 
     // Source package.json as a parsed JSON object.
-    // ----------------------------------------------
+    // --------------------------------------------
     const sourcePackageJson = await getSourcePackageJson(packageName);
 
     // Required properties to be copied to the npm build package.json file.
@@ -91,8 +92,8 @@ export const build = async ({ p: packageName, m: main }) => {
       PACKAGE_REQUIRED_JSON_KEYS.includes(k[0])
     );
 
-    //Inject formatted package `name` into required properties.
-    // --------------------------------------------------------
+    // Inject formatted package `name` into required properties.
+    // ---------------------------------------------------------
     requiredProperties.unshift(["name", formatNpmPackageName(packageName)]);
 
     // Format package.json as Typeacript module if `main` was provided.
@@ -160,11 +161,11 @@ export const patch = async () => {
       const packageJson = await getSourcePackageJson(pkg);
 
       // Bump version patch index.
-      // --------------------------
+      // -------------------------
       const newVersion = bumpSemverPatch(packageJson.version);
 
       // Write updated package.json to the source directory.
-      // --------------------------------------------------
+      // ---------------------------------------------------
       await writePackageJsonToSource(
         pkg,
         await formatJson({
@@ -179,7 +180,7 @@ export const patch = async () => {
     }
 
     // Write updated Release Please manifest.
-    // -------------------------------------
+    // --------------------------------------
     await writeReleasePleaseManifest(await formatJson(releasePleaseManifset));
 
     console.log("✅ Patched all package versions.");

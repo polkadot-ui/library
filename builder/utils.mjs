@@ -16,6 +16,11 @@ export const getPackagesDirectory = () => {
   return join(dirname(fileURLToPath(import.meta.url)), "..", "packages");
 };
 
+// Gets the top level directory from the current directory.
+export const getTopDirectory = () => {
+  return join(dirname(fileURLToPath(import.meta.url)), "..");
+};
+
 // Checks that all given files are present in all the provided packages.
 export const checkFilesExistInPackages = async (pkgs, files) => {
   let allFilesExist = true;
@@ -87,6 +92,37 @@ export const bumpSemverPatch = (currentVersion) => {
   const pieces = currentVersion.split(/[.]+/);
   const increment = Number(pieces.pop()) + 1;
   return `${pieces.join(".")}.${increment}`;
+};
+
+// Format the package introduction data in the README file.
+export const formatDirectoryHeaders = (pkg, description) => {
+  return (
+    "#### `" +
+    formatNpmPackageName(pkg) +
+    "`&nbsp; [[source](https://github.com/polkadot-cloud/library/tree/main/packages/" +
+    pkg +
+    ") &nbsp;|&nbsp; [npm](https://www.npmjs.com/package/" +
+    formatNpmPackageName(pkg) +
+    ")]\n\n" +
+    description +
+    "\n\n"
+  );
+};
+
+// Format the package content data in the README file.
+export const formatDirectoryEntry = (directory) => {
+  return directory.reduce((str, { name, description, doc }) => {
+    return (
+      str +
+      "- [" +
+      name +
+      "](" +
+      doc +
+      ")" +
+      (description ? ": " + description : "") +
+      "\n\n"
+    );
+  }, "");
 };
 
 //--------------------------------------------------
@@ -184,4 +220,13 @@ export const writePackageJsonToSource = async (path, data) => {
 // Writes a package.json file to output directory.
 export const writePackageJsonToOutput = async (path, data) => {
   await fs.writeFile(`${path}/${PACKAGE_OUTPUT}/package.json`, data);
+};
+
+// Get the source markdown file for `docs/README.md` directory.
+export const getDirectoryTemplate = async () => {
+  const file = await fs.readFile(
+    `${getTopDirectory()}/builder/templates/directory.md`,
+    "utf-8"
+  );
+  return file.toString();
 };
