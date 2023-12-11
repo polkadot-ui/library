@@ -616,15 +616,15 @@
   resolved "https://registry.yarnpkg.com/@polkadot-cloud/assets/-/assets-0.1.35.tgz#5718e6e0b80ac9c01e7fed150012bb2b7563a160"
   integrity sha512-ImyHYQ01s1kFetDE5qlk5x8s/H3WDFcbCcm+GquaJxm4b/QeznSJsBP0ZeaArihsCPcSWux9nFG6P1mfToVhtw==
 
-"@polkadot-cloud/core@^1.0.49", "@polkadot-cloud/core@^1.0.50":
-  version "1.0.50"
-  resolved "https://registry.yarnpkg.com/@polkadot-cloud/core/-/core-1.0.50.tgz#6db1fea7473601cee315f5e8be972e9a8efc1034"
-  integrity sha512-SdHsp49XxdLRwwjwe/dcqQcy8tyBL4MoQc4YYmOWRjOcnasJmPZE2VHLYtHvnhS3pkWJav0WuhScPUh9dUtGDQ==
+"@polkadot-cloud/core@^1.0.50", "@polkadot-cloud/core@^1.0.51":
+  version "1.0.51"
+  resolved "https://registry.yarnpkg.com/@polkadot-cloud/core/-/core-1.0.51.tgz#ab41a661552f5708c8a1dea2ff4c860c16a2b8a6"
+  integrity sha512-Gwm0pTz4Wl9+Q0n3TFBZ+0AQx8cSmo5lo7ALQpT33pZv0QluKrW489Hskt37//2uphELO4t/VkuP9Pu+Pw7jnQ==
 
-"@polkadot-cloud/react@^0.1.138", "@polkadot-cloud/react@^0.1.139":
-  version "0.1.139"
-  resolved "https://registry.yarnpkg.com/@polkadot-cloud/react/-/react-0.1.139.tgz#bd35f7aa2d622728b1b31d2226c216ac7ad41bc1"
-  integrity sha512-Swa7pZmtrp591+7PHhSPX0sbi5cv/NWlcao/GorzUovu2EuHfG7n6qMCXRgwvReV2KYWBma7QD+awF6vmSeHMw==
+"@polkadot-cloud/react@^0.1.139", "@polkadot-cloud/react@^0.1.142":
+  version "0.1.143"
+  resolved "https://registry.yarnpkg.com/@polkadot-cloud/react/-/react-0.1.143.tgz#25c12ce29ed72c30029cd2c95a4fa304dfe105b7"
+  integrity sha512-BoMPmcJqMqOBBFNpupkmQ/d7HavEodoYkM8BXucmc73qZ/goh4DTs7gDpYOKDKFciPMiDPSEPXNNSAFgA6ndrQ==
   dependencies:
     "@chainsafe/metamask-polkadot-adapter" "^0.6.0"
     "@fortawesome/fontawesome-svg-core" "^6.5.1"
@@ -633,17 +633,17 @@
     "@fortawesome/free-solid-svg-icons" "^6.5.1"
     "@fortawesome/react-fontawesome" "^0.2.0"
     "@polkadot-cloud/assets" "0.1.35"
-    "@polkadot-cloud/core" "^1.0.49"
+    "@polkadot-cloud/core" "^1.0.50"
     "@polkadot-cloud/utils" "^0.0.25"
     "@polkadot/keyring" "^12.6.1"
     "@polkadot/util" "^12.5.1"
     "@polkadot/util-crypto" "^12.5.1"
-    framer-motion "^10.16.15"
+    framer-motion "^10.16.16"
 
-"@polkadot-cloud/recipes@^0.0.8":
-  version "0.0.8"
-  resolved "https://registry.yarnpkg.com/@polkadot-cloud/recipes/-/recipes-0.0.8.tgz#c97a8d2b105cab7245490c963fad649f6d717b46"
-  integrity sha512-BAOi6fYh7QcsfwAGlmFDLx9x0E3dKdxjrrZ5Bm+RijQASaFoqP5G2rVrvC3ng1HFHkxjS950yx4pxyZ6m18wjw==
+"@polkadot-cloud/recipes@^0.0.9":
+  version "0.0.9"
+  resolved "https://registry.yarnpkg.com/@polkadot-cloud/recipes/-/recipes-0.0.9.tgz#4c6f8e5eaef1a0203c0a6c38f2d33218c7bb174c"
+  integrity sha512-B4f2ZN910NpAtRLb2C9/nYpRT/nPoy0KQCQtHwmu/pd1yTb3B6VwU3C8uTloQYuzs7rbm444qYu32BNKg1G4/g==
   dependencies:
     "@chainsafe/metamask-polkadot-adapter" "^0.6.0"
     "@chainsafe/metamask-polkadot-types" "^0.6.0"
@@ -654,8 +654,8 @@
     "@fortawesome/react-fontawesome" "^0.2.0"
     "@ledgerhq/hw-transport-webhid" "^6.27.20"
     "@polkadot-cloud/assets" "0.1.35"
-    "@polkadot-cloud/core" "^1.0.49"
-    "@polkadot-cloud/react" "^0.1.138"
+    "@polkadot-cloud/core" "^1.0.50"
+    "@polkadot-cloud/react" "^0.1.139"
     "@polkadot-cloud/utils" "^0.0.25"
     "@polkadot/keyring" "^12.6.1"
     "@polkadot/util" "^12.5.1"
@@ -1429,10 +1429,10 @@
   dependencies:
     "@types/react" "*"
 
-"@types/react@*", "@types/react@^18.2.42":
-  version "18.2.42"
-  resolved "https://registry.yarnpkg.com/@types/react/-/react-18.2.42.tgz#6f6b11a904f6d96dda3c2920328a97011a00aba7"
-  integrity sha512-c1zEr96MjakLYus/wPnuWDo1/zErfdU9rNsIGmE+NV71nx88FG9Ttgo5dqorXTu/LImX2f63WBP986gJkMPNbA==
+"@types/react@*", "@types/react@^18.2.43":
+  version "18.2.43"
+  resolved "https://registry.yarnpkg.com/@types/react/-/react-18.2.43.tgz#c58e5abe241e6f71f60ce30e2a9aceb9d3a2a374"
+  integrity sha512-nvOV01ZdBdd/KW6FahSbcNplt2jCJfyWdTos61RYHV+FVv5L/g9AOX1bmbVcWcLFL8+KHQfh1zVIQrud6ihyQA==
   dependencies:
     "@types/prop-types" "*"
     "@types/scheduler" "*"
@@ -1557,10 +1557,10 @@
   dependencies:
     "@swc/core" "^1.3.96"
 
-"@vitest/coverage-v8@^1.0.2":
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/@vitest/coverage-v8/-/coverage-v8-1.0.2.tgz#a2019f45ed715a31862294a265a3c842b5134c1f"
-  integrity sha512-WCTbfnvFPqH8TGVPNnPXcLBK/tbMX5GGZ/Lc9EuYvVX4xbO0ULKLzWDbVU37C2Y2YIlNu/VP1kp7QKUZolUDgA==
+"@vitest/coverage-v8@^1.0.4":
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/@vitest/coverage-v8/-/coverage-v8-1.0.4.tgz#49193139399c37ddf16c23d96892ef32cd67a69a"
+  integrity sha512-xD6Yuql6RW0Ir/JJIs6rVrmnG2/KOWJF+IRX1oJQk5wGKGxbtdrYPbl+WTUn/4ICCQ2G20zbE1e8/nPNyAG5Vg==
   dependencies:
     "@ampproject/remapping" "^2.2.1"
     "@bcoe/v8-coverage" "^0.2.3"
@@ -1576,44 +1576,44 @@
     test-exclude "^6.0.0"
     v8-to-istanbul "^9.2.0"
 
-"@vitest/expect@1.0.2":
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/@vitest/expect/-/expect-1.0.2.tgz#7fc5ee3fe0e649f5a5e3df1a9744efe0163d1237"
-  integrity sha512-mAIo/8uddSWkjQMLFcjqZP3WmkwvvN0OtlyZIu33jFnwme3vZds8m8EDMxtj+Uzni2DwtPfHNjJcTM8zTV1f4A==
+"@vitest/expect@1.0.4":
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/@vitest/expect/-/expect-1.0.4.tgz#2751018b6e527841043e046ff424304453a0a024"
+  integrity sha512-/NRN9N88qjg3dkhmFcCBwhn/Ie4h064pY3iv7WLRsDJW7dXnEgeoa8W9zy7gIPluhz6CkgqiB3HmpIXgmEY5dQ==
   dependencies:
-    "@vitest/spy" "1.0.2"
-    "@vitest/utils" "1.0.2"
+    "@vitest/spy" "1.0.4"
+    "@vitest/utils" "1.0.4"
     chai "^4.3.10"
 
-"@vitest/runner@1.0.2":
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/@vitest/runner/-/runner-1.0.2.tgz#aad21c03fdcd1f380564fad37be7d5a2feb2f733"
-  integrity sha512-ZcHJXPT2kg/9Hc4fNkCbItlsgZSs3m4vQbxB8LCSdzpbG85bExCmSvu6K9lWpMNdoKfAr1Jn0BwS9SWUcGnbTQ==
+"@vitest/runner@1.0.4":
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/@vitest/runner/-/runner-1.0.4.tgz#c4dcb88c07f40b91293ff1331747ee58fad6d5e4"
+  integrity sha512-rhOQ9FZTEkV41JWXozFM8YgOqaG9zA7QXbhg5gy6mFOVqh4PcupirIJ+wN7QjeJt8S8nJRYuZH1OjJjsbxAXTQ==
   dependencies:
-    "@vitest/utils" "1.0.2"
+    "@vitest/utils" "1.0.4"
     p-limit "^5.0.0"
     pathe "^1.1.1"
 
-"@vitest/snapshot@1.0.2":
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/@vitest/snapshot/-/snapshot-1.0.2.tgz#df11b066c9593e3539640a41f38452a6b5889da1"
-  integrity sha512-9ClDz2/aV5TfWA4reV7XR9p+hE0e7bifhwxlURugj3Fw0YXeTFzHmKCNEHd6wOIFMfthbGGwhlq7TOJ2jDO4/g==
+"@vitest/snapshot@1.0.4":
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/@vitest/snapshot/-/snapshot-1.0.4.tgz#7020983b3963b473237fea08d347ea83b266b9bb"
+  integrity sha512-vkfXUrNyNRA/Gzsp2lpyJxh94vU2OHT1amoD6WuvUAA12n32xeVZQ0KjjQIf8F6u7bcq2A2k969fMVxEsxeKYA==
   dependencies:
     magic-string "^0.30.5"
     pathe "^1.1.1"
     pretty-format "^29.7.0"
 
-"@vitest/spy@1.0.2":
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/@vitest/spy/-/spy-1.0.2.tgz#c28205427e77e589e3f0e6017f55d1c5b9defee3"
-  integrity sha512-YlnHmDntp+zNV3QoTVFI5EVHV0AXpiThd7+xnDEbWnD6fw0TH/J4/+3GFPClLimR39h6nA5m0W4Bjm5Edg4A/A==
+"@vitest/spy@1.0.4":
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/@vitest/spy/-/spy-1.0.4.tgz#e182c78fb9b1178ff789ad7eb4560ba6750e6e9b"
+  integrity sha512-9ojTFRL1AJVh0hvfzAQpm0QS6xIS+1HFIw94kl/1ucTfGCaj1LV/iuJU4Y6cdR03EzPDygxTHwE1JOm+5RCcvA==
   dependencies:
     tinyspy "^2.2.0"
 
-"@vitest/utils@1.0.2":
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/@vitest/utils/-/utils-1.0.2.tgz#fbc483a62d13a02fa4e2b470fbf565fdd616a242"
-  integrity sha512-GPQkGHAnFAP/+seSbB9pCsj339yRrMgILoI5H2sPevTLCYgBq0VRjF8QSllmnQyvf0EontF6KUIt2t5s2SmqoQ==
+"@vitest/utils@1.0.4":
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/@vitest/utils/-/utils-1.0.4.tgz#6e673eaf87a2ff28a12688d17bdbb62cc22bf773"
+  integrity sha512-gsswWDXxtt0QvtK/y/LWukN7sGMYmnCcv1qv05CsY6cU/Y1zpGX1QuvLs+GO1inczpE6Owixeel3ShkjhYtGfA==
   dependencies:
     diff-sequences "^29.6.3"
     loupe "^2.3.7"
@@ -6864,10 +6864,10 @@ prettier-plugin-organize-imports@^3.2.4:
   resolved "https://registry.yarnpkg.com/prettier-plugin-organize-imports/-/prettier-plugin-organize-imports-3.2.4.tgz#77967f69d335e9c8e6e5d224074609309c62845e"
   integrity sha512-6m8WBhIp0dfwu0SkgfOxJqh+HpdyfqSSLfKKRZSFbDuEQXDDndb8fTpRWkUrX/uBenkex3MgnVk0J3b3Y5byog==
 
-prettier@^3.1.0:
-  version "3.1.0"
-  resolved "https://registry.yarnpkg.com/prettier/-/prettier-3.1.0.tgz#c6d16474a5f764ea1a4a373c593b779697744d5e"
-  integrity sha512-TQLvXjq5IAibjh8EpBIkNKxO749UEWABoiIZehEPiY4GNpVdhaFKqSTu+QrlU6D2dPAfubRmtJTi4K4YkQ5eXw==
+prettier@^3.1.1:
+  version "3.1.1"
+  resolved "https://registry.yarnpkg.com/prettier/-/prettier-3.1.1.tgz#6ba9f23165d690b6cbdaa88cb0807278f7019848"
+  integrity sha512-22UbSzg8luF4UuZtzgiUOfcGM8s4tjBv6dJRT7j275NXsy2jb4aJa4NNveul5x4eqlF1wuhuR2RElK71RvmVaw==
 
 pretty-format@^29.7.0:
   version "29.7.0"
@@ -8181,10 +8181,10 @@ svgo@^2.7.0:
     picocolors "^1.0.0"
     stable "^0.1.8"
 
-svgo@^3.0.5:
-  version "3.0.5"
-  resolved "https://registry.yarnpkg.com/svgo/-/svgo-3.0.5.tgz#0595cf3c762c4e5180713d7b92dc67deaf46c6a0"
-  integrity sha512-HQKHEo73pMNOlDlBcLgZRcHW2+1wo7bFYayAXkGN0l/2+h68KjlfZyMRhdhaGvoHV2eApOovl12zoFz42sT6rQ==
+svgo@^3.1.0:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/svgo/-/svgo-3.1.0.tgz#7e63855c8da73297d5d5765e968f9679a0f8d24a"
+  integrity sha512-R5SnNA89w1dYgNv570591F66v34b3eQShpIBcQtZtM5trJwm1VvxbIoMpRYY3ybTAutcKTLEmTsdnaknOHbiQA==
   dependencies:
     "@trysound/sax" "0.2.0"
     commander "^7.2.0"
@@ -8789,10 +8789,10 @@ vinyl@^2.0.0, vinyl@^2.2.0:
     remove-trailing-separator "^1.0.1"
     replace-ext "^1.0.0"
 
-vite-node@1.0.2:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/vite-node/-/vite-node-1.0.2.tgz#5e6096e31b851f245ccbd353bf3939130dfd0224"
-  integrity sha512-h7BbMJf46fLvFW/9Ygo3snkIBEHFh6fHpB4lge98H5quYrDhPFeI3S0LREz328uqPWSnii2yeJXktQ+Pmqk5BQ==
+vite-node@1.0.4:
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/vite-node/-/vite-node-1.0.4.tgz#36d6c49e3b5015967d883845561ed67abe6553cc"
+  integrity sha512-9xQQtHdsz5Qn8hqbV7UKqkm8YkJhzT/zr41Dmt5N7AlD8hJXw/Z7y0QiD5I8lnTthV9Rvcvi0QW7PI0Fq83ZPg==
   dependencies:
     cac "^6.7.14"
     debug "^4.3.4"
@@ -8861,16 +8861,16 @@ vite@^5.0.0, vite@^5.0.7:
   optionalDependencies:
     fsevents "~2.3.3"
 
-vitest@^1.0.2:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/vitest/-/vitest-1.0.2.tgz#a7c3bf41bd5ef8c1c781c98c84a749d26b31f944"
-  integrity sha512-F3NVwwpXfRSDnJmyv+ALPwSRVt0zDkRRE18pwUHSUPXAlWQ47rY1dc99ziMW5bBHyqwK2ERjMisLNoef64qk9w==
+vitest@^1.0.4:
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/vitest/-/vitest-1.0.4.tgz#c4b39ba4fcba674499c90e28f4d8dd16fa1d4eb3"
+  integrity sha512-s1GQHp/UOeWEo4+aXDOeFBJwFzL6mjycbQwwKWX2QcYfh/7tIerS59hWQ20mxzupTJluA2SdwiBuWwQHH67ckg==
   dependencies:
-    "@vitest/expect" "1.0.2"
-    "@vitest/runner" "1.0.2"
-    "@vitest/snapshot" "1.0.2"
-    "@vitest/spy" "1.0.2"
-    "@vitest/utils" "1.0.2"
+    "@vitest/expect" "1.0.4"
+    "@vitest/runner" "1.0.4"
+    "@vitest/snapshot" "1.0.4"
+    "@vitest/spy" "1.0.4"
+    "@vitest/utils" "1.0.4"
     acorn-walk "^8.3.0"
     cac "^6.7.14"
     chai "^4.3.10"
@@ -8885,7 +8885,7 @@ vitest@^1.0.2:
     tinybench "^2.5.1"
     tinypool "^0.8.1"
     vite "^5.0.0"
-    vite-node "1.0.2"
+    vite-node "1.0.4"
     why-is-node-running "^2.2.2"
 
 vscode-jsonrpc@6.0.0:
