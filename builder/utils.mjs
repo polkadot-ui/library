@@ -97,7 +97,7 @@ export const bumpSemverPatch = (currentVersion) => {
 // Format the package introduction data in the README file.
 export const formatDirectoryHeaders = (pkg, description) => {
   return (
-    "#### `" +
+    "\n#### `" +
     formatNpmPackageName(pkg) +
     "`&nbsp; [[source](https://github.com/polkadot-cloud/library/tree/main/packages/" +
     pkg +
@@ -141,7 +141,7 @@ export const npmLicenseContent = (license) => {
 
 // Header content on dist/README.md.
 export const npmHearderContent = (title, description) => {
-  return "# " + title + "\n\n" + "**" + description + "**" + "\n\n";
+  return "\n# " + title + "\n\n" + "**" + description + "**" + "\n\n";
 };
 
 //--------------------------------------------------

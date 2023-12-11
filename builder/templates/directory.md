@@ -5,4 +5,3 @@
 Polkadot Cloud Library hosts static assets, data sources, functional components and utilities for developers to plug &amp; play into their dApps.
 
 ## Directory
-
