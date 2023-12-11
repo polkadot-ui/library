@@ -264,6 +264,8 @@ export const ExtensionAccountsProvider = ({
 
   // Handle errors when communiating with extensions.
   const handleExtensionError = (id: string, err: string) => {
+    console.log(id, err);
+
     // if not general error (maybe enabled but no accounts trust app)
     if (err.startsWith("Error")) {
       // remove extension from local `active_extensions`.
