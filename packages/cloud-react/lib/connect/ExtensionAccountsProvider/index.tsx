@@ -255,8 +255,6 @@ export const ExtensionAccountsProvider = ({
             handleAccounts(accounts);
           } else {
             const unsub = extension.accounts.subscribe((accounts) => {
-              console.log(id, ": subscribing to accounts");
-              console.log(accounts);
               handleAccounts(accounts || []);
             });
             addToUnsubscribe(id, unsub);
@@ -272,8 +270,6 @@ export const ExtensionAccountsProvider = ({
 
   // Handle errors when communiating with extensions.
   const handleExtensionError = (id: string, err: string) => {
-    console.log(id, err);
-
     // if not general error (maybe enabled but no accounts trust app)
     if (err.startsWith("Error")) {
       // remove extension from local `active_extensions`.
