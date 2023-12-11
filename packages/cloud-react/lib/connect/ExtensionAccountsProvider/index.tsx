@@ -169,7 +169,7 @@ export const ExtensionAccountsProvider = ({
               handleAccounts(accounts);
             } else {
               const unsub = extension.accounts.subscribe((accounts) => {
-                if (accounts) handleAccounts(accounts);
+                handleAccounts(accounts || []);
               });
               addToUnsubscribe(id, unsub);
             }
@@ -242,11 +242,14 @@ export const ExtensionAccountsProvider = ({
 
           // If account subscriptions are not supported, simply get the account(s) from the extnsion. Otherwise, subscribe to accounts.
           if (!extensionHasFeature(id, "subscribeAccounts")) {
+            console.log(id, ": fetching accounts");
+
             const accounts = await extension.accounts.get();
             handleAccounts(accounts);
           } else {
+            console.log(id, ": subscribing to accounts");
             const unsub = extension.accounts.subscribe((accounts) => {
-              if (accounts) handleAccounts(accounts);
+              handleAccounts(accounts || []);
             });
             addToUnsubscribe(id, unsub);
           }
