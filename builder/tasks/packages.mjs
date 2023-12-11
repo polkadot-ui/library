@@ -2,6 +2,8 @@
 // SPDX-License-Identifier: GPL-3.0-only
 
 import { join } from "path";
+import { parse } from "yaml";
+import fs from "fs/promises";
 import {
   addTypescriptPropertiesIfMain,
   allPropertiesExist,
@@ -20,6 +22,11 @@ import {
   writePackageJsonToOutput,
   writePackageJsonToSource,
   writeReleasePleaseManifest,
+  writeReadmeToOutput,
+  formatDirectoryEntry,
+  npmLicenseContent,
+  npmHearderContent,
+  getTemplate,
 } from "../utils.mjs";
 import {
   PACKAGE_OUTPUT,
@@ -113,9 +120,51 @@ export const build = async ({ p: packageName, m: main }) => {
     // -------------------------------------------
     await writePackageJsonToOutput(packagePath, packageJson);
 
-    console.log(`✅ package.json injected into package ${packageName}.`);
+    // Open file to get npm header.
+    // ----------------------------
+    let readmeMd = await getTemplate("npm");
+
+    // Format data from package `index.yml`.
+    // -------------------------------------
+    const { directory, npm } = parse(
+      await fs.readFile(
+        `${getPackagesDirectory()}/${packageName}/index.yml`,
+        "utf-8"
+      )
+    );
+
+    // Get needed data from packages source package.json file.
+    // -------------------------------------------------------
+    const { description: npmDescription, license } =
+      await getSourcePackageJson(packageName);
+
+    // Append the npm entries.
+    // -----------------------
+    readmeMd += npmHearderContent(npm.title, npmDescription);
+
+    if (npm.contents) {
+      for (const item of npm.contents) {
+        readmeMd += "- " + item.item + "\n\n";
+      }
+    }
+
+    readmeMd += "## Docs" + "\n\n";
+
+    // Append the directory entries.
+    // -----------------------------
+    readmeMd += formatDirectoryEntry(directory) + npmLicenseContent(license);
+
+    // Write README.md to the output directory.
+    // ----------------------------------------
+    await writeReadmeToOutput(packagePath, readmeMd);
+    console.log(
+      `✅ package.json and README.md injected into package ${packageName}.`
+    );
   } catch (err) {
-    console.error(`❌ Could not generate  ${packageName} package.json:`, err);
+    console.error(
+      `❌ Could not generate ${packageName} package.json and README.md:`,
+      err
+    );
   }
 };
 

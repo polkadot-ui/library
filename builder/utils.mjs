@@ -125,6 +125,25 @@ export const formatDirectoryEntry = (directory) => {
   }, "");
 };
 
+// License content on dist/README.md.
+export const npmLicenseContent = (license) => {
+  return (
+    "## License" +
+    "\n\n" +
+    "[" +
+    license +
+    "](https://spdx.org/licenses/" +
+    license +
+    ".html)" +
+    "\n\n"
+  );
+};
+
+// Header content on dist/README.md.
+export const npmHearderContent = (title, description) => {
+  return "# " + title + "\n\n" + "**" + description + "**" + "\n\n";
+};
+
 //--------------------------------------------------
 // Package build utils
 //--------------------------------------------------
@@ -222,10 +241,15 @@ export const writePackageJsonToOutput = async (path, data) => {
   await fs.writeFile(`${path}/${PACKAGE_OUTPUT}/package.json`, data);
 };
 
-// Get the source markdown file for `docs/README.md` directory.
-export const getDirectoryTemplate = async () => {
+// Writes a README file to output directory.
+export const writeReadmeToOutput = async (path, data) => {
+  await fs.writeFile(`${path}/${PACKAGE_OUTPUT}/README.md`, data);
+};
+
+// Get the source markdown file for the directory.
+export const getTemplate = async (name) => {
   const file = await fs.readFile(
-    `${getTopDirectory()}/builder/templates/directory.md`,
+    `${getTopDirectory()}/builder/templates/${name}.md`,
     "utf-8"
   );
   return file.toString();

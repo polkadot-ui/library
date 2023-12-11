@@ -16,13 +16,3 @@
 
 <hr>
 
-# Polkadot Cloud: Recipes
-
-**Example functional components derived from the Polkadot Cloud library.**
-
-- Fully functional UI implementations of headless components.
-- Useful combinations of UI components and static assets for Polkadot dApps.
-
-## License
-
-[GPL-3.0-only](https://spdx.org/licenses/GPL-3.0-only.html)
