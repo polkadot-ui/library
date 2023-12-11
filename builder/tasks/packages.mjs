@@ -120,10 +120,6 @@ export const build = async ({ p: packageName, m: main }) => {
     // -------------------------------------------
     await writePackageJsonToOutput(packagePath, packageJson);
 
-    // Open file to get npm header.
-    // ----------------------------
-    let readmeMd = await getTemplate("npm");
-
     // Format data from package `index.yml`.
     // -------------------------------------
     const { directory, npm } = parse(
@@ -137,6 +133,10 @@ export const build = async ({ p: packageName, m: main }) => {
     // -------------------------------------------------------
     const { description: npmDescription, license } =
       await getSourcePackageJson(packageName);
+
+    // Open file to get npm header.
+    // ----------------------------
+    let readmeMd = await getTemplate("npm");
 
     // Append the npm entries.
     // -----------------------
