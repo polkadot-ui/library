@@ -14,7 +14,11 @@ import {
   ExtensionAccountsProviderProps,
   Sync,
 } from "./types";
-import { extensionIsLocal, removeFromLocalExtensions } from "./utils";
+import {
+  addToLocalExtensions,
+  extensionIsLocal,
+  removeFromLocalExtensions,
+} from "./utils";
 import { AnyFunction, AnyJson } from "../../utils/types";
 import { useImportExtension } from "./useImportExtension";
 import { useExtensions } from "../ExtensionsProvider/useExtensions";
@@ -119,6 +123,9 @@ export const ExtensionAccountsProvider = ({
 
           // Summons extension popup.
           const extension: ExtensionInterface = await enable(dappName);
+          maybeOnExtensionEnabled(id);
+          addToLocalExtensions(id);
+          setExtensionStatus(id, "connected");
 
           // Continue if `enable` succeeded, and if the current network is supported.
           if (extension !== undefined) {
@@ -208,6 +215,8 @@ export const ExtensionAccountsProvider = ({
         if (extension !== undefined) {
           // Call optional `onExtensionEnabled` callback.
           maybeOnExtensionEnabled(id);
+          addToLocalExtensions(id);
+          setExtensionStatus(id, "connected");
 
           // Handler for new accounts.
           const handleAccounts = (a: ExtensionAccount[]) => {
@@ -242,13 +251,12 @@ export const ExtensionAccountsProvider = ({
 
           // If account subscriptions are not supported, simply get the account(s) from the extnsion. Otherwise, subscribe to accounts.
           if (!extensionHasFeature(id, "subscribeAccounts")) {
-            console.log(id, ": fetching accounts");
-
             const accounts = await extension.accounts.get();
             handleAccounts(accounts);
           } else {
-            console.log(id, ": subscribing to accounts");
             const unsub = extension.accounts.subscribe((accounts) => {
+              console.log(id, ": subscribing to accounts");
+              console.log(accounts);
               handleAccounts(accounts || []);
             });
             addToUnsubscribe(id, unsub);
