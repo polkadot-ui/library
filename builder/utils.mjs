@@ -6,6 +6,7 @@ import { join, dirname } from "path";
 import { fileURLToPath } from "url";
 import { PACKAGE_OUTPUT, PACKAGE_SCOPE } from "./config.mjs";
 import { format } from "prettier";
+import { parse } from "yaml";
 
 //--------------------------------------------------
 // Directory and file validation utils
@@ -105,7 +106,7 @@ export const formatDirectoryHeaders = (pkg, description) => {
     formatNpmPackageName(pkg) +
     ")]\n\n" +
     description +
-    "\n\n"
+    "\n"
   );
 };
 
@@ -114,13 +115,13 @@ export const formatDirectoryEntry = (directory) => {
   return directory.reduce((str, { name, description, doc }) => {
     return (
       str +
-      "- [" +
+      "\n- [" +
       name +
       "](" +
       doc +
       ")" +
       (description ? ": " + description : "") +
-      "\n\n"
+      "\n"
     );
   }, "");
 };
@@ -135,13 +136,13 @@ export const npmLicenseContent = (license) => {
     "](https://spdx.org/licenses/" +
     license +
     ".html)" +
-    "\n\n"
+    "\n"
   );
 };
 
 // Header content on dist/README.md.
-export const npmHearderContent = (title, description) => {
-  return "\n# " + title + "\n\n" + "**" + description + "**" + "\n\n";
+export const npmHeaderContent = (title, description) => {
+  return "# " + title + "\n\n" + "**" + description + "**" + "\n\n";
 };
 
 //--------------------------------------------------
@@ -231,6 +232,13 @@ export const getDistPackageJson = async (path) => {
   );
 };
 
+// Get the source index.yml file for a package.
+export const getSourceIndexYml = async (path) => {
+  return parse(
+    await fs.readFile(`${getPackagesDirectory()}/${path}/index.yml`, "utf-8")
+  );
+};
+
 // Writes a package.json file to source directory.
 export const writePackageJsonToSource = async (path, data) => {
   await fs.writeFile(`${getPackagesDirectory()}/${path}/package.json`, data);
@@ -253,4 +261,34 @@ export const getTemplate = async (name) => {
     "utf-8"
   );
   return file.toString();
+};
+
+// Get the template markdown and write a README file to output directory.
+export const generatePackageReadme = async (packageName, path) => {
+  // Open file to get npm header.
+  let readmeMd = (await getTemplate("npm")) + "\n";
+
+  // Format data from package `index.yml`.
+  const { directory, npm } = await getSourceIndexYml(packageName);
+
+  // Get needed data from packages source package.json file.
+  const { description: npmDescription, license } =
+    await getSourcePackageJson(packageName);
+
+  // Append the npm entries.
+  readmeMd += npmHeaderContent(npm.title, npmDescription);
+
+  if (npm.contents) {
+    for (const item of npm.contents) {
+      readmeMd += "- " + item.item + "\n\n";
+    }
+  }
+
+  readmeMd += "## Docs" + "\n\n";
+
+  // Append the directory entries.
+  readmeMd += formatDirectoryEntry(directory) + npmLicenseContent(license);
+
+  // Write README.md to the output directory.
+  await writeReadmeToOutput(path, readmeMd);
 };
