@@ -146,12 +146,18 @@ export const shuffle = <T>(array: Array<T>) => {
 export const withTimeout = (
   fn: AnyFunction,
   timeout: number,
-  args?: AnyJson[] | undefined
+  options?: {
+    args?: AnyJson[];
+    onTimeout?: AnyFunction;
+  }
 ) => {
   return new Promise((resolve, reject) => {
-    (args ? fn(...args) : fn()).then(resolve, reject);
+    (options?.args ? fn(...options.args) : fn()).then(resolve, reject);
     setTimeout(() => {
-      reject();
+      if (typeof options?.onTimeout === "function") {
+        options.onTimeout();
+      }
+      reject(Error("Timeout"));
     }, timeout);
   });
 };

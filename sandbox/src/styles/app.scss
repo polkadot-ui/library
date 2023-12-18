@@ -93,12 +93,13 @@ SPDX-License-Identifier: GPL-3.0-only */
       justify-content: center;
       align-items: center;
       padding-left: 1.25rem;
+
       h3 {
         color: var(--text-color-secondary);
         font-family: InterBold, sans-serif;
         display: flex;
         align-items: center;
-        margin: 0rem;
+        margin: 0;
       }
     }
   }
