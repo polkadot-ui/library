@@ -146,7 +146,7 @@ export const shuffle = <T>(array: Array<T>) => {
 export const withTimeout = (
   ms: number,
   promise: AnyFunction,
-  options: {
+  options?: {
     onTimeout?: AnyFunction;
   }
 ) => {
