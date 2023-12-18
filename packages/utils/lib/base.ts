@@ -141,23 +141,22 @@ export const shuffle = <T>(array: Array<T>) => {
 
 /**
  * @name withTimeout
- * @summary Wraps a promise with a timeout and rejects after the timeout.
+ * @summary Timeout a promise after a specified number of milliseconds.
  */
 export const withTimeout = (
-  fn: AnyFunction,
-  timeout: number,
-  options?: {
-    args?: AnyJson[];
+  ms: number,
+  promise: AnyFunction,
+  options: {
     onTimeout?: AnyFunction;
   }
 ) => {
-  return new Promise((resolve, reject) => {
-    (options?.args ? fn(...options.args) : fn()).then(resolve, reject);
-    setTimeout(() => {
+  const timeout = new Promise((_, reject) =>
+    setTimeout(async () => {
       if (typeof options?.onTimeout === "function") {
         options.onTimeout();
       }
       reject(Error("Timeout"));
-    }, timeout);
-  });
+    }, ms)
+  );
+  return Promise.race([promise, timeout]);
 };
