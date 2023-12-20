@@ -1,7 +1,7 @@
 {
   "name": "polkadot-cloud-react",
   "license": "GPL-3.0-only",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "type": "module",
   "contributors": [
     "Ross Bulat<ross@parity.io>",
@@ -42,8 +42,8 @@
     "@polkadot-cloud/core": "^1.1.0",
     "@polkadot-cloud/utils": "^0.1.0",
     "@polkadot/keyring": "^12.6.2",
-    "@polkadot/util": "^12.5.1",
-    "@polkadot/util-crypto": "^12.5.1",
+    "@polkadot/util": "^12.6.2",
+    "@polkadot/util-crypto": "^12.6.2",
     "framer-motion": "^10.16.16",
     "react-error-boundary": "^4.0.12"
   }
