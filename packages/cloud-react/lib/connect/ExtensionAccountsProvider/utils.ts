@@ -5,6 +5,12 @@ import { localStorageOrDefault } from "@polkadot-cloud/utils";
 import Keyring from "@polkadot/keyring";
 import { ExtensionAccount } from "../ExtensionsProvider/types";
 import { ExternalAccount } from "../types";
+import { NetworkSS58 } from "./types";
+import { AnyFunction } from "../../utils/types";
+
+/*------------------------------------------------------------
+   Active account utils.
+ ------------------------------------------------------------*/
 
 // Gets local `active_acount` for a network.
 export const getActiveAccountLocal = (network: string, ss58: number) => {
@@ -17,23 +23,31 @@ export const getActiveAccountLocal = (network: string, ss58: number) => {
   return account;
 };
 
-// Adds an extension to local `active_extensions`.
-export const addToLocalExtensions = (id: string) => {
-  const localExtensions = localStorageOrDefault<string[]>(
-    `active_extensions`,
-    [],
-    true
+// Checks if the local active account is the provided accounts.
+export const getActiveExtensionAccount = (
+  { network, ss58 }: NetworkSS58,
+  accounts: ExtensionAccount[]
+) => {
+  return (
+    accounts.find(
+      ({ address }) => address === getActiveAccountLocal(network, ss58)
+    ) ?? null
   );
-  if (Array.isArray(localExtensions)) {
-    if (!localExtensions.includes(id)) {
-      localExtensions.push(id);
-      localStorage.setItem(
-        "active_extensions",
-        JSON.stringify(localExtensions)
-      );
-    }
+};
+
+// Connects to active account, and calls an optional callback, if provided.
+export const connectActiveExtensionAccount = (
+  account: ExtensionAccount | null,
+  callback: AnyFunction
+) => {
+  if (account !== null) {
+    callback(account);
   }
 };
+
+/*------------------------------------------------------------
+   External account utils.
+ ------------------------------------------------------------*/
 
 // Gets accounts that exist in local `external_accounts`.
 export const getInExternalAccounts = (
@@ -60,31 +74,4 @@ export const getLocalExternalAccounts = (network?: string) => {
     localAccounts = localAccounts.filter((l) => l.network === network);
   }
   return localAccounts;
-};
-
-// Check if an extension exists in local `active_extensions`.
-export const extensionIsLocal = (id: string) => {
-  const localExtensions = localStorageOrDefault<string[]>(
-    `active_extensions`,
-    [],
-    true
-  );
-  let foundExtensionLocally = false;
-  if (Array.isArray(localExtensions)) {
-    foundExtensionLocally = localExtensions.find((l) => l === id) !== undefined;
-  }
-  return foundExtensionLocally;
-};
-
-// Removes extension from local `active_extensions`.
-export const removeFromLocalExtensions = (id: string) => {
-  let localExtensions = localStorageOrDefault<string[]>(
-    `active_extensions`,
-    [],
-    true
-  );
-  if (Array.isArray(localExtensions)) {
-    localExtensions = localExtensions.filter((l: string) => l !== id);
-    localStorage.setItem("active_extensions", JSON.stringify(localExtensions));
-  }
 };

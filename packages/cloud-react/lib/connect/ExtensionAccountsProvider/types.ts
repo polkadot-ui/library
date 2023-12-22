@@ -4,11 +4,10 @@
 import { ReactNode } from "react";
 import { ExtensionAccount } from "../ExtensionsProvider/types";
 import { ImportedAccount } from "../types";
-import { MaybeAddress } from "../../utils/types";
+import { MaybeAddress, Sync } from "../../utils/types";
 
 export interface ExtensionAccountsContextInterface {
   connectExtensionAccounts: (id?: string) => Promise<boolean>;
-  forgetAccounts: (accounts: ExtensionAccount[]) => void;
   extensionAccountsSynced: Sync;
   extensionAccounts: ImportedAccount[];
 }
@@ -26,10 +25,10 @@ export interface ExtensionAccountsProviderProps {
 export interface HandleImportExtension {
   newAccounts: ExtensionAccount[];
   meta: {
+    accountsToRemove: ExtensionAccount[];
     removedActiveAccount: MaybeAddress;
   };
 }
-export type Sync = "synced" | "unsynced" | "syncing";
 
 export type NetworkSS58 = {
   network: string;

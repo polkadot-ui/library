@@ -3,11 +3,7 @@
 
 import Keyring from "@polkadot/keyring";
 import { isValidAddress } from "@polkadot-cloud/utils";
-import type {
-  ExtensionAccount,
-  ExtensionInterface,
-} from "../ExtensionsProvider/types";
-import { ImportedAccount } from "../types";
+import type { ExtensionAccount } from "../ExtensionsProvider/types";
 import { HandleImportExtension, NetworkSS58 } from "./types";
 import { AnyFunction } from "../../utils/types";
 import { getActiveAccountLocal, getInExternalAccounts } from "./utils";
@@ -20,9 +16,8 @@ export const useImportExtension = () => {
   const handleImportExtension = (
     id: string,
     currentAccounts: ExtensionAccount[],
-    extension: ExtensionInterface,
+    signer: AnyFunction,
     newAccounts: ExtensionAccount[],
-    forget: (accounts: ImportedAccount[]) => void,
     { network, ss58 }: NetworkSS58
   ): HandleImportExtension => {
     if (!newAccounts.length) {
@@ -44,7 +39,6 @@ export const useImportExtension = () => {
 
     // Remove `newAccounts` from local external accounts if present.
     const inExternal = getInExternalAccounts(newAccounts, network);
-    forget(inExternal);
 
     // Find any accounts that have been removed from this extension.
     const removedAccounts = currentAccounts
@@ -56,9 +50,6 @@ export const useImportExtension = () => {
       removedAccounts.find(
         ({ address }) => address === getActiveAccountLocal(network, ss58)
       )?.address || null;
-
-    // Commit remove forgotten accounts.
-    forget(removedAccounts);
 
     // Remove accounts that have already been added to `currentAccounts` via another extension.
     newAccounts = newAccounts.filter(
@@ -73,45 +64,19 @@ export const useImportExtension = () => {
       address,
       name,
       source: id,
-      signer: extension.signer,
+      signer,
     }));
+
     return {
       newAccounts,
       meta: {
+        accountsToRemove: [...inExternal, ...removedAccounts],
         removedActiveAccount,
       },
     };
   };
 
-  // Get active extension account.
-  //
-  // Checks if the local active account is in the extension.
-  const getActiveExtensionAccount = (
-    { network, ss58 }: NetworkSS58,
-    accounts: ImportedAccount[]
-  ) => {
-    return (
-      accounts.find(
-        ({ address }) => address === getActiveAccountLocal(network, ss58)
-      ) ?? null
-    );
-  };
-
-  // Connect active extension account.
-  //
-  // Connects to active account if it is provided.
-  const connectActiveExtensionAccount = (
-    account: ImportedAccount | null,
-    callback: AnyFunction
-  ) => {
-    if (account !== null) {
-      callback(account);
-    }
-  };
-
   return {
     handleImportExtension,
-    getActiveExtensionAccount,
-    connectActiveExtensionAccount,
   };
 };
