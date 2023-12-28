@@ -31,7 +31,7 @@ export const useImportExtension = () => {
     newAccounts = newAccounts.filter(({ address }) => isValidAddress(address));
 
     // Reformat addresses to ensure correct ss58 format.
-    newAccounts.map(async (account) => {
+    newAccounts.map((account) => {
       const { address } = keyring.addFromAddress(account.address);
       account.address = address;
       return account;
