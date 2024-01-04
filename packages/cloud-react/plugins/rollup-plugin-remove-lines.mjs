@@ -1,4 +1,4 @@
-/* @license Copyright 2023 @polkadot-cloud/library authors & contributors
+/* @license Copyright 2024 @polkadot-cloud/library authors & contributors
 SPDX-License-Identifier: GPL-3.0-only */
 
 import fs from "fs/promises";
@@ -29,7 +29,9 @@ export default ({
         } else {
           const filePath = path.join(dir, "/", file);
           const ext = path.extname(filePath);
-          if (extensions.includes(ext)) files.push(filePath);
+          if (extensions.includes(ext)) {
+            files.push(filePath);
+          }
         }
       }
       return files;

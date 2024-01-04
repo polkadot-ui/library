@@ -12,11 +12,14 @@
 *.txt
 *.html
 *.webmanifest
+*.tgz
 dist
 build
-LICENSE
 postcss.config.js
-README.md
 *.tsconfig.json
 *.tsbuildinfo
 *.woff2
+*.yml
+LICENSE
+README.md
+CHANGELOG.md

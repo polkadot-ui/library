@@ -1,4 +1,4 @@
-/* @license Copyright 2023 @polkadot-cloud/library authors & contributors
+/* @license Copyright 2024 @polkadot-cloud/library authors & contributors
 SPDX-License-Identifier: GPL-3.0-only */
 /* eslint-disable @typescript-eslint/no-var-requires */
 
@@ -19,12 +19,9 @@ const buildComponents = () => {
     .pipe(gulp.dest("dist"));
 };
 
-const stripComments = () => {
-  return src("dist/**/*.js").pipe(strip()).pipe(gulp.dest("dist"));
-};
+const stripComments = () =>
+  src("dist/**/*.js").pipe(strip()).pipe(gulp.dest("dist"));
 
-const licenseAndReadme = () => {
-  return src(["LICENSE", "README.npm.md"]).pipe(dest("dist"));
-};
+const copyLicense = () => src(["LICENSE"]).pipe(dest("dist"));
 
-export default series(buildComponents, stripComments, licenseAndReadme);
+export default series(buildComponents, stripComments, copyLicense);

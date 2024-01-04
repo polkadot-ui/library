@@ -1,4 +1,4 @@
-/* @license Copyright 2023 @polkadot-cloud/library authors & contributors
+/* @license Copyright 2024 @polkadot-cloud/library authors & contributors
 SPDX-License-Identifier: GPL-3.0-only */
 
 import { useEffect, useState, createRef, MutableRefObject } from "react";
@@ -122,7 +122,9 @@ export const Odometer = ({
       <span className="odometer-inner" ref={odometerRef}>
         {spaceBefore ? <span style={{ paddingLeft: spaceBefore }} /> : null}
         {digits.map((d, i) => {
-          if (d === "dot") foundDecimal = true;
+          if (d === "dot") {
+            foundDecimal = true;
+          }
 
           // If transitioning, get digits needed to animate.
           let childDigits = null;

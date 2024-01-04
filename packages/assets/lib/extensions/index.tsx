@@ -1,4 +1,4 @@
-/* @license Copyright 2023 @polkadot-cloud/library authors & contributors
+/* @license Copyright 2024 @polkadot-cloud/library authors & contributors
 SPDX-License-Identifier: GPL-3.0-only */
 
 import {
@@ -120,8 +120,9 @@ export const HardwareIcons: ExtensionIconRecords = {
 // Helper to get the correct icon from `ExtensionIcons`.
 export const getExtensionIcon = (id: string): ExtensionIcon | null => {
   // Workaround to return Nova Wallet icon when `isNovaWallet` is true.
-  if (id === "polkadot-js" && window?.walletExtension?.isNovaWallet)
+  if (id === "polkadot-js" && window?.walletExtension?.isNovaWallet) {
     id = "novawallet";
+  }
 
   return ExtensionIcons[id] || null;
 };

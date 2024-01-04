@@ -1,4 +1,4 @@
-/* @license Copyright 2023 @polkadot-cloud/library authors & contributors
+/* @license Copyright 2024 @polkadot-cloud/library authors & contributors
 SPDX-License-Identifier: GPL-3.0-only */
 
 import { ComponentBase } from "../../../utils/types";
@@ -10,10 +10,8 @@ import "@polkadot-cloud/core/css/base/structure/Page/index.css";
  * A motion.div that wraps every page. Transitions can be applied to this wrapper that will affect
  * the entire page.
  */
-export const Page = ({ children, style }: ComponentBase) => {
-  return (
-    <div className="core-page" style={style}>
-      {children}
-    </div>
-  );
-};
+export const Page = ({ children, style }: ComponentBase) => (
+  <div className="core-page" style={style}>
+    {children}
+  </div>
+);

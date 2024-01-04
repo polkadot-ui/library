@@ -1,4 +1,4 @@
-/* @license Copyright 2023 @polkadot-cloud/library authors & contributors
+/* @license Copyright 2024 @polkadot-cloud/library authors & contributors
 SPDX-License-Identifier: GPL-3.0-only */
 /* eslint-disable @typescript-eslint/no-var-requires */
 
@@ -19,26 +19,19 @@ const buildComponents = () => {
     .pipe(gulp.dest("dist"));
 };
 
-const buildSvg = () => {
-  return src("lib/**/*.svg").pipe(dest("dist/"));
-};
+const buildSvg = () => src("lib/**/*.svg").pipe(dest("dist/"));
 
-const buildJsons = () => {
-  return src("lib/**/*.json").pipe(dest("dist/"));
-};
+const buildJsons = () => src("lib/**/*.json").pipe(dest("dist/"));
 
-const stripComments = () => {
-  return src("dist/**/*.js").pipe(strip()).pipe(gulp.dest("dist"));
-};
+const stripComments = () =>
+  src("dist/**/*.js").pipe(strip()).pipe(gulp.dest("dist"));
 
-const licenseAndReadme = () => {
-  return src(["LICENSE", "README.npm.md"]).pipe(dest("dist"));
-};
+const copyLicense = () => src(["LICENSE"]).pipe(dest("dist"));
 
 export default series(
   buildComponents,
   buildJsons,
   buildSvg,
   stripComments,
-  licenseAndReadme
+  copyLicense
 );

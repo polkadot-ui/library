@@ -1,8 +1,8 @@
-// Copyright 2023 @polkadot-cloud/library authors & contributors
+// Copyright 2024 @polkadot-cloud/library authors & contributors
 // SPDX-License-Identifier: GPL-3.0-only
 
 import { ExtensionFeature } from "@polkadot-cloud/assets/types";
-import { AnyJson } from "../../utils/types";
+import { AnyJson, VoidFn } from "../../utils/types";
 import type { FunctionComponent, SVGProps } from "react";
 import { ExternalAccountAddedBy } from "../types";
 
@@ -27,7 +27,7 @@ export interface ExtensionInjected extends ExtensionConfig {
 export interface ExtensionInterface {
   accounts: {
     subscribe: {
-      (a: { (b: ExtensionAccount[]): void }): void;
+      (a: { (b: ExtensionAccount[]): void }): VoidFn;
     };
     get: () => Promise<ExtensionAccount[]>;
   };

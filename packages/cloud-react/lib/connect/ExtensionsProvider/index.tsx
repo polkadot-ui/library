@@ -1,4 +1,4 @@
-// Copyright 2023 @polkadot-cloud/library authors & contributors
+// Copyright 2024 @polkadot-cloud/library authors & contributors
 // SPDX-License-Identifier: GPL-3.0-only
 
 import { setStateWithRef } from "@polkadot-cloud/utils";
@@ -50,12 +50,13 @@ export const ExtensionsProvider = ({ children }: { children: ReactNode }) => {
   const handleSnapInjection = async (hasInjectedWeb3: boolean) => {
     const snapAvailable = await polkadotSnapAvailable();
 
-    if (hasInjectedWeb3 || snapAvailable)
+    if (hasInjectedWeb3 || snapAvailable) {
       setStateWithRef(
         getExtensionsStatus(snapAvailable),
         setExtensionsStatus,
         extensionsStatusRef
       );
+    }
 
     setStateWithRef(false, setCheckingInjectedWeb3, checkingInjectedWeb3Ref);
   };
@@ -89,11 +90,12 @@ export const ExtensionsProvider = ({ children }: { children: ReactNode }) => {
   // Loops through the supported extensios and checks if they are present in `injectedWeb3`. Adds
   // `installed` status to the extension if it is present.
   const getExtensionsStatus = (snapAvailable: boolean) => {
-    const { injectedWeb3 }: AnyJson = window;
+    const { injectedWeb3 } = window;
 
     const newExtensionsStatus = { ...extensionsStatus };
-    if (snapAvailable)
+    if (snapAvailable) {
       newExtensionsStatus["metamask-polkadot-snap"] = "installed";
+    }
 
     ExtensionsArray.forEach((e) => {
       if (injectedWeb3[e.id] !== undefined) {
@@ -118,8 +120,11 @@ export const ExtensionsProvider = ({ children }: { children: ReactNode }) => {
     feature: ExtensionFeature
   ): boolean => {
     const features = Extensions[id].features;
-    if (features === "*" || features.includes(feature)) return true;
-    else return false;
+    if (features === "*" || features.includes(feature)) {
+      return true;
+    } else {
+      return false;
+    }
   };
 
   // Check for `injectedWeb3` and Metamask Snap on mount. To trigger interval on soft page
@@ -134,11 +139,14 @@ export const ExtensionsProvider = ({ children }: { children: ReactNode }) => {
       intervalInitialisedRef.current = true;
 
       injectedWeb3Interval = setInterval(() => {
-        if (injectCounter + 1 === totalChecks) handleClearInterval(false);
-        else {
+        if (injectCounter + 1 === totalChecks) {
+          handleClearInterval(false);
+        } else {
           // if injected is present
           const injectedWeb3 = (window as AnyJson)?.injectedWeb3 || null;
-          if (injectedWeb3 !== null) handleClearInterval(true);
+          if (injectedWeb3 !== null) {
+            handleClearInterval(true);
+          }
         }
       }, checkEveryMs);
     }

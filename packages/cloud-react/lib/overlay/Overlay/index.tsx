@@ -1,4 +1,4 @@
-// Copyright 2023 @polkadot-cloud/library authors & contributors
+// Copyright 2024 @polkadot-cloud/library authors & contributors
 // SPDX-License-Identifier: GPL-3.0-only
 
 import type { OverlayProps } from "../OverlayProvider/types";
@@ -11,20 +11,18 @@ export const Overlay = ({
   canvas = {},
   fallback,
   externalOverlayStatus,
-}: OverlayProps) => {
-  return (
-    <>
-      <Background externalOverlayStatus={externalOverlayStatus} />
-      <Modal
-        fallback={fallback}
-        modals={modals}
-        externalOverlayStatus={externalOverlayStatus}
-      />
-      <Canvas
-        fallback={fallback}
-        canvas={canvas}
-        externalOverlayStatus={externalOverlayStatus}
-      />
-    </>
-  );
-};
+}: OverlayProps) => (
+  <>
+    <Background externalOverlayStatus={externalOverlayStatus} />
+    <Modal
+      fallback={fallback}
+      modals={modals}
+      externalOverlayStatus={externalOverlayStatus}
+    />
+    <Canvas
+      fallback={fallback}
+      canvas={canvas}
+      externalOverlayStatus={externalOverlayStatus}
+    />
+  </>
+);

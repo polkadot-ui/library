@@ -1,4 +1,4 @@
-/* @license Copyright 2023 @polkadot-cloud/library authors & contributors
+/* @license Copyright 2024 @polkadot-cloud/library authors & contributors
 SPDX-License-Identifier: GPL-3.0-only */
 
 import { ReactNode, CSSProperties } from "react";
@@ -18,6 +18,8 @@ export type ComponentBaseWithClassName = ComponentBase & {
   // passing a className string.
   className?: string;
 };
+
+export type Sync = "synced" | "unsynced" | "syncing";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export type AnyApi = any;

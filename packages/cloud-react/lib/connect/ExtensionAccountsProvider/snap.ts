@@ -1,4 +1,4 @@
-// Copyright 2023 @polkadot-cloud/library authors & contributors
+// Copyright 2024 @polkadot-cloud/library authors & contributors
 // SPDX-License-Identifier: GPL-3.0-only
 import type {
   Injected,
@@ -24,9 +24,9 @@ interface Web3Window extends InjectedWindow {
 }
 
 const transformAccounts = (accounts: string[]): ExtensionAccount[] =>
-  accounts.map((address, i) => ({
+  accounts.map((address, index) => ({
     address,
-    name: `Polkadot Snap ${i + 1}`,
+    name: `Polkadot Snap ${index + 1}`,
     source: "metamask-polkadot-snap",
     type: "ethereum",
   }));
@@ -43,13 +43,13 @@ const injectPolkadotSnap = (win: Web3Window, config: SnapConfig): void => {
             return transformAccounts([response]);
           },
           // Currently there is only available only one account, in that case this method will never return anything.
-          subscribe: (
-            // eslint-disable-next-line @typescript-eslint/no-unused-vars, no-unused-vars
-            _cb: (accounts: InjectedAccount[]) => void
-          ): (() => void) => {
+          subscribe:
+            (
+              // eslint-disable-next-line @typescript-eslint/no-unused-vars, no-unused-vars
+              _cb: (accounts: InjectedAccount[]) => void
+            ): (() => void) =>
             // eslint-disable-next-line @typescript-eslint/no-empty-function
-            return (): void => {};
-          },
+            (): void => {},
         },
         signer: {
           signPayload: async (
@@ -78,7 +78,7 @@ export const initPolkadotSnap = (config: SnapConfig): Promise<boolean> =>
     win.injectedWeb3 = win.injectedWeb3 || {};
 
     // Attempt to inject into `injectedWeb3`.
-    if (hasMetaMask())
+    if (hasMetaMask()) {
       isMetamaskSnapsSupported().then((result) => {
         if (result) {
           injectPolkadotSnap(win, config);
@@ -92,5 +92,7 @@ export const initPolkadotSnap = (config: SnapConfig): Promise<boolean> =>
           resolve(false);
         }
       });
-    else resolve(false);
+    } else {
+      resolve(false);
+    }
   });

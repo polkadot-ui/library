@@ -1,12 +1,12 @@
 {
   "name": "polkadot-cloud-core",
   "license": "GPL-3.0-only",
-  "version": "1.0.49",
+  "version": "1.2.0",
   "contributors": [
     "Ross Bulat<ross@parity.io>",
     "Nikolaos Kontakis<wirednkod@gmail.com>"
   ],
-  "description": "Core reusable styles for Polkadot Dapps.",
+  "description": "Core styles and themes for Polkadot dApps.",
   "keywords": [
     "Polkadot",
     "CSS",
@@ -17,9 +17,9 @@
   },
   "homepage": "https://github.com/polkadot-cloud/library#readme",
   "scripts": {
-    "build:mock": "node ../../scripts/generatePackageJson.mjs -p cloud-core",
-    "build": "rm -fr dist && gulp && mv dist/README.npm.md dist/README.md && node ../../scripts/generatePackageJson.mjs -p cloud-core",
-    "watch": "rm -fr dist && gulp && gulp --task watch",
+    "build:mock": "node ../../builder/run.mjs -t package:build -p cloud-core",
+    "build": "rm -fr dist && gulp --silent && yarn build:mock",
+    "watch": "rm -fr dist && gulp --silent && gulp --silent --t watch",
     "clear": "rm -rf node_modules dist tsconfig.tsbuildinfo"
   }
 }
