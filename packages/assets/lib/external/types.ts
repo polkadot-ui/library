@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 export interface NetworkInformation {
   name: string;
   network_type: string; // TODO, add type guard for string: "mainnet" | "canarynet" | "solo_mainnet" | "solo_testnet";
@@ -10,14 +9,14 @@ export interface NetworkInformation {
   release_cycle: string;
   specs: Specs;
   contacts: Contact[];
-  faucet?: any;
+  faucet?: null | string;
   rpc_endpoints: RpcEndpoint[];
   api_endpoints: ApiEndpoint[];
   bootnodes: Bootnode[];
   documentation: string[];
-  expectations: any[];
+  expectations: string[];
   features: string[];
-  notes?: any[];
+  notes?: string[];
 }
 
 export interface Chain {
@@ -54,7 +53,7 @@ export interface Specs {
   ss58_format: number;
   ed?: number;
   lease_period?: number;
-  era?: any;
+  era?: number | null;
 }
 
 export interface Contact {

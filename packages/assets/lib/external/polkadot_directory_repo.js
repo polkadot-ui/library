@@ -4,7 +4,7 @@ import fs from "fs";
 import http from "https";
 import { parse } from "yaml";
 
-import { polkadot_network_url, networks } from "./network_config.js";
+import { POLKADOT_NETWORK_URL, NETWORKS } from "./config.js";
 
 const dirs = ["./lib/external/yaml", "./lib/external/json"];
 
@@ -26,7 +26,7 @@ const some = async (f) => {
   const yamlFile = f + ".yaml";
   const jsonFile = f + ".json";
   const downloadFile = fs.createWriteStream("./lib/external/yaml/" + yamlFile);
-  http.get(polkadot_network_url + yamlFile, (response) => {
+  http.get(POLKADOT_NETWORK_URL + yamlFile, (response) => {
     response.pipe(downloadFile);
     // after download completed, convert to JSON and close filestream
     downloadFile.on("finish", () => {
@@ -35,7 +35,7 @@ const some = async (f) => {
         "utf8"
       );
       fs.writeFileSync(
-        `./lib/external//json/${jsonFile}`,
+        `./lib/external/json/${jsonFile}`,
         JSON.stringify(parse(ymlFile))
       );
       downloadFile.close();
@@ -44,10 +44,10 @@ const some = async (f) => {
 };
 
 fs.copyFileSync(
-  "./lib/external/json_export_index.txt",
+  "./lib/external/json_export_index",
   "./lib/external/json/index.tsx"
 );
 
-for (const f of networks) {
+for (const f of NETWORKS) {
   some(f);
 }

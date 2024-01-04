@@ -1,9 +1,9 @@
 /* @license Copyright 2023 @polkadot-cloud/library authors & contributors
 SPDX-License-Identifier: GPL-3.0-only */
-export const polkadot_network_url =
+export const POLKADOT_NETWORK_URL =
   "https://raw.githubusercontent.com/paritytech/polkadot_network_directory/master/chain_info/";
 
-export const networks = [
+export const NETWORKS = [
   "Acala",
   "Ajuna",
   "Aleph_Zero",
