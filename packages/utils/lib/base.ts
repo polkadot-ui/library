@@ -160,12 +160,12 @@ export const withTimeout = (
     onTimeout?: AnyFunction;
   }
 ) => {
-  const timeout = new Promise((_, reject) =>
+  const timeout = new Promise((resolve) =>
     setTimeout(async () => {
       if (typeof options?.onTimeout === "function") {
         options.onTimeout();
       }
-      reject(Error("Timeout"));
+      resolve(undefined);
     }, ms)
   );
   return Promise.race([promise, timeout]);
