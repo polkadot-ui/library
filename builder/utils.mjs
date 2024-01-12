@@ -6,7 +6,8 @@ import { join, dirname } from "path";
 import { fileURLToPath } from "url";
 import { PACKAGE_OUTPUT, PACKAGE_SCOPE } from "./config.mjs";
 import { format } from "prettier";
-import { parse } from "yaml";
+import yml from "yaml";
+const { parse } = yml;
 
 //--------------------------------------------------
 // Directory and file validation utils
