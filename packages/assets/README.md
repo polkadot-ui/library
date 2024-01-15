@@ -7,7 +7,7 @@ Data and static assets for Polkadot apps.
 ## Adding Web Extension Wallets
 
 To add a web extension wallet, submit a PR with the following changes:
-* **Icon**: Add the extension icon as an [SVG](/https://github.com/polkadot-cloud/library/tree/main/packages/assets/lib/extensions/svg) and [JSX](https://github.com/polkadot-cloud/library/tree/main/packages/assets/lib/extensions/jsx) component.
+* **Icon**: Add the extension icon as an [SVG](https://github.com/polkadot-cloud/library/tree/main/packages/assets/lib/extensions/svg) and [JSX](https://github.com/polkadot-cloud/library/tree/main/packages/assets/lib/extensions/jsx) component.
 * **Extension details**: Add the extension details to the `Extensions` JSON object in [this file](https://github.com/polkadot-cloud/library/blob/main/packages/assets/lib/extensions/index.tsx).
 
 ## Adding Validator Operators
