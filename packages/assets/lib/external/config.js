@@ -1,4 +1,4 @@
-/* @license Copyright 2023 @polkadot-cloud/library authors & contributors
+/* @license Copyright 2024 @polkadot-cloud/library authors & contributors
 SPDX-License-Identifier: GPL-3.0-only */
 export const POLKADOT_NETWORK_URL =
   "https://raw.githubusercontent.com/polkadot-cloud/polkadot_network_directory/master/chain_info/";
