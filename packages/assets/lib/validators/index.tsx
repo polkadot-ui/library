@@ -280,7 +280,7 @@ export const ValidatorCommunity: ValidatorEntry[] = [
       ],
     },
   },
-        {
+  {
     name: "P2P.ORG Validator",
     thumbnail: "P2P_org",
     bio: "P2P.ORG is a leading institutional grade validator in the Dotsama network, renowned for offering the highest APR on the market, an impressive track record with zero slashing events since Genesis, 24/7 personal support, in-depth analytics through a customized dashboard, a strong commitment to uptime with 99% SLA.",
@@ -307,7 +307,6 @@ export const ValidatorCommunity: ValidatorEntry[] = [
         "1Wo6qcrh7wxc1kQY5nfixFuCAFuzkgiwau64SmrPXBE7vVf",
         "129TM37DNpyJqtRYYimSMp8aQZ8QW7Jg3b4qtSrRqjgAChQf",
         "12GsUt6XbVMHvKt9NZNXBcXFvNCyTUiNhKpVnAjnLBYkZSj1",
-
       ],
       kusama: [
         "CtsCpqinjxip4wAmmUfCmNjr9DHmzKTek44vDGEqygPzWhq",
@@ -342,7 +341,6 @@ export const ValidatorCommunity: ValidatorEntry[] = [
         "CaxeCQ3JWSrZiRNyCTnE4vT8aMrX1sJDJWCXSwrEpxWkiL5",
         "GHXKyWqC2Jm69XmVGjbQWBC7XVtbwRHszYKAVa5LFxFSEmG",
         "GM9dSVNSrskXAruSdDGteqGtv8uv4zoLty6FrQLhrgp5enN",
-
       ],
     },
   },
