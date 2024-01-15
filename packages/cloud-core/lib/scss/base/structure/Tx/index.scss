@@ -28,6 +28,7 @@ SPDX-License-Identifier: GPL-3.0-only */
 
       > .inner {
         display: flex;
+        flex-direction: row;
         align-items: center;
 
         > div {
