@@ -7,8 +7,8 @@ Data and static assets for Polkadot apps.
 ## Adding Web Extension Wallets
 
 To add a web extension wallet, submit a PR with the following changes:
-* **Icon**: Add the extension icon as an SVG Component in [this folder](https://github.com/polkadot-cloud/library/tree/main/packages/assets/extensions/jsx).
-* **Extension details**: Add the extension details to the `Extensions` JSON object in [this file](https://github.com/polkadot-cloud/library/blob/main/packages/assets/extensions/index.tsx).
+* **Icon**: Add the extension icon as an [SVG](/https://github.com/polkadot-cloud/library/tree/main/packages/assets/lib/extensions/svg) and [JSX](https://github.com/polkadot-cloud/library/tree/main/packages/assets/lib/extensions/jsx) component.
+* **Extension details**: Add the extension details to the `Extensions` JSON object in [this file](https://github.com/polkadot-cloud/library/blob/main/packages/assets/lib/extensions/index.tsx).
 
 ## Adding Validator Operators
 
@@ -16,8 +16,8 @@ Validator operators can add their contact information, icon, and which validator
 
 To add an operator, submit a PR with the following changes:
 
-- **Thumbnail:** Add your operator's thumbnail as an SVG Component in [this folder](https://github.com/polkadot-cloud/library/tree/main/packages/assets/validators/thumbnails).
-- **Operator details:** Add your operator details to the `ValidatorCommunity` JSON object in [this file](https://github.com/polkadot-cloud/library/blob/main/packages/assets/validators/index.ts).
+- **Thumbnail:** Add your operator's thumbnail as an SVG Component in [this folder](https://github.com/polkadot-cloud/library/tree/main/packages/assets/lib/validators/thumbnails).
+- **Operator details:** Add your operator details to the `ValidatorCommunity` JSON object in [this file](https://github.com/polkadot-cloud/library/blob/main/packages/assets/lib/validators/index.tsx).
 
 ### Operator Structure
 
