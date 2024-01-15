@@ -1,4 +1,4 @@
-const P2P_org = () => (
+const P2POrg = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width="744"
@@ -30,4 +30,4 @@ const P2P_org = () => (
   </svg>
 );
 
-export default P2P_org;
+export default P2POrg;

@@ -282,7 +282,7 @@ export const ValidatorCommunity: ValidatorEntry[] = [
   },
   {
     name: "P2P.ORG Validator",
-    thumbnail: "P2P_org",
+    thumbnail: "P2POrg",
     bio: "P2P.ORG is a leading institutional grade validator in the Dotsama network, renowned for offering the highest APR on the market, an impressive track record with zero slashing events since Genesis, 24/7 personal support, in-depth analytics through a customized dashboard, a strong commitment to uptime with 99% SLA.",
     email: "letsgo@p2p.org",
     twitter: "@P2Pvalidator",
