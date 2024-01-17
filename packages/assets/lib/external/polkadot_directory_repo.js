@@ -25,7 +25,7 @@ writeStream.write(`export * from "./json/index";`);
 writeStream.write(`export * from "./types";`);
 writeStream.end();
 
-const generateFiles = async (f) => {
+const generateFiles = (f) => {
   const yamlFile = f + ".yaml";
   const jsonFile = f + ".json";
   const downloadFile = fs.createWriteStream(YAML_DIR + yamlFile);
@@ -43,8 +43,32 @@ const generateFiles = async (f) => {
   });
 };
 
-fs.copyFileSync(EXTERNAL_DIR + "json_export_index", JSON_DIR + "index.tsx");
-
 for (const f of NETWORKS) {
   generateFiles(f);
 }
+
+const createIndexFile = () => {
+  const exportArray = [];
+  const indexFile = fs.createWriteStream(JSON_DIR + "index.tsx", {
+    flags: "a",
+  });
+  indexFile.write(
+    `/* @license Copyright 2024 @paritytech/polkadot-cloud authors & contributors\n`
+  );
+  indexFile.write(`SPDX-License-Identifier: GPL-3.0-only */\n`);
+  indexFile.write(`import { NetworkInformation } from "../types";\n`);
+
+  for (const f of NETWORKS) {
+    const f_lower = f.toLowerCase();
+    indexFile.write(`import ${f_lower + "Json"} from "./${f}.json";\n`);
+    indexFile.write(
+      `const ${f_lower}: NetworkInformation = ${f_lower + "Json"};\n`
+    );
+    exportArray.push(f_lower);
+  }
+
+  indexFile.write(`export { ${exportArray.join(", ")} };\n`);
+  indexFile.end();
+};
+
+createIndexFile();
