@@ -6,10 +6,13 @@ import { parse } from "yaml";
 
 import { POLKADOT_NETWORK_URL, NETWORKS } from "./config.js";
 
-const dirs = ["./lib/external/yaml", "./lib/external/json"];
+const EXTERNAL_DIR = "./lib/external/";
+const YAML_DIR = EXTERNAL_DIR + "yaml/";
+const JSON_DIR = EXTERNAL_DIR + "json/";
+const dirs = [YAML_DIR, JSON_DIR];
 
-fs.rmSync("./lib/external/json", { recursive: true, force: true });
-fs.rmSync("./lib/external/yaml", { recursive: true, force: true });
+fs.rmSync(JSON_DIR, { recursive: true, force: true });
+fs.rmSync(YAML_DIR, { recursive: true, force: true });
 
 dirs.forEach((dir) => {
   if (!fs.existsSync(dir)) {
@@ -17,23 +20,20 @@ dirs.forEach((dir) => {
   }
 });
 
-const writeStream = fs.createWriteStream("./lib/external/index.ts");
+const writeStream = fs.createWriteStream(EXTERNAL_DIR + "index.ts");
 writeStream.write(`export * from "./json/index";`);
 writeStream.write(`export * from "./types";`);
 writeStream.end();
 
-const some = async (f) => {
+const generateFiles = async (f) => {
   const yamlFile = f + ".yaml";
   const jsonFile = f + ".json";
-  const downloadFile = fs.createWriteStream("./lib/external/yaml/" + yamlFile);
+  const downloadFile = fs.createWriteStream(YAML_DIR + yamlFile);
   http.get(POLKADOT_NETWORK_URL + yamlFile, (response) => {
     response.pipe(downloadFile);
     // after download completed, convert to JSON and close filestream
     downloadFile.on("finish", () => {
-      const ymlFile = fs.readFileSync(
-        "./lib/external/yaml/" + yamlFile,
-        "utf8"
-      );
+      const ymlFile = fs.readFileSync(YAML_DIR + yamlFile, "utf8");
       fs.writeFileSync(
         `./lib/external/json/${jsonFile}`,
         JSON.stringify(parse(ymlFile))
@@ -43,11 +43,8 @@ const some = async (f) => {
   });
 };
 
-fs.copyFileSync(
-  "./lib/external/json_export_index",
-  "./lib/external/json/index.tsx"
-);
+fs.copyFileSync(EXTERNAL_DIR + "json_export_index", JSON_DIR + "index.tsx");
 
 for (const f of NETWORKS) {
-  some(f);
+  generateFiles(f);
 }

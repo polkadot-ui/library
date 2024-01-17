@@ -1,6 +1,12 @@
 export interface NetworkInformation {
   name: string;
-  network_type: string; // TODO, add type guard for string: "mainnet" | "canarynet" | "solo_mainnet" | "solo_testnet";
+  network_type: string;
+  // TODO, add type guard for string
+  // | "mainnet"
+  // | "testnet"
+  // | "canarynet"
+  // | "solo_mainnet"
+  // | "solo_testnet";
   chain: Chain;
   chainspec: Chainspec;
   goals: string[];
