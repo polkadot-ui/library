@@ -230,8 +230,9 @@ export const Odometer = ({
                       top: 0,
                       height: lineHeight,
                       lineHeight,
-                      width: `${allDigitRefs[`d_${d}`]?.current
-                        ?.offsetWidth}px`,
+                      width: `${
+                        allDigitRefs[`d_${d}`]?.current?.offsetWidth
+                      }px`,
                     }}
                   >
                     {d === "dot" ? "." : d === "comma" ? "," : d}

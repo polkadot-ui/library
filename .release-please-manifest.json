@@ -1,8 +1,8 @@
 {
-  "packages/assets": "0.3.2",
-  "packages/cloud-core": "1.2.2",
-  "packages/cloud-react": "0.3.6",
-  "packages/utils": "0.2.1",
+  "packages/assets": "0.3.3",
+  "packages/cloud-core": "1.2.3",
+  "packages/cloud-react": "0.3.7",
+  "packages/utils": "0.2.2",
   "builder": "0.2.0",
   "sandbox": "0.2.0"
 }
