@@ -1,9 +1,10 @@
 /* @license Copyright 2024 @polkadot-cloud/library authors & contributors
 SPDX-License-Identifier: GPL-3.0-only */
 
-@import "./app";
+/* Developer Notes:
+ * This file should be imported in the main library entry file. */
 
-html {
+ html {
   font-size: 10px;
 
   @media (width >= 600px) {
@@ -11,40 +12,103 @@ html {
   }
 }
 
+/* Every element conforms to border-box by default. */
+* {
+  box-sizing: border-box;
+}
+
+/* Define default body style and cancel out spacing. */
+body {
+  font-family: Inter, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  font-weight: normal;
+  margin: 0;
+}
+
+/* Define default header tag styling. */
 h1 {
   color: var(--text-color-primary);
+  font-family: InterSemiBold, sans-serif;
+  font-size: 1.6rem;
+  line-height: 1.6rem;
+  font-weight: 600;
   margin: 0 0 0.4rem;
 }
 
 h2 {
   color: var(--text-color-primary);
+  font-family: InterSemiBold, sans-serif;
+  font-size: 1.4rem;
+  line-height: 1.6rem;
+  font-weight: 600;
   margin: 1rem 0;
 }
 
 h3 {
   color: var(--text-color-primary);
+  font-family: InterSemiBold, sans-serif;
+  font-size: 1.25rem;
+  line-height: 1.55rem;
+  font-weight: 500;
   margin: 1rem 0;
 }
 
 h4 {
   color: var(--text-color-primary);
+  font-family: InterSemiBold, sans-serif;
+  font-size: 1.08rem;
+  line-height: 1.65rem;
+  font-weight: 500;
   margin: 1.25rem 0;
 }
 
 h5 {
   color: var(--text-color-primary);
+  font-size: 0.92rem;
+  line-height: 1.02rem;
+  font-weight: 500;
   margin: 1.25rem 0;
 }
 
+/* Define default paragraph style. */
 p {
   color: var(--text-color-secondary);
+  font-size: 1.04rem;
+  line-height: 1.5rem;
   margin: 0.75rem 0;
 }
 
+/* Define default anchor style. */
 a {
   color: var(--text-color-secondary);
+  text-decoration: none;
+  cursor: pointer;
 }
 
+/* Define bare-bones button style. */
 button {
   color: var(--text-color-secondary);
+  -webkit-tap-highlight-color: transparent;
+  font-family: Inter, sans-serif;
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
+}
+
+/* Define default input style. */
+input {
+  font-family: Inter, sans-serif;
+  background: none;
+  border: none;
+}
+
+button:focus,
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
 }
