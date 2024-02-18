@@ -18,6 +18,5 @@ SPDX-License-Identifier: GPL-3.0-only */
   
   /* Miscellaneous styling */
   --opacity-disabled: 0.3;
-  --title-font-size: 1.75rem;
   --transition-duration: 0.15s;
 }
