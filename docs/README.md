@@ -1,5 +1,7 @@
 <!-- markdown-link-check-disable -->
+
 [![Polkadot - Library](https://img.shields.io/badge/Polkadot-Library-E6007A?logo=polkadot&logoColor=E6007A)]([https://github.com/polkadot-cloud/library]) ![ci](https://github.com/polkadot-cloud/library/actions/workflows/main.yml/badge.svg) [![License](https://img.shields.io/badge/License-GPL_3.0_only-blue.svg)](https://opensource.org/license/gpl-3-0/)
+
 <!-- markdown-link-check-enable -->
 
 # Polkadot Cloud Library
@@ -37,8 +39,6 @@ Functional React components for Polkadot dApps.
 - [Overlay](https://polkadot.cloud/overlay): Overlay Provider and UI component for modals and overlaying content.
 
 - [Charts](https://polkadot.cloud/charts): Light-weight charts for displaying simple statistics.
-
-- [Buttons](https://polkadot.cloud/buttons): A small collection of plug-and-play button components.
 
 #### `@polkadot-cloud/utils`&nbsp; [[source](https://github.com/polkadot-cloud/library/tree/main/packages/utils) &nbsp;|&nbsp; [npm](https://www.npmjs.com/package/@polkadot-cloud/utils)]
 

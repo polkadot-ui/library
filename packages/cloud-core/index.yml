@@ -8,5 +8,3 @@ npm:
   title: "Polkadot Cloud: Core"
   contents:
     - item: Plug and play 2-dimensional themes, comprised of CSS variables.
-    - item: Fonts are provided with theme templates.
-    - item: Hosts CSS styles for Polkadot Cloud UI components.
