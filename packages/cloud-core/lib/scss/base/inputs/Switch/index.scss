@@ -58,8 +58,8 @@ SPDX-License-Identifier: GPL-3.0-only */
 // Mixin for disabled
 @mixin disabled {
   transition:
-    opacity var(--transition-duration),
-    color var(--transition-duration);
+    opacity 0.15s,
+    color 0.15s;
 
   &:disabled {
     opacity: var(--opacity-disabled);
