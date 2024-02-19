@@ -3,7 +3,6 @@ SPDX-License-Identifier: GPL-3.0-only */
 
 import { Odometer } from "../../../packages/cloud-react/lib/complex/Odometer";
 import { Polkicon } from "../../../packages/cloud-react/lib/icons/Polkicon";
-import { Chart } from "../../../packages/cloud-react/lib/base/structure/Chart";
 import BigNumber from "bignumber.js";
 import { useState } from "react";
 
@@ -17,14 +16,6 @@ export const Components = () => {
 
   const [val2, setVal2] = useState<number>(1201903.456789);
   const updateValue2 = () => setVal2(Number((val2 + 17491.390013).toFixed(4)));
-
-  // Chart colors
-  const colors = [
-    { value: 60, color: "red" },
-    { value: 200, color: "green" },
-    { value: 300, color: "blue" },
-    { value: 150, color: "purple" },
-  ];
 
   return (
     <div className="page">
@@ -156,138 +147,6 @@ export const Components = () => {
             address="111111111111111111111111111111111111111111111111"
             colors={["blue", "pink", "white", "yellow"]}
           />
-        </div>
-      </div>
-
-      <h2>Charts</h2>
-      <p>Light-weight charts for simple statistics.</p>
-
-      <h3>Simple</h3>
-      <div className="row">
-        <div className="svg-box wide">
-          <Chart
-            diameter={75}
-            items={[
-              { value: 60, color: "var(--accent-color-primary)" },
-              { value: 200, color: "var(--background-default)" },
-            ]}
-          />
-        </div>
-        <div className="svg-box wide">
-          <Chart
-            diameter={75}
-            items={[
-              { value: 200, color: "var(--accent-color-primary)" },
-              { value: 0, color: "var(--background-default)" },
-            ]}
-          />
-        </div>
-        <div className="svg-box wide">
-          <Chart
-            diameter={75}
-            items={[
-              { value: 0, color: "var(--accent-color-primary)" },
-              { value: 200, color: "var(--background-default)" },
-            ]}
-          />
-        </div>
-      </div>
-
-      <h3>Empty</h3>
-      <div className="row">
-        <div className="svg-box">
-          <Chart
-            diameter={75}
-            items={[
-              { value: 0, color: "var(--accent-color-primary)" },
-              { value: 0, color: "var(--background-default)" },
-            ]}
-          />
-        </div>
-      </div>
-
-      <h3>Donut</h3>
-      <div className="row">
-        <div className="svg-box">
-          <Chart
-            diameter={75}
-            items={[
-              { value: 60, color: "var(--background-default)" },
-              { value: 50, color: "var(--background-invert)" },
-              { value: 150, color: "var(--accent-color-primary)" },
-              { value: 200, color: "var(--accent-color-secondary)" },
-              { value: 30, color: "var(--button-secondary-background)" },
-            ]}
-          />
-        </div>
-        <div className="svg-box">
-          <Chart
-            diameter={75}
-            items={[
-              { value: 60, color: "var(--background-default)" },
-              { value: 50, color: "var(--background-invert)" },
-              { value: 150, color: "var(--accent-color-primary)" },
-              { value: 200, color: "var(--accent-color-secondary)" },
-              { value: 30, color: "var(--button-secondary-background)" },
-            ]}
-            innerRadius={20}
-          />
-        </div>
-        <div className="svg-box">
-          <Chart
-            diameter={75}
-            items={[
-              { value: 60, color: "var(--background-default)" },
-              { value: 50, color: "var(--background-invert)" },
-              { value: 150, color: "var(--accent-color-primary)" },
-              { value: 200, color: "var(--accent-color-secondary)" },
-              { value: 30, color: "var(--button-secondary-background)" },
-            ]}
-            innerRadius={30}
-          />
-        </div>
-        <div className="svg-box">
-          <Chart
-            diameter={75}
-            items={[
-              { value: 60, color: "var(--background-default)" },
-              { value: 50, color: "var(--background-invert)" },
-              { value: 150, color: "var(--accent-color-primary)" },
-              { value: 200, color: "var(--accent-color-secondary)" },
-              { value: 30, color: "var(--button-secondary-background)" },
-            ]}
-            innerRadius={40}
-          />
-        </div>
-        <div className="svg-box">
-          <Chart
-            diameter={75}
-            items={[
-              { value: 60, color: "yellow" },
-              { value: 200, color: "green" },
-              { value: 300, color: "blue" },
-            ]}
-            innerRadius={5}
-          />
-        </div>
-      </div>
-
-      <h3>Speed</h3>
-      <div className="row">
-        <div className="svg-box">
-          <Chart diameter={75} items={colors} innerRadius={20} />
-        </div>
-        <div className="svg-box">
-          <Chart diameter={75} items={colors} speed={0.1} />
-        </div>
-        <div className="svg-box">
-          <Chart diameter={75} items={colors} innerRadius={30} speed={3} />
-        </div>
-        <div className="svg-box">
-          <Chart diameter={75} items={colors} innerRadius={15} speed={10} />
-        </div>
-        <div className="svg-box">
-          <Chart diameter={75} items={colors} innerRadius={40} speed={100} />
         </div>
       </div>
     </div>

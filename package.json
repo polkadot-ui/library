@@ -1,12 +1,8 @@
 {
-  "name": "polkadot-cloud",
-  "version": "0.2.14",
+  "name": "polkadot-cloud-library",
+  "version": "0.3.0",
   "license": "GPL-3.0-only",
-  "contributors": [
-    "Ross Bulat<ross@parity.io>",
-    "Nikolaos Kontakis<wirednkod@gmail.com>"
-  ],
-  "description": "Polkadot Cloud",
+  "description": "Polkadot Cloud Library",
   "private": "true",
   "scripts": {
     "build:directory": "node builder/run.mjs -t directory:build",
