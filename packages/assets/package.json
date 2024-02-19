@@ -1,0 +1,28 @@
+{
+  "name": "polkadot-ui-assets",
+  "license": "MIT",
+  "version": "0.5.2",
+  "type": "module",
+  "contributors": [
+    "Ross Bulat<ross@parity.io>",
+    "Nikolaos Kontakis<nikos@parity.io>"
+  ],
+  "description": "Data sources and static assets for Polkadot dApps.",
+  "keywords": [
+    "Polkadot",
+    "Validators",
+    "Extensions",
+    "Web3",
+    "Components",
+    "UI"
+  ],
+  "bugs": {
+    "url": "https://github.com/polkadot-ui/library/issues"
+  },
+  "homepage": "https://github.com/polkadot-ui/library#readme",
+  "scripts": {
+    "build:mock": "node ../../builder/run.mjs -t package:build -p assets",
+    "build": "rm -fr dist && gulp --silent && cp LICENSE dist && yarn build:mock",
+    "clear": "rm -rf node_modules dist tsconfig.tsbuildinfo"
+  }
+}

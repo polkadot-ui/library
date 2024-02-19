@@ -1,0 +1,33 @@
+# Information about the contents of this package.
+
+directory:
+  - name: Polkicon
+    description: A light-weight and customisable Polkadot Icon.
+    doc: https://polkadot-ui.github.io/polkicon
+
+  - name: Extensions Provider
+    description: Discover available web3 exensions and manage their status.
+    doc: https://polkadot-ui.github.io/extensions-provider
+
+  - name: Extension Accounts Provider
+    description: Connect to web extensions and subscribe to accounts.
+    doc: https://polkadot-ui.github.io/extension-accounts-provider
+
+  - name: Odometer
+    description: An odometer effect used for numbers and balances.
+    doc: https://polkadot-ui.github.io/odometer
+
+  - name: Overlay
+    description: Overlay Provider and UI component for modals and overlaying content.
+    doc: https://polkadot-ui.github.io/overlay
+
+  - name: Charts
+    description: Light-weight charts for displaying simple statistics.
+    doc: https://polkadot-ui.github.io/charts
+
+npm:
+  title: "Polkadot UI: React"
+  contents:
+    - item: Headless components provided as React context providers and hooks.
+    - item: Fully functional UI implementations of headless components.
+    - item: Useful UI components for Polkadot dApps.

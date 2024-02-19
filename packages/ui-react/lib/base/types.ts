@@ -1,0 +1,95 @@
+/* @license Copyright 2024 @polkadot-ui/library authors & contributors
+SPDX-License-Identifier: MIT */
+
+import {
+  AnyJson,
+  ComponentBase,
+  ComponentBaseWithClassName,
+  DisplayFor,
+} from "../utils/types";
+import { ReactElement, ReactNode } from "react";
+
+export type EntryProps = ComponentBase & {
+  // the theme mode.
+  mode: "light" | "dark";
+  // the active theme.
+  theme: string;
+};
+
+export type CardProps = ComponentBaseWithClassName & {
+  children: ReactNode;
+  animations?: AnyJson;
+};
+
+export type GridItemsAlignment =
+  | "flex-start"
+  | "center"
+  | "flex-end"
+  | "stretch"
+  | "baseline";
+
+export type GridJustify =
+  | "flex-start"
+  | "center"
+  | "flex-end"
+  | "space-between"
+  | "space-around"
+  | "space-evenly";
+
+export type GridSizes = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12;
+
+export type GridProps = ComponentBaseWithClassName & {
+  column?: boolean;
+  row?: boolean;
+  alignItems?: GridItemsAlignment;
+  expanded?: boolean;
+  justify?: GridJustify;
+  lg?: GridSizes;
+  md?: GridSizes;
+  sm?: GridSizes;
+};
+
+export type LoaderProps = {
+  type?: "cube" | "line" | "dots";
+  text?: string;
+};
+
+export type SideProps = ComponentBase & {
+  // whether the side menu should be open on smaller screens.
+  open: boolean;
+  // whether side menu is in minimised state.
+  minimised: boolean;
+  // optional width property to be applied to maximised side.
+  width?: string | number;
+};
+
+export type RowProps = ComponentBase & {
+  // whether there is margin space vertically.
+  yMargin?: boolean;
+};
+
+export type RowSectionProps = ComponentBase & {
+  // the css order of the component for vertical layouts.
+  vLast?: boolean;
+  // true means padding on the left and false means padding on the right.
+  hLast?: boolean;
+  // true means the secondary element and  false means the primary one.
+  secondary?: boolean;
+};
+
+export type TxProps = {
+  // whether there is margin on top.
+  margin?: boolean;
+  // account type for the transaction signing.
+  label: string;
+  // account id
+  name: string;
+  // whether there is enough funds for the transaction.
+  notEnoughFunds: boolean;
+  // warning messgae.
+  dangerMessage: string;
+  // signing component.
+  SignerComponent: ReactElement;
+  // display for.
+  displayFor?: DisplayFor;
+};

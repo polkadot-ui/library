@@ -1,0 +1,11 @@
+name: Release Automation
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  release-please-repo:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: google-github-actions/release-please-action@v4

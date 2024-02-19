@@ -1,0 +1,13 @@
+/* @license Copyright 2024 @polkadot-ui/library authors & contributors
+SPDX-License-Identifier: MIT */
+
+@use "../styles";
+
+.modal-overlay {
+  @include styles.modal-position;
+
+  background: var(--modal-background-color);
+  transition: backdrop-filter 0.5s;
+  backdrop-filter: blur(4px);
+  z-index: 9;
+}

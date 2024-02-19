@@ -1,0 +1,23 @@
+/* @license Copyright 2024 @polkadot-ui/library authors & contributors
+SPDX-License-Identifier: MIT */
+
+@use "../styles";
+
+.modal-motion-two-sections {
+  @include styles.modal-motion-sections;
+
+  width: 200%;
+
+  > .section {
+    @include styles.modal-scrollbar;
+
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    flex-basis: 50%;
+    min-width: 50%;
+    height: auto;
+    overflow: hidden auto;
+    flex-grow: 1;
+  }
+}

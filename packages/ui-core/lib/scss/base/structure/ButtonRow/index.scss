@@ -1,0 +1,13 @@
+/* @license Copyright 2024 @polkadot-ui/library authors & contributors
+SPDX-License-Identifier: MIT */
+
+@use "../styles";
+
+.core-button-row {
+  display: flex;
+  align-items: center;
+
+  &.y-margin {
+    margin-top: 1rem;
+  }
+}

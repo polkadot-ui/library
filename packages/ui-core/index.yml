@@ -1,0 +1,10 @@
+# Information about the contents of this package.
+
+directory:
+  - name: Using Polkadot UI Themes
+    doc: https://polkadot-ui.github.io/using-themes
+
+npm:
+  title: "Polkadot UI: Core"
+  contents:
+    - item: Plug and play 2-dimensional themes, comprised of CSS variables.

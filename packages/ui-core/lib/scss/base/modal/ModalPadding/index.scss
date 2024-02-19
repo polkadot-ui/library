@@ -1,0 +1,16 @@
+/* @license Copyright 2024 @polkadot-ui/library authors & contributors
+SPDX-License-Identifier: MIT */
+
+.modal-padding {
+  display: flex;
+  flex-flow: column wrap;
+  padding: 1rem;
+
+  &.vertical-only {
+    padding: 1rem 0 0.25rem;
+  }
+
+  &.horizontal-only {
+    padding: 0 1rem;
+  }
+}

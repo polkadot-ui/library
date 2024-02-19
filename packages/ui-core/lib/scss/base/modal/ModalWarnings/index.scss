@@ -1,0 +1,11 @@
+/* @license Copyright 2024 @polkadot-ui/library authors & contributors
+SPDX-License-Identifier: MIT */
+
+.modal-warnings {
+  margin-top: 0;
+  width: 100%;
+
+  &.with-margin {
+    margin-top: 0.75rem;
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "name": "polkadot-ui-builder",
+  "license": "MIT",
+  "version": "0.4.0",
+  "contributors": [
+    "Ross Bulat<ross@parity.io>",
+    "Nikolaos Kontakis<wirednkod@gmail.com>"
+  ],
+  "description": "Polkadot UI Builder",
+  "scripts": {
+    "clear": "rm -rf node_modules dist tsconfig.tsbuildinfo"
+  }
+}

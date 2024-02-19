@@ -1,0 +1,10 @@
+/* @license Copyright 2024 @polkadot-ui/library authors & contributors
+SPDX-License-Identifier: MIT */
+
+@use "../styles";
+
+.core-body {
+  position: relative;
+  display: flex;
+  flex-grow: 1;
+}

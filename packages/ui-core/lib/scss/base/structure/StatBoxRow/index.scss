@@ -1,0 +1,11 @@
+/* @license Copyright 2024 @polkadot-ui/library authors & contributors
+SPDX-License-Identifier: MIT */
+
+@use "../styles";
+
+.core-stat-box-row {
+  @include styles.page-padding;
+
+  display: flex;
+  flex-direction: column;
+}
