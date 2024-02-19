@@ -1,3 +1,6 @@
+/* @license Copyright 2024 @polkadot-ui/library authors & contributors
+SPDX-License-Identifier: MIT */
+
 export interface NetworkInformation {
   name: string;
   network_type: string;
