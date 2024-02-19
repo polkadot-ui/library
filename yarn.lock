@@ -852,9 +852,9 @@
   integrity sha512-qgCmiBeH/f/zkLQx5Cz5kUMIJ+k2+OGAxkoqqOCWPa+Dr//JTPQhOxogoMfTGcH/BcPfRM7FIylJNQRKQ0DxVQ==
 
 "@polkadot-cloud/core@^1.3.1":
-  version "1.3.1"
-  resolved "https://registry.yarnpkg.com/@polkadot-cloud/core/-/core-1.3.1.tgz#a58070cc6d7942a730b49cbd2f94d11b340832fc"
-  integrity sha512-km+7vPRP1MebEi4AJbCfLzZg5vkUPaDMvMWmXJ3j6mHUVfQobpeIO03vFwJvTPskvF2UKg0dgMmsb05Mticm8A==
+  version "1.3.2"
+  resolved "https://registry.yarnpkg.com/@polkadot-cloud/core/-/core-1.3.2.tgz#16641fcb8c4924f1964e526198ef55b56d0b7f63"
+  integrity sha512-3QRhi3kBsUXwGGdDxj4ZIXbSvl7G24v6qLZYLWhchqHnd9BGLmzfmc/5xQ2kTTVwy1n1yEKXxH9mu2hvLhLqpw==
 
 "@polkadot-cloud/utils@^0.2.4":
   version "0.2.4"
