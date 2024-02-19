@@ -16,7 +16,7 @@ SPDX-License-Identifier: MIT */
 
   --accent-color-transparent-light: rgb(211 48 121 / 5%);
   --accent-color-transparent-dark: rgb(211 48 121 / 5%);
-  
+
   --accent-color-pending-light: rgb(211 48 121 / 50%);
   --accent-color-pending-dark: rgb(211 48 121 / 50%);
 }
