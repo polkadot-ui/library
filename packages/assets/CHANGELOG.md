@@ -4,8 +4,6 @@
 
 ## [0.5.2](https://github.com/polkadot-ui/library/) Change repository and move to polkadot-ui
 
-## [0.4.0](https://github.com/polkadot-cloud/library/compare/polkadot-cloud-assets-v0.3.5...polkadot-cloud-assets-v0.4.0) (2024-02-18)
-
 ### Features
 
 * [BREAKING] Remove buttons & structure, license fixes ([#349](https://github.com/polkadot-cloud/library/issues/349)) ([bd93d9b](https://github.com/polkadot-cloud/library/commit/bd93d9b7e5a6008abad9ccf420e37d792c409cb1))
