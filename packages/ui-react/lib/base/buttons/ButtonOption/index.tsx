@@ -5,7 +5,7 @@ import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "@polkadot-ui/core/css/base/buttons/index.css";
 import { ButtonCommonProps } from "../types";
-import { ComponentBaseWithClassName } from "../../../utils/types"
+import { ComponentBaseWithClassName } from "../../../utils/types";
 import { valEmpty, onMouseHandlers } from "../../../utils";
 
 export type ButtonOptionProps = ComponentBaseWithClassName &

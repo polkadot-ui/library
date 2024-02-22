@@ -1,7 +1,7 @@
 /* @license Copyright 2024 @polkadot-ui/library authors & contributors
 SPDX-License-Identifier: MIT */
 
-import { ComponentBaseWithClassName } from "../../../utils/types"
+import { ComponentBaseWithClassName } from "../../../utils/types";
 import { valEmpty, onMouseHandlers } from "../../../utils";
 import { ButtonCommonProps } from "../types";
 import "@polkadot-ui/core/css/base/buttons/index.css";

@@ -2,7 +2,7 @@
 SPDX-License-Identifier: MIT */
 
 import { InfoSVG } from "../../../svg/Info";
-import { ComponentBaseWithClassName } from "../../../utils/types"
+import { ComponentBaseWithClassName } from "../../../utils/types";
 import { valEmpty, onMouseHandlers } from "../../../utils";
 import { ButtonCommonProps } from "../types";
 import "@polkadot-ui/core/css/base/buttons/index.css";

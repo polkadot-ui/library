@@ -6,10 +6,16 @@ import { ButtonMonoProps, ButtonMono } from "../ButtonMono";
 import { ButtonMonoInvert } from "../ButtonMonoInvert";
 import { ButtonOptionProps, ButtonOption } from "../ButtonOption";
 import { ButtonPrimaryProps, ButtonPrimary } from "../ButtonPrimary";
-import { ButtonPrimaryInvertProps, ButtonPrimaryInvert } from "../ButtonPrimaryInvert";
+import {
+  ButtonPrimaryInvertProps,
+  ButtonPrimaryInvert,
+} from "../ButtonPrimaryInvert";
 import { ButtonSecondaryProps, ButtonSecondary } from "../ButtonSecondary";
 import { ButtonSubmitProps, ButtonSubmit } from "../ButtonSubmit";
-import { ButtonSubmitInvertProps, ButtonSubmitInvert } from "../ButtonSubmitInvert";
+import {
+  ButtonSubmitInvertProps,
+  ButtonSubmitInvert,
+} from "../ButtonSubmitInvert";
 import { ButtonTabProps, ButtonTab } from "../ButtonTab";
 import { ButtonTertiaryProps, ButtonTertiary } from "../ButtonTertiary";
 import { ButtonText } from "../ButtonText";

@@ -81,7 +81,8 @@ export const HardwareStatusBar = ({
             <h3>
               {text}
               {help && (
-                <Button type="help"
+                <Button
+                  type="help"
                   marginLeft
                   onClick={() => {
                     if (typeof handleHelp === "function") {
@@ -96,14 +97,16 @@ export const HardwareStatusBar = ({
         </section>
         <section>
           {inProgress ? (
-            <Button type="monoInvert"
+            <Button
+              type="monoInvert"
               text={tCancel}
               onClick={() =>
                 typeof handleCancel === "function" && handleCancel()
               }
             />
           ) : (
-            <Button type="primaryInvert"
+            <Button
+              type="primaryInvert"
               text={tDone}
               onClick={() => {
                 if (typeof handleDone === "function") {

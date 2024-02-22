@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import "@polkadot-ui/core/css/base/buttons/index.css";
 import { ButtonCommonProps, ButtonIconProps } from "../types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { ComponentBaseWithClassName } from "../../../utils/types"
+import { ComponentBaseWithClassName } from "../../../utils/types";
 import { valEmpty, onMouseHandlers, valOr } from "../../../utils";
 
 export type ButtonMonoProps = ComponentBaseWithClassName &
