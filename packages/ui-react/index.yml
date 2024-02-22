@@ -25,6 +25,10 @@ directory:
     description: Light-weight charts for displaying simple statistics.
     doc: https://polkadot-ui.github.io/charts
 
+  - name: Buttons
+    description: A small collection of plug-and-play button components.
+    doc: https://polkadot-ui.github.io/buttons
+
 npm:
   title: "Polkadot UI: React"
   contents:

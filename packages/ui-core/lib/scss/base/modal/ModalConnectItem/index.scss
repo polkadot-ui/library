@@ -14,7 +14,7 @@ SPDX-License-Identifier: MIT */
 
   &.can-connect {
     > .inner {
-      transition: transform 0.15s;
+      transition: transform var(--transition-duration);
 
       &:hover {
         transform: scale(1.015);
@@ -27,7 +27,7 @@ SPDX-License-Identifier: MIT */
 
     .link {
       color: var(--text-color-secondary);
-      transition: color 0.15s;
+      transition: color var(--transition-duration);
 
       &:hover {
         color: var(--accent-color-primary);

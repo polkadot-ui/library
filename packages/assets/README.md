@@ -28,9 +28,9 @@ The following table outlines the structure of a `ValidatorCommunity` entry:
 | Operator Name  | `name`       | Yes      | The chosen name of the operator.                                                            | `Validator Central`                                     |
 | Thumbnail Name | `thumbnail`  | Yes      | The name of your SVG component representing your thumbnail.                                 | _See Below_                                             |
 | Bio            | `bio`        | No       | A short description of your entity. Maximum 300 characters.                                 | `Summing up my validator identity in a sentence or so.` |
-<!-- | Email Address  | `email`      | No       | A public email address representing the operator.                                           | `validatorcentral@polkadot.cloud`                       |
-| Twitter Handle | `twitter`    | No       | The Twitter handle representing the operator.                                               | `@polkadot-ui`                                       | -->
-<!-- | Website URL    | `website`    | No       | A live and vlid secure URL to your website.                                                 | `https://polkadot.cloud`                                 | -->
+| Email Address  | `email`      | No       | A public email address representing the operator.                                           | `validatorcentral@polkadot-ui.something`                |
+| Twitter Handle | `twitter`    | No       | The Twitter handle representing the operator.                                               | `@polkadot-ui`                                          |
+| Website URL    | `website`    | No       | A live and vlid secure URL to your website.                                                 | `https://polkadot-ui..something`                        |
 | Validator List | `validators` | Yes      | A list of validators grouped by network. At least 1 validator in 1 network must be defined. | _See Below_                                             |
 
 ### Example Operator

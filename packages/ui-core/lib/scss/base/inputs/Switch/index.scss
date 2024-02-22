@@ -58,11 +58,11 @@ SPDX-License-Identifier: MIT */
 // Mixin for disabled
 @mixin disabled {
   transition:
-    opacity 0.15s,
-    color 0.15s;
+    opacity var(--transition-duration),
+    color var(--transition-duration);
 
   &:disabled {
-    opacity: 0.3;
+    opacity: var(--opacity-disabled);
     cursor: default;
   }
 }
