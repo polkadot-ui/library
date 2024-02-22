@@ -3,7 +3,6 @@
   "version": "0.3.0",
   "license": "MIT",
   "contributors": [
-    "Ross Bulat<ross@parity.io>",
     "Nikolaos Kontakis<wirednkod@gmail.com>"
   ],
   "description": "Polkadot UI",

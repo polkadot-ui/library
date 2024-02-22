@@ -18,7 +18,7 @@
   "homepage": "https://github.com/polkadot-ui/library#readme",
   "scripts": {
     "build:mock": "node ../../builder/run.mjs -t package:build -p ui-core",
-    "build": "rm -fr dist && gulp --silent && yarn build:mock",
+    "build": "rm -fr dist && gulp && yarn build:mock",
     "watch": "rm -fr dist && gulp --silent && gulp --silent --t watch",
     "clear": "rm -rf node_modules dist tsconfig.tsbuildinfo"
   }

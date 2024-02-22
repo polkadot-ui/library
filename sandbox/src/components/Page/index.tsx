@@ -2,6 +2,8 @@
 SPDX-License-Identifier: MIT */
 
 import { useTheme } from "../../contexts/Theme";
+// Import the base cloud-core styles to ensure the theme styles are applied instead of doc styles.
+import "../../../../packages/ui-core/dist/css/styles/index.css";
 // Import each supported theme here.
 import "../../../../packages/ui-core/dist/accent/polkadot-relay.css";
 import "../../../../packages/ui-core/dist/accent/kusama-relay.css";
