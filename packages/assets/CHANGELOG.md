@@ -1,5 +1,7 @@
 # Changelog
 
+## [0.5.3](https://github.com/polkadot-ui/library/) Revert all changes 
+
 ## [0.5.2](https://github.com/polkadot-ui/library/) Change repository and move to polkadot-ui
 
 ## [0.4.0](https://github.com/polkadot-cloud/library/compare/polkadot-cloud-assets-v0.3.5...polkadot-cloud-assets-v0.4.0) (2024-02-18)

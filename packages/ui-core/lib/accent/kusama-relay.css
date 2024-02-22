@@ -3,7 +3,7 @@ SPDX-License-Identifier: MIT */
 
 .theme-kusama-relay {
   /* Accent colors */
-   --accent-color-primary-light: rgb(31 41 55);
+  --accent-color-primary-light: rgb(31 41 55);
   --accent-color-primary-dark: rgb(126 131 141);
   --accent-color-secondary-light: #414c5c;
   --accent-color-secondary-dark: rgb(141 144 150);

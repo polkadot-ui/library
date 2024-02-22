@@ -2,10 +2,6 @@
   "name": "polkadot-ui-core",
   "license": "MIT",
   "version": "2.0.2",
-  "contributors": [
-    "Ross Bulat<ross@parity.io>",
-    "Nikolaos Kontakis<wirednkod@gmail.com>"
-  ],
   "description": "Core styles and themes for Polkadot dApps.",
   "keywords": [
     "Polkadot",

@@ -1,12 +1,8 @@
 {
   "name": "polkadot-ui-react",
   "license": "MIT",
-  "version": "0.5.1",
+  "version": "0.5.3",
   "type": "module",
-  "contributors": [
-    "Ross Bulat<ross@parity.io>",
-    "Nikolaos Kontakis<wirednkod@gmail.com>"
-  ],
   "description": "Functional React components for Polkadot dApps.",
   "keywords": [
     "Polkadot",
