@@ -4,7 +4,7 @@ SPDX-License-Identifier: MIT */
 import { Button } from "../../buttons/Button";
 import { PageTitleProps, PageTitleTabProps } from "../../types";
 import { valEmpty } from "../../../utils";
-import "@polkadot-cloud/core/css/base/structure/PageTitleTabs/index.css";
+import "@polkadot-ui/core/css/base/structure/PageTitleTabs/index.css";
 
 /**
  * @name PageTitleTabs

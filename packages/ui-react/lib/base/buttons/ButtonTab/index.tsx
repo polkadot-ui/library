@@ -1,5 +1,5 @@
-// Copyright 2024 @polkadot-cloud/library authors & contributors
-// SPDX-License-Identifier: GPL-3.0-only
+/* @license Copyright 2024 @polkadot-ui/library authors & contributors
+SPDX-License-Identifier: MIT */
 
 import { ComponentBaseWithClassName } from "../../../utils/types"
 import { valEmpty, onMouseHandlers } from "../../../utils";

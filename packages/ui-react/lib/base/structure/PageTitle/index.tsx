@@ -7,7 +7,7 @@ import { valEmpty } from "../../../utils";
 import { Button } from "../../buttons/Button";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { PageTitleTabs } from "../PageTitleTabs";
-import "@polkadot-cloud/core/css/base/structure/PageTitle/index.css";
+import "@polkadot-ui/core/css/base/structure/PageTitle/index.css";
 
 /**
  * @name PageTitle

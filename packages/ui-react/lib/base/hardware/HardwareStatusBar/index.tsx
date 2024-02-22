@@ -5,7 +5,7 @@ import { Button } from "../../buttons/Button";
 import { ComponentBase } from "../../../utils/types";
 import { motion } from "framer-motion";
 import { FunctionComponent, SVGProps } from "react";
-import "@polkadot-cloud/core/css/base/hardware/HardwareStatusBar/index.css";
+import "@polkadot-ui/core/css/base/hardware/HardwareStatusBar/index.css";
 
 export type HardwareStatusBarProps = ComponentBase & {
   // whether to animate in the status bar.

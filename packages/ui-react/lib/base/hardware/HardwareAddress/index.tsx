@@ -12,7 +12,7 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { FormEvent, ReactNode, useState } from "react";
 import { ellipsisFn, unescape } from "@polkadot-ui/utils";
-import "@polkadot-cloud/core/css/base/hardware/HardwareAddress/index.css";
+import "@polkadot-ui/core/css/base/hardware/HardwareAddress/index.css";
 
 export type HardwareAddressProps = ComponentBase & {
   // the address to import.
