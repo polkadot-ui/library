@@ -121,7 +121,7 @@ export const AccountCard = ({
     let mGridSize: GridSizes = 8;
 
     // Based on the existance of icon/extraComponent and if their sizes are given as params, the following 'if' is calculating the correct sizes
-    // in the 12 column Grid that polakdot-cloud supports at the moment, and sets the states accordingly
+    // in the 12 column Grid that polakdot-ui supports at the moment, and sets the states accordingly
     if (icon?.gridSize || extraComponent?.gridSize) {
       iGridSize = icon?.gridSize || 2;
       xGridSize = extraComponent?.gridSize || 2;

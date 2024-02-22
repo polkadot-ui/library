@@ -3,7 +3,7 @@ SPDX-License-Identifier: MIT */
 
 .modal-card {
   background: var(--background-modal);
-  transition: opacity 0.15s;
+  transition: opacity var(--transition-duration);
 
   &.dimmed {
     opacity: 0;

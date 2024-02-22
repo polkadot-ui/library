@@ -1,11 +1,7 @@
 {
   "name": "polkadot-ui-core",
   "license": "MIT",
-  "version": "2.0.1",
-  "contributors": [
-    "Ross Bulat<ross@parity.io>",
-    "Nikolaos Kontakis<wirednkod@gmail.com>"
-  ],
+  "version": "2.0.2",
   "description": "Core styles and themes for Polkadot dApps.",
   "keywords": [
     "Polkadot",
@@ -18,7 +14,7 @@
   "homepage": "https://github.com/polkadot-ui/library#readme",
   "scripts": {
     "build:mock": "node ../../builder/run.mjs -t package:build -p ui-core",
-    "build": "rm -fr dist && gulp --silent && yarn build:mock",
+    "build": "rm -fr dist && gulp && yarn build:mock",
     "watch": "rm -fr dist && gulp --silent && gulp --silent --t watch",
     "clear": "rm -rf node_modules dist tsconfig.tsbuildinfo"
   }
