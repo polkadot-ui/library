@@ -1883,25 +1883,6 @@
   resolved "https://registry.yarnpkg.com/@typescript-eslint/types/-/types-7.0.2.tgz#b6edd108648028194eb213887d8d43ab5750351c"
   integrity sha512-ZzcCQHj4JaXFjdOql6adYV4B/oFOFjPOC9XYwCaZFRvqN8Llfvv4gSxrkQkd2u4Ci62i2c6W6gkDwQJDaRc4nA==
 
-"@typescript-eslint/types@7.0.2":
-  version "7.0.2"
-  resolved "https://registry.yarnpkg.com/@typescript-eslint/types/-/types-7.0.2.tgz#b6edd108648028194eb213887d8d43ab5750351c"
-  integrity sha512-ZzcCQHj4JaXFjdOql6adYV4B/oFOFjPOC9XYwCaZFRvqN8Llfvv4gSxrkQkd2u4Ci62i2c6W6gkDwQJDaRc4nA==
-
-"@typescript-eslint/typescript-estree@7.0.1":
-  version "7.0.1"
-  resolved "https://registry.yarnpkg.com/@typescript-eslint/typescript-estree/-/typescript-estree-7.0.1.tgz#1d52ac03da541693fa5bcdc13ad655def5046faf"
-  integrity sha512-SO9wHb6ph0/FN5OJxH4MiPscGah5wjOd0RRpaLvuBv9g8565Fgu0uMySFEPqwPHiQU90yzJ2FjRYKGrAhS1xig==
-  dependencies:
-    "@typescript-eslint/types" "7.0.1"
-    "@typescript-eslint/visitor-keys" "7.0.1"
-    debug "^4.3.4"
-    globby "^11.1.0"
-    is-glob "^4.0.3"
-    minimatch "9.0.3"
-    semver "^7.5.4"
-    ts-api-utils "^1.0.1"
-
 "@typescript-eslint/typescript-estree@7.0.2":
   version "7.0.2"
   resolved "https://registry.yarnpkg.com/@typescript-eslint/typescript-estree/-/typescript-estree-7.0.2.tgz#3c6dc8a3b9799f4ef7eca0d224ded01974e4cb39"
@@ -1928,14 +1909,6 @@
     "@typescript-eslint/types" "7.0.2"
     "@typescript-eslint/typescript-estree" "7.0.2"
     semver "^7.5.4"
-
-"@typescript-eslint/visitor-keys@7.0.2":
-  version "7.0.2"
-  resolved "https://registry.yarnpkg.com/@typescript-eslint/visitor-keys/-/visitor-keys-7.0.2.tgz#2899b716053ad7094962beb895d11396fc12afc7"
-  integrity sha512-8Y+YiBmqPighbm5xA2k4wKTxRzx9EkBu7Rlw+WHqMvRJ3RPz/BMBO9b2ru0LUNmXg120PHUXD5+SWFy2R8DqlQ==
-  dependencies:
-    "@typescript-eslint/types" "7.0.2"
-    eslint-visitor-keys "^3.4.1"
 
 "@typescript-eslint/visitor-keys@7.0.2":
   version "7.0.2"
@@ -2068,19 +2041,19 @@
     webdriver "8.32.2"
     webdriverio "8.32.2"
 
-"@wdio/cli@^8.32.1":
-  version "8.32.2"
-  resolved "https://registry.yarnpkg.com/@wdio/cli/-/cli-8.32.2.tgz#5db60ee35e7b3133d983bfbe970aac5fb240d77f"
-  integrity sha512-CbTALXXnDzvthu+EK0dK5QDTXToU4wNrldtonQcsD8tT726O56BLFGm9tzcGP6PZWh9NxAuvsFlWSwUxcqXq0Q==
+"@wdio/cli@^8.32.3":
+  version "8.32.3"
+  resolved "https://registry.yarnpkg.com/@wdio/cli/-/cli-8.32.3.tgz#181ee78ce3fb40e789b75de23d48922787030caf"
+  integrity sha512-qjR1MFKQM547iCooceBHyggJRNguD7fhgF4Q7L2r7psG3AQFWzdCN/8rulRGIxTz4PJlIqks9AH9kUJlVAf44A==
   dependencies:
     "@types/node" "^20.1.1"
     "@vitest/snapshot" "^1.2.1"
-    "@wdio/config" "8.32.2"
-    "@wdio/globals" "8.32.2"
+    "@wdio/config" "8.32.3"
+    "@wdio/globals" "8.32.3"
     "@wdio/logger" "8.28.0"
     "@wdio/protocols" "8.32.0"
     "@wdio/types" "8.32.2"
-    "@wdio/utils" "8.32.2"
+    "@wdio/utils" "8.32.3"
     async-exit-hook "^2.0.1"
     chalk "^5.2.0"
     chokidar "^3.5.3"
@@ -2095,7 +2068,7 @@
     lodash.union "^4.6.0"
     read-pkg-up "10.0.0"
     recursive-readdir "^2.2.3"
-    webdriverio "8.32.2"
+    webdriverio "8.32.3"
     yargs "^17.7.2"
 
 "@wdio/config@8.32.2":
@@ -2132,7 +2105,7 @@
     expect-webdriverio "^4.11.2"
     webdriverio "8.32.2"
 
-"@wdio/globals@^8.29.3", "@wdio/globals@^8.32.3":
+"@wdio/globals@8.32.3", "@wdio/globals@^8.29.3", "@wdio/globals@^8.32.3":
   version "8.32.3"
   resolved "https://registry.yarnpkg.com/@wdio/globals/-/globals-8.32.3.tgz#08e69858b3cbfad69e3f105f9fd8f50de58d4cae"
   integrity sha512-jyK89GvWaOYQT9pfZ6HNwkFANgai9eBVfeDPw5yFLXfk6js9GSWbvqMJg/PFi1dQ7xbnbuuf5eYVc65bfAt9KQ==
@@ -11189,7 +11162,7 @@ webdriver@8.32.3:
     ky "^0.33.0"
     ws "^8.8.0"
 
-webdriverio@8.32.2, webdriverio@^8.29.3:
+webdriverio@8.32.2:
   version "8.32.2"
   resolved "https://registry.yarnpkg.com/webdriverio/-/webdriverio-8.32.2.tgz#79a955165684061714fd01bbdee5fa3f1521239c"
   integrity sha512-Z0Wc/dHFfWGWJZpaQ8u910/LG0E9EIVTO7J5yjqWx2XtXz2LzQMxYwNRnvNLhY/1tI4y/cZxI6kFMWr8wD2TtA==
@@ -11219,7 +11192,7 @@ webdriverio@8.32.2, webdriverio@^8.29.3:
     serialize-error "^11.0.1"
     webdriver "8.32.2"
 
-webdriverio@8.32.3:
+webdriverio@8.32.3, webdriverio@^8.29.3:
   version "8.32.3"
   resolved "https://registry.yarnpkg.com/webdriverio/-/webdriverio-8.32.3.tgz#c3b8545ed1dd37f2559c60854b5e71d0864cd024"
   integrity sha512-SupbQKMtUZHSH7lmF5xaJPgxsn8sIBNAjs1CyPI33u30eY9VcVQ4CJQ818ZS3FLxR0q2XdWk9lsQNyhZwlN3RA==
