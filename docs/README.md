@@ -29,7 +29,7 @@ Core styles and themes for Polkadot dApps.
 
 Functional React components for Polkadot dApps.
 
-- Polkicon](https://polkadot-ui.github.io/polkicon): A light-weight and customisable Polkadot Icon.
+- Polkicon: A light-weight and customisable Polkadot Icon.
 
 - Extensions Provider: Discover available web3 exensions and manage their status.
 
