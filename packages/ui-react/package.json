@@ -41,6 +41,6 @@
     "@polkadot/util": "^12.6.2",
     "@polkadot/util-crypto": "^12.6.2",
     "framer-motion": "^11.0.8",
-    "react-error-boundary": "^4.0.12"
+    "react-error-boundary": "^4.0.13"
   }
 }
