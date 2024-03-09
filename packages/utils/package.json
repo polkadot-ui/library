@@ -2,10 +2,6 @@
   "name": "polkadot-ui-utils",
   "license": "MIT",
   "version": "0.4.0",
-  "contributors": [
-    "Ross Bulat<ross@parity.io>",
-    "Nikolaos Kontakis<wirednkod@gmail.com>"
-  ],
   "description": "Common utility functions to aid in Polkadot dApp development.",
   "keywords": [
     "Polkadot",

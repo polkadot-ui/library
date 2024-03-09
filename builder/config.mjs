@@ -35,7 +35,6 @@ export const PACKAGE_REQUIRED_JSON_KEYS = [
   "keywords",
   "bugs",
   "homepage",
-  "contributors",
   "description",
   "dependencies",
   "peerDependencies",

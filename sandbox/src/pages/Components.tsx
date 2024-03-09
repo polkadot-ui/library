@@ -4,6 +4,7 @@ SPDX-License-Identifier: MIT */
 import { Odometer } from "../../../packages/ui-react/lib/complex/Odometer";
 import { Polkicon } from "../../../packages/ui-react/lib/icons/Polkicon";
 import { Chart } from "../../../packages/ui-react/lib/base/structure/Chart";
+import { AccountCard } from "../../../packages/ui-react/lib/complex/AccountCard";
 import BigNumber from "bignumber.js";
 import { useState } from "react";
 
@@ -74,6 +75,36 @@ export const Components = () => {
         >
           Trigger Update
         </button>
+      </div>
+
+      <h2>Account Card</h2>
+      <div style={{ display: "flex" }}>
+        <AccountCard
+          style={{ padding: "1rem" }}
+          icon={{
+            copy: false,
+            position: "right",
+            gridSize: 3,
+            justify: "space-around",
+          }}
+          title={{
+            address: "1f1yYj2bCFhJCTVdeWLDueUsrZynLAaj6jeMy18fjZ7Cr73",
+          }}
+        />
+      </div>
+      <div style={{ display: "flex" }}>
+        <AccountCard
+          style={{ padding: "1rem" }}
+          icon={{
+            copy: false,
+            position: "right",
+            gridSize: 3,
+            justify: "space-around",
+          }}
+          title={{
+            address: "1f1yYj2bCFhJCTVdeWLDueUsrZynLAaj6jeMy18fjZ7Cr73",
+          }}
+        />
       </div>
 
       <h2>Polkicon</h2>
