@@ -1,7 +1,7 @@
 {
   "name": "polkadot-ui-assets",
   "license": "MIT",
-  "version": "0.5.2",
+  "version": "0.5.3",
   "type": "module",
   "description": "Data sources and static assets for Polkadot dApps.",
   "keywords": [
