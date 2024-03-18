@@ -2033,15 +2033,15 @@
     webdriver "8.33.1"
     webdriverio "8.33.1"
 
-"@wdio/cli@^8.33.1":
-  version "8.33.1"
-  resolved "https://registry.yarnpkg.com/@wdio/cli/-/cli-8.33.1.tgz#94dad615bb284f5b037fea3f1ba66c0a7bff7eef"
-  integrity sha512-Ngt5R6YAmErkSKnWLWt1JilLIKDPIB0P93bzQhb9bQhmg1arFBcl75uiwe6kf6T355vzcNslMaEJyeuqGChmCg==
+"@wdio/cli@^8.34.1":
+  version "8.34.1"
+  resolved "https://registry.yarnpkg.com/@wdio/cli/-/cli-8.34.1.tgz#af2209098acb69eae80da3cada9339e5edc4db44"
+  integrity sha512-/MY3/XD6KAobu58Vq4a4Lwul/ghJO87sq5l/f2VLlkhD6IVwtlo08xUnBz7Y2wfHElf/R9RV+i3pkbXDeghnMw==
   dependencies:
     "@types/node" "^20.1.1"
     "@vitest/snapshot" "^1.2.1"
-    "@wdio/config" "8.33.1"
-    "@wdio/globals" "8.33.1"
+    "@wdio/config" "8.34.0"
+    "@wdio/globals" "8.34.1"
     "@wdio/logger" "8.28.0"
     "@wdio/protocols" "8.32.0"
     "@wdio/types" "8.32.4"
@@ -2060,7 +2060,7 @@
     lodash.union "^4.6.0"
     read-pkg-up "10.0.0"
     recursive-readdir "^2.2.3"
-    webdriverio "8.33.1"
+    webdriverio "8.34.1"
     yargs "^17.7.2"
 
 "@wdio/config@8.33.1":
@@ -2097,7 +2097,7 @@
     expect-webdriverio "^4.11.2"
     webdriverio "8.33.1"
 
-"@wdio/globals@^8.29.3", "@wdio/globals@^8.34.1":
+"@wdio/globals@8.34.1", "@wdio/globals@^8.29.3", "@wdio/globals@^8.34.1":
   version "8.34.1"
   resolved "https://registry.yarnpkg.com/@wdio/globals/-/globals-8.34.1.tgz#82524d8ab295f4001474a3eda73108560a63df95"
   integrity sha512-snN9o23a9EKfNgV0TqwiWeoeWrj6BCopBVDa6Pdx4GUw6RyRDIX2StqT9mB3n8v3FPlLjs0Lym0DL9tNbV39uA==
@@ -11065,7 +11065,7 @@ webdriver@8.34.0:
     ky "^0.33.0"
     ws "^8.8.0"
 
-webdriverio@8.33.1, webdriverio@^8.29.3:
+webdriverio@8.33.1:
   version "8.33.1"
   resolved "https://registry.yarnpkg.com/webdriverio/-/webdriverio-8.33.1.tgz#cf7f853f1d9be81b08ce9b62e87b95bbcf2dac1b"
   integrity sha512-1DsF8sx1a46AoVYCUpEwJYU74iBAW/U2H5r6p+60ct7dIiFmxmc4uCbOqtf7NLOTgrIzAOaRnT0EsrRICpg5Qw==
@@ -11095,7 +11095,7 @@ webdriverio@8.33.1, webdriverio@^8.29.3:
     serialize-error "^11.0.1"
     webdriver "8.33.1"
 
-webdriverio@8.34.1:
+webdriverio@8.34.1, webdriverio@^8.29.3:
   version "8.34.1"
   resolved "https://registry.yarnpkg.com/webdriverio/-/webdriverio-8.34.1.tgz#1033c12d6d4ea410f92447b67cfc0bfdd0ac4796"
   integrity sha512-9C+sy8mkvIGdKFFHL5oq6s2Uhq1lsAXybG3MsF0QA2822Jm+oYHN4KohrOGF0yBJc/x5JRaW3/hXvldnj7a55A==
