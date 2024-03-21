@@ -70,7 +70,7 @@
     "tiny-lr": "^2.0.0",
     "tslib": "^2.6.2",
     "tsup": "^8.0.2",
-    "typescript": "^5.4.2",
+    "typescript": "^5.4.3",
     "vitest": "^1.4.0",
     "yaml": "^2.4.1"
   },
