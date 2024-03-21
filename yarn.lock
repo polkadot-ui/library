@@ -1731,14 +1731,7 @@
   resolved "https://registry.yarnpkg.com/@types/mocha/-/mocha-10.0.6.tgz#818551d39113081048bdddbef96701b4e8bb9d1b"
   integrity sha512-dJvrYWxP/UcXm36Qn36fxhUKu8A/xMRXVT2cliFF1Z7UA9liG5Psj3ezNSZw+5puH2czDXRLcXQxf8JbJt0ejg==
 
-"@types/node@*", "@types/node@^20.1.0", "@types/node@^20.1.1":
-  version "20.11.19"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-20.11.19.tgz#b466de054e9cb5b3831bee38938de64ac7f81195"
-  integrity sha512-7xMnVEcZFu0DikYjWOlRq7NTPETrm7teqUT2WkQjrTIkEgUyyGdWsj/Zg8bEJt5TNklzbPD1X3fqfsHw3SpapQ==
-  dependencies:
-    undici-types "~5.26.4"
-
-"@types/node@^20.11.28":
+"@types/node@*", "@types/node@^20.1.0", "@types/node@^20.1.1", "@types/node@^20.11.28":
   version "20.11.28"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-20.11.28.tgz#4fd5b2daff2e580c12316e457473d68f15ee6f66"
   integrity sha512-M/GPWVS2wLkSkNHVeLkrF2fD5Lx5UC4PxA0uZcKc6QqbIQUJyW1jVjueJYi1z8n0I5PxYrtpnPnWglE+y9A0KA==
@@ -2115,7 +2108,7 @@
     loglevel-plugin-prefix "^0.8.4"
     strip-ansi "^7.1.0"
 
-"@wdio/mocha-framework@8.33.1", "@wdio/mocha-framework@^8.32.3":
+"@wdio/mocha-framework@8.33.1":
   version "8.33.1"
   resolved "https://registry.yarnpkg.com/@wdio/mocha-framework/-/mocha-framework-8.33.1.tgz#9ecce1177eb75147edf4ae7a5a370067e79e2c1a"
   integrity sha512-CxYLE22+tgnMnruElvDGJGR+dE0pxvMZ95agIUYYen69DJ705a74XtTR6zX9COWu6RooBezHgEs3fXev0XL79Q==
@@ -2125,6 +2118,18 @@
     "@wdio/logger" "8.28.0"
     "@wdio/types" "8.32.4"
     "@wdio/utils" "8.33.1"
+    mocha "^10.0.0"
+
+"@wdio/mocha-framework@^8.35.0":
+  version "8.35.0"
+  resolved "https://registry.yarnpkg.com/@wdio/mocha-framework/-/mocha-framework-8.35.0.tgz#d529fe265b7a2aed6717693b50b0ee865b36e2fd"
+  integrity sha512-riO3aMgvGdFFRMpyMk5m480V+mi5EcKk6cjT1TB9L5XEN7Mo/8qthBw9CLgFCZkr4KlR40hgPKSZFHE0rH2GpQ==
+  dependencies:
+    "@types/mocha" "^10.0.0"
+    "@types/node" "^20.1.0"
+    "@wdio/logger" "8.28.0"
+    "@wdio/types" "8.32.4"
+    "@wdio/utils" "8.35.0"
     mocha "^10.0.0"
 
 "@wdio/protocols@8.32.0":
@@ -2189,6 +2194,25 @@
   version "8.33.1"
   resolved "https://registry.yarnpkg.com/@wdio/utils/-/utils-8.33.1.tgz#8ab0679d5214d9a4bea4aa198d3c1a806d386df0"
   integrity sha512-W0ArrZbs4M23POv8+FPsgHDFxg+wwklfZgLSsjVq2kpCmBCfIPxKSAOgTo/XrcH4We/OnshgBzxLcI+BHDgi4w==
+  dependencies:
+    "@puppeteer/browsers" "^1.6.0"
+    "@wdio/logger" "8.28.0"
+    "@wdio/types" "8.32.4"
+    decamelize "^6.0.0"
+    deepmerge-ts "^5.1.0"
+    edgedriver "^5.3.5"
+    geckodriver "^4.3.1"
+    get-port "^7.0.0"
+    import-meta-resolve "^4.0.0"
+    locate-app "^2.1.0"
+    safaridriver "^0.1.0"
+    split2 "^4.2.0"
+    wait-port "^1.0.4"
+
+"@wdio/utils@8.35.0":
+  version "8.35.0"
+  resolved "https://registry.yarnpkg.com/@wdio/utils/-/utils-8.35.0.tgz#d8e026bf62d5020e50ee1451af0f5e27f846680c"
+  integrity sha512-9KCyn4aS+9tWfthnUkNFVe52AM6QrLGAeIxgGxNlzTAcQGl7jjwdDM7aSK0RjLkWI3a/88DRH21mN/t2LGDmPQ==
   dependencies:
     "@puppeteer/browsers" "^1.6.0"
     "@wdio/logger" "8.28.0"
