@@ -1,7 +1,6 @@
 /* @license Copyright 2024 @polkadot-ui/library authors & contributors
 SPDX-License-Identifier: MIT */
 
-import { blake2AsU8a } from "@polkadot/util-crypto";
 import { getSs58AddressInfo } from "@polkadot-api/substrate-bindings";
 import { ChainName, Circle, Scheme } from "./types";
 import { blake2b } from "@noble/hashes/blake2b";
@@ -199,81 +198,3 @@ export const findScheme = (d: number): Scheme => {
 
   return schema;
 };
-
-let zeroHash: Uint8Array = new Uint8Array();
-const addressToId = (address: string): Uint8Array => {
-  if (!zeroHash.length) {
-    zeroHash = blake2AsU8a(new Uint8Array(32));
-  }
-  const addressInfo = getSs58AddressInfo(address);
-  if (addressInfo.isValid) {
-    const { publicKey } = addressInfo;
-    return blake2AsU8a(publicKey).map(
-      (x: number, i: string | number) => (x + 256 - zeroHash[i]) % 256
-    );
-  } else {
-    return blake2AsU8a("").map(
-      (x: number, i: string | number) => (x + 256 - zeroHash[i]) % 256
-    );
-  }
-};
-
-export const getColors = (address: string): string[] => {
-  const total = Object.values(SCHEMA)
-    .map((s): number => s.freq)
-    .reduce((a, b): number => a + b);
-  const id = addressToId(address);
-  const d = Math.floor((id[30] + id[31] * 256) % total);
-  const rot = (id[28] % 6) * 3;
-  const sat = (Math.floor((id[29] * 70) / 256 + 26) % 80) + 30;
-  const scheme = findScheme(d);
-  const palette = Array.from(id).map((x, i): string => {
-    const b = (x + (i % 28) * 58) % 256;
-
-    if (b === 0) {
-      return "#444";
-    } else if (b === 255) {
-      return "transparent";
-    }
-
-    const h = Math.floor(((b % 64) * 360) / 64);
-    const l = [53, 15, 35, 75][Math.floor(b / 64)];
-
-    return `hsl(${h}, ${sat}%, ${l}%)`;
-  });
-
-  return scheme.colors.map(
-    (_, i): string => palette[scheme.colors[i < 18 ? (i + rot) % 18 : 18]]
-  );
-};
-
-// TODO: explore this new approach
-// export const getColorsCheck = (address: string): string[] => {
-//     const total = Object.values(SCHEMA)
-//       .map((s): number => s.freq)
-//       .reduce((a, b): number => a + b);
-//     const id = addressToId(address);
-//     const d = Math.floor((id[30] + id[31] * 256) % total);
-//     const rot = (id[28] % 6) * 3;
-//     const sat = Math.floor((id[29] * 70) / 256 + 26) % 80;
-//     const alignedSat = sat < 40 ? sat + 50 : sat < 70 ? sat + 30 : sat;
-//     const scheme = findScheme(d);
-//     const palette = Array.from(id).map((x, i): string => {
-//       const b = (x + (i % 28) * 58) % 256;
-
-//       if (b === 0) {
-//         return "#444";
-//       } else if (b === 255) {
-//         return "transparent";
-//       }
-
-//       const h = Math.floor(((b % 64) * 360) / 64);
-//       const l = [40, 45, 50, 55][Math.floor(b / 64)];
-
-//       return `hsl(${h}, ${alignedSat}%, ${l}%)`;
-//     });
-
-//     return scheme.colors.map(
-//       (_, i): string => palette[scheme.colors[i < 18 ? (i + rot) % 18 : 18]]
-//     );
-//   };
