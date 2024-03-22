@@ -1,21 +1,10 @@
 /* @license Copyright 2024 @polkadot-ui/library authors & contributors
 SPDX-License-Identifier: MIT */
 
-import { decodeAddress, blake2AsU8a } from "@polkadot/util-crypto";
-
-/*
-  A generic identity icon, taken from
-  https://github.com/polkadot-js/ui/tree/master/packages/react-identicon
-*/
-
-export type ChainName = "polkadot" | "kusama" | "westend" | "generic";
-
-export interface Circle {
-  cx: number;
-  cy: number;
-  fill: string;
-  r: number;
-}
+import { blake2AsU8a } from "@polkadot/util-crypto";
+import { getSs58AddressInfo } from "@polkadot-api/substrate-bindings";
+import { ChainName, Circle, Scheme } from "./types";
+import { blake2b } from "@noble/hashes/blake2b";
 
 const SIZE = 64;
 const C = SIZE / 2;
@@ -97,15 +86,67 @@ export const getCircleXY = (ch: ChainName): [number, number][] => {
   ];
 };
 
-/*
-  A generic identity icon, taken from
-  https://github.com/polkadot-js/ui/tree/master/packages/react-identicon
-*/
+export const getParams = (account: string) => {
+  const zero = blake2b(
+    new Uint8Array([
+      0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+      0, 0, 0, 0, 0, 0, 0,
+    ])
+  );
 
-interface Scheme {
-  freq: number;
-  colors: number[];
-}
+  const add = getSs58AddressInfo(account);
+
+  let id: string | Uint8Array = add.isValid ? add.publicKey : account;
+  if (
+    !(
+      typeof id == "object" &&
+      id &&
+      id instanceof Uint8Array &&
+      id.length == 32
+    )
+  ) {
+    return {};
+  }
+
+  id = Uint8Array.from(blake2b(id)).map(
+    (x, i: number) => (x + 256 - zero[i]) % 256
+  );
+
+  const s = 64;
+  const c = s / 2;
+  const r = /* sixPoint ? (s / 2 / 8) * 5 : */ (s / 2 / 4) * 2.8;
+  const rroot3o2 = (r * Math.sqrt(3)) / 2;
+  const ro2 = r / 2;
+  const rroot3o4 = (r * Math.sqrt(3)) / 4;
+  const ro4 = r / 4;
+  const r3o4 = (r * 3) / 4;
+
+  const z = (s / 64) * 5;
+
+  const total = Object.keys(SCHEMA)
+    .map((k) => SCHEMA[k].freq)
+    .reduce((a, b) => a + b);
+
+  const sat = (Math.floor((id[29] * 70) / 256 + 26) % 80) + 30;
+  const d = Math.floor((id[30] + id[31] * 256) % total);
+  const scheme = findScheme(d);
+  const palette = Array.from(id).map((x, i) => {
+    const b = (x + (i % 28) * 58) % 256;
+    if (b == 0) {
+      return "#444";
+    }
+    if (b == 255) {
+      return "transparent";
+    }
+    const h = Math.floor(((b % 64) * 360) / 64);
+    const l = [53, 15, 35, 75][Math.floor(b / 64)];
+    return `hsl(${h}, ${sat}%, ${l}%)`;
+  });
+
+  const rot = (id[28] % 6) * 3;
+
+  return { c, r, rroot3o2, ro2, rroot3o4, ro4, r3o4, z, rot, scheme, palette };
+};
 
 /*
     A generic identity icon, taken from
@@ -160,15 +201,21 @@ export const findScheme = (d: number): Scheme => {
 };
 
 let zeroHash: Uint8Array = new Uint8Array();
-
 const addressToId = (address: string): Uint8Array => {
   if (!zeroHash.length) {
     zeroHash = blake2AsU8a(new Uint8Array(32));
   }
-  const pubKey = decodeAddress(address || "").toString();
-  return blake2AsU8a(pubKey).map(
-    (x: number, i: string | number) => (x + 256 - zeroHash[i]) % 256
-  );
+  const addressInfo = getSs58AddressInfo(address);
+  if (addressInfo.isValid) {
+    const { publicKey } = addressInfo;
+    return blake2AsU8a(publicKey).map(
+      (x: number, i: string | number) => (x + 256 - zeroHash[i]) % 256
+    );
+  } else {
+    return blake2AsU8a("").map(
+      (x: number, i: string | number) => (x + 256 - zeroHash[i]) % 256
+    );
+  }
 };
 
 export const getColors = (address: string): string[] => {

@@ -1,59 +1,23 @@
 /* @license Copyright 2024 @polkadot-ui/library authors & contributors
 SPDX-License-Identifier: MIT */
 
+import { PolkiconProps } from "./types";
+
+import { getParams } from "./utils";
 import { useCallback, useEffect, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import {
-  Circle,
-  getCircleXY,
-  outerCircle,
-  renderCircle,
-  Z,
-  getColors,
-  ChainName,
-} from "./utils";
-import { isValidAddress } from "@polkadot-ui/utils";
-
-interface PolkiconProps {
-  size?: number | string;
-  address: string;
-  copy?: boolean;
-  colors?: string[];
-  outerColor?: string;
-  copyTimeout?: number;
-}
-
-const copyPopup = {
-  initial: {
-    opacity: 0,
-    scale: 0.5,
-  },
-  animate: {
-    opacity: 1,
-    scale: 1,
-    transition: {
-      ease: "easeInOut",
-      duration: 0.1,
-    },
-  },
-  exit: {
-    opacity: 0,
-  },
-};
 
 export const Polkicon = ({
   size = "2rem",
   address,
   copy = false,
-  colors: initialColors,
-  outerColor,
-  copyTimeout = 500,
+  outerColor = "white",
+  copyTimeout = 750,
+  copyMsg = "✔",
+  style = {},
+  className = "",
 }: PolkiconProps) => {
-  const [colors, setColors] = useState<string[]>([]);
-  const [xy, setXy] = useState<[number, number][] | undefined>();
   const [copySuccess, setCopySuccess] = useState(false);
-  const [message, setMessage] = useState<string>("Copied!");
-
+  const [message, setMessage] = useState<string | JSX.Element>(copyMsg);
   const [s, setS] = useState<string | number>();
   const [f, setF] = useState<string>();
   const [p, setP] = useState<string>();
@@ -117,56 +81,12 @@ export const Polkicon = ({
     }
   }, [size]);
 
-  useEffect(() => {
-    // TODO: look closer into this approach
-    let ch = "generic";
-    // Polkadot
-    if (address) {
-      if (address.startsWith("1")) {
-        ch = "polkadot";
-      } else if (
-        address.startsWith("E") ||
-        address.startsWith("D") ||
-        address.startsWith("G")
-      ) {
-        ch = "kusama";
-      } else if (address.startsWith("5")) {
-        ch = "westend";
-      }
-    } else {
-      ch = "polkadot";
-    }
-    const circleXy = getCircleXY(ch as ChainName);
-    if (initialColors && initialColors?.length < circleXy.length) {
-      let initColIdx = 0;
-      for (let i = 0; i < circleXy.length; i++) {
-        if (!initialColors[i]) {
-          initialColors[i] = initialColors[initColIdx++];
-        }
-        if (initColIdx == initialColors.length) {
-          initColIdx = 0;
-        }
-      }
-    }
-    const defaultColors = new Array<string>(circleXy.length).fill("#ddd");
-    const deactiveColors = new Array<string>(circleXy.length).fill(
-      "var(--background-invert)"
-    );
-
-    setXy(circleXy);
-    setColors(
-      isValidAddress(address)
-        ? initialColors || getColors(address) || defaultColors
-        : deactiveColors
-    );
-  }, [address]);
-
   const handleClick = useCallback(() => {
     const copyText = async (text: string) => {
       try {
         await navigator.clipboard.writeText(text);
         setCopySuccess(true);
-        setMessage("Copied!");
+        setMessage(copyMsg);
       } catch (err) {
         setCopySuccess(true);
         setMessage("Failed!");
@@ -183,72 +103,84 @@ export const Polkicon = ({
     }
   }, [copy, copySuccess]);
 
-  return (
-    xy && (
-      <div
-        onClick={copy ? handleClick : undefined}
-        style={
-          copy
-            ? {
-                cursor: copySuccess ? "none" : "copy",
-                position: "relative",
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-              }
-            : {
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-              }
-        }
+  const { c, r, rroot3o2, ro2, rroot3o4, ro4, r3o4, z, rot, scheme, palette } =
+    getParams(address);
+
+  const colors = scheme?.colors?.map(
+    (_, i) => palette[scheme?.colors[i < 18 ? (i + rot) % 18 : 18]]
+  );
+
+  let i = 0;
+
+  return !colors ? null : (
+    <div
+      onClick={copy ? handleClick : undefined}
+      style={
+        copy
+          ? {
+              cursor: copySuccess ? "none" : "copy",
+              position: "relative",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+            }
+          : {
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+            }
+      }
+    >
+      <svg
+        id={Math.random().toString(36).substring(2, 9)}
+        className={className}
+        style={style}
+        width={s}
+        height={s}
+        viewBox="0 0 64 64"
       >
-        <svg
-          viewBox="0 0 64 64"
-          id={address}
-          name={address}
-          width={s}
-          height={s}
+        <circle cx={64 / 2} cy={64 / 2} r={64 / 2} fill={outerColor} />
+        <circle cx={c} cy={c - r} r={z} fill={colors[i++]} />
+        <circle cx={c} cy={c - ro2} r={z} fill={colors[i++]} />
+        <circle cx={c - rroot3o4} cy={c - r3o4} r={z} fill={colors[i++]} />
+        <circle cx={c - rroot3o2} cy={c - ro2} r={z} fill={colors[i++]} />
+        <circle cx={c - rroot3o4} cy={c - ro4} r={z} fill={colors[i++]} />
+        <circle cx={c - rroot3o2} cy={c} r={z} fill={colors[i++]} />
+        <circle cx={c - rroot3o2} cy={c + ro2} r={z} fill={colors[i++]} />
+        <circle cx={c - rroot3o4} cy={c + ro4} r={z} fill={colors[i++]} />
+        <circle cx={c - rroot3o4} cy={c + r3o4} r={z} fill={colors[i++]} />
+        <circle cx={c} cy={c + r} r={z} fill={colors[i++]} />
+        <circle cx={c} cy={c + ro2} r={z} fill={colors[i++]} />
+        <circle cx={c + rroot3o4} cy={c + r3o4} r={z} fill={colors[i++]} />
+        <circle cx={c + rroot3o2} cy={c + ro2} r={z} fill={colors[i++]} />
+        <circle cx={c + rroot3o4} cy={c + ro4} r={z} fill={colors[i++]} />
+        <circle cx={c + rroot3o2} cy={c} r={z} fill={colors[i++]} />
+        <circle cx={c + rroot3o2} cy={c - ro2} r={z} fill={colors[i++]} />
+        <circle cx={c + rroot3o4} cy={c - ro4} r={z} fill={colors[i++]} />
+        <circle cx={c + rroot3o4} cy={c - r3o4} r={z} fill={colors[i++]} />
+        <circle cx={c} cy={c} r={z} fill={colors[i++]} />
+      </svg>
+      {copy && copySuccess && (
+        <p
+          style={{
+            fontSize: f,
+            fontWeight: "bold",
+            padding: p,
+            width: s,
+            height: s,
+            position: "absolute",
+            borderRadius: "55rem",
+            color: "white",
+            background: "green",
+            opacity: "80%",
+            alignItems: "center",
+            justifyContent: "center",
+            display: "flex",
+          }}
         >
-          {[
-            outerColor
-              ? outerCircle(outerColor)
-              : outerCircle("var(--background-default"),
-          ]
-            .concat(
-              xy.map(
-                ([cx, cy], index): Circle => ({
-                  cx,
-                  cy,
-                  fill: colors[index],
-                  r: Z,
-                })
-              )
-            )
-            .map(renderCircle)}
-        </svg>
-        {copy && (
-          <AnimatePresence>
-            {copySuccess && (
-              <motion.div
-                variants={copyPopup}
-                initial={"initial"}
-                animate={"animate"}
-                exit={"exit"}
-                style={{
-                  position: "absolute",
-                  padding: p,
-                  borderRadius: "100%",
-                  backgroundColor: "var(--background-default)",
-                  fontWeight: "bold",
-                }}
-              >
-                <p style={{ fontSize: f, fontWeight: "bold" }}>{message}</p>
-              </motion.div>
-            )}
-          </AnimatePresence>
-        )}
-      </div>
-    )
+          {message}
+        </p>
+      )}
+    </div>
   );
 };
