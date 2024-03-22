@@ -81,21 +81,35 @@ export const Components = () => {
       <h3>Size</h3>
       <div className="row">
         <div className="svg-box">
+          {/* Generic */}
           <Polkicon
+            copy
             size="10rem"
-            address="13Bbi16jczqELAGBH7MaBu31ABreDmw9yFhrEiNEx6wMkNWe"
+            address="13QqEYyFfeWmBVr3QvfhwpYrXoUFDgs7ViYhxv2fvLHe6mtT"
           />
         </div>
         <div className="svg-box">
+          {/* Polkadot */}
           <Polkicon
+            copy
             size="7rem"
-            address="EkvDzBYPaageH576B7cwhZrTA9EL9CCM8p7U5eqsp8LJysn"
+            address="13QqEYyFfeWmBVr3QvfhwpYrXoUFDgs7ViYhxv2fvLHe6mtT"
           />
         </div>
         <div className="svg-box">
+          {/* Kusama */}
           <Polkicon
+            copy
             size={60}
-            address="234CHvWmTuaVtkJpLS9oxuhFd3HamcEMrfFAPYoFaetEZmY7"
+            address="Ez9kY44SEGDVceyDzRkhd5hpmkqL489sbeyCHKGr3UcfCwM"
+          />
+        </div>
+        <div className="svg-box">
+          {/* Kusama */}
+          <Polkicon
+            copy
+            size={40}
+            address="Ez9kY44SEGDVceyDzRkhd5hpmkqL489sbeyCHKGr3UcfCwM"
           />
         </div>
       </div>

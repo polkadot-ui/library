@@ -34,6 +34,7 @@
     "@fortawesome/free-regular-svg-icons": "^6.5.1",
     "@fortawesome/free-solid-svg-icons": "^6.5.1",
     "@fortawesome/react-fontawesome": "^0.2.0",
+    "@polkadot-api/substrate-bindings": "^0.0.1-87b10c43c1862eec15d3a29e752a1b05b4cc16b1.1.0",
     "@polkadot-ui/assets": "^0.5.3",
     "@polkadot-ui/core": "^2.0.2",
     "@polkadot-ui/utils": "^0.4.0",
