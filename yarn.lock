@@ -1071,7 +1071,7 @@
   resolved "https://registry.yarnpkg.com/@pkgr/core/-/core-0.1.1.tgz#1ec17e2edbec25c8306d424ecfbf13c7de1aaa31"
   integrity sha512-cq8o4cWH0ibXh9VGi5P20Tu9XF/0fFXl9EUinr9QfTM7a7p0oTA4iJRCQWppXR1Pg8dSM0UCItCkPwsk9qWWYA==
 
-"@polkadot-api/substrate-bindings@^0.0.1-87b10c43c1862eec15d3a29e752a1b05b4cc16b1.1.0":
+"@polkadot-api/substrate-bindings@0.0.1-87b10c43c1862eec15d3a29e752a1b05b4cc16b1.1.0":
   version "0.0.1-87b10c43c1862eec15d3a29e752a1b05b4cc16b1.1.0"
   resolved "https://registry.yarnpkg.com/@polkadot-api/substrate-bindings/-/substrate-bindings-0.0.1-87b10c43c1862eec15d3a29e752a1b05b4cc16b1.1.0.tgz#56c157d5b303591de0670fb4a3893583c17016d7"
   integrity sha512-orAAKbodBkSJ3s6yigu2lLPnCKeF+XjqeaaaypYcw1L3505eZAGITpW5KvvkRlr/tq5UIbv13RSI82IpikEq8A==
