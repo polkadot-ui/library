@@ -1,6 +1,3 @@
-/* @license Copyright 2024 @polkadot-ui/library authors & contributors",
-"SPDX-License-Identifier: MIT */
-
 import { Route, Routes } from "react-router-dom";
 import { routes } from "./config/routes";
 import { Menu } from "./components/Menu";
@@ -8,13 +5,10 @@ import { Header } from "./components/Header";
 import { useUi } from "./contexts/UI";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
-import "@polkadot-ui/core/css/base/structure/Body/index.css";
-import "@polkadot-ui/core/css/base/structure/Main/index.css";
-import "@polkadot-ui/core/css/base/structure/Side/index.css";
-
 
 export const Router = () => {
   const { sideMenuOpen } = useUi();
+  console.log(sideMenuOpen);
 
   return (
     <>
@@ -29,13 +23,14 @@ export const Router = () => {
         <div
           style={{
             minHeight: "calc(100vh - 5.5rem)",
-            width: "20rem"
+            width: "20rem",
           }}
         >
           <Menu />
         </div>
 
-        <div className="core-main"
+        <div
+          className="core-main"
           style={{
             minHeight: "calc(100vh - 5.5rem)",
           }}

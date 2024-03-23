@@ -48,7 +48,7 @@ export const Pie = ({
         PROGRESS_TIMEOUT
       );
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [visiblePart]);
 
   const segments = useMemo(() => {

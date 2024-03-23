@@ -1,4 +1,3 @@
-
 import { useEffect, useState, createRef, useRef } from "react";
 import "@polkadot-ui/core/css/complex/Odometer/index.css";
 import { Digit, DigitRef, Direction, Props, Status } from "./types";

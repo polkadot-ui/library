@@ -1,4 +1,4 @@
-import { valEmpty } from "../../utils"
+import { valEmpty } from "../../utils";
 import { GridProps } from "../common_types";
 import "@polkadot-ui/core/css/base/structure/Grid/index.css";
 

@@ -1,4 +1,3 @@
-
 import { JSX, useEffect, useState } from "react";
 
 import { Polkicon } from "../Polkicon";
@@ -6,7 +5,7 @@ import { Card } from "../Card";
 import { Grid } from "../Grid";
 import { GridJustify, GridSizes, GridItemsAlignment } from "../common_types";
 import { valEmpty } from "../../utils";
-import { ellipsisFn } from "@polkadot-ui/utils"
+import { ellipsisFn } from "@polkadot-ui/utils";
 import {
   HPositionLR,
   HPosition,

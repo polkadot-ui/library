@@ -1,4 +1,3 @@
-
 import { PolkiconProps } from "./types";
 
 import { getParams } from "./utils";
@@ -99,7 +98,7 @@ export const Polkicon = ({
         setCopySuccess(false);
       }, copyTimeout);
     }
-  }, [copy, copySuccess]);
+  }, [copy, copySuccess, copyTimeout]);
 
   const { c, r, rroot3o2, ro2, rroot3o4, ro4, r3o4, z, rot, scheme, palette } =
     getParams(address);

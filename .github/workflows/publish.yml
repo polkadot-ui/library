@@ -37,7 +37,7 @@ jobs:
         with:
           node-version: 18
           registry-url: https://registry.npmjs.org
-          cache: 'pnpm'
+          cache: "pnpm"
 
       # Check whether a package build is a new version.
       - name: Check New Version From Build

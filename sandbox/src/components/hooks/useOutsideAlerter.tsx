@@ -1,5 +1,3 @@
-/* @license Copyright 2024 @polkadot-ui/library authors & contributors",
-"SPDX-License-Identifier: MIT */
 import { AnyFunction, AnyObject } from "@packages/utils/lib/types";
 import { useEffect } from "react";
 

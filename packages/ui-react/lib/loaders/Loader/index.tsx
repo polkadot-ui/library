@@ -1,5 +1,4 @@
-
-import { LoaderProps } from "../types"
+import { LoaderProps } from "../types";
 import { Cube } from "../Cube";
 import { Dots } from "../Dots";
 import { Line } from "../Line";
