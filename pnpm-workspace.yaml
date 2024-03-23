@@ -1,0 +1,7 @@
+# pnpm-workspace.yaml
+packages:
+  - 'packages/assets'
+  - 'packages/ui-core'
+  - 'packages/ui-react'
+  - 'packages/utils'
+  - 'sandbox'

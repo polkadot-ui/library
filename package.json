@@ -5,18 +5,15 @@
   "description": "Polkadot UI",
   "private": "true",
   "scripts": {
-    "build:directory": "node builder/run.mjs -t directory:build",
-    "build:mock": "npm run build:mock --workspaces --if-present",
-    "clear": "npm run --workspaces clear && rm -rf node_modules coverage",
-    "prebuild": "node builder/run.mjs -t packages:prebuild",
-    "build": "npm run build --workspaces --if-present",
-    "postbuild": "node builder/run.mjs -t packages:postbuild",
+    "build": "pnpm  --parallel --filter \"./**\" build",
+    "clear": "pnpm run --parallel clear && rm -rf node_modules coverage",
     "lint": "eslint './**' --fix && npx prettier --write . && npx stylelint '**/*.scss' --fix",
-    "patch": "node builder/run.mjs -t packages:patch",
-    "sandbox": "npm run dev -w sandbox",
+    "sandbox": "pnpm --filter ./sandbox run dev",
     "test": "npm run test --workspaces --if-present"
   },
   "devDependencies": {
+    "kill-port": "^2.0.1",
+    "@originjs/vite-plugin-federation": "^1.1.10",
     "@fortawesome/fontawesome-svg-core": "^6.5.1",
     "@fortawesome/free-brands-svg-icons": "^6.5.1",
     "@fortawesome/free-regular-svg-icons": "^6.5.1",
@@ -79,7 +76,6 @@
     "packages/ui-core",
     "packages/ui-react",
     "packages/assets",
-    "builder",
     "sandbox"
   ],
   "repository": {

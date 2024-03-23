@@ -19,8 +19,11 @@
   "scripts": {
     "prebuild": "node ./lib/external/polkadot_directory_repo.js",
     "build:mock": "node ../../builder/run.mjs -t package:build -p assets",
-    "build": "rm -fr dist && gulp --silent && cp LICENSE dist && yarn build:mock",
+    "build": "rm -fr dist && gulp --silent && cp LICENSE dist && pnpm run build:mock",
     "postbuild": "rm -rf ./lib/external/yaml ./lib/external/json ./lib/external/index.ts",
     "clear": "rm -rf node_modules dist tsconfig.tsbuildinfo"
+  },
+  "devDependencies": {
+    "merge-stream": "^2.0.0"
   }
 }
