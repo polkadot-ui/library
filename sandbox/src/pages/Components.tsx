@@ -1,9 +1,7 @@
 /* @license Copyright 2024 @polkadot-ui/library authors & contributors
 SPDX-License-Identifier: MIT */
 
-import { Odometer } from "../../../packages/ui-react/lib/complex/Odometer";
-import { Polkicon } from "../../../packages/ui-react/lib/icons/Polkicon";
-import { Chart } from "../../../packages/ui-react/lib/base/structure/Chart";
+import { Odometer, Polkicon, Chart } from "@packages/ui-react/dist";
 import BigNumber from "bignumber.js";
 import { useState } from "react";
 

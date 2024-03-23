@@ -3,8 +3,6 @@ SPDX-License-Identifier: MIT */
 
 import { ReactNode } from "react";
 import { Components } from "../pages/Components";
-import { Complex } from "../pages/Complex";
-import { Buttons } from "../pages/Buttons";
 
 type Routes = {
   name: string;
@@ -35,17 +33,6 @@ const pages = [
     element: <Components />,
     default: true,
   },
-  {
-    path: "complex",
-    name: "Complex",
-    element: <Complex />,
-    default: true,
-  },
-  {
-    path: "buttons",
-    name: "Buttons",
-    element: <Buttons />,
-  },
 ];
 
 export const routes: Routes = [
@@ -62,7 +49,7 @@ export const routeCategories: RouteCategories = [
     name: "Navigation",
     paths: [
       {
-        paths: ["components", "complex", "buttons"],
+        paths: ["components"],
       },
     ],
   },

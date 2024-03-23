@@ -2,22 +2,23 @@
 "SPDX-License-Identifier: MIT */
 
 import { Route, Routes } from "react-router-dom";
-import { Side } from "../../packages/ui-react/lib/base/structure/Side";
-import { Body } from "../../packages/ui-react/lib/base/structure/Body";
-import { Main } from "../../packages/ui-react/lib/base/structure/Main";
 import { routes } from "./config/routes";
 import { Menu } from "./components/Menu";
 import { Header } from "./components/Header";
 import { useUi } from "./contexts/UI";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
+import "@polkadot-ui/core/css/base/structure/Body/index.css";
+import "@polkadot-ui/core/css/base/structure/Main/index.css";
+import "@polkadot-ui/core/css/base/structure/Side/index.css";
+
 
 export const Router = () => {
   const { sideMenuOpen } = useUi();
 
   return (
     <>
-      <Body>
+      <div className="core-body">
         {/* App header */}
         <Header />
 
@@ -25,18 +26,16 @@ export const Router = () => {
         <ToggleMenu />
 
         {/* Left side menu */}
-        <Side
-          open={sideMenuOpen}
-          minimised={false}
+        <div
           style={{
             minHeight: "calc(100vh - 5.5rem)",
+            width: "20rem"
           }}
-          width="20rem"
         >
           <Menu />
-        </Side>
+        </div>
 
-        <Main
+        <div className="core-main"
           style={{
             minHeight: "calc(100vh - 5.5rem)",
           }}
@@ -50,8 +49,8 @@ export const Router = () => {
               </Routes>
             </div>
           </div>
-        </Main>
-      </Body>
+        </div>
+      </div>
     </>
   );
 };
