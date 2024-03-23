@@ -1,6 +1,3 @@
-/* @license Copyright 2024 @polkadot-ui/library authors & contributors
-SPDX-License-Identifier: MIT */
-
 import { describe, expect, test } from "vitest";
 import { AnyObject, EvalMessages } from "../lib/types";
 import * as fn from "../lib/index";

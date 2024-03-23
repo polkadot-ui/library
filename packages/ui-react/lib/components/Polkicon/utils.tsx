@@ -1,6 +1,3 @@
-/* @license Copyright 2024 @polkadot-ui/library authors & contributors
-SPDX-License-Identifier: MIT */
-
 import { getSs58AddressInfo } from "@polkadot-api/substrate-bindings";
 import { ChainName, Circle, Scheme } from "./types";
 import { blake2b } from "@noble/hashes/blake2b";

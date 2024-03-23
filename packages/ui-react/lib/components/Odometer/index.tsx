@@ -1,5 +1,3 @@
-/* @license Copyright 2024 @polkadot-ui/library authors & contributors
-SPDX-License-Identifier: MIT */
 
 import { useEffect, useState, createRef, useRef } from "react";
 import "@polkadot-ui/core/css/complex/Odometer/index.css";

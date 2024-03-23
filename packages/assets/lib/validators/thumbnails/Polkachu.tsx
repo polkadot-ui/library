@@ -1,6 +1,3 @@
-/* @license Copyright 2024 @polkadot-ui/library authors & contributors
-SPDX-License-Identifier: MIT */
-
 const Polkachu = () => (
   <svg
     viewBox="0 0 44.426 44.424"

@@ -1,6 +1,3 @@
-/* @license Copyright 2024 @polkadot-ui/library authors & contributors
-SPDX-License-Identifier: MIT */
-
 export const Talisman = () => (
   <svg
     viewBox="0 0 32 32"

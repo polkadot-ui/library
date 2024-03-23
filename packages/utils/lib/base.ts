@@ -1,6 +1,3 @@
-/* @license Copyright 2024 @polkadot-ui/library authors & contributors
-SPDX-License-Identifier: MIT */
-
 import { BigNumber } from "bignumber.js";
 import { AnyFunction, AnyJson } from "./types";
 

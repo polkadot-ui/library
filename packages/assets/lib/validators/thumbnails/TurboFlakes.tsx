@@ -1,6 +1,3 @@
-/* @license Copyright 2024 @polkadot-ui/library authors & contributors
-SPDX-License-Identifier: MIT */
-
 const TurboFlakes = () => (
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 156.84 156.84">
     <circle

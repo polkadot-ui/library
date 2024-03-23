@@ -1,6 +1,3 @@
-/* @license Copyright 2024 @polkadot-ui/library authors & contributors
-SPDX-License-Identifier: MIT */
-
 export const POLKADOT_NETWORK_URL =
   "https://raw.githubusercontent.com/polkadot-ui/polkadot_network_directory/master/chain_info/";
 
