@@ -26,3 +26,4 @@ CHANGELOG.md
 
 pnpm-workspace.yaml
 pnpm-lock.yaml
+*.yaml
