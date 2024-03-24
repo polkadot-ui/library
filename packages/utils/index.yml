@@ -3,11 +3,11 @@
 directory:
   - name: Base
     description: A collection of reusable utilities for manipulating string / number / arrays etc.
-    doc: https://polkadot-ui.github.io/base-utilities
+    doc: https://polkadot-ui.info/#/base-utilities
 
   - name: Unit
     description: A collection of reusable utilities for manipulating chain units.
-    doc: https://polkadot-ui.github.io/unit_utilities
+    doc: https://polkadot-ui.info/#/unit_utilities
 
 npm:
   title: "Polkadot UI: Utils"

@@ -2,7 +2,7 @@
 
 directory:
   - name: Using Polkadot UI Themes
-    doc: https://polkadot-ui.github.io/using-themes
+    doc: https://polkadot-ui.info/#/using-themes
 
 npm:
   title: "Polkadot UI: Core"

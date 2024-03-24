@@ -2,7 +2,7 @@ name: Publish
 
 on:
   push:
-    branches: [main, nik-remove-stupidities-from-lib]
+    branches: [main]
 
 jobs:
   # Dynamically fetches packages to publish from the `packages` folder. Uses `sed` to format the
@@ -46,7 +46,7 @@ jobs:
 
       # Publish a package build from `dist` folder. Only runs if the package is a new version.
       - name: Publish Package From Build
-        run: npm publish --dry-run
+        run: npm publish
         working-directory: "packages/${{ matrix.package }}/dist"
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
