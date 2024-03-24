@@ -23,11 +23,10 @@
   "homepage": "https://polkadot.info",
   "scripts": {
     "dev": "vite",
-    "build": "tsc --p ./tsconfig-build.json && vite build",
+    "build": "tsc --p ./tsconfig-build.json && vite build && pnpm run prepare",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "prepare": "mkdir -p dist &&  cp README.md ./dist/. && cp package.json ./dist/. && cp LICENSE ./dist/.",
-    "prepublishOnly": "pnpm run build && pnpm run prepare"
+    "prepare": "mkdir -p dist &&  cp README.md ./dist/. && cp package.json ./dist/. && cp LICENSE ./dist/."
   },
   "peerDependencies": {
     "@noble/hashes": "^1.4.0",
