@@ -1,7 +1,8 @@
 {
   "name": "polkadot-ui-assets",
   "license": "MIT",
-  "version": "0.5.3",
+  "version": "0.0.1-alpha.0",
+  "author": "Nikolaos Kontakis<wirednkod@gmail.com>",
   "type": "module",
   "description": "Data sources and static assets for Polkadot dApps.",
   "keywords": [

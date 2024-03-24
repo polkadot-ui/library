@@ -1,7 +1,8 @@
 {
-  "name": "polkadot-ui-react",
+  "name": "@polkadot-ui/react",
   "license": "MIT",
-  "version": "0.5.5",
+  "version": "0.0.1-alpha.0",
+  "author": "Nikolaos Kontakis<wirednkod@gmail.com>",
   "type": "module",
   "description": "Functional React components for Polkadot dApps.",
   "keywords": [
@@ -14,18 +15,19 @@
   "bugs": {
     "url": "https://github.com/polkadot-ui/library/issues"
   },
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
-  "files": [
-    "dist"
-  ],
+  "main": "index.js",
+  "types": "index.d.ts",
+  "publishConfig": {
+    "directory": "dist"
+  },
   "homepage": "https://polkadot.info",
   "scripts": {
     "dev": "vite",
     "build": "tsc --p ./tsconfig-build.json && vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "prepublishOnly": "pnpm run build"
+    "prepare": "cp README.md dist && cp package.json dist && cp LICENSE dist",
+    "prepublishOnly": "pnpm run build && pnpm run prepare"
   },
   "peerDependencies": {
     "@noble/hashes": "^1.4.0",
