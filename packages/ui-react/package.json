@@ -26,7 +26,7 @@
     "build": "tsc --p ./tsconfig-build.json && vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "prepare": "cp README.md ./dist/. && cp package.json ./dist/. && cp LICENSE ./dist/.",
+    "prepare": "rm -rf ./dist && mkdir dist &&  cp README.md ./dist/. && cp package.json ./dist/. && cp LICENSE ./dist/.",
     "prepublishOnly": "pnpm run build && pnpm run prepare"
   },
   "peerDependencies": {
