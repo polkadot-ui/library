@@ -3,3 +3,4 @@ SPDX-License-Identifier: MIT */
 
 export * from "./base";
 export * from "./unit";
+export * from "./types";

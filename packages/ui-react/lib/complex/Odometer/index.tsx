@@ -2,8 +2,37 @@
 SPDX-License-Identifier: MIT */
 
 import { useEffect, useState, createRef, useRef } from "react";
+import { MutableRefObject } from "react";
 import "@polkadot-ui/core/css/complex/Odometer/index.css";
-import { Digit, DigitRef, Direction, Props, Status } from "./types";
+
+interface OdometerProps {
+  value: number | string;
+  wholeColor?: string;
+  decimalColor?: string;
+  spaceBefore?: string | number;
+  spaceAfter?: string | number;
+  zeroDecimals?: number;
+}
+
+export type Digit =
+  | "comma"
+  | "dot"
+  | "0"
+  | "1"
+  | "2"
+  | "3"
+  | "4"
+  | "5"
+  | "6"
+  | "7"
+  | "8"
+  | "9";
+
+export type DigitRef = MutableRefObject<HTMLSpanElement>;
+
+export type Status = "new" | "inactive" | "transition" | "finished";
+
+export type Direction = "down" | "none";
 
 export const Odometer = ({
   value,
@@ -12,7 +41,7 @@ export const Odometer = ({
   wholeColor = "var(--text-color-primary)",
   decimalColor = "var(--text-color-tertiary)",
   zeroDecimals = 0,
-}: Props) => {
+}: OdometerProps) => {
   // Store all possible digits.
   const [allDigits] = useState<Digit[]>([
     "comma",
