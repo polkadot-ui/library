@@ -24,6 +24,8 @@ export const Router = () => {
           style={{
             minHeight: "calc(100vh - 5.5rem)",
             width: "20rem",
+            display: "flex",
+            float: "left",
           }}
         >
           <Menu />
@@ -33,6 +35,9 @@ export const Router = () => {
           className="core-main"
           style={{
             minHeight: "calc(100vh - 5.5rem)",
+            width: "calc(100vw - 20rem)",
+            display: "flex",
+            justifyContent: "center",
           }}
         >
           <div className="main-area">
