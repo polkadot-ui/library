@@ -2,7 +2,7 @@ name: Publish Utils
 
 on:
   push:
-    branches: [main, nik-publish-fix]
+    branches: [main]
 
 jobs:
   # Uses the above list of packages to check for new versions, and publishes them if they are new.
