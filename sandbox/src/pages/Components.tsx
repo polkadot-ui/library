@@ -1,6 +1,11 @@
-import { Odometer, Polkicon, Chart } from "@packages/ui-react";
+import {
+  Odometer,
+  Polkicon,
+  Chart,
+  AccountCard,
+  IconProps,
+} from "@packages/ui-react/lib/components";
 
-import { AccountCard, IconProps } from "@packages/ui-react/lib/components";
 import BigNumber from "bignumber.js";
 import { useState } from "react";
 
