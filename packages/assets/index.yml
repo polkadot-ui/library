@@ -3,11 +3,11 @@
 directory:
   - name: Web3 Wallet Extensions
     description: A list of popular Web3 wallet extensions with metadata and icons.
-    doc: https://polkadot-ui.github.io//extensions
+    doc: https://polkadot-ui.info/#/extensions
 
   - name: Validator Operators
     description: A list of Polkadot validator operators with metadata and thumbnails.
-    doc: https://polkadot-ui.github.io/validators
+    doc: https://polkadot-ui.info/#/validators
 
 npm:
   title: "Polkadot UI: Assets"

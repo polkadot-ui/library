@@ -1,6 +1,3 @@
-/* @license Copyright 2024 @polkadot-ui/library authors & contributors
-SPDX-License-Identifier: MIT */
-
 import { ReactNode, CSSProperties } from "react";
 
 // A generic type to handle React components. We assume the component may have

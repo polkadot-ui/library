@@ -1,0 +1,6 @@
+lib
+public
+.*
+*.json
+!package.json
+*config.ts

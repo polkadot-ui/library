@@ -1,6 +1,3 @@
-/* @license Copyright 2024 @polkadot-ui/library authors & contributors
-SPDX-License-Identifier: MIT */
-
 export const PolkadotVault = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"

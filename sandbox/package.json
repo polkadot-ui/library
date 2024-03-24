@@ -17,6 +17,10 @@
     "svgo": "^3.2.0"
   },
   "devDependencies": {
+    "@fortawesome/free-brands-svg-icons": "^6.5.1",
+    "@fortawesome/free-regular-svg-icons": "^6.5.1",
+    "@fortawesome/free-solid-svg-icons": "^6.5.1",
+    "@fortawesome/react-fontawesome": "^0.2.0",
     "@testing-library/react": "^14.2.2",
     "@types/mocha": "^10.0.6",
     "@types/react": "^18.2.67",
@@ -30,6 +34,7 @@
     "@wdio/globals": "^8.34.1",
     "@wdio/mocha-framework": "^8.32.3",
     "@wdio/spec-reporter": "^8.32.4",
+    "bignumber.js": "^9.1.1",
     "eslint": "^8.57.0",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.6",

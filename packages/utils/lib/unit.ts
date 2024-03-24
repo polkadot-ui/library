@@ -1,6 +1,3 @@
-/* @license Copyright 2024 @polkadot-ui/library authors & contributors
-SPDX-License-Identifier: MIT */
-
 import { decodeAddress, encodeAddress } from "@polkadot/keyring";
 import { hexToU8a, isHex, u8aToString, u8aUnwrapBytes } from "@polkadot/util";
 import { BigNumber } from "bignumber.js";

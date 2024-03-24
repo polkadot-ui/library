@@ -1,7 +1,8 @@
 {
   "name": "polkadot-ui-core",
   "license": "MIT",
-  "version": "2.0.2",
+  "version": "0.0.1-alpha.0",
+  "author": "Nikolaos Kontakis<wirednkod@gmail.com>",
   "description": "Core styles and themes for Polkadot dApps.",
   "keywords": [
     "Polkadot",
@@ -14,7 +15,7 @@
   "homepage": "https://github.com/polkadot-ui/library#readme",
   "scripts": {
     "build:mock": "node ../../builder/run.mjs -t package:build -p ui-core",
-    "build": "rm -fr dist && gulp && yarn build:mock",
+    "build": "rm -fr dist && gulp && pnpm run build:mock",
     "watch": "rm -fr dist && gulp --silent && gulp --silent --t watch",
     "clear": "rm -rf node_modules dist tsconfig.tsbuildinfo"
   }

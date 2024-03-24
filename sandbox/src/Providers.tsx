@@ -1,6 +1,3 @@
-/* @license Copyright 2024 @polkadot-ui/library authors & contributors
-SPDX-License-Identifier: MIT */
-
 import { AnyJson, AnyObject } from "@packages/utils/lib/types";
 import { ReactNode } from "react";
 import { ThemesProvider } from "./contexts/Theme";

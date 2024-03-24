@@ -1,5 +1,3 @@
-/* @license Copyright 2024 @polkadot-ui/library authors & contributors
-SPDX-License-Identifier: MIT */
 /* eslint-disable no-undef */
 
 import { $, expect } from "@wdio/globals";

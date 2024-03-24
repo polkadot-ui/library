@@ -1,6 +1,3 @@
-/* @license Copyright 2024 @polkadot-ui/library authors & contributors
-SPDX-License-Identifier: MIT */
-
 import { Fragment, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import {
