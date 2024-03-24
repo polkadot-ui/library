@@ -1,6 +1,3 @@
-/* @license Copyright 2024 @polkadot-ui/library authors & contributors
-SPDX-License-Identifier: MIT */
-
 import "@polkadot-ui/core/css/loaders/Dots/index.css";
 
 export const Dots = () => (

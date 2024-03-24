@@ -23,6 +23,6 @@ postcss.config.js
 LICENSE
 README.md
 CHANGELOG.md
-.licenserc.json
 
-*json_export_index*
+pnpm-workspace.yaml
+pnpm-lock.yaml

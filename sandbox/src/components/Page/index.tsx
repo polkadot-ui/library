@@ -1,6 +1,3 @@
-/* @license Copyright 2024 @polkadot-ui/library authors & contributors
-SPDX-License-Identifier: MIT */
-
 import { useTheme } from "../../contexts/Theme";
 // Import the base ui-core styles to ensure the theme styles are applied instead of doc styles.
 import "../../../../packages/ui-core/dist/css/styles/index.css";

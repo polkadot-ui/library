@@ -9,13 +9,13 @@ Core React components. Using SCSS, Typescript etc. Built using Rollup, and publi
 #### Start the development server for real-time component feedback.
 
 ```
-yarn dev
+pnpm run dev
 ```
 
 #### Build the package into an optimised Rollup build.
 
 ```
-yarn build
+pnpm run build
 ```
 
 #### Publish the package to NPM.

@@ -10,4 +10,5 @@
 README.md
 *CODEOWNERS*
 CHANGELOG.md
-.licenserc.json
+pnpm-workspace.yaml
+pnpm-lock.yaml

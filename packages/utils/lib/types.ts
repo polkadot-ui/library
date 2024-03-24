@@ -1,6 +1,3 @@
-/* @license Copyright 2024 @polkadot-ui/library authors & contributors
-SPDX-License-Identifier: MIT */
-
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export type AnyJson = any;
 

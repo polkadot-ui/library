@@ -29,28 +29,23 @@ jobs:
         package: ${{ fromJson(needs.get-packages.outputs.packages) }}
     steps:
       - uses: actions/checkout@v4
-      - run: yarn install && yarn build:mock
+      - uses: pnpm/action-setup@v3
+        with:
+          version: 8
+      - run: pnpm install
       - uses: actions/setup-node@v4
         with:
           node-version: 18
           registry-url: https://registry.npmjs.org
-
-      # Check whether a package build is a new version.
-      - name: Check New Version From Build
-        id: check_new_version_build
-        uses: PostHog/check-package-version@v2
-        with:
-          path: "./packages/${{ matrix.package }}/dist"
+          cache: "pnpm"
 
       # Build the package if new version is available.
       - name: Build Package
-        if: steps.check_new_version_build.outputs.is-new-version == 'true'
-        run: yarn build
+        run: pnpm run build
         working-directory: "packages/${{ matrix.package }}"
 
       # Publish a package build from `dist` folder. Only runs if the package is a new version.
       - name: Publish Package From Build
-        if: steps.check_new_version_build.outputs.is-new-version == 'true'
         run: npm publish
         working-directory: "packages/${{ matrix.package }}/dist"
         env:

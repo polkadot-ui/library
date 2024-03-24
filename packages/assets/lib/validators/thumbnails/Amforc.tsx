@@ -1,6 +1,3 @@
-/* @license Copyright 2024 @polkadot-ui/library authors & contributors
-SPDX-License-Identifier: MIT */
-
 const Amforc = () => (
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 94.12 94.24">
     <defs>

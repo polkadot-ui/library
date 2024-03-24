@@ -1,6 +1,3 @@
-/* @license Copyright 2024 @polkadot-ui/library authors & contributors
-SPDX-License-Identifier: MIT */
-
 export const FearlessWallet = () => (
   <svg
     viewBox="0 0 256 256"

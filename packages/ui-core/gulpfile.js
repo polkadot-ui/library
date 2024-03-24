@@ -1,5 +1,3 @@
-/* @license Copyright 2024 @polkadot-ui/library authors & contributors
-SPDX-License-Identifier: MIT */
 /* eslint-disable @typescript-eslint/no-var-requires */
 
 const { src, dest, series, watch } = require("gulp");

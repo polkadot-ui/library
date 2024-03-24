@@ -1,6 +1,3 @@
-/* @license Copyright 2024 @polkadot-ui/library authors & contributors",
-"SPDX-License-Identifier: MIT */
-
 import minimist from "minimist";
 import * as packages from "./tasks/packages.mjs";
 import * as directory from "./tasks/directory.mjs";

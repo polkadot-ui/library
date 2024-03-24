@@ -1,6 +1,3 @@
-/* @license Copyright 2024 @polkadot-ui/library authors & contributors",
-"SPDX-License-Identifier: MIT */
-
 import { useState, ReactNode, useContext, createContext } from "react";
 import * as defaults from "./defaults";
 import type { UIContextInterface } from "./types";

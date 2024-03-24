@@ -1,7 +1,3 @@
-/* @license Copyright 2024 @polkadot-ui/library authors & contributors",
-"SPDX-License-Identifier: MIT */
-
-import { setStateWithRef } from "@polkadot-ui/utils";
 import { useState, useRef, ReactNode, createContext, useContext } from "react";
 import { defaultThemeContext } from "./defaults";
 import type { Mode, ThemeContextInterface } from "./types";
@@ -38,7 +34,8 @@ export const ThemesProvider = ({ children }: { children: ReactNode }) => {
     .addEventListener("change", (event) => {
       const newMode = event.matches ? "dark" : "light";
       localStorage.setItem("mode", newMode);
-      setStateWithRef(newMode, setMode, modeRef);
+      setMode(newMode);
+      modeRef.current = newMode;
     });
 
   // Toggle the active mode.
@@ -47,7 +44,8 @@ export const ThemesProvider = ({ children }: { children: ReactNode }) => {
       maybeTheme || (modeRef.current === "dark" ? "light" : "dark");
 
     localStorage.setItem("mode", newMode);
-    setStateWithRef(newMode, setMode, modeRef);
+    setMode(newMode);
+    modeRef.current = newMode;
   };
 
   return (

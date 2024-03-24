@@ -1,6 +1,3 @@
-/* @license Copyright 2024 @polkadot-ui/library authors & contributors
-SPDX-License-Identifier: MIT */
-
 import { describe, expect, test } from "vitest";
 import * as fn from "../lib/index";
 import BigNumber from "bignumber.js";
