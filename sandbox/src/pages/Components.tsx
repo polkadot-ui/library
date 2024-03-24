@@ -1,4 +1,6 @@
-import { Odometer, Polkicon, Chart } from "@packages/ui-react/dist";
+import { Odometer, Polkicon, Chart } from "@packages/ui-react";
+
+import { AccountCard, IconProps } from "@packages/ui-react/lib/components";
 import BigNumber from "bignumber.js";
 import { useState } from "react";
 
@@ -12,6 +14,14 @@ export const Components = () => {
 
   const [val2, setVal2] = useState<number>(1201903.456789);
   const updateValue2 = () => setVal2(Number((val2 + 17491.390013).toFixed(4)));
+
+  // Account card options
+  const iconProps: IconProps = {
+    copy: false,
+    position: "right",
+    gridSize: 3,
+    justify: "space-around",
+  };
 
   // Chart colors
   const colors = [
@@ -69,6 +79,21 @@ export const Components = () => {
         >
           Trigger Update
         </button>
+      </div>
+
+      <h2>AccountCard</h2>
+      <p>A "card" showing the account with the Polkicon</p>
+      <div className="row">
+        <div className="svg-box">
+          <AccountCard
+            style={{ padding: "1rem", width: "500px" }}
+            icon={iconProps}
+            title={{
+              address: "1f1yYj2bCFhJCTVdeWLDueUsrZynLAaj6jeMy18fjZ7Cr73",
+            }}
+            ellipsis={{ active: true, amount: 10, position: "center" }}
+          />
+        </div>
       </div>
 
       <h2>Polkicon</h2>

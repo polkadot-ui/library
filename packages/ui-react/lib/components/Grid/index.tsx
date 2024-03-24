@@ -21,7 +21,7 @@ export const Grid = ({
     (!isRow ? "column" : "row") +
     // In case of a row then style it
     valEmpty(isRow && expanded, "expanded") +
-    justify +
+    valEmpty(justify, justify) +
     valEmpty(alignItems, "align-" + alignItems) +
     // In case of a column then style it
     valEmpty(!isRow && !!sm, "sm-" + sm) +

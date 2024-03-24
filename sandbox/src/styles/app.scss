@@ -105,6 +105,7 @@
 .main-area {
   /* Leave enough room to show footer where content does not consume 100vh. */
   min-height: calc(100vh - 5.5rem);
+  width: 100%;
 
   @media (width < 1200px) {
     padding: 0 2.5rem;

@@ -172,7 +172,7 @@ export const AccountCard = ({
               }
             : {}
         )}
-        className={`${title?.className} ${fontClasses
+        className={`${title?.className || null} ${fontClasses
           ?.filter((a) => a.trim() != "")
           ?.join("")}`}
       >
