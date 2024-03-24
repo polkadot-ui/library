@@ -5,8 +5,6 @@ on:
     branches: [main, nik-publish-fix]
 
 jobs:
-  # Uses the above list of packages to check for new versions, and publishes them if they are new.
-  # NOTE: Publishing currently frozen.
   npm-publish:
     runs-on: ubuntu-latest
     steps:
@@ -21,24 +19,13 @@ jobs:
           registry-url: https://registry.npmjs.org
           cache: "pnpm"
 
-      - name: Check package version
-        id: cpv
-        uses: PostHog/check-package-version@v2
-
-      - name: Echo versions
-        run: |
-          echo "Committed version: ${{ steps.cpv.outputs.committed-version }}"
-          echo "Published version: ${{ steps.cpv.outputs.published-version }}"
-
       # Build the package if new version is available.
       - name: Build Package
-        if: steps.cpv.outputs.is-new-version == 'true'
         run: pnpm run build
         working-directory: "packages/ui-react"
 
       # Publish a package build from `dist` folder. Only runs if the package is a new version.
       - name: Publish Package From Build
-        if: steps.cpv.outputs.is-new-version == 'true'
         run: npm publish
         working-directory: "packages/ui-react/dist"
         env:
