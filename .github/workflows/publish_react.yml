@@ -1,32 +1,45 @@
-# name: Publish React
+name: Publish React
 
-# on:
-#   push:
-#     branches: [main, nik-publish-fix]
+on:
+  push:
+    branches: [main, nik-publish-fix]
 
-# jobs:
-#   npm-publish:
-#     runs-on: ubuntu-latest
-#     steps:
-#       - uses: actions/checkout@v4
-#       - uses: pnpm/action-setup@v3
-#         with:
-#           version: 8
-#       - run: pnpm install
-#       - uses: actions/setup-node@v4
-#         with:
-#           node-version: 18
-#           registry-url: https://registry.npmjs.org
-#           cache: "pnpm"
+jobs:
+  # Uses the above list of packages to check for new versions, and publishes them if they are new.
+  # NOTE: Publishing currently frozen.
+  npm-publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v3
+        with:
+          version: 8
+      - run: pnpm install
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 18
+          registry-url: https://registry.npmjs.org
+          cache: "pnpm"
 
-#       # Build the package if new version is available.
-#       - name: Build Package
-#         run: pnpm run build
-#         working-directory: "packages/ui-react"
+      - name: Check package version
+        id: cpv
+        uses: PostHog/check-package-version@v2
 
-#       # Publish a package build from `dist` folder. Only runs if the package is a new version.
-#       - name: Publish Package From Build
-#         run: npm publish
-#         working-directory: "packages/ui-react/dist"
-#         env:
-#           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      - name: Echo versions
+        run: |
+          echo "Committed version: ${{ steps.cpv.outputs.committed-version }}"
+          echo "Published version: ${{ steps.cpv.outputs.published-version }}"
+
+      # Build the package if new version is available.
+      - name: Build Package
+        if: steps.cpv.outputs.is-new-version == 'true'
+        run: pnpm run build
+        working-directory: "packages/ui-react"
+
+      # Publish a package build from `dist` folder. Only runs if the package is a new version.
+      - name: Publish Package From Build
+        if: steps.cpv.outputs.is-new-version == 'true'
+        run: npm publish
+        working-directory: "packages/ui-react/dist"
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
