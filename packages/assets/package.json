@@ -1,7 +1,7 @@
 {
   "name": "polkadot-ui-assets",
   "license": "MIT",
-  "version": "0.0.1-alpha.0",
+  "version": "0.0.1-alpha.1",
   "author": "Nikolaos Kontakis<wirednkod@gmail.com>",
   "type": "module",
   "description": "Data sources and static assets for Polkadot dApps.",
@@ -20,7 +20,7 @@
   "scripts": {
     "prebuild": "node ./lib/external/polkadot_directory_repo.js",
     "build:mock": "node ../../builder/run.mjs -t package:build -p assets",
-    "build": "rm -fr dist && gulp --silent && cp LICENSE dist && pnpm run build:mock",
+    "build": "rm -rf dist && gulp --silent && cp LICENSE dist && pnpm run prebuild && pnpm run build:mock",
     "postbuild": "rm -rf ./lib/external/yaml ./lib/external/json ./lib/external/index.ts",
     "clear": "rm -rf node_modules dist tsconfig.tsbuildinfo"
   },
