@@ -141,11 +141,11 @@ importers:
         specifier: 0.0.1-87b10c43c1862eec15d3a29e752a1b05b4cc16b1.1.0
         version: 0.0.1-87b10c43c1862eec15d3a29e752a1b05b4cc16b1.1.0
       '@polkadot-ui/core':
-        specifier: ^2.0.2
-        version: 2.0.2
+        specifier: ^0.0.1-alpha.0
+        version: 0.0.1-alpha.0
       '@polkadot-ui/utils':
-        specifier: ^0.4.0
-        version: 0.4.0(@polkadot/keyring@12.6.2)(@polkadot/util@12.6.2)
+        specifier: ^0.0.1-alpha.0
+        version: 0.0.1-alpha.0(@polkadot/keyring@12.6.2)(@polkadot/util@12.6.2)
       '@types/node':
         specifier: ^20.11.30
         version: 20.11.30
@@ -1610,12 +1610,12 @@ packages:
     resolution: {integrity: sha512-APi2JC/opY7eHlF7lPpPB7aY2dYbFIDjbpGR5D+sBkGyzmKWOTdecK3XdObAhgQv4SYrOYBrRTpSNr4+QgfAsg==}
     dev: true
 
-  /@polkadot-ui/core@2.0.2:
-    resolution: {integrity: sha512-RDymyKjY/pDIp46yNbKWoynl4HKvXG6mi2KO9eR2w0w96isj4DpnjhEMrBvUB7D3YP5XnF4QRu65HNRwh3WIlQ==}
+  /@polkadot-ui/core@0.0.1-alpha.0:
+    resolution: {integrity: sha512-TPItElBkMp4jI+RnP7Fmg9S1T7ShjB5MsYT4JnXwFSmw3AfMJQj8gsyawKpBKQWzRZ2iEZPEkcBr+fHuaZ7bzQ==}
     dev: true
 
-  /@polkadot-ui/utils@0.4.0(@polkadot/keyring@12.6.2)(@polkadot/util@12.6.2):
-    resolution: {integrity: sha512-QpMEIjgGfZlSKcypLeEmb6SmYO77XT50e4Jmr6uTSTqaUzWcnwXdBbHp9zTB828IiDMou4UWg8cTYMb6ImPsOw==}
+  /@polkadot-ui/utils@0.0.1-alpha.0(@polkadot/keyring@12.6.2)(@polkadot/util@12.6.2):
+    resolution: {integrity: sha512-cBikUAEjALyMSgFH8INlMIAk1nZyz9yEexeeGtb4jAz47EppLO+tNRcXM9hKho8NdnHu8DeCpjuTDul1/UGbgg==}
     peerDependencies:
       '@polkadot/keyring': ^12.6.2
       '@polkadot/util': ^12.6.2
