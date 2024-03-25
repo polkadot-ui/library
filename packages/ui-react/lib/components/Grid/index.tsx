@@ -1,6 +1,6 @@
 import { valEmpty } from "../../utils";
 import { GridProps } from "../common_types";
-import "@polkadot-ui/core/css/base/structure/Grid/index.css";
+import "@polkadot-ui/core/css/components/Grid/index.css";
 
 export const Grid = ({
   alignItems,
