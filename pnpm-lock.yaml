@@ -138,32 +138,32 @@ importers:
         specifier: ^1.4.0
         version: 1.4.0
       '@polkadot-api/substrate-bindings':
-        specifier: 0.0.1-964938186318c12a68aacfe7ee10e8fa919a0491.1.0
-        version: 0.0.1-964938186318c12a68aacfe7ee10e8fa919a0491.1.0
+        specifier: 0.0.1-fee5ecb6d09dea073f130fd2a58995907bd36c9c.1.0
+        version: 0.0.1-fee5ecb6d09dea073f130fd2a58995907bd36c9c.1.0
       '@polkadot-ui/core':
         specifier: ^0.0.1-alpha.1
         version: 0.0.1-alpha.1
       '@polkadot-ui/utils':
-        specifier: ^0.0.1-alpha.0
-        version: 0.0.1-alpha.0(@polkadot/keyring@12.6.2)(@polkadot/util@12.6.2)
+        specifier: ^0.0.1-alpha.2
+        version: 0.0.1-alpha.2(@polkadot/keyring@12.6.2)(@polkadot/util@12.6.2)
       '@types/node':
         specifier: ^20.11.30
         version: 20.11.30
       '@types/react':
-        specifier: ^18.2.66
-        version: 18.2.69
+        specifier: ^18.2.70
+        version: 18.2.70
       '@types/react-dom':
         specifier: ^18.2.22
         version: 18.2.22
       '@typescript-eslint/eslint-plugin':
-        specifier: ^7.2.0
+        specifier: ^7.3.1
         version: 7.3.1(@typescript-eslint/parser@7.3.1)(eslint@8.57.0)(typescript@5.4.3)
       '@typescript-eslint/parser':
-        specifier: ^7.2.0
+        specifier: ^7.3.1
         version: 7.3.1(eslint@8.57.0)(typescript@5.4.3)
       '@vitejs/plugin-react':
         specifier: ^4.2.1
-        version: 4.2.1(vite@5.2.4)
+        version: 4.2.1(vite@5.2.6)
       eslint:
         specifier: ^8.57.0
         version: 8.57.0
@@ -177,17 +177,17 @@ importers:
         specifier: ^10.3.10
         version: 10.3.10
       typescript:
-        specifier: ^5.2.2
+        specifier: ^5.4.3
         version: 5.4.3
       vite:
-        specifier: ^5.2.0
-        version: 5.2.4(@types/node@20.11.30)(sass@1.72.0)
+        specifier: ^5.2.6
+        version: 5.2.6(@types/node@20.11.30)(sass@1.72.0)
       vite-plugin-dts:
         specifier: ^3.7.3
-        version: 3.7.3(@types/node@20.11.30)(rollup@4.13.0)(typescript@5.4.3)(vite@5.2.4)
+        version: 3.7.3(@types/node@20.11.30)(rollup@4.13.0)(typescript@5.4.3)(vite@5.2.6)
       vite-plugin-lib-inject-css:
         specifier: ^2.0.1
-        version: 2.0.1(vite@5.2.4)
+        version: 2.0.1(vite@5.2.6)
     publishDirectory: dist
 
   packages/utils:
@@ -1601,25 +1601,25 @@ packages:
     engines: {node: ^12.20.0 || ^14.18.0 || >=16.0.0}
     dev: true
 
-  /@polkadot-api/substrate-bindings@0.0.1-964938186318c12a68aacfe7ee10e8fa919a0491.1.0:
-    resolution: {integrity: sha512-y5og38vXucvRNJ90dF6SzYM6Wm68ZLIHwXOds0cI1Ir3KpgUcqsujOyd0r969t4E2ChJfoc3QaWnzErlrK4nQg==}
+  /@polkadot-api/substrate-bindings@0.0.1-fee5ecb6d09dea073f130fd2a58995907bd36c9c.1.0:
+    resolution: {integrity: sha512-7XmdG8mHiyB8jFHKqVqKtWtLRGt8N05QM1D67vsqR3aMm+16f8amwrLPj1yR26QtpcXrr88l2+umud0ZPjHLxg==}
     dependencies:
       '@noble/hashes': 1.4.0
-      '@polkadot-api/utils': 0.0.1-964938186318c12a68aacfe7ee10e8fa919a0491.1.0
+      '@polkadot-api/utils': 0.0.1-fee5ecb6d09dea073f130fd2a58995907bd36c9c.1.0
       '@scure/base': 1.1.6
       scale-ts: 1.6.0
     dev: true
 
-  /@polkadot-api/utils@0.0.1-964938186318c12a68aacfe7ee10e8fa919a0491.1.0:
-    resolution: {integrity: sha512-on2NVAb1KlN/1pJKb3G8As2GiUsWu7+ZIywwkFji8sxgBX3X81MDdXEN5viqZsCj4k6octAilp9+bSepJjNe3g==}
+  /@polkadot-api/utils@0.0.1-fee5ecb6d09dea073f130fd2a58995907bd36c9c.1.0:
+    resolution: {integrity: sha512-hMkSlhBgb+M2jgRLeXnVwkOhf1j0ZWLH/Viyd/83eaV5Y/nDzg6ezIZCEKvnqaL6cczi1yovD9ggENuNsrgacw==}
     dev: true
 
   /@polkadot-ui/core@0.0.1-alpha.1:
     resolution: {integrity: sha512-W2UD3meGzF7hv7I+mjpyO/qOirC+w+/J4EcAMdCu4Ggcc7zuA50OQH8/C1Ua5nv+N1q1SgS0OlSzR9303IDkfA==}
     dev: true
 
-  /@polkadot-ui/utils@0.0.1-alpha.0(@polkadot/keyring@12.6.2)(@polkadot/util@12.6.2):
-    resolution: {integrity: sha512-cBikUAEjALyMSgFH8INlMIAk1nZyz9yEexeeGtb4jAz47EppLO+tNRcXM9hKho8NdnHu8DeCpjuTDul1/UGbgg==}
+  /@polkadot-ui/utils@0.0.1-alpha.2(@polkadot/keyring@12.6.2)(@polkadot/util@12.6.2):
+    resolution: {integrity: sha512-bUgnVP3inL2PJ7RULYVuVwkyH62JJKRYoUMEOn5JetFuBlq0yHNXEsYrPQ/YIaluIGQXF5/Hf2V6BKOq78Y8FA==}
     peerDependencies:
       '@polkadot/keyring': ^12.6.2
       '@polkadot/util': ^12.6.2
@@ -2438,11 +2438,19 @@ packages:
   /@types/react-dom@18.2.22:
     resolution: {integrity: sha512-fHkBXPeNtfvri6gdsMYyW+dW7RXFo6Ad09nLFK0VQWR7yGLai/Cyvyj696gbwYvBnhGtevUG9cET0pmUbMtoPQ==}
     dependencies:
-      '@types/react': 18.2.69
+      '@types/react': 18.2.70
     dev: true
 
   /@types/react@18.2.69:
     resolution: {integrity: sha512-W1HOMUWY/1Yyw0ba5TkCV+oqynRjG7BnteBB+B7JmAK7iw3l2SW+VGOxL+akPweix6jk2NNJtyJKpn4TkpfK3Q==}
+    dependencies:
+      '@types/prop-types': 15.7.12
+      '@types/scheduler': 0.16.8
+      csstype: 3.1.3
+    dev: true
+
+  /@types/react@18.2.70:
+    resolution: {integrity: sha512-hjlM2hho2vqklPhopNkXkdkeq6Lv8WSZTpr7956zY+3WS5cfYUewtCzsJLsbW5dEv3lfSeQ4W14ZFeKC437JRQ==}
     dependencies:
       '@types/prop-types': 15.7.12
       '@types/scheduler': 0.16.8
@@ -2648,6 +2656,22 @@ packages:
       '@types/babel__core': 7.20.5
       react-refresh: 0.14.0
       vite: 5.2.4(@types/node@20.11.30)(sass@1.72.0)
+    transitivePeerDependencies:
+      - supports-color
+    dev: true
+
+  /@vitejs/plugin-react@4.2.1(vite@5.2.6):
+    resolution: {integrity: sha512-oojO9IDc4nCUUi8qIR11KoQm0XFFLIwsRBwHRR4d/88IWghn1y6ckz/bJ8GHDCsYEJee8mDzqtJxh15/cisJNQ==}
+    engines: {node: ^14.18.0 || >=16.0.0}
+    peerDependencies:
+      vite: ^4.2.0 || ^5.0.0
+    dependencies:
+      '@babel/core': 7.24.3
+      '@babel/plugin-transform-react-jsx-self': 7.24.1(@babel/core@7.24.3)
+      '@babel/plugin-transform-react-jsx-source': 7.24.1(@babel/core@7.24.3)
+      '@types/babel__core': 7.20.5
+      react-refresh: 0.14.0
+      vite: 5.2.6(@types/node@20.11.30)(sass@1.72.0)
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -11040,7 +11064,7 @@ packages:
       debug: 4.3.4(supports-color@8.1.1)
       pathe: 1.1.2
       picocolors: 1.0.0
-      vite: 5.2.4(@types/node@20.11.30)(sass@1.72.0)
+      vite: 5.2.6(@types/node@20.11.30)(sass@1.72.0)
     transitivePeerDependencies:
       - '@types/node'
       - less
@@ -11104,7 +11128,7 @@ packages:
       vscode-uri: 3.0.8
     dev: true
 
-  /vite-plugin-dts@3.7.3(@types/node@20.11.30)(rollup@4.13.0)(typescript@5.4.3)(vite@5.2.4):
+  /vite-plugin-dts@3.7.3(@types/node@20.11.30)(rollup@4.13.0)(typescript@5.4.3)(vite@5.2.6):
     resolution: {integrity: sha512-26eTlBYdpjRLWCsTJebM8vkCieE+p9gP3raf+ecDnzzK5E3FG6VE1wcy55OkRpfWWVlVvKkYFe6uvRHYWx7Nog==}
     engines: {node: ^14.18.0 || >=16.0.0}
     peerDependencies:
@@ -11120,7 +11144,7 @@ packages:
       debug: 4.3.4(supports-color@8.1.1)
       kolorist: 1.8.0
       typescript: 5.4.3
-      vite: 5.2.4(@types/node@20.11.30)(sass@1.72.0)
+      vite: 5.2.6(@types/node@20.11.30)(sass@1.72.0)
       vue-tsc: 1.8.27(typescript@5.4.3)
     transitivePeerDependencies:
       - '@types/node'
@@ -11157,14 +11181,14 @@ packages:
       - supports-color
     dev: true
 
-  /vite-plugin-lib-inject-css@2.0.1(vite@5.2.4):
+  /vite-plugin-lib-inject-css@2.0.1(vite@5.2.6):
     resolution: {integrity: sha512-86VU8m4t3TNPk9xfdnNDqn1OHkgrPHpP7B5wkVys4tWSLwMMIucCgJdc5wenGntLNMWKChJV0Ut3qGH6iGojMg==}
     peerDependencies:
       vite: '*'
     dependencies:
       magic-string: 0.30.8
       picocolors: 1.0.0
-      vite: 5.2.4(@types/node@20.11.30)(sass@1.72.0)
+      vite: 5.2.6(@types/node@20.11.30)(sass@1.72.0)
     dev: true
 
   /vite-plugin-svgr@4.2.0(rollup@4.13.0)(typescript@5.4.3)(vite@5.2.4):
@@ -11252,6 +11276,43 @@ packages:
 
   /vite@5.2.4(@types/node@20.11.30)(sass@1.72.0):
     resolution: {integrity: sha512-vjFghvHWidBTinu5TCymJk/lRHlR5ljqB83yugr0HA1xspUPdOZHqbqDLnZ8f9/jINrtFHTCYYyIUi+o+Q5iyg==}
+    engines: {node: ^18.0.0 || >=20.0.0}
+    hasBin: true
+    peerDependencies:
+      '@types/node': ^18.0.0 || >=20.0.0
+      less: '*'
+      lightningcss: ^1.21.0
+      sass: '*'
+      stylus: '*'
+      sugarss: '*'
+      terser: ^5.4.0
+    peerDependenciesMeta:
+      '@types/node':
+        optional: true
+      less:
+        optional: true
+      lightningcss:
+        optional: true
+      sass:
+        optional: true
+      stylus:
+        optional: true
+      sugarss:
+        optional: true
+      terser:
+        optional: true
+    dependencies:
+      '@types/node': 20.11.30
+      esbuild: 0.20.2
+      postcss: 8.4.38
+      rollup: 4.13.0
+      sass: 1.72.0
+    optionalDependencies:
+      fsevents: 2.3.3
+    dev: true
+
+  /vite@5.2.6(@types/node@20.11.30)(sass@1.72.0):
+    resolution: {integrity: sha512-FPtnxFlSIKYjZ2eosBQamz4CbyrTizbZ3hnGJlh/wMtCrlp1Hah6AzBLjGI5I2urTfNnpovpHdrL6YRuBOPnCA==}
     engines: {node: ^18.0.0 || >=20.0.0}
     hasBin: true
     peerDependencies:
