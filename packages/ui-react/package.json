@@ -31,7 +31,7 @@
   "peerDependencies": {
     "@noble/hashes": "^1.4.0",
     "@polkadot-api/substrate-bindings": "0.0.1-87b10c43c1862eec15d3a29e752a1b05b4cc16b1.1.0",
-    "@polkadot-ui/core": "^0.0.1-alpha.0",
+    "@polkadot-ui/core": "^0.0.1-alpha.1",
     "@polkadot-ui/utils": "^0.0.1-alpha.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
@@ -39,7 +39,7 @@
   "devDependencies": {
     "@noble/hashes": "^1.4.0",
     "@polkadot-api/substrate-bindings": "0.0.1-87b10c43c1862eec15d3a29e752a1b05b4cc16b1.1.0",
-    "@polkadot-ui/core": "^0.0.1-alpha.0",
+    "@polkadot-ui/core": "^0.0.1-alpha.1",
     "@polkadot-ui/utils": "^0.0.1-alpha.2",
     "@types/node": "^20.11.30",
     "@types/react": "^18.2.66",
