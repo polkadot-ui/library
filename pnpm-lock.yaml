@@ -141,8 +141,8 @@ importers:
         specifier: 0.0.1-87b10c43c1862eec15d3a29e752a1b05b4cc16b1.1.0
         version: 0.0.1-87b10c43c1862eec15d3a29e752a1b05b4cc16b1.1.0
       '@polkadot-ui/core':
-        specifier: ^0.0.1-alpha.0
-        version: 0.0.1-alpha.0
+        specifier: ^0.0.1-alpha.1
+        version: 0.0.1-alpha.1
       '@polkadot-ui/utils':
         specifier: ^0.0.1-alpha.0
         version: 0.0.1-alpha.0(@polkadot/keyring@12.6.2)(@polkadot/util@12.6.2)
@@ -1610,8 +1610,8 @@ packages:
     resolution: {integrity: sha512-APi2JC/opY7eHlF7lPpPB7aY2dYbFIDjbpGR5D+sBkGyzmKWOTdecK3XdObAhgQv4SYrOYBrRTpSNr4+QgfAsg==}
     dev: true
 
-  /@polkadot-ui/core@0.0.1-alpha.0:
-    resolution: {integrity: sha512-TPItElBkMp4jI+RnP7Fmg9S1T7ShjB5MsYT4JnXwFSmw3AfMJQj8gsyawKpBKQWzRZ2iEZPEkcBr+fHuaZ7bzQ==}
+  /@polkadot-ui/core@0.0.1-alpha.1:
+    resolution: {integrity: sha512-W2UD3meGzF7hv7I+mjpyO/qOirC+w+/J4EcAMdCu4Ggcc7zuA50OQH8/C1Ua5nv+N1q1SgS0OlSzR9303IDkfA==}
     dev: true
 
   /@polkadot-ui/utils@0.0.1-alpha.0(@polkadot/keyring@12.6.2)(@polkadot/util@12.6.2):
@@ -3495,6 +3495,7 @@ packages:
 
   /b4a@1.6.6:
     resolution: {integrity: sha512-5Tk1HLk6b6ctmjIkAcU/Ujv/1WqiDl0F0JdRCR80VsOcUlHcu7pWeWRlOqQLHfDEsVx9YH/aif5AG4ehoCtTmg==}
+    requiresBuild: true
     dev: true
 
   /bach@1.2.0:
@@ -5863,6 +5864,7 @@ packages:
 
   /fast-fifo@1.3.2:
     resolution: {integrity: sha512-/d9sfos4yxzpwkDkuN7k2SqFKtYNmCTzgfEpz82x34IM9/zc8KGxQoXg1liNC/izpRM/MBdt44Nmx41ZWqk+FQ==}
+    requiresBuild: true
     dev: true
 
   /fast-glob@3.3.2:
@@ -7408,6 +7410,7 @@ packages:
   /jest-diff@29.7.0:
     resolution: {integrity: sha512-LMIgiIrhigmPrs03JHpxUh2yISK3vLFPkAodPeo0+BuF7wA2FoQbkEg1u8gBYBThncu7e1oEDUfIXVuTqLRUjw==}
     engines: {node: ^14.15.0 || ^16.10.0 || >=18.0.0}
+    requiresBuild: true
     dependencies:
       chalk: 4.1.2
       diff-sequences: 29.6.3
@@ -7818,11 +7821,13 @@ packages:
 
   /loglevel-plugin-prefix@0.8.4:
     resolution: {integrity: sha512-WpG9CcFAOjz/FtNht+QJeGpvVl/cdR6P0z6OcXSkr8wFJOsV2GRj2j10JLfjuA4aYkcKCNIEqRGCyTife9R8/g==}
+    requiresBuild: true
     dev: true
 
   /loglevel@1.9.1:
     resolution: {integrity: sha512-hP3I3kCrDIMuRwAwHltphhDM1r8i55H33GgqjXbrisuJhF4kRhW1dNuxsRklp4bXl8DSdLaNLuiL4A/LWRfxvg==}
     engines: {node: '>= 0.6.0'}
+    requiresBuild: true
     dev: true
 
   /loose-envify@1.4.0:
@@ -9091,6 +9096,7 @@ packages:
 
   /queue-tick@1.0.1:
     resolution: {integrity: sha512-kJt5qhMxoszgU/62PLP1CJytzd2NKetjSRnyuj31fDd3Rlcz3fzlFdFLD1SItunPwyqEOkca6GbV612BWfaBag==}
+    requiresBuild: true
     dev: true
 
   /quick-lru@5.1.1:
@@ -9976,6 +9982,7 @@ packages:
 
   /streamx@2.16.1:
     resolution: {integrity: sha512-m9QYj6WygWyWa3H1YY69amr4nVgy61xfjys7xO7kviL5rfIEc2naf+ewFiOA+aEJD7y0JO3h2GoiUv4TDwEGzQ==}
+    requiresBuild: true
     dependencies:
       fast-fifo: 1.3.2
       queue-tick: 1.0.1
