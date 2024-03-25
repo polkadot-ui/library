@@ -12,7 +12,7 @@ import {
   ComponentBaseWithClassName,
 } from "../../utils/types";
 
-import "@polkadot-ui/core/css/complex/AccountCard/index.css";
+import "@polkadot-ui/core/css/components/AccountCard/index.css";
 
 type FontType =
   | "xx-small"
@@ -26,6 +26,7 @@ type FontType =
 
 interface AccountCardProps {
   title: TitleProps;
+  edit?: boolean;
   fontSize?: FontType | string;
   ellipsis?: EllipsisProps;
   icon?: IconProps;
@@ -82,6 +83,7 @@ const isOfFontType = (input: string): input is FontType =>
 
 export const AccountCard = ({
   title,
+  edit = false,
   fontSize,
   ellipsis = { active: false, amount: 7 },
   icon,
@@ -109,6 +111,8 @@ export const AccountCard = ({
   const [xtraSize, setXtraSize] = useState<GridSizes | undefined>(
     extraComponent?.gridSize
   );
+
+  const [address, setAddress] = useState<string | undefined>(title.address);
 
   // Adjust the columns
   useEffect(() => {
@@ -141,7 +145,7 @@ export const AccountCard = ({
       className={icon?.className}
     >
       <Polkicon
-        address={title.address}
+        address={address}
         size={icon?.size || 30}
         copy={icon?.copy}
         colors={icon?.colors}
@@ -158,33 +162,49 @@ export const AccountCard = ({
       justify={title?.justify}
       alignItems={title?.align || "center"}
     >
-      <div
-        style={Object.assign(
-          {},
-          title?.style || {},
-          !isOfFontType(fontSize) ? { fontSize } : {},
-          // Auto-ellipsis when component becomes too small and ellipsis is not active
-          !ellipsis?.active
-            ? {
-                textOverflow: "ellipsis",
-                whiteSpace: "nowrap",
-                overflow: "hidden",
-              }
-            : {}
-        )}
-        className={`${title?.className || null} ${fontClasses
-          ?.filter((a) => a.trim() != "")
-          ?.join("")}`}
-      >
-        {title?.component ||
-          (ellipsis?.active
-            ? ellipsisFn(
-                title?.name || title.address,
-                ellipsis.amount,
-                (ellipsis?.position as HPosition) || "center"
-              )
-            : title?.name || title.address)}
-      </div>
+      {edit ? (
+        <input
+          style={Object.assign(
+            {},
+            title?.style || {},
+            !isOfFontType(fontSize) ? { fontSize } : {},
+            { width: "100%" }
+          )}
+          className={`${title?.className || null} ${fontClasses
+            ?.filter((a) => a.trim() != "")
+            ?.join("")}`}
+          value={address}
+          onChange={(e) => setAddress(e.target.value)}
+        />
+      ) : (
+        <div
+          style={Object.assign(
+            {},
+            title?.style || {},
+            !isOfFontType(fontSize) ? { fontSize } : {},
+            // Auto-ellipsis when component becomes too small and ellipsis is not active
+            !ellipsis?.active
+              ? {
+                  textOverflow: "ellipsis",
+                  whiteSpace: "nowrap",
+                  overflow: "hidden",
+                }
+              : {}
+          )}
+          className={`${title?.className || null} ${fontClasses
+            ?.filter((a) => a.trim() != "")
+            ?.join("")}`}
+        >
+          {title?.component ||
+            (ellipsis?.active
+              ? ellipsisFn(
+                  title?.name || title.address,
+                  ellipsis.amount,
+                  (ellipsis?.position as HPosition) || "center"
+                )
+              : title?.name || title.address)}
+        </div>
+      )}
     </Grid>
   );
 

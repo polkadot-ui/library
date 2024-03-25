@@ -1,4 +1,4 @@
-import "@polkadot-ui/core/css/base/structure/Card/index.css";
+import "@polkadot-ui/core/css/components/Card/index.css";
 import { CardProps } from "../common_types";
 import { valEmpty } from "../../utils";
 

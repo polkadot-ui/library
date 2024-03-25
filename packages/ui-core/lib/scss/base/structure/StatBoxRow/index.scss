@@ -1,8 +1,0 @@
-@use "../styles";
-
-.core-stat-box-row {
-  @include styles.page-padding;
-
-  display: flex;
-  flex-direction: column;
-}
