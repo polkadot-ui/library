@@ -23,8 +23,8 @@ export const Components = () => {
   // Account card options
   const iconProps: IconProps = {
     copy: false,
-    position: "right",
-    gridSize: 3,
+    position: "left",
+    gridSize: 1,
     justify: "space-around",
   };
 
@@ -91,6 +91,7 @@ export const Components = () => {
       <div className="row">
         <div className="svg-box">
           <AccountCard
+            edit
             style={{ padding: "1rem", width: "500px" }}
             icon={iconProps}
             title={{
@@ -173,7 +174,7 @@ export const Components = () => {
         />
       </div>
 
-      <h3>Colors</h3>
+      <h3>States</h3>
       <div className="row">
         <div className="svg-box">
           <Polkicon
