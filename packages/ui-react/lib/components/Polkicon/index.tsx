@@ -1,3 +1,4 @@
+import { getSs58AddressInfo } from "@polkadot-api/substrate-bindings";
 import { PolkiconProps } from "./types";
 
 import { getParams } from "./utils";
@@ -90,7 +91,7 @@ export const Polkicon = ({
       }
     };
     copy && copyText(address);
-  }, [copy, address]);
+  }, [copy, address, copyMsg]);
 
   useEffect(() => {
     if (copy && copySuccess) {
@@ -103,9 +104,12 @@ export const Polkicon = ({
   const { c, r, rroot3o2, ro2, rroot3o4, ro4, r3o4, z, rot, scheme, palette } =
     getParams(address);
 
-  const colors = scheme?.colors?.map(
-    (_, i) => palette[scheme?.colors[i < 18 ? (i + rot) % 18 : 18]]
-  );
+  const add = getSs58AddressInfo(address);
+  const colors = add.isValid
+    ? scheme?.colors?.map(
+        (_, i) => palette[scheme?.colors[i < 18 ? (i + rot) % 18 : 18]]
+      )
+    : [];
 
   let i = 0;
 
