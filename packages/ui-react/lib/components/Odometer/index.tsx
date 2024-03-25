@@ -1,6 +1,6 @@
 import { useEffect, useState, createRef, useRef } from "react";
 import { MutableRefObject } from "react";
-import "@polkadot-ui/core/css/complex/Odometer/index.css";
+import "@polkadot-ui/core/css/components/Odometer/index.css";
 
 interface OdometerProps {
   value: number | string;

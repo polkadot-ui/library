@@ -12,7 +12,7 @@ import {
   ComponentBaseWithClassName,
 } from "../../utils/types";
 
-import "@polkadot-ui/core/css/complex/AccountCard/index.css";
+import "@polkadot-ui/core/css/components/AccountCard/index.css";
 
 type FontType =
   | "xx-small"
