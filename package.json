@@ -41,7 +41,7 @@
     "prettier-plugin-organize-imports": "^3.2.4",
     "stylelint": "^16.3.1",
     "stylelint-config-standard-scss": "^13.0.0",
-    "rollup": "^4.13.0",
+    "rollup": "^4.13.1",
     "sass": "^1.72.0",
     "tiny-lr": "^2.0.0",
     "tsup": "^8.0.2",
