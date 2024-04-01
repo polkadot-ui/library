@@ -14,7 +14,8 @@
     "Substrate"
   ],
   "homepage": "https://polkadot-ui.info",
-"scripts": {
+  "scripts": {
+    "prepare": "husky",
     "commit": "npx cz",
     "build": "pnpm  --parallel --filter \"./**\" build",
     "clear": "pnpm run --parallel clear && rm -rf node_modules coverage",
