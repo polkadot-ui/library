@@ -1,1 +1,59 @@
-{"name":"Westend BridgeHub","network_type":"testnet","chain":{"type":"parachain","parent":"Westend","consensus":"Aura","sudo":true,"para_id":1002},"chainspec":{"http_url":"https://raw.githubusercontent.com/paritytech/polkadot-sdk/master/cumulus/parachains/chain-specs/bridge-hub-westend.json"},"goals":["Westend's testnet parachain for BridgeHub"],"repository":"https://github.com/paritytech/polkadot-sdk","validators":["Parity Only"],"release_cycle":"Following the Polkadot 3 weeks cycle","specs":{"block_time":12,"era":null,"ed":3333333,"lease_period":null,"decimals":12,"token":"ROC","ss58_format":null},"contacts":[{"type":"website","contact":"https://github.com/paritytech/subport"}],"faucet":"#westend-faucet:matrix.org","rpc_endpoints":[{"name":"Parity","url":"wss://westend-bridge-hub-rpc.polkadot.io:443"},{"name":"Dwellir","url":"wss://westend-bridge-hub-rpc.dwellir.com:443"},{"name":"Dwellir Tunisia","url":"wss://westend-bridge-hub-rpc-tn.dwellir.com:443"},{"name":"IBP Network GeoDNS1","url":"wss://sys.ibp.network:443/bridgehub-westend"},{"name":"IBP Network GeoDNS2","url":"wss://sys.dotters.network:443/bridgehub-westend"}],"api_endpoints":[],"bootnodes":[],"documentation":["https://github.com/paritytech/polkadot-sdk"],"expectations":["parity: Run collator nodes; upgrade runtime","community: Test potential integrations with BridgeHub parachain"],"features":["bridge with Rococo"],"notes":[]}
+{
+  "name": "Westend BridgeHub",
+  "network_type": "testnet",
+  "chain": {
+    "type": "parachain",
+    "parent": "Westend",
+    "consensus": "Aura",
+    "sudo": true,
+    "para_id": 1002
+  },
+  "chainspec": {
+    "http_url": "https://raw.githubusercontent.com/paritytech/polkadot-sdk/master/cumulus/parachains/chain-specs/bridge-hub-westend.json"
+  },
+  "goals": ["Westend's testnet parachain for BridgeHub"],
+  "repository": "https://github.com/paritytech/polkadot-sdk",
+  "validators": ["Parity Only"],
+  "release_cycle": "Following the Polkadot 3 weeks cycle",
+  "specs": {
+    "block_time": 12,
+    "era": null,
+    "ed": 3333333,
+    "lease_period": null,
+    "decimals": 12,
+    "token": "ROC",
+    "ss58_format": null
+  },
+  "contacts": [
+    { "type": "website", "contact": "https://github.com/paritytech/subport" }
+  ],
+  "faucet": "#westend-faucet:matrix.org",
+  "rpc_endpoints": [
+    { "name": "Parity", "url": "wss://westend-bridge-hub-rpc.polkadot.io:443" },
+    {
+      "name": "Dwellir",
+      "url": "wss://westend-bridge-hub-rpc.dwellir.com:443"
+    },
+    {
+      "name": "Dwellir Tunisia",
+      "url": "wss://westend-bridge-hub-rpc-tn.dwellir.com:443"
+    },
+    {
+      "name": "IBP Network GeoDNS1",
+      "url": "wss://sys.ibp.network:443/bridgehub-westend"
+    },
+    {
+      "name": "IBP Network GeoDNS2",
+      "url": "wss://sys.dotters.network:443/bridgehub-westend"
+    }
+  ],
+  "api_endpoints": [],
+  "bootnodes": [],
+  "documentation": ["https://github.com/paritytech/polkadot-sdk"],
+  "expectations": [
+    "parity: Run collator nodes; upgrade runtime",
+    "community: Test potential integrations with BridgeHub parachain"
+  ],
+  "features": ["bridge with Rococo"],
+  "notes": []
+}
