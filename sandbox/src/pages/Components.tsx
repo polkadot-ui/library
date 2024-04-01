@@ -20,12 +20,19 @@ export const Components = () => {
   const [val2, setVal2] = useState<number>(1201903.456789);
   const updateValue2 = () => setVal2(Number((val2 + 17491.390013).toFixed(4)));
 
+  const address = "1f1yYj2bCFhJCTVdeWLDueUsrZynLAaj6jeMy18fjZ7Cr73";
+  const address2 = "13QqEYyFfeWmBVr3QvfhwpYrXoUFDgs7ViYhxv2fvLHe6mtT";
+  const address3 = "Ez9kY44SEGDVceyDzRkhd5hpmkqL489sbeyCHKGr3UcfCwM";
+  const address4 = "5EFJZfqfmDZktdFfKUJa3kCrJZrzXUP1tkyN5RNtQ1uqZwtY";
+  const invalid_address = "111111111111111111111111111111111111111111111111";
+
   // Account card options
   const iconProps: IconProps = {
     copy: false,
     position: "left",
     gridSize: 1,
     justify: "space-around",
+    address,
   };
 
   // Chart colors
@@ -95,7 +102,7 @@ export const Components = () => {
             style={{ padding: "1rem", width: "500px" }}
             icon={iconProps}
             title={{
-              address: "1f1yYj2bCFhJCTVdeWLDueUsrZynLAaj6jeMy18fjZ7Cr73",
+              address,
             }}
             ellipsis={{ active: true, amount: 10, position: "center" }}
           />
@@ -108,70 +115,38 @@ export const Components = () => {
       <div className="row">
         <div className="svg-box">
           {/* Generic */}
-          <Polkicon
-            copy
-            size="10rem"
-            address="13QqEYyFfeWmBVr3QvfhwpYrXoUFDgs7ViYhxv2fvLHe6mtT"
-          />
+          <Polkicon copy size="10rem" address={address2} />
         </div>
         <div className="svg-box">
           {/* Polkadot */}
-          <Polkicon
-            copy
-            size="7rem"
-            address="13QqEYyFfeWmBVr3QvfhwpYrXoUFDgs7ViYhxv2fvLHe6mtT"
-          />
+          <Polkicon copy size="7rem" address={address2} />
         </div>
         <div className="svg-box">
           {/* Kusama */}
-          <Polkicon
-            copy
-            size={60}
-            address="Ez9kY44SEGDVceyDzRkhd5hpmkqL489sbeyCHKGr3UcfCwM"
-          />
+          <Polkicon copy size={60} address={address3} />
         </div>
         <div className="svg-box">
           {/* Kusama */}
-          <Polkicon
-            copy
-            size={40}
-            address="Ez9kY44SEGDVceyDzRkhd5hpmkqL489sbeyCHKGr3UcfCwM"
-          />
+          <Polkicon copy size={40} address={address} />
         </div>
       </div>
 
       <h3>Theme</h3>
       <div className="row">
         <div className="svg-box">
-          <Polkicon
-            size="5rem"
-            address="5EFJZfqfmDZktdFfKUJa3kCrJZrzXUP1tkyN5RNtQ1uqZwtY"
-          />
+          <Polkicon size="5rem" address={address4} />
         </div>
         <div className="svg-box">
-          <Polkicon
-            size="5rem"
-            address="5EFJZfqfmDZktdFfKUJa3kCrJZrzXUP1tkyN5RNtQ1uqZwtY"
-            outerColor="transparent"
-          />
+          <Polkicon size="5rem" address={address4} outerColor="transparent" />
         </div>
         <div className="svg-box">
-          <Polkicon
-            size="5rem"
-            address="5EFJZfqfmDZktdFfKUJa3kCrJZrzXUP1tkyN5RNtQ1uqZwtY"
-            outerColor="#E6007A"
-          />
+          <Polkicon size="5rem" address={address4} outerColor="#E6007A" />
         </div>
       </div>
 
       <h3>Copy</h3>
       <div className="row">
-        <Polkicon
-          copy
-          size="5rem"
-          address="5EFJZfqfmDZktdFfKUJa3kCrJZrzXUP1tkyN5RNtQ1uqZwtY"
-          copyTimeout={300}
-        />
+        <Polkicon copy size="5rem" address={address4} copyTimeout={300} />
       </div>
 
       <h3>States</h3>
@@ -179,21 +154,21 @@ export const Components = () => {
         <div className="svg-box">
           <Polkicon
             size="5rem"
-            address="5EFJZfqfmDZktdFfKUJa3kCrJZrzXUP1tkyN5RNtQ1uqZwtY"
+            address={address4}
             colors={["blue", "yellow", "black", "pink", "brown"]}
           />
         </div>
         <div className="svg-box">
           <Polkicon
             size="5rem"
-            address="5EFJZfqfmDZktdFfKUJa3kCrJZrzXUP1tkyN5RNtQ1uqZwtY"
+            address={address4}
             colors={["blue", "yellow"]}
           />
         </div>
         <div className="svg-box">
           <Polkicon
             size="5rem"
-            address="111111111111111111111111111111111111111111111111"
+            address={invalid_address}
             colors={["blue", "pink", "white", "yellow"]}
           />
         </div>

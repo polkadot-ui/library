@@ -1,12 +1,7 @@
-import { ComponentBaseWithClassName } from "../../utils/types";
-import { Pie, PieProps } from "./Pie";
+import { Pie } from "./Pie";
+import type { Props, PieProps } from "./types";
 
 export type ChartType = "pie";
-
-export type Props = ComponentBaseWithClassName & {
-  // the type of the chart that need to be imported.
-  type?: ChartType;
-} & PieProps;
 
 export const Chart = (props: Props) => {
   const { type } = props;

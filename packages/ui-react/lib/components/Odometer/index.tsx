@@ -1,35 +1,6 @@
 import { useEffect, useState, createRef, useRef } from "react";
-import { MutableRefObject } from "react";
 import "@polkadot-ui/core/css/components/Odometer/index.css";
-
-interface OdometerProps {
-  value: number | string;
-  wholeColor?: string;
-  decimalColor?: string;
-  spaceBefore?: string | number;
-  spaceAfter?: string | number;
-  zeroDecimals?: number;
-}
-
-export type Digit =
-  | "comma"
-  | "dot"
-  | "0"
-  | "1"
-  | "2"
-  | "3"
-  | "4"
-  | "5"
-  | "6"
-  | "7"
-  | "8"
-  | "9";
-
-export type DigitRef = MutableRefObject<HTMLSpanElement>;
-
-export type Status = "new" | "inactive" | "transition" | "finished";
-
-export type Direction = "down" | "none";
+import { OdometerProps, Digit, Status, DigitRef, Direction } from "./types";
 
 export const Odometer = ({
   value,
@@ -92,7 +63,7 @@ export const Odometer = ({
     );
 
     setAllDigitRefs(all);
-  }, []);
+  }, [allDigits]);
 
   // Phase 1: new digits and refs are added to the odometer.
   useEffect(() => {

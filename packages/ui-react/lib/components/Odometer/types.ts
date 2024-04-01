@@ -1,13 +1,13 @@
 import { MutableRefObject } from "react";
 
-export interface Props {
+export type OdometerProps = {
   value: number | string;
   wholeColor?: string;
   decimalColor?: string;
   spaceBefore?: string | number;
   spaceAfter?: string | number;
   zeroDecimals?: number;
-}
+};
 
 export type Digit =
   | "comma"

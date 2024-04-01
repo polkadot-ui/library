@@ -1,21 +1,15 @@
 import {
-  AnyJson,
   ComponentBase,
   ComponentBaseWithClassName,
   DisplayFor,
 } from "../utils/types";
-import { ReactElement, ReactNode } from "react";
+import { ReactElement } from "react";
 
 export type EntryProps = ComponentBase & {
   // the theme mode.
   mode: "light" | "dark";
   // the active theme.
   theme: string;
-};
-
-export type CardProps = ComponentBaseWithClassName & {
-  children: ReactNode;
-  animations?: AnyJson;
 };
 
 export type GridItemsAlignment =
