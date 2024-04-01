@@ -7,7 +7,7 @@ export type OdometerProps = {
   spaceBefore?: string | number;
   spaceAfter?: string | number;
   zeroDecimals?: number;
-}
+};
 
 export type Digit =
   | "comma"

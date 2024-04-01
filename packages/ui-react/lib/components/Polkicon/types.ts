@@ -1,5 +1,5 @@
 import { ComponentBaseWithClassName } from "../../utils";
-export type PolkiconProps = ComponentBaseWithClassName  & {
+export type PolkiconProps = ComponentBaseWithClassName & {
   size?: number | string;
   address: string;
   copy?: boolean;
@@ -8,7 +8,7 @@ export type PolkiconProps = ComponentBaseWithClassName  & {
   copyTimeout?: number;
   copyMsg?: string | JSX.Element;
   style?: object;
-}
+};
 
 export interface Scheme {
   freq: number;

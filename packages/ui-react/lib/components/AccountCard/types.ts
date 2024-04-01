@@ -20,32 +20,34 @@ export type AccountCardProps = {
   icon?: IconProps;
   extraComponent?: ExtraComponentProps;
   noCard?: boolean;
-}
+};
 
-export type ExtraComponentProps = CommonParams &  ComponentBaseWithClassName & {
-  component?: JSX.Element;
-  position?: HPositionLR;
-}
+export type ExtraComponentProps = CommonParams &
+  ComponentBaseWithClassName & {
+    component?: JSX.Element;
+    position?: HPositionLR;
+  };
 
 export type EllipsisProps = {
   active?: boolean;
   amount?: number;
   position?: string;
-}
+};
 
 type CommonParams = {
   gridSize?: GridSizes;
   justify?: GridJustify;
-}
+};
 
-export type TitleProps = ComponentBaseWithClassName  & {
+export type TitleProps = ComponentBaseWithClassName & {
   address: string;
   align?: GridItemsAlignment;
   justify?: GridJustify;
   component?: JSX.Element;
   name?: string;
-}
+};
 
-export type IconProps  = PolkiconProps & CommonParams & {
+export type IconProps = PolkiconProps &
+  CommonParams & {
     position?: HPositionLR;
-  }
+  };

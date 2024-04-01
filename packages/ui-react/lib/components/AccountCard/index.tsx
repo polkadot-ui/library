@@ -6,10 +6,7 @@ import { Grid } from "../Grid";
 import { GridSizes } from "../common_types";
 import { valEmpty } from "../../utils";
 import { ellipsisFn } from "@polkadot-ui/utils";
-import {
-  HPosition,
-  ComponentBaseWithClassName,
-} from "../../utils/types";
+import { HPosition, ComponentBaseWithClassName } from "../../utils/types";
 
 import "@polkadot-ui/core/css/components/AccountCard/index.css";
 
