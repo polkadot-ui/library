@@ -1,5 +1,5 @@
 import "@polkadot-ui/core/css/components/Card/index.css";
-import { CardProps } from "../common_types";
+import { CardProps } from "./types";
 import { valEmpty } from "../../utils";
 
 export const Card = ({

@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { ReactNode, CSSProperties } from "react";
 
 // A generic type to handle React components. We assume the component may have
@@ -11,22 +12,21 @@ export interface ComponentBase {
 
 export type VoidFn = () => void;
 
-export type ComponentBaseWithClassName = ComponentBase & {
+export type ComponentBaseWithClassName = {
   // passing a className string.
   className?: string;
+  // passing react children.
+  children?: ReactNode;
+  // passing custom styling.
+  style?: CSSProperties;
 };
 
 export type Sync = "synced" | "unsynced" | "syncing";
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export type AnyApi = any;
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export type Any = any;
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export type AnyJson = any;
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export type AnyFunction = any;
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export type AnyObject = any;
 export type MaybeAddress = string | null;
 export type MaybeString = string | null;

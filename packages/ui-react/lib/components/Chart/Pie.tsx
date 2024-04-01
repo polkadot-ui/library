@@ -1,11 +1,5 @@
 import { useState, useEffect, useMemo } from "react";
-
-export type PieProps = {
-  diameter: number;
-  items: { value: number; color: string }[];
-  innerRadius?: number;
-  speed?: number;
-};
+import { PieProps } from "./types";
 
 const PROGRESS_TIMEOUT = 5;
 

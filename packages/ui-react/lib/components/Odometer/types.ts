@@ -1,6 +1,6 @@
 import { MutableRefObject } from "react";
 
-export interface Props {
+export type OdometerProps = {
   value: number | string;
   wholeColor?: string;
   decimalColor?: string;

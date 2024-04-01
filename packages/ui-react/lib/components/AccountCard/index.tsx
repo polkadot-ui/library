@@ -1,73 +1,19 @@
-import { JSX, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 import { Polkicon } from "../Polkicon";
 import { Card } from "../Card";
 import { Grid } from "../Grid";
-import { GridJustify, GridSizes, GridItemsAlignment } from "../common_types";
+import { GridSizes } from "../common_types";
 import { valEmpty } from "../../utils";
 import { ellipsisFn } from "@polkadot-ui/utils";
 import {
-  HPositionLR,
   HPosition,
   ComponentBaseWithClassName,
 } from "../../utils/types";
 
 import "@polkadot-ui/core/css/components/AccountCard/index.css";
 
-type FontType =
-  | "xx-small"
-  | "x-small"
-  | "small"
-  | "medium"
-  | "large"
-  | "larger"
-  | "x-large"
-  | "xx-large";
-
-interface AccountCardProps {
-  title: TitleProps;
-  edit?: boolean;
-  fontSize?: FontType | string;
-  ellipsis?: EllipsisProps;
-  icon?: IconProps;
-  extraComponent?: ExtraComponentProps;
-  noCard?: boolean;
-}
-
-export interface IconProps extends CommonParams, ComponentBaseWithClassName {
-  size?: number;
-  copy?: boolean;
-  position?: HPositionLR;
-  colors?: string[];
-  outerColor?: string;
-  dark?: boolean;
-}
-
-export interface ExtraComponentProps
-  extends CommonParams,
-    ComponentBaseWithClassName {
-  component?: JSX.Element;
-  position?: HPositionLR;
-}
-
-export interface EllipsisProps {
-  active?: boolean;
-  amount?: number;
-  position?: string;
-}
-
-interface CommonParams {
-  gridSize?: GridSizes;
-  justify?: GridJustify;
-}
-
-export interface TitleProps extends ComponentBaseWithClassName {
-  address: string;
-  align?: GridItemsAlignment;
-  justify?: GridJustify;
-  component?: JSX.Element;
-  name?: string;
-}
+import { FontType, AccountCardProps } from "./types";
 
 const isOfFontType = (input: string): input is FontType =>
   [
