@@ -1,15 +1,15 @@
 name: Polkadot Collectives
 network_type: mainnet
 chain:
-    type: parachain
-    parent: Polkadot
-    consensus: PoS
-    sudo: true
-    para_id: 1001
+  type: parachain
+  parent: Polkadot
+  consensus: PoS
+  sudo: true
+  para_id: 1001
 chainspec:
-    http_url: https://raw.githubusercontent.com/paritytech/polkadot-sdk/master/cumulus/parachains/chain-specs/collectives-polkadot.json
+  http_url: https://raw.githubusercontent.com/paritytech/polkadot-sdk/master/cumulus/parachains/chain-specs/collectives-polkadot.json
 goals:
-    - This parachain is for collectives that serve the Polkadot network.
+  - This parachain is for collectives that serve the Polkadot network.
 repository: https://github.com/paritytech/polkadot-sdk
 validators:
   - Open

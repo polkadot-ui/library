@@ -1,3 +1,8 @@
+## 0.0.1-alpha.2 (2024-04-01)
+
+
+<!-- Prior to Reversioning -->
+
 # Changelog
 
 ## [0.4.0](https://github.com/polkadot-ui/library/) Change repository and move to polkadot-ui
