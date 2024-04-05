@@ -144,8 +144,8 @@ importers:
         specifier: ^1.4.0
         version: 1.4.0
       '@polkadot-api/substrate-bindings':
-        specifier: 0.0.1-b8e0bb66a2645173a19131a47b2933f1b2e12f26.1.0
-        version: 0.0.1-b8e0bb66a2645173a19131a47b2933f1b2e12f26.1.0
+        specifier: 0.0.1
+        version: 0.0.1
       '@polkadot-ui/core':
         specifier: ^0.0.1-alpha.2
         version: 0.0.1-alpha.2
@@ -1676,17 +1676,17 @@ packages:
     engines: {node: ^12.20.0 || ^14.18.0 || >=16.0.0}
     dev: true
 
-  /@polkadot-api/substrate-bindings@0.0.1-b8e0bb66a2645173a19131a47b2933f1b2e12f26.1.0:
-    resolution: {integrity: sha512-6GUFO27RmxoyKQNp4kLrq3MqtGJo3xYipYjWQyXjHaIMD1ppB65osiM1DrREO1nYIdthnNzWzA4mvHE794fdaQ==}
+  /@polkadot-api/substrate-bindings@0.0.1:
+    resolution: {integrity: sha512-bAe7a5bOPnuFVmpv7y4BBMRpNTnMmE0jtTqRUw/+D8ZlEHNVEJQGr4wu3QQCl7k1GnSV1wfv3mzIbYjErEBocg==}
     dependencies:
       '@noble/hashes': 1.4.0
-      '@polkadot-api/utils': 0.0.1-b8e0bb66a2645173a19131a47b2933f1b2e12f26.1.0
+      '@polkadot-api/utils': 0.0.1
       '@scure/base': 1.1.6
       scale-ts: 1.6.0
     dev: true
 
-  /@polkadot-api/utils@0.0.1-b8e0bb66a2645173a19131a47b2933f1b2e12f26.1.0:
-    resolution: {integrity: sha512-ePQbWJ5eRO5rLu8cPWQawWvPF39F32wxPJTv/xrgSHP/L5UlnGRtx7docog7w0uBdr62LVggZOxrNsLN3LOwgA==}
+  /@polkadot-api/utils@0.0.1:
+    resolution: {integrity: sha512-3j+pRmlF9SgiYDabSdZsBSsN5XHbpXOAce1lWj56IEEaFZVjsiCaxDOA7C9nCcgfVXuvnbxqqEGQvnY+QfBAUw==}
     dev: true
 
   /@polkadot-ui/core@0.0.1-alpha.2:
