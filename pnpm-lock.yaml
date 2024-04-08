@@ -60,8 +60,8 @@ importers:
         specifier: ^3.1.0
         version: 3.1.0(@typescript-eslint/eslint-plugin@7.5.0)(eslint@8.57.0)
       framer-motion:
-        specifier: ^11.0.24
-        version: 11.0.24
+        specifier: ^11.0.25
+        version: 11.0.25
       gulp:
         specifier: ^4.0.2
         version: 4.0.2
@@ -6354,8 +6354,8 @@ packages:
       map-cache: 0.2.2
     dev: true
 
-  /framer-motion@11.0.24:
-    resolution: {integrity: sha512-l2iM8NR53qtcujgAqYvGPJJGModPNWEVUaATRDLfnaLvUoFpImovBm0AHalSSsY8tW6knP8mfJTW4WYGbnAe4w==}
+  /framer-motion@11.0.25:
+    resolution: {integrity: sha512-mRt7vQGzA7++wTgb+PW1TrlXXgndqR6hCiJ48fXr2X9alte2hPQiAq556HRwDCt0Q5X98MNvcSe4KUa27Gm5Lg==}
     peerDependencies:
       '@emotion/is-prop-valid': '*'
       react: ^18.0.0
