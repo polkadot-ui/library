@@ -41,7 +41,7 @@
     "@polkadot-api/substrate-bindings": "0.0.1",
     "@polkadot-ui/core": "^0.0.1-alpha.2",
     "@polkadot-ui/utils": "^0.0.1-alpha.2",
-    "@types/node": "^20.12.5",
+    "@types/node": "^20.12.6",
     "@types/react": "^18.2.74",
     "@types/react-dom": "^18.2.24",
     "@typescript-eslint/eslint-plugin": "^7.5.0",
