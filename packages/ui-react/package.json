@@ -42,7 +42,7 @@
     "@polkadot-ui/core": "^0.0.1-alpha.2",
     "@polkadot-ui/utils": "^0.0.1-alpha.2",
     "@types/node": "^20.12.7",
-    "@types/react": "^18.2.75",
+    "@types/react": "^18.2.77",
     "@types/react-dom": "^18.2.25",
     "@typescript-eslint/eslint-plugin": "^7.6.0",
     "@typescript-eslint/parser": "^7.6.0",
