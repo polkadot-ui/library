@@ -1,10 +1,4 @@
-import {
-  Odometer,
-  Polkicon,
-  Chart,
-  AccountCard,
-  IconProps,
-} from "@packages/ui-react/lib/components";
+import { Odometer, Polkicon, Chart } from "@packages/ui-react/lib/components";
 
 import BigNumber from "bignumber.js";
 import { useState } from "react";
@@ -25,15 +19,6 @@ export const Components = () => {
   const address3 = "Ez9kY44SEGDVceyDzRkhd5hpmkqL489sbeyCHKGr3UcfCwM";
   const address4 = "5EFJZfqfmDZktdFfKUJa3kCrJZrzXUP1tkyN5RNtQ1uqZwtY";
   const invalid_address = "111111111111111111111111111111111111111111111111";
-
-  // Account card options
-  const iconProps: IconProps = {
-    copy: false,
-    position: "left",
-    gridSize: 1,
-    justify: "space-around",
-    address,
-  };
 
   // Chart colors
   const colors = [
@@ -91,22 +76,6 @@ export const Components = () => {
         >
           Trigger Update
         </button>
-      </div>
-
-      <h2>AccountCard</h2>
-      <p>A "card" showing the account with the Polkicon</p>
-      <div className="row">
-        <div className="svg-box">
-          <AccountCard
-            edit
-            style={{ padding: "1rem", width: "500px" }}
-            icon={iconProps}
-            title={{
-              address,
-            }}
-            ellipsis={{ active: true, amount: 10, position: "center" }}
-          />
-        </div>
       </div>
 
       <h2>Polkicon</h2>

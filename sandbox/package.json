@@ -8,9 +8,15 @@
     "dev": "vite",
     "preview": "vite preview",
     "wdio": "wdio run ./wdio.conf.ts",
+    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "lint:fix": "eslint './**' --fix && npx prettier --write . && npx stylelint '**/*.scss' --fix",
     "clear": "rm -rf node_modules dist tsconfig.tsbuildinfo coverage"
   },
   "dependencies": {
+    "@emotion/react": "^11.11.4",
+    "@emotion/styled": "^11.11.5",
+    "@mui/material": "^5.15.14",
+    "antd": "^5.16.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.22.3",

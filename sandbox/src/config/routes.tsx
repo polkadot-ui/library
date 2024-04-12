@@ -1,5 +1,6 @@
 import { ReactNode } from "react";
 import { Components } from "../pages/Components";
+import { Recipes } from "../pages/Recipes";
 
 type Routes = {
   name: string;
@@ -30,6 +31,11 @@ const pages = [
     element: <Components />,
     default: true,
   },
+  {
+    path: "recipes",
+    name: "Recipes",
+    element: <Recipes />,
+  },
 ];
 
 export const routes: Routes = [
@@ -46,7 +52,7 @@ export const routeCategories: RouteCategories = [
     name: "Navigation",
     paths: [
       {
-        paths: ["components"],
+        paths: ["components", "recipes"],
       },
     ],
   },
