@@ -269,8 +269,8 @@ importers:
         specifier: ^8.36.0
         version: 8.36.0(typescript@5.4.5)
       '@wdio/mocha-framework':
-        specifier: ^8.32.3
-        version: 8.35.0
+        specifier: ^8.36.0
+        version: 8.36.0
       '@wdio/spec-reporter':
         specifier: ^8.36.0
         version: 8.36.0
@@ -3206,6 +3206,20 @@ packages:
       - supports-color
     dev: true
 
+  /@wdio/mocha-framework@8.36.0:
+    resolution: {integrity: sha512-5wZgh1apbSKTtgGwvd//L4kxdaXe30AQ3y9YeJD+OuAJUTYFRjTpMS13bO3pX518imQeB8HCm4aUc2kxs7J81Q==}
+    engines: {node: ^16.13 || >=18}
+    dependencies:
+      '@types/mocha': 10.0.6
+      '@types/node': 20.12.7
+      '@wdio/logger': 8.28.0
+      '@wdio/types': 8.36.0
+      '@wdio/utils': 8.36.0
+      mocha: 10.3.0
+    transitivePeerDependencies:
+      - supports-color
+    dev: true
+
   /@wdio/protocols@8.32.0:
     resolution: {integrity: sha512-inLJRrtIGdTz/YPbcsvpSvPlYQFTVtF3OYBwAXhG2FiP1ZwE1CQNLP/xgRGye1ymdGCypGkexRqIx3KBGm801Q==}
     dev: true
@@ -3320,7 +3334,6 @@ packages:
     transitivePeerDependencies:
       - supports-color
     dev: true
-    optional: true
 
   /abort-controller@3.0.0:
     resolution: {integrity: sha512-h8lQ8tacZYnR3vNQTgibj+tODHI5/+l06Au2Pcriv/Gmet0eaj4TwWH41sO9wnHDiQsEj19q0drzdWdeAHtweg==}
