@@ -269,8 +269,8 @@ importers:
         specifier: ^8.36.0
         version: 8.36.0(typescript@5.4.5)
       '@wdio/mocha-framework':
-        specifier: ^8.32.3
-        version: 8.35.0
+        specifier: ^8.36.0
+        version: 8.36.0
       '@wdio/spec-reporter':
         specifier: ^8.36.0
         version: 8.36.0
