@@ -144,7 +144,7 @@ importers:
         specifier: ^1.4.0
         version: 1.4.0
       '@polkadot-api/substrate-bindings':
-        specifier: 0.0.1
+        specifier: ^0.0.1
         version: 0.0.1
       '@polkadot-ui/core':
         specifier: ^0.0.1-alpha.2
