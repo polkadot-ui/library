@@ -7,11 +7,6 @@ import {
 } from "../../config/routes";
 import { motion } from "framer-motion";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faChevronDown,
-  faChevronRight,
-} from "@fortawesome/free-solid-svg-icons";
-import { faCircle } from "@fortawesome/free-regular-svg-icons";
 import { useUi } from "../../contexts/UI";
 interface Props {
   name: string;
@@ -31,7 +26,7 @@ export const Category = ({ rest, name, i }: Props) => {
       <button onClick={() => setOpen(!open)}>
         <h3>
           <FontAwesomeIcon
-            icon={open ? faChevronDown : faChevronRight}
+            icon={open ? "chevron-down" : "chevron-right"}
             transform={"shrink-5"}
           />{" "}
           {name}
@@ -55,7 +50,7 @@ export const Category = ({ rest, name, i }: Props) => {
           <Fragment key={`nav_${i}_heading_${j}`}>
             {heading ? (
               <h4>
-                <FontAwesomeIcon icon={faCircle} transform="shrink-6" />{" "}
+                <FontAwesomeIcon icon={"circle-plus"} transform="shrink-6" />{" "}
                 {heading}
               </h4>
             ) : null}
@@ -63,12 +58,11 @@ export const Category = ({ rest, name, i }: Props) => {
             {paths.map((path, k) => (
               <Link
                 key={`nav_${i}_heading_${j}_path_${k}`}
-                className={`link ${heading ? " group" : ""} ${
-                  pathname === `/${path}` ||
+                className={`link ${heading ? " group" : ""} ${pathname === `/${path}` ||
                   (pathname === "/" && isDefaultRoute(path))
-                    ? " selected"
-                    : ``
-                }`}
+                  ? " selected"
+                  : ``
+                  }`}
                 to={`${path}`}
                 onClick={() => setSideMenu(false)}
               >
