@@ -1,5 +1,4 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { useTheme } from "../../contexts/Theme";
 
 export const Header = () => {
@@ -50,7 +49,7 @@ export const Header = () => {
           rel="noreferrer"
         >
           <FontAwesomeIcon
-            icon={faGithub}
+            icon={"github"}
             transform="grow-7"
             style={{ marginLeft: "0.75rem" }}
           />
