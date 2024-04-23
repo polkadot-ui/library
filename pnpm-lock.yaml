@@ -189,8 +189,8 @@ importers:
         specifier: ^5.2.10
         version: 5.2.10(@types/node@20.12.7)(sass@1.75.0)
       vite-plugin-dts:
-        specifier: ^3.8.3
-        version: 3.8.3(@types/node@20.12.7)(rollup@4.16.1)(typescript@5.4.5)(vite@5.2.10)
+        specifier: ^3.9.0
+        version: 3.9.0(@types/node@20.12.7)(rollup@4.16.1)(typescript@5.4.5)(vite@5.2.10)
       vite-plugin-lib-inject-css:
         specifier: ^2.0.1
         version: 2.0.1(vite@5.2.10)
@@ -3118,14 +3118,6 @@ packages:
       chalk: 5.3.0
       easy-table: 1.2.0
       pretty-ms: 7.0.1
-    dev: true
-
-  /@wdio/types@8.36.0:
-    resolution: {integrity: sha512-0hw/PaJHqDrbIMvU08w3oMDGg89udSkqWF2hFlGAjOc20quRrhn0F1L+NhFpYdezeRKz5gpgTDIqaQs9RWKq1A==}
-    engines: {node: ^16.13 || >=18}
-    requiresBuild: true
-    dependencies:
-      '@types/node': 20.12.7
     dev: true
 
   /@wdio/types@8.36.1:
@@ -10657,8 +10649,8 @@ packages:
       vscode-uri: 3.0.8
     dev: true
 
-  /vite-plugin-dts@3.8.3(@types/node@20.12.7)(rollup@4.16.1)(typescript@5.4.5)(vite@5.2.10):
-    resolution: {integrity: sha512-yRHiRosQw7MXdOhmcrVI+kRiB8YEShbSxnADNteK4eZGdEoyOkMHihvO5XOAVlOq8ng9sIqu8vVefDK1zcj3qw==}
+  /vite-plugin-dts@3.9.0(@types/node@20.12.7)(rollup@4.16.1)(typescript@5.4.5)(vite@5.2.10):
+    resolution: {integrity: sha512-pwFIEYQ3LZvMafkEGvNnileb6af5JuyZsBfYQrTDYxdeGEy0OS4B4hCsLPo5YGnhK5k9EzyO6BXVO6y+Lt5T2A==}
     engines: {node: ^14.18.0 || >=16.0.0}
     peerDependencies:
       typescript: '*'
