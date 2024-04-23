@@ -144,8 +144,8 @@ importers:
         specifier: ^1.4.0
         version: 1.4.0
       '@polkadot-api/substrate-bindings':
-        specifier: ^0.0.1
-        version: 0.0.1
+        specifier: ^0.1.0
+        version: 0.1.0
       '@polkadot-ui/core':
         specifier: ^0.0.1-alpha.2
         version: 0.0.1-alpha.2
@@ -1691,8 +1691,8 @@ packages:
     engines: {node: ^12.20.0 || ^14.18.0 || >=16.0.0}
     dev: true
 
-  /@polkadot-api/substrate-bindings@0.0.1:
-    resolution: {integrity: sha512-bAe7a5bOPnuFVmpv7y4BBMRpNTnMmE0jtTqRUw/+D8ZlEHNVEJQGr4wu3QQCl7k1GnSV1wfv3mzIbYjErEBocg==}
+  /@polkadot-api/substrate-bindings@0.1.0:
+    resolution: {integrity: sha512-NEbtbdyZ9G/VCL1OnKOq9NFNd4kOnTCE0FvKPPofgUcxkKbYn9x1WKLa19mBT5XiSI5U7th8WmMATp4q/KK+iQ==}
     dependencies:
       '@noble/hashes': 1.4.0
       '@polkadot-api/utils': 0.0.1
@@ -3118,14 +3118,6 @@ packages:
       chalk: 5.3.0
       easy-table: 1.2.0
       pretty-ms: 7.0.1
-    dev: true
-
-  /@wdio/types@8.36.0:
-    resolution: {integrity: sha512-0hw/PaJHqDrbIMvU08w3oMDGg89udSkqWF2hFlGAjOc20quRrhn0F1L+NhFpYdezeRKz5gpgTDIqaQs9RWKq1A==}
-    engines: {node: ^16.13 || >=18}
-    requiresBuild: true
-    dependencies:
-      '@types/node': 20.12.7
     dev: true
 
   /@wdio/types@8.36.1:
