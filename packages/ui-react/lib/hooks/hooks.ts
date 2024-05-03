@@ -1,5 +1,5 @@
-import { SS58String, createClient } from "@polkadot-api/client"
-import { getInjectedExtensions } from "@polkadot-api/legacy-polkadot-provider"
+import { SS58String, createClient } from "polkadot-api/client"
+import { getInjectedExtensions } from "polkadot-api/pjs-signer"
 import { createContext, useContext, useEffect, useState } from "react"
 import { paraChainApi, relayChainApi } from "./api"
 

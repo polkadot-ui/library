@@ -4,7 +4,6 @@ import { Menu } from "./components/Menu";
 import { Header } from "./components/Header";
 import { useUi } from "./contexts/UI";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars } from "@fortawesome/free-solid-svg-icons";
 
 export const Router = () => {
   const { sideMenuOpen } = useUi();
@@ -68,7 +67,7 @@ const ToggleMenu = () => {
       type="button"
       onClick={() => setSideMenu(!sideMenuOpen)}
     >
-      <FontAwesomeIcon icon={faBars}></FontAwesomeIcon>{" "}
+      <FontAwesomeIcon icon={"bars"}></FontAwesomeIcon>{" "}
     </button>
   );
 };

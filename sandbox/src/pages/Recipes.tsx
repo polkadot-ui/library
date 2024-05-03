@@ -43,9 +43,7 @@ export const Recipes = () => {
             edit
             style={{ padding: "1rem", width: "500px" }}
             icon={iconProps}
-            title={{
-              address,
-            }}
+            title={{ address: "" }}
             ellipsis={{ active: true, amount: 10, position: "center" }}
           />
         </div>
@@ -87,8 +85,6 @@ export const Recipes = () => {
                   type="column"
                   wallets={[
                     "enkrypt",
-                    "fearless-wallet",
-                    "metamask-polkadot-snap",
                     "novawallet",
                     "polkadot-js",
                     "polkagate",

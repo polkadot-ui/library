@@ -1,11 +1,12 @@
-import { ReactNode, useState, CSSProperties } from "react"
+import { ReactNode, useState, CSSProperties, useEffect } from "react"
 import { Any, ComponentBaseWithClassName } from "../../utils"
 import { getExtensionIcon, Extensions } from "@polkadot-ui/assets/extensions"
 
 import {
-  getLegacyProvider,
-} from "@polkadot-api/legacy-polkadot-provider"
-import { createScClient } from "@substrate/connect"
+  getInjectedExtensions,
+  connectInjectedExtension,
+} from "polkadot-api/pjs-signer"
+
 import "./index.scss"
 
 type wallets = "enkrypt" |
@@ -28,7 +29,8 @@ export type ConnectProps = ContentItemProps & {
 
 export type ContentItemProps = ComponentBaseWithClassName & {
   type?: string,
-  name?: string
+  name?: string,
+  exists?: boolean
 }
 
 export type ModalStatusProps = ComponentBaseWithClassName & {
@@ -50,11 +52,28 @@ export const Modal = ({ modalIsOpen, setModalIsOpen, children, style = {} }: Mod
   )
 }
 
-const { connectAccounts, relayChains } = getLegacyProvider(createScClient())
-const chain = relayChains.westend2
+const getTheAccount = async (name: string) => {
+  const ext = await connectInjectedExtension(name)
+  const accounts = ext.getAccounts()
+  return accounts
+}
 
 // The Web/Wallets content
 export const ContentItem = ({ type = "column", name }: ContentItemProps) => {
+
+  const [walletExists, setWalletExists] = useState<boolean>(false)
+
+  useEffect(() => {
+    const walletExists = async (name: string) => {
+      try {
+        await connectInjectedExtension(name).then(() => setWalletExists(true))
+      } catch (err) {
+        setWalletExists(false)
+      }
+    }
+    walletExists(name)
+  }, [name])
+
   const Icon = getExtensionIcon(name)
 
   const common = {
@@ -65,7 +84,8 @@ export const ContentItem = ({ type = "column", name }: ContentItemProps) => {
     borderRadius: "1rem",
     margin: "0.5rem",
     alignItems: "center",
-    cursor: "pointer"
+    cursor: "pointer",
+    position: "relative"
   }
   const style = type === "column" ?
     { ...common, flexDirection: "column", width: "47%" } as CSSProperties :
@@ -74,31 +94,32 @@ export const ContentItem = ({ type = "column", name }: ContentItemProps) => {
   const item = Extensions[name];
 
   return (
-    <div style={style} onClick={() => {
-      const getTheAccount = async () => {
-        return await chain.getAccounts()
+    <div style={style} onClick={async () => {
+      if (walletExists) {
+        const accounts = await getTheAccount(name)
+        console.log("GO TO THE ACCOUNTS WHEN CLICKED", accounts)
       }
-      connectAccounts(name)
-      const accounts = getTheAccount()
-      console.log("name:", accounts)
     }}>
       <div style={{ display: "flex", width: "3rem", margin: "1rem" }}><Icon /></div>
       <div style={{ display: "flex" }}>
         {item?.title || ""}
+      </div>
+      <div style={{ display: "flex", position: "absolute", bottom: 0, fontSize: "1rem", color: walletExists ? "green" : "#999" }}>
+        {walletExists ? "Installed" : "Not Installed"}
       </div>
     </div>
   )
 }
 
 // The content of the Modal
-export const ConnectContent = ({ wallets, type = "column" }) =>
-  <div style={{ display: "flex", flexWrap: "wrap" }}>
-    {wallets.map((wallet: wallets) =>
-      <ContentItem name={wallet} type={type} />
-    )}
-  </div>
-
-
+export const ConnectContent = ({ wallets, type = "column" }) => {
+  return (
+    <div style={{ display: "flex", flexWrap: "wrap" }}>
+      {wallets.map((wallet: wallets) =>
+        <ContentItem name={wallet} type={type} exists />
+      )}
+    </div>)
+}
 
 export const Connect = ({
   title = "Connect",
