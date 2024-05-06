@@ -144,8 +144,8 @@ importers:
         specifier: ^1.4.0
         version: 1.4.0
       '@polkadot-api/substrate-bindings':
-        specifier: ^0.3.0
-        version: 0.3.0
+        specifier: ^0.4.0
+        version: 0.4.0
       '@polkadot-ui/core':
         specifier: ^0.0.1-alpha.2
         version: 0.0.1-alpha.2
@@ -1691,8 +1691,8 @@ packages:
     engines: {node: ^12.20.0 || ^14.18.0 || >=16.0.0}
     dev: true
 
-  /@polkadot-api/substrate-bindings@0.3.0:
-    resolution: {integrity: sha512-huNyUSXkqzJMRlD6iNJ54olvfOIj33mOmJicBChcC44WGjE/WgAabi/dvKka/4yihFvu1WZ3WJPKhjnJj5I68Q==}
+  /@polkadot-api/substrate-bindings@0.4.0:
+    resolution: {integrity: sha512-7eaZABXpUp22W5GcXr51pNL4v1d8Pw8w92DbKwWs+eOGzcoZG/btEyUhPWy2OI2k7Oak3wTkvGXLSze1KyrPgQ==}
     dependencies:
       '@noble/hashes': 1.4.0
       '@polkadot-api/utils': 0.0.1
