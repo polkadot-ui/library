@@ -189,8 +189,8 @@ importers:
         specifier: ^5.2.10
         version: 5.2.10(@types/node@20.12.8)(sass@1.76.0)
       vite-plugin-dts:
-        specifier: ^3.9.0
-        version: 3.9.0(@types/node@20.12.8)(rollup@4.17.2)(typescript@5.4.5)(vite@5.2.10)
+        specifier: ^3.9.1
+        version: 3.9.1(@types/node@20.12.8)(rollup@4.17.2)(typescript@5.4.5)(vite@5.2.10)
       vite-plugin-lib-inject-css:
         specifier: ^2.0.1
         version: 2.0.1(vite@5.2.10)
@@ -10854,8 +10854,8 @@ packages:
       vscode-uri: 3.0.8
     dev: true
 
-  /vite-plugin-dts@3.9.0(@types/node@20.12.8)(rollup@4.17.2)(typescript@5.4.5)(vite@5.2.10):
-    resolution: {integrity: sha512-pwFIEYQ3LZvMafkEGvNnileb6af5JuyZsBfYQrTDYxdeGEy0OS4B4hCsLPo5YGnhK5k9EzyO6BXVO6y+Lt5T2A==}
+  /vite-plugin-dts@3.9.1(@types/node@20.12.8)(rollup@4.17.2)(typescript@5.4.5)(vite@5.2.10):
+    resolution: {integrity: sha512-rVp2KM9Ue22NGWB8dNtWEr+KekN3rIgz1tWD050QnRGlriUCmaDwa7qA5zDEjbXg5lAXhYMSBJtx3q3hQIJZSg==}
     engines: {node: ^14.18.0 || >=16.0.0}
     peerDependencies:
       typescript: '*'
