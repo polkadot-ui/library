@@ -192,8 +192,8 @@ importers:
         specifier: ^3.9.1
         version: 3.9.1(@types/node@20.12.10)(rollup@4.17.2)(typescript@5.4.5)(vite@5.2.11)
       vite-plugin-lib-inject-css:
-        specifier: ^2.0.1
-        version: 2.0.1(vite@5.2.11)
+        specifier: ^2.1.0
+        version: 2.1.0(vite@5.2.11)
     publishDirectory: dist
 
   packages/utils:
@@ -327,6 +327,82 @@ packages:
     dependencies:
       '@jridgewell/gen-mapping': 0.3.5
       '@jridgewell/trace-mapping': 0.3.25
+    dev: true
+
+  /@ast-grep/napi-darwin-arm64@0.21.4:
+    resolution: {integrity: sha512-K0caG6Pde78nsm6i7Y4S7UxDS/DJ9Jo5zjcf4hwuqSbMDaVr+doTS8NIu0Plu5Y/yyFBTYPdcJAdQAhOFUf07A==}
+    engines: {node: '>= 10'}
+    cpu: [arm64]
+    os: [darwin]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /@ast-grep/napi-linux-arm64-gnu@0.21.4:
+    resolution: {integrity: sha512-G3M/tf/yAygkulpxjqfdSzdH/OBM82aZJWvRyNLJdNo0KB7BtgvWMNhrCqEw7a5g9kkFDZGa7NI2CLWwQqQMKw==}
+    engines: {node: '>= 10'}
+    cpu: [arm64]
+    os: [linux]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /@ast-grep/napi-linux-x64-gnu@0.21.4:
+    resolution: {integrity: sha512-U7jl8RGpxKV+pjFstY0y5qD+D+wm9dXNO7NBbIOnETgTMizTFiUuQWT7SOlIklhcxxuXqWzfwhNN1qwI0tGNWw==}
+    engines: {node: '>= 10'}
+    cpu: [x64]
+    os: [linux]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /@ast-grep/napi-linux-x64-musl@0.21.4:
+    resolution: {integrity: sha512-SOGR93kGomRR+Vh87+jXI3pJLR+J+dekCI8a4S22kGX9iAen8/+Ew++lFouDueKLyszmmhCrIk1WnJvYPuSFBw==}
+    engines: {node: '>= 10'}
+    cpu: [x64]
+    os: [linux]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /@ast-grep/napi-win32-arm64-msvc@0.21.4:
+    resolution: {integrity: sha512-ciGaTbkPjbCGqUyLwIPvcNeftNXjSG3cXE+5NiLThRbDhh2yUOE8YJkElUQcu0xQCdSlXnb4l/imEED/65jGfw==}
+    engines: {node: '>= 10'}
+    cpu: [arm64]
+    os: [win32]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /@ast-grep/napi-win32-ia32-msvc@0.21.4:
+    resolution: {integrity: sha512-pj5N9BiiqIYuhqQGnJhjxGJLmVdHUgGsWLLfwsiwpRAe2VSsF+LfoV+F0nO39hctfcWn2mj6+YQjWzDAcQ+dtw==}
+    engines: {node: '>= 10'}
+    cpu: [ia32]
+    os: [win32]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /@ast-grep/napi-win32-x64-msvc@0.21.4:
+    resolution: {integrity: sha512-5UESKh0jrL0IHqmRQ1ct0DQekthis6h2dlly9ab+vXKlJHAOx205aXuEjKJ+zRPV9nP+yC0+u5f1E/5sNB5R7Q==}
+    engines: {node: '>= 10'}
+    cpu: [x64]
+    os: [win32]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /@ast-grep/napi@0.21.4:
+    resolution: {integrity: sha512-M89TKShmmzI4NywkIJBZ1O1dAgcIYIuV9l3YLvId+lg1pSGD5XgNSQBM8ZG30Vjf4OGUuKFymp99+WZW6BW4Zw==}
+    engines: {node: '>= 10'}
+    optionalDependencies:
+      '@ast-grep/napi-darwin-arm64': 0.21.4
+      '@ast-grep/napi-linux-arm64-gnu': 0.21.4
+      '@ast-grep/napi-linux-x64-gnu': 0.21.4
+      '@ast-grep/napi-linux-x64-musl': 0.21.4
+      '@ast-grep/napi-win32-arm64-msvc': 0.21.4
+      '@ast-grep/napi-win32-ia32-msvc': 0.21.4
+      '@ast-grep/napi-win32-x64-msvc': 0.21.4
     dev: true
 
   /@babel/code-frame@7.24.2:
@@ -2820,7 +2896,7 @@ packages:
   /@vitest/snapshot@1.5.0:
     resolution: {integrity: sha512-qpv3fSEuNrhAO3FpH6YYRdaECnnRjg9VxbhdtPwPRnzSfHVXnNzzrpX4cJxqiwgRMo7uRMWDFBlsBq4Cr+rO3A==}
     dependencies:
-      magic-string: 0.30.8
+      magic-string: 0.30.10
       pathe: 1.1.2
       pretty-format: 29.7.0
     dev: true
@@ -2829,7 +2905,7 @@ packages:
     resolution: {integrity: sha512-K3mvIsjyKYBhNIDujMD2gfQEzddLe51nNOAf45yKRt/QFJcUIeTQd2trRvv6M6oCBHNVnZwFWbQ4yj96ibiDsA==}
     requiresBuild: true
     dependencies:
-      magic-string: 0.30.8
+      magic-string: 0.30.10
       pathe: 1.1.2
       pretty-format: 29.7.0
     dev: true
@@ -2837,7 +2913,7 @@ packages:
   /@vitest/snapshot@1.6.0:
     resolution: {integrity: sha512-+Hx43f8Chus+DCmygqqfetcAZrDJwvTj0ymqjQq4CvmpKFSTVteEOBzCusu1x2tt4OJcvBflyHUE0DZSLgEMtQ==}
     dependencies:
-      magic-string: 0.30.8
+      magic-string: 0.30.10
       pathe: 1.1.2
       pretty-format: 29.7.0
     dev: true
@@ -7765,6 +7841,12 @@ packages:
     hasBin: true
     dev: true
 
+  /magic-string@0.30.10:
+    resolution: {integrity: sha512-iIRwTIf0QKV3UAnYK4PU8uiEc4SRh5jX0mwpIwETPpHdhVM4f53RSwS/vXvN1JhGX+Cs7B8qIq3d6AH49O5fAQ==}
+    dependencies:
+      '@jridgewell/sourcemap-codec': 1.4.15
+    dev: true
+
   /magic-string@0.30.8:
     resolution: {integrity: sha512-ISQTe55T2ao7XtlAStud6qwYPZjE4GK1S/BeVPus4jrq6JuOnQ00YKQC581RWhR122W7msZV263KzVeLoqidyQ==}
     engines: {node: '>=12'}
@@ -10754,12 +10836,13 @@ packages:
       - supports-color
     dev: true
 
-  /vite-plugin-lib-inject-css@2.0.1(vite@5.2.11):
-    resolution: {integrity: sha512-86VU8m4t3TNPk9xfdnNDqn1OHkgrPHpP7B5wkVys4tWSLwMMIucCgJdc5wenGntLNMWKChJV0Ut3qGH6iGojMg==}
+  /vite-plugin-lib-inject-css@2.1.0(vite@5.2.11):
+    resolution: {integrity: sha512-4U2XKuzo05qOoFk7VXI0Pq9O4NPuo9xeb7axTbYCYEzWUShSbKuFErDz6YuA6PgWQDPJ5vDCPNfmTY3wfjZxtQ==}
     peerDependencies:
       vite: '*'
     dependencies:
-      magic-string: 0.30.8
+      '@ast-grep/napi': 0.21.4
+      magic-string: 0.30.10
       picocolors: 1.0.0
       vite: 5.2.11(@types/node@20.12.10)(sass@1.77.0)
     dev: true
