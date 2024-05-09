@@ -220,8 +220,8 @@ importers:
         specifier: ^6.23.0
         version: 6.23.0(react-dom@18.3.1)(react@18.3.1)
       svgo:
-        specifier: ^3.3.0
-        version: 3.3.0
+        specifier: ^3.3.1
+        version: 3.3.1
     devDependencies:
       '@fortawesome/free-brands-svg-icons':
         specifier: ^6.5.2
@@ -10002,8 +10002,8 @@ packages:
     resolution: {integrity: sha512-ovssysQTa+luh7A5Weu3Rta6FJlFBBbInjOh722LIt6klpU2/HtdUbszju/G4devcvk8PGt7FCLv5wftu3THUA==}
     dev: true
 
-  /svgo@3.3.0:
-    resolution: {integrity: sha512-y350OL6eAmhDbWcASdukXoG0MbpdfJQPHwEUAaTW1HBNSO2VErJ35fs7uNLSWjzFDhfua517RcouBzjZoO1JFg==}
+  /svgo@3.3.1:
+    resolution: {integrity: sha512-xQQTIGRl3gHTO2PFlZFLl+Xwofj+CMOPitfoByGBNAniQnY6SbGgd31u3C8RTqdlqZqYNl9Sb83VXbimVHcU6w==}
     engines: {node: '>=14.0.0'}
     hasBin: true
     dependencies:
