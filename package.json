@@ -16,7 +16,7 @@
   "homepage": "https://polkadot-ui.info",
   "scripts": {
     "prepare": "husky",
-    "commit": "npx cz",
+    "preinstall": "npx only-allow pnpm",
     "build": "pnpm  --parallel --filter \"./**\" build",
     "clear": "pnpm run --parallel clear && rm -rf node_modules coverage",
     "lint": "eslint './**' --fix && npx prettier --write . && npx stylelint '**/*.scss' --fix",
@@ -28,7 +28,6 @@
     "@typescript-eslint/eslint-plugin": "^7.8.0",
     "@typescript-eslint/parser": "^7.8.0",
     "autoprefixer": "^10.4.19",
-    "cz-conventional-changelog": "^3.3.0",
     "eslint": "^8.57.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-prettier": "^9.1.0",
@@ -62,11 +61,6 @@
     "typescript": "^5.4.5",
     "vitest": "^1.6.0",
     "yaml": "^2.4.2"
-  },
-  "config": {
-    "commitizen": {
-      "path": "./node_modules/cz-conventional-changelog"
-    }
   },
   "workspaces": [
     "packages/utils",
