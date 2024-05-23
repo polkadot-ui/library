@@ -266,8 +266,8 @@ importers:
         specifier: ^8.36.1
         version: 8.36.1(typescript@5.4.5)
       '@wdio/mocha-framework':
-        specifier: ^8.36.1
-        version: 8.36.1
+        specifier: ^8.37.0
+        version: 8.37.0
       '@wdio/spec-reporter':
         specifier: ^8.36.1
         version: 8.36.1
@@ -3206,6 +3206,20 @@ packages:
       '@wdio/logger': 8.28.0
       '@wdio/types': 8.36.1
       '@wdio/utils': 8.36.1
+      mocha: 10.4.0
+    transitivePeerDependencies:
+      - supports-color
+    dev: true
+
+  /@wdio/mocha-framework@8.37.0:
+    resolution: {integrity: sha512-fTLhg/X7Lq3DIWKKmmus06mULDjyf8+N9ebG4ydSbSnW4p4im4HB+SguHgg7drX499I5nC6ZQw6sbQ3SHeB3fQ==}
+    engines: {node: ^16.13 || >=18}
+    dependencies:
+      '@types/mocha': 10.0.6
+      '@types/node': 20.12.12
+      '@wdio/logger': 8.28.0
+      '@wdio/types': 8.37.0
+      '@wdio/utils': 8.37.0
       mocha: 10.4.0
     transitivePeerDependencies:
       - supports-color
@@ -6766,6 +6780,7 @@ packages:
 
   /inflight@1.0.6:
     resolution: {integrity: sha512-k92I/b08q4wvFscXCLvqfsHCrjrF7yiXsQuIVvVE7N82W3+aqpzuUdBbfhWcy/FZR3/4IgflMgKLOsvPDrGCJA==}
+    deprecated: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
     dependencies:
       once: 1.4.0
       wrappy: 1.0.2
