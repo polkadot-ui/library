@@ -30,7 +30,7 @@
     "@vitejs/plugin-react": "^4.2.1",
     "@vitejs/plugin-react-swc": "^3.6.0",
     "@wdio/browser-runner": "^8.36.1",
-    "@wdio/cli": "^8.36.1",
+    "@wdio/cli": "^8.37.0",
     "@wdio/globals": "^8.36.1",
     "@wdio/mocha-framework": "^8.36.1",
     "@wdio/spec-reporter": "^8.36.1",
