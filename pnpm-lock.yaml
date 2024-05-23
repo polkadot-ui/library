@@ -269,8 +269,8 @@ importers:
         specifier: ^8.37.0
         version: 8.37.0
       '@wdio/spec-reporter':
-        specifier: ^8.36.1
-        version: 8.36.1
+        specifier: ^8.37.0
+        version: 8.37.0
       bignumber.js:
         specifier: ^9.1.1
         version: 9.1.2
@@ -3199,20 +3199,6 @@ packages:
       strip-ansi: 7.1.0
     dev: true
 
-  /@wdio/mocha-framework@8.36.1:
-    resolution: {integrity: sha512-G0h5AeneMNtoh9CcVQ82OCKj0axxUOEotEcInDu8V6UJbUywNJVL/bdTMKdaq5i84Hnc+s1LUKmLvN95F+lHGA==}
-    engines: {node: ^16.13 || >=18}
-    dependencies:
-      '@types/mocha': 10.0.6
-      '@types/node': 20.12.12
-      '@wdio/logger': 8.28.0
-      '@wdio/types': 8.36.1
-      '@wdio/utils': 8.36.1
-      mocha: 10.4.0
-    transitivePeerDependencies:
-      - supports-color
-    dev: true
-
   /@wdio/mocha-framework@8.37.0:
     resolution: {integrity: sha512-fTLhg/X7Lq3DIWKKmmus06mULDjyf8+N9ebG4ydSbSnW4p4im4HB+SguHgg7drX499I5nC6ZQw6sbQ3SHeB3fQ==}
     engines: {node: ^16.13 || >=18}
@@ -3238,13 +3224,13 @@ packages:
       '@types/node': 20.12.12
     dev: true
 
-  /@wdio/reporter@8.36.1:
-    resolution: {integrity: sha512-HcXr9XKq/6kPC9nexMRXIc/ft3Lvp0yCaW5tps01Axus9wbi5ysLHi2z5sB84F2YdpM+aRf7Lac56xkc4Jldeg==}
+  /@wdio/reporter@8.37.0:
+    resolution: {integrity: sha512-NmrFgF4Y1UCiTzDC9HOyZEsH8FBMFFKO3ZtSiDyKC6DrNGdDaRIzfypjO5RxqPgmc1DhTrpDaVnu+q/OffczSg==}
     engines: {node: ^16.13 || >=18}
     dependencies:
       '@types/node': 20.12.12
       '@wdio/logger': 8.28.0
-      '@wdio/types': 8.36.1
+      '@wdio/types': 8.37.0
       diff: 5.2.0
       object-inspect: 1.13.1
     dev: true
@@ -3273,12 +3259,12 @@ packages:
       - utf-8-validate
     dev: true
 
-  /@wdio/spec-reporter@8.36.1:
-    resolution: {integrity: sha512-VgAd8VQCfwKYz4A3BPDUYNIQxXhRSTaVNbmDzSlYfo5Jekygk7fz0LRFYBpJ69l7eQH0P5nzEyF92oW/rvE3VA==}
+  /@wdio/spec-reporter@8.37.0:
+    resolution: {integrity: sha512-fzTckUnluPjMXVGYqKLdDU3mjqSY0Us1Bh8LHMn+OS0/86rD86OufgC9R65QwDl5aTGToMEwenEdjrSyyQ5jlw==}
     engines: {node: ^16.13 || >=18}
     dependencies:
-      '@wdio/reporter': 8.36.1
-      '@wdio/types': 8.36.1
+      '@wdio/reporter': 8.37.0
+      '@wdio/types': 8.37.0
       chalk: 5.3.0
       easy-table: 1.2.0
       pretty-ms: 7.0.1
@@ -3287,9 +3273,11 @@ packages:
   /@wdio/types@8.36.1:
     resolution: {integrity: sha512-kKtyJbypasKo/VQuJ6dTQQwFtHE9qoygjoCZjrQCLGraRSjOEiqZHPR0497wbeCvcgHIYyImbmcylqZNGUE0CQ==}
     engines: {node: ^16.13 || >=18}
+    requiresBuild: true
     dependencies:
       '@types/node': 20.12.12
     dev: true
+    optional: true
 
   /@wdio/types@8.37.0:
     resolution: {integrity: sha512-36kmSlZcVhsMlbhaSCQUfL51iG81FlbzW4Dfkz4903cDkxmh64bgxydZbRB5aPLnJzzR7tI3chIME8zSVZFR8w==}
@@ -3301,6 +3289,7 @@ packages:
   /@wdio/utils@8.36.1:
     resolution: {integrity: sha512-xmgPHU11/o9n2FeRmDFkPRC0okiwA1i2xOcR2c3aSpuk99XkAm9RaMn/6u9LFaqsCpgaVxazcYEGSceO7U4hZA==}
     engines: {node: ^16.13 || >=18}
+    requiresBuild: true
     dependencies:
       '@puppeteer/browsers': 1.9.1
       '@wdio/logger': 8.28.0
@@ -3318,6 +3307,7 @@ packages:
     transitivePeerDependencies:
       - supports-color
     dev: true
+    optional: true
 
   /@wdio/utils@8.37.0:
     resolution: {integrity: sha512-2YtT8fH8mfMuDeEXKtFgxxBBoIGezSKysKAydtV9sICg4ZJM5CSsSzhfGaszC2qgOv3WHaBsfgg0Nljp1g2Y5A==}
@@ -4602,6 +4592,7 @@ packages:
 
   /devtools-protocol@0.0.1302984:
     resolution: {integrity: sha512-Rgh2Sk5fUSCtEx4QGH9iwTyECdFPySG2nlz5J8guGh2Wlha6uzSOCq/DCEC8faHlLaMPZJMuZ4ovgcX4LvOkKA==}
+    requiresBuild: true
     dev: true
 
   /diff-sequences@29.6.3:
