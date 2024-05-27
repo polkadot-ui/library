@@ -269,8 +269,8 @@ importers:
         specifier: ^8.38.0
         version: 8.38.0
       '@wdio/spec-reporter':
-        specifier: ^8.37.0
-        version: 8.37.0
+        specifier: ^8.38.0
+        version: 8.38.0
       bignumber.js:
         specifier: ^9.1.1
         version: 9.1.2
@@ -3253,12 +3253,12 @@ packages:
       '@types/node': 20.12.12
     dev: true
 
-  /@wdio/reporter@8.37.0:
-    resolution: {integrity: sha512-NmrFgF4Y1UCiTzDC9HOyZEsH8FBMFFKO3ZtSiDyKC6DrNGdDaRIzfypjO5RxqPgmc1DhTrpDaVnu+q/OffczSg==}
+  /@wdio/reporter@8.38.0:
+    resolution: {integrity: sha512-7eyBM06j0PAu2g14wOwJbSmUOaT8q1pmMukzeRl1YDoW2sLpQG0zMZNzQNsQyi7+1KgltTJJnvHCec5MBZrjpw==}
     engines: {node: ^16.13 || >=18}
     dependencies:
       '@types/node': 20.12.12
-      '@wdio/logger': 8.28.0
+      '@wdio/logger': 8.38.0
       '@wdio/types': 8.37.0
       diff: 5.2.0
       object-inspect: 1.13.1
@@ -3288,11 +3288,11 @@ packages:
       - utf-8-validate
     dev: true
 
-  /@wdio/spec-reporter@8.37.0:
-    resolution: {integrity: sha512-fzTckUnluPjMXVGYqKLdDU3mjqSY0Us1Bh8LHMn+OS0/86rD86OufgC9R65QwDl5aTGToMEwenEdjrSyyQ5jlw==}
+  /@wdio/spec-reporter@8.38.0:
+    resolution: {integrity: sha512-Cuk/mqsBa+YgAL3OCtsYLUxRkGSYeaXM3LSE5muzY1mSqQlK3a/5GdAXlaOosuhYpUgI0A9xTsMiq7PQd75qHA==}
     engines: {node: ^16.13 || >=18}
     dependencies:
-      '@wdio/reporter': 8.37.0
+      '@wdio/reporter': 8.38.0
       '@wdio/types': 8.37.0
       chalk: 5.3.0
       easy-table: 1.2.0
