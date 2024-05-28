@@ -260,8 +260,8 @@ importers:
         specifier: ^8.38.0
         version: 8.38.0(@babel/core@7.24.5)(@types/node@20.12.12)(esbuild@0.18.20)(rollup@4.18.0)(sass@1.77.2)(typescript@5.4.5)
       '@wdio/cli':
-        specifier: ^8.38.0
-        version: 8.38.0(typescript@5.4.5)
+        specifier: ^8.38.1
+        version: 8.38.1(typescript@5.4.5)
       '@wdio/globals':
         specifier: ^8.38.0
         version: 8.38.0(typescript@5.4.5)
@@ -3128,8 +3128,8 @@ packages:
       - utf-8-validate
     dev: true
 
-  /@wdio/cli@8.38.0(typescript@5.4.5):
-    resolution: {integrity: sha512-plRVINOKeVzg4uOFJBjaEg5fBZ1vw/yxvreziL0AOxAG03HalrE1sImvu83HjDWNUDIRVcJDq+iiiFsL3khSLg==}
+  /@wdio/cli@8.38.1(typescript@5.4.5):
+    resolution: {integrity: sha512-xif0RvJX+saXVdzrhlEafbEdptNyeyqm0pyilT4H7OI7OMa+23rWB67r2SPoIZbBrVeFv1iqtUx9hR73RRio2A==}
     engines: {node: ^16.13 || >=18}
     hasBin: true
     dependencies:
