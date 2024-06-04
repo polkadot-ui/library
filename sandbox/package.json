@@ -33,7 +33,7 @@
     "@wdio/cli": "^8.38.1",
     "@wdio/globals": "^8.38.0",
     "@wdio/mocha-framework": "^8.38.0",
-    "@wdio/spec-reporter": "^8.38.0",
+    "@wdio/spec-reporter": "^8.38.2",
     "bignumber.js": "^9.1.1",
     "eslint": "^8.57.0",
     "eslint-plugin-react-hooks": "^4.6.2",
