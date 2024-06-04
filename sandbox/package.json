@@ -31,7 +31,7 @@
     "@vitejs/plugin-react-swc": "^3.7.0",
     "@wdio/browser-runner": "^8.38.1",
     "@wdio/cli": "^8.38.1",
-    "@wdio/globals": "^8.38.0",
+    "@wdio/globals": "^8.38.2",
     "@wdio/mocha-framework": "^8.38.0",
     "@wdio/spec-reporter": "^8.38.0",
     "bignumber.js": "^9.1.1",
