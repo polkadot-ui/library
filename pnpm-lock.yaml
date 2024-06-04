@@ -266,8 +266,8 @@ importers:
         specifier: ^8.38.0
         version: 8.38.0(typescript@5.4.5)
       '@wdio/mocha-framework':
-        specifier: ^8.38.0
-        version: 8.38.0
+        specifier: ^8.38.2
+        version: 8.38.2
       '@wdio/spec-reporter':
         specifier: ^8.38.0
         version: 8.38.0
@@ -3143,6 +3143,20 @@ packages:
       - supports-color
     dev: true
 
+  /@wdio/mocha-framework@8.38.2:
+    resolution: {integrity: sha512-qJmRL5E6/ypjCUACH4hvCAAmTdU4YUrUlp9o/IKvTIAHMnZPE0/HgUFixCeu8Mop+rdzTPVBrbqxpRDdSnraYA==}
+    engines: {node: ^16.13 || >=18}
+    dependencies:
+      '@types/mocha': 10.0.6
+      '@types/node': 20.14.0
+      '@wdio/logger': 8.38.0
+      '@wdio/types': 8.38.2
+      '@wdio/utils': 8.38.2
+      mocha: 10.4.0
+    transitivePeerDependencies:
+      - supports-color
+    dev: true
+
   /@wdio/protocols@8.38.0:
     resolution: {integrity: sha512-7BPi7aXwUtnXZPeWJRmnCNFjyDvGrXlBmN9D4Pi58nILkyjVRQKEY9/qv/pcdyB0cvmIvw++Kl/1Lg+RxG++UA==}
     dev: true
@@ -3205,6 +3219,13 @@ packages:
     engines: {node: ^16.13 || >=18}
     dependencies:
       '@types/node': 20.14.1
+    dev: true
+
+  /@wdio/types@8.38.2:
+    resolution: {integrity: sha512-+wj1c1OSLdnN4WO5b44Ih4263dTl/eSwMGSI4/pCgIyXIuYQH38JQ+6WRa+c8vJEskUzboq2cSgEQumVZ39ozQ==}
+    engines: {node: ^16.13 || >=18}
+    dependencies:
+      '@types/node': 20.14.0
     dev: true
 
   /@wdio/types@8.38.2:
