@@ -58,11 +58,12 @@ export const Category = ({ rest, name, i }: Props) => {
             {paths.map((path, k) => (
               <Link
                 key={`nav_${i}_heading_${j}_path_${k}`}
-                className={`link ${heading ? " group" : ""} ${pathname === `/${path}` ||
+                className={`link ${heading ? " group" : ""} ${
+                  pathname === `/${path}` ||
                   (pathname === "/" && isDefaultRoute(path))
-                  ? " selected"
-                  : ``
-                  }`}
+                    ? " selected"
+                    : ``
+                }`}
                 to={`${path}`}
                 onClick={() => setSideMenu(false)}
               >
