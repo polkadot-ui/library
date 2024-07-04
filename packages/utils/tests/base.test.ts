@@ -1,7 +1,6 @@
 import { describe, expect, test } from "vitest";
 import { AnyObject, EvalMessages } from "../lib/types";
 import * as fn from "../lib/index";
-import BigNumber from "bignumber.js";
 
 const defaultChainDecimals = 9;
 const address = "234CHvWmTuaVtkJpLS9oxuhFd3HamcEMrfFAPYoFaetEZmY7";
@@ -72,31 +71,31 @@ describe("Tests suite - rmCommas Function", () => {
 
 describe("Tests suite - greaterThanZero Function", () => {
   test("should return true when the input is greater than 0", () => {
-    const val = new BigNumber("10");
+    const val = BigInt("10");
     const result = fn.greaterThanZero(val);
     expect(result).toBe(true);
   });
 
   test("should return false when the input is equal to 0", () => {
-    const val = new BigNumber("0");
+    const val = BigInt("0");
     const result = fn.greaterThanZero(val);
     expect(result).toBe(false);
   });
 
   test("should return false when the input is less than 0", () => {
-    const val = new BigNumber("-5");
+    const val = BigInt("-5");
     const result = fn.greaterThanZero(val);
     expect(result).toBe(false);
   });
 
   test("should return true when the input is a large positive number", () => {
-    const val = new BigNumber("999999999999999999999999999");
+    const val = BigInt("999999999999999999999999999");
     const result = fn.greaterThanZero(val);
     expect(result).toBe(true);
   });
 
   test("should return false when the input is a large negative number", () => {
-    const val = new BigNumber("-999999999999999999999999999");
+    const val = BigInt("-999999999999999999999999999");
     const result = fn.greaterThanZero(val);
     expect(result).toBe(false);
   });
@@ -104,31 +103,31 @@ describe("Tests suite - greaterThanZero Function", () => {
 
 describe("Tests suite - isNotZero Function", () => {
   test("should return true when the input is greater than 0", () => {
-    const val = new BigNumber("10");
+    const val = BigInt("10");
     const result = fn.isNotZero(val);
     expect(result).toBe(true);
   });
 
   test("should return false when the input is equal to 0", () => {
-    const val = new BigNumber("0");
+    const val = BigInt("0");
     const result = fn.isNotZero(val);
     expect(result).toBe(false);
   });
 
   test("should return true when the input is less than 0", () => {
-    const val = new BigNumber("-5");
+    const val = BigInt("-5");
     const result = fn.isNotZero(val);
     expect(result).toBe(true);
   });
 
   test("should return true when the input is a large positive number", () => {
-    const val = new BigNumber("999999999999999999999999999");
+    const val = BigInt("999999999999999999999999999");
     const result = fn.isNotZero(val);
     expect(result).toBe(true);
   });
 
   test("should return true when the input is a large negative number", () => {
-    const val = new BigNumber("-999999999999999999999999999");
+    const val = BigInt("-999999999999999999999999999");
     const result = fn.isNotZero(val);
     expect(result).toBe(true);
   });

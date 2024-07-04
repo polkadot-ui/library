@@ -1,4 +1,3 @@
-import { BigNumber } from "bignumber.js";
 import { AnyFunction, AnyJson } from "./types";
 
 /**
@@ -87,28 +86,26 @@ export const ellipsisFn = (
 
 /**
  * @name greaterThanZero
- * @summary Returns whether a BigNumber is greater than zero.
+ * @summary Returns whether a bigint is greater than zero.
  */
-export const greaterThanZero = (val: BigNumber) => val.isGreaterThan(0);
+export const greaterThanZero = (val: bigint) => val > 0;
 
 /**
  * @name isNotZero
- * @summary Returns whether a BigNumber is zero.
+ * @summary Returns whether a bigint is zero.
  */
-export const isNotZero = (val: BigNumber) => !val.isZero();
+export const isNotZero = (val: bigint) => val !== 0n;
 
 /**
  * @name minDecimalPlaces
  * @summary Forces a number to have at least the provided decimal places.
  */
 export const minDecimalPlaces = (val: string, minDecimals: number): string => {
-  const whole = new BigNumber(rmCommas(val).split(".")[0] || 0);
+  const whole = BigInt(rmCommas(val).split(".")[0] || 0);
   const decimals = val.split(".")[1] || "";
-  const missingDecimals = new BigNumber(minDecimals).minus(decimals.length);
-  return missingDecimals.isGreaterThan(0)
-    ? `${whole.toFormat(0)}.${decimals.toString()}${"0".repeat(
-        missingDecimals.toNumber()
-      )}`
+  const missingDecimals = BigInt(minDecimals) - BigInt(decimals.length);
+  return greaterThanZero(missingDecimals)
+    ? `${whole}.${decimals.toString()}${"0".repeat(Number(missingDecimals))}`
     : val;
 };
 
