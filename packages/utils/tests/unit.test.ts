@@ -17,6 +17,14 @@ describe("Tests suite - planckToUnit Function", () => {
       "Argument out of range: -2"
     );
   });
+
+  test("should throw error when undefined value", () => {
+    const inputValue = undefined;
+    const units = 2;
+    const expectedOutput = Number("0");
+    const result = fn.planckToUnit(inputValue, units);
+    expect(result).toEqual(expectedOutput);
+  });
 });
 
 describe("Test suite - unitToPlanck Function", () => {
