@@ -1,30 +1,29 @@
 import { describe, expect, test } from "vitest";
 import * as fn from "../lib/index";
-import BigNumber from "bignumber.js";
 
 describe("Tests suite - planckToUnit Function", () => {
-  test("should correctly convert a BigNumber to units", () => {
-    const inputValue = new BigNumber("10000000");
+  test("should correctly convert a BigInt to units", () => {
+    const inputValue = 10000000n;
     const units = 6;
-    const expectedOutput = new BigNumber("10.000000");
+    const expectedOutput = Number("10.000000");
     const result = fn.planckToUnit(inputValue, units);
     expect(result).toEqual(expectedOutput);
   });
 
   test("should throw error when negative units", () => {
-    const inputValue = new BigNumber("10000000");
+    const inputValue = 10000000n;
     const units = -2;
     expect(() => fn.planckToUnit(inputValue, units)).toThrowError(
-      "[BigNumber Error] Argument out of range: -2"
+      "Argument out of range: -2"
     );
   });
 });
 
 describe("Test suite - unitToPlanck Function", () => {
   test("should correctly convert a string to planck with positive units", () => {
-    const val = "10";
+    const val = "10.2";
     const units = 6;
-    const expectedOutput = new BigNumber("10000000");
+    const expectedOutput = BigInt("10200000");
     const result = fn.unitToPlanck(val, units);
     expect(result).toEqual(expectedOutput);
   });
@@ -32,7 +31,7 @@ describe("Test suite - unitToPlanck Function", () => {
   test("should correctly convert a string to planck with zero units", () => {
     const val = "42";
     const units = 0;
-    const expectedOutput = new BigNumber("42");
+    const expectedOutput = BigInt("42");
     const result = fn.unitToPlanck(val, units);
     expect(result).toEqual(expectedOutput);
   });
@@ -40,25 +39,21 @@ describe("Test suite - unitToPlanck Function", () => {
   test("should correctly convert a string to planck with negative units but return integer", () => {
     const val = "100000";
     const units = -6;
-    const expectedOutput = new BigNumber("0");
-    const result = fn.unitToPlanck(val, units);
-    expect(result).toEqual(expectedOutput);
+    expect(() => fn.unitToPlanck(val, units)).toThrowError(
+      "Param(s) cannot be negative"
+    );
   });
 
-  test("should return 0 for an empty string", () => {
+  test("should error for an empty string", () => {
     const val = "";
     const units = 8;
-    const expectedOutput = new BigNumber("0");
-    const result = fn.unitToPlanck(val, units);
-    expect(result).toEqual(expectedOutput);
+    expect(() => fn.unitToPlanck(val, units)).toThrowError("Params are wrong");
   });
 
-  test("should return 0 for a non-numeric string", () => {
+  test("should error for a non-numeric string", () => {
     const val = "invalid";
     const units = 4;
-    const expectedOutput = new BigNumber("0");
-    const result = fn.unitToPlanck(val, units);
-    expect(result).toEqual(expectedOutput);
+    expect(() => fn.unitToPlanck(val, units)).toThrowError("Params are wrong");
   });
 });
 
