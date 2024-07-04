@@ -7,7 +7,7 @@
     "outDir": "dist",
     "module": "ESNext",
     "moduleResolution": "Node",
-    "target": "es6",
+    "target": "ES2020",
     "lib": ["DOM", "DOM.Iterable", "ESNext"],
     "sourceMap": false,
     "allowSyntheticDefaultImports": true,
