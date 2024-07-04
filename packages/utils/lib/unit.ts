@@ -1,6 +1,5 @@
 import { decodeAddress, encodeAddress } from "@polkadot/keyring";
 import { hexToU8a, isHex, u8aToString, u8aUnwrapBytes } from "@polkadot/util";
-import { BigNumber } from "bignumber.js";
 import type { MutableRefObject, RefObject } from "react";
 import { AnyJson, AnyObject, EvalMessages } from "./types";
 import { ellipsisFn } from "./base";
@@ -17,13 +16,17 @@ export const remToUnit = (rem: string) =>
  * @name planckToUnit
  * @summary convert planck to the token unit.
  * @description
- * Converts an on chain balance value in BigNumber planck to a decimal value in token unit. (1 token
- * = 10^units planck).
+ * Converts an on chain balance value in bigint planck to a decimal value in token unit
  */
-export const planckToUnit = (val: BigNumber, units: number) =>
-  new BigNumber(
-    val.dividedBy(new BigNumber(10).exponentiatedBy(units)).toFixed(units)
-  );
+export const planckToUnit = (val: bigint, units: number): number => {
+  if (units < 0) {
+    throw new Error(`Argument out of range: ${units}`);
+  }
+  const str = val.toString();
+  const numb = str.slice(0, str.length - units);
+  const dec = str.slice(str.length - units);
+  return Number(numb + "." + dec);
+};
 
 /**
  * @name unitToPlanck
@@ -32,11 +35,20 @@ export const planckToUnit = (val: BigNumber, units: number) =>
  * Converts a balance in token unit to an equivalent value in planck by applying the chain decimals
  * point. (1 token = 10^units planck).
  */
-export const unitToPlanck = (val: string, units: number): BigNumber => {
-  const init = new BigNumber(!val.length || !val ? "0" : val);
-  return (!init.isNaN() ? init : new BigNumber(0))
-    .multipliedBy(new BigNumber(10).exponentiatedBy(units))
-    .integerValue();
+export const unitToPlanck = (val: string, units: number): bigint => {
+  //make sure val and/or units are a positive number
+  if (Number(val) < 0 || units < 0) {
+    throw new Error(`Param(s) cannot be negative`);
+  }
+
+  const init = val.replaceAll(",", ".");
+
+  if (init && !isNaN(Number(init)) && (init.match(/\./g) || []).length <= 1) {
+    const value = Number(!init.length || !init ? "0" : init);
+    return BigInt(value * 10 ** units);
+  } else {
+    throw new Error(`Params are wrong`);
+  }
 };
 
 /**
@@ -360,8 +372,7 @@ export const makeCancelable = (promise: Promise<AnyObject>) => {
 };
 
 // Private for evalUnits
-const getSiValue = (si: number): BigNumber =>
-  new BigNumber(10).pow(new BigNumber(si));
+const getSiValue = (si: number): bigint => BigInt(10) ** BigInt(si);
 
 const si = [
   { value: getSiValue(24), symbol: "y", isMil: true },
@@ -372,7 +383,7 @@ const si = [
   { value: getSiValue(9), symbol: "n", isMil: true },
   { value: getSiValue(6), symbol: "μ", isMil: true },
   { value: getSiValue(3), symbol: "m", isMil: true },
-  { value: new BigNumber(1), symbol: "" },
+  { value: BigInt(1), symbol: "" },
   { value: getSiValue(3), symbol: "k" },
   { value: getSiValue(6), symbol: "M" },
   { value: getSiValue(9), symbol: "G" },
@@ -405,7 +416,7 @@ const alphaInts = new RegExp("^[+]?[0-9]*[" + allowedSymbols + "]{1}$");
 export const evalUnits = (
   input: string,
   chainDecimals: number
-): [BigNumber | null, string] => {
+): [bigint | null, string] => {
   //sanitize input to remove + char if exists
   input = input && input.replace("+", "");
   if (
@@ -421,34 +432,28 @@ export const evalUnits = (
   // find the value from the si list
   const siVal = si.find((s) => s.symbol === symbol);
   const numberStr = input.replace(symbol, "").replace(",", ".");
-  let numeric: BigNumber = new BigNumber(0);
+  let numeric: bigint = BigInt(0);
 
   if (!siVal) {
     return [null, EvalMessages.SYMBOL_ERROR];
   }
-  const decimalsBn = new BigNumber(10).pow(new BigNumber(chainDecimals));
+  const decimalsBn = BigInt(10) ** BigInt(chainDecimals);
   const containDecimal = numberStr.includes(".");
   const [decPart, fracPart] = numberStr.split(".");
   const fracDecimals = fracPart?.length || 0;
-  const fracExp = new BigNumber(10).pow(new BigNumber(fracDecimals));
+  const fracExp = BigInt(10) ** BigInt(fracDecimals);
   numeric = containDecimal
-    ? new BigNumber(
-        new BigNumber(decPart)
-          .multipliedBy(fracExp)
-          .plus(new BigNumber(fracPart))
-      )
-    : new BigNumber(new BigNumber(numberStr));
-  numeric = numeric.multipliedBy(decimalsBn);
+    ? BigInt(BigInt(decPart) * BigInt(fracExp) + BigInt(fracPart))
+    : BigInt(numberStr);
+  numeric = numeric * decimalsBn;
   if (containDecimal) {
     numeric = siVal.isMil
-      ? numeric.dividedBy(siVal.value).dividedBy(fracExp)
-      : numeric.multipliedBy(siVal.value).dividedBy(fracExp);
+      ? numeric / siVal.value / fracExp
+      : (numeric * siVal.value) / fracExp;
   } else {
-    numeric = siVal.isMil
-      ? numeric.dividedBy(siVal.value)
-      : numeric.multipliedBy(siVal.value);
+    numeric = siVal.isMil ? numeric / siVal.value : numeric * siVal.value;
   }
-  if (numeric.eq(new BigNumber(0))) {
+  if (numeric === BigInt(0)) {
     return [null, EvalMessages.ZERO];
   }
   return [numeric, EvalMessages.SUCCESS];

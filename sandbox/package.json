@@ -34,7 +34,6 @@
     "@wdio/globals": "^8.38.0",
     "@wdio/mocha-framework": "^8.38.2",
     "@wdio/spec-reporter": "^8.38.0",
-    "bignumber.js": "^9.1.1",
     "eslint": "^8.57.0",
     "eslint-plugin-react-hooks": "^4.6.2",
     "eslint-plugin-react-refresh": "^0.4.7",

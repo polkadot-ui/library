@@ -6,7 +6,6 @@ import {
   IconProps,
 } from "@packages/ui-react/lib/components";
 
-import BigNumber from "bignumber.js";
 import { useState } from "react";
 
 export const Components = () => {
@@ -65,7 +64,7 @@ export const Components = () => {
 
       <div style={{ display: "flex" }}>
         <h1 style={{ margin: "1rem 0 0 0", display: "flex" }}>
-          <Odometer value={new BigNumber(val).toFormat()} />
+          <Odometer value={BigInt(val).toString()} />
         </h1>
       </div>
       <div style={{ display: "flex" }}>
@@ -80,7 +79,7 @@ export const Components = () => {
 
       <div style={{ display: "flex" }}>
         <h3 style={{ margin: "1rem 0 0 0", display: "flex" }}>
-          <Odometer value={new BigNumber(val2).toFormat()} />
+          <Odometer value={BigInt(val2).toString()} />
         </h3>
       </div>
       <div style={{ display: "flex" }}>
