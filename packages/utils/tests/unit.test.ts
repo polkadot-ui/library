@@ -2,6 +2,14 @@ import { describe, expect, test } from "vitest";
 import * as fn from "../lib/index";
 
 describe("Tests suite - planckToUnit Function", () => {
+  test("should correctly convert a BigInt to unit", () => {
+    const inputValue = 249959811600n;
+    const units = 10;
+    const expectedOutput = Number("24.99598116");
+    const result = fn.planckToUnit(inputValue, units);
+    expect(result).toEqual(expectedOutput);
+  });
+
   test("should correctly convert a BigInt to units", () => {
     const inputValue = 10000000n;
     const units = 6;
@@ -104,5 +112,13 @@ describe("Tests suite - transformToBaseUnit Function", () => {
   test("Should has 0.0000 fee and return 0", () => {
     const result = fn.transformToBaseUnit("0.0000", 20);
     expect(result).toBe("0");
+  });
+
+  test("Should fail if input is undefined", () => {
+    const input = undefined;
+    const dec = 18;
+    expect(() => fn.transformToBaseUnit(input, dec)).toThrowError(
+      "[@polkadot/utils | transformToBaseUnit] Input is not defined"
+    );
   });
 });
