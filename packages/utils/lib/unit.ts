@@ -3,6 +3,7 @@ import { hexToU8a, isHex, u8aToString, u8aUnwrapBytes } from "@polkadot/util";
 import type { MutableRefObject, RefObject } from "react";
 import { AnyJson, AnyObject, EvalMessages } from "./types";
 import { ellipsisFn } from "./base";
+import { errorLogPrefix } from "./config";
 
 /**
  * @name remToUnit
@@ -471,10 +472,15 @@ export const evalUnits = (
  * @param {number} chainDecimals: The number of decimal places used by the blockchain.
  */
 export const transformToBaseUnit = (
-  estFee: string,
+  input: string,
   chainDecimals: number
 ): string => {
-  const t = estFee.length - chainDecimals;
+  if (!input) {
+    throw new Error(
+      `[${errorLogPrefix} | transformToBaseUnit] Input is not defined`
+    );
+  }
+  const t = input.length - chainDecimals;
   let s = "";
   // if chainDecimals are more than the estFee length
   if (t < 0) {
@@ -482,7 +488,7 @@ export const transformToBaseUnit = (
     for (let i = 0; i < Math.abs(t) - 1; i++) {
       s += "0";
     }
-    s = s + estFee;
+    s = s + input;
     // remove trailing 0s
     for (let i = 0; i < s.length; i++) {
       if (s.slice(s.length - 1) !== "0") {
@@ -492,7 +498,7 @@ export const transformToBaseUnit = (
     }
     s = "0." + s;
   } else {
-    s = (parseInt(estFee) / 10 ** chainDecimals).toString();
+    s = (parseInt(input) / 10 ** chainDecimals).toString();
   }
   return parseFloat(s) !== 0 ? s : "0";
 };
