@@ -6,6 +6,7 @@ import { extensionCtx } from "./extensionCtx"
 import { getExtensionIcon } from "@polkadot-ui/assets/extensions"
 import { useAvailableExtensions } from "./hooks"
 import type { SelectedAccountType } from "./types"
+import { Any } from "../../utils"
 
 const { Provider } = extensionCtx
 
@@ -62,7 +63,7 @@ const getExtensionsStore = () => {
 }
 
 const extensionsStore = getExtensionsStore()
-extensionsStore.subscribe(Function.prototype as any)
+extensionsStore.subscribe(Function.prototype as Any)
 
 export const ExtensionProvider: React.FC<
   PropsWithChildren<{

@@ -9,9 +9,6 @@ import type { SelectedAccountType } from "./types"
 export const SignerCtx: React.FC<
   PropsWithChildren<{ account: SelectedAccountType }>
 > = ({ account, children }) => {
-  const address = account?.address
-  const extensionName = account?.extension
-
   const extensions = useSelectedExtensions()
   const [injectedPolkadotAccount, setInjectedPolkadotAccount] =
     useState<InjectedPolkadotAccount | null>(null)
@@ -21,6 +18,9 @@ export const SignerCtx: React.FC<
       setInjectedPolkadotAccount(null)
       return
     }
+
+    const address = account.address
+    const extensionName = account.extension
 
     setInjectedPolkadotAccount(
       extensions

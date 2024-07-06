@@ -2,6 +2,7 @@ import { useContext, useEffect, useMemo, useState } from "react"
 import { SelectedAccountCtx } from "./accountCtx"
 import { extensionCtx } from "./extensionCtx"
 import { getInjectedExtensions } from "polkadot-api/pjs-signer"
+import { Any } from "../../utils"
 
 const getJoinedInjectedExtensions = () => getInjectedExtensions()?.join(",")
 
@@ -11,7 +12,7 @@ export const useAvailableExtensions = (): string[] => {
   const [extensions, setExtensions] = useState(getJoinedInjectedExtensions)
 
   useEffect(() => {
-    let token: any
+    let token: Any
     const updateExtensions = () => {
       const jointedExtensions = getJoinedInjectedExtensions()
       setExtensions(jointedExtensions)
