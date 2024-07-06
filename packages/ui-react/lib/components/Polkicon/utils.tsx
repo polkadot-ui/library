@@ -1,63 +1,65 @@
-import { getSs58AddressInfo } from "@polkadot-api/substrate-bindings";
-import { ChainName, Circle, Scheme } from "./types";
-import { blake2b } from "@noble/hashes/blake2b";
+import { getSs58AddressInfo } from "@polkadot-api/substrate-bindings"
+import { ChainName, Circle, Scheme } from "./types"
+import { blake2b } from "@noble/hashes/blake2b"
 
-const SIZE = 64;
-const C = SIZE / 2;
-export const Z = (SIZE / 64) * 5;
+// eslint-disable-next-line react-refresh/only-export-components
+const SIZE = 64
+// eslint-disable-next-line react-refresh/only-export-components
+const C = SIZE / 2
+export const Z = (SIZE / 64) * 5
 
 export const outerCircle = (fill: string): Circle => ({
   cx: C,
   cy: C,
   fill,
   r: C,
-});
+})
 
 export const renderCircle = ({ cx, cy, fill, r }: Circle, key: number) => (
   <circle cx={cx} cy={cy} fill={fill} key={key} r={r} />
-);
+)
 
 const getRotation = (
   ch: ChainName
 ): {
-  r: number;
-  ro2: number;
-  r3o4: number;
-  ro4: number;
-  rroot3o2: number;
-  rroot3o4: number;
+  r: number
+  ro2: number
+  r3o4: number
+  ro4: number
+  rroot3o2: number
+  rroot3o4: number
 } => {
-  let param_r: number;
-  let param_rroot3o2: number;
-  let param_ro2: number;
-  let param_rroot3o4: number;
-  let param_ro4: number;
-  let param_r3o4: number;
+  let param_r: number
+  let param_rroot3o2: number
+  let param_ro2: number
+  let param_rroot3o4: number
+  let param_ro4: number
+  let param_r3o4: number
   switch (ch) {
     case "generic":
     case "kusama":
     case "westend":
     default:
-      param_r = 3;
-      param_rroot3o2 = 2;
-      param_ro2 = 2;
-      param_rroot3o4 = 4;
-      param_ro4 = 4;
-      param_r3o4 = 4;
-      break;
+      param_r = 3
+      param_rroot3o2 = 2
+      param_ro2 = 2
+      param_rroot3o4 = 4
+      param_ro4 = 4
+      param_r3o4 = 4
+      break
   }
-  const r = (C / 4) * param_r;
-  const rroot3o2 = (r * Math.sqrt(3)) / param_rroot3o2;
-  const ro2 = r / param_ro2;
-  const rroot3o4 = (r * Math.sqrt(3)) / param_rroot3o4;
-  const ro4 = r / param_ro4;
-  const r3o4 = (r * 3) / param_r3o4;
+  const r = (C / 4) * param_r
+  const rroot3o2 = (r * Math.sqrt(3)) / param_rroot3o2
+  const ro2 = r / param_ro2
+  const rroot3o4 = (r * Math.sqrt(3)) / param_rroot3o4
+  const ro4 = r / param_ro4
+  const r3o4 = (r * 3) / param_r3o4
 
-  return { r, r3o4, ro2, ro4, rroot3o2, rroot3o4 };
-};
+  return { r, r3o4, ro2, ro4, rroot3o2, rroot3o4 }
+}
 
 export const getCircleXY = (ch: ChainName): [number, number][] => {
-  const { r, r3o4, ro2, ro4, rroot3o2, rroot3o4 } = getRotation(ch);
+  const { r, r3o4, ro2, ro4, rroot3o2, rroot3o4 } = getRotation(ch)
 
   return [
     [C, C - r],
@@ -79,8 +81,8 @@ export const getCircleXY = (ch: ChainName): [number, number][] => {
     [C + rroot3o4, C - ro4],
     [C + rroot3o4, C - r3o4],
     [C, C],
-  ];
-};
+  ]
+}
 
 export const getParams = (account: string) => {
   const zero = blake2b(
@@ -88,11 +90,11 @@ export const getParams = (account: string) => {
       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
       0, 0, 0, 0, 0, 0, 0,
     ])
-  );
+  )
 
-  const add = getSs58AddressInfo(account);
+  const add = getSs58AddressInfo(account)
 
-  let id: string | Uint8Array = add.isValid ? add.publicKey : account;
+  let id: string | Uint8Array = add.isValid ? add.publicKey : account
   if (
     !(
       typeof id == "object" &&
@@ -101,48 +103,48 @@ export const getParams = (account: string) => {
       id.length == 32
     )
   ) {
-    return {};
+    return {}
   }
 
   id = Uint8Array.from(blake2b(id)).map(
     (x, i: number) => (x + 256 - zero[i]) % 256
-  );
+  )
 
-  const s = 64;
-  const c = s / 2;
-  const r = /* sixPoint ? (s / 2 / 8) * 5 : */ (s / 2 / 4) * 2.8;
-  const rroot3o2 = (r * Math.sqrt(3)) / 2;
-  const ro2 = r / 2;
-  const rroot3o4 = (r * Math.sqrt(3)) / 4;
-  const ro4 = r / 4;
-  const r3o4 = (r * 3) / 4;
+  const s = 64
+  const c = s / 2
+  const r = /* sixPoint ? (s / 2 / 8) * 5 : */ (s / 2 / 4) * 2.8
+  const rroot3o2 = (r * Math.sqrt(3)) / 2
+  const ro2 = r / 2
+  const rroot3o4 = (r * Math.sqrt(3)) / 4
+  const ro4 = r / 4
+  const r3o4 = (r * 3) / 4
 
-  const z = (s / 64) * 5;
+  const z = (s / 64) * 5
 
   const total = Object.keys(SCHEMA)
     .map((k) => SCHEMA[k].freq)
-    .reduce((a, b) => a + b);
+    .reduce((a, b) => a + b)
 
-  const sat = (Math.floor((id[29] * 70) / 256 + 26) % 80) + 30;
-  const d = Math.floor((id[30] + id[31] * 256) % total);
-  const scheme = findScheme(d);
+  const sat = (Math.floor((id[29] * 70) / 256 + 26) % 80) + 30
+  const d = Math.floor((id[30] + id[31] * 256) % total)
+  const scheme = findScheme(d)
   const palette = Array.from(id).map((x, i) => {
-    const b = (x + (i % 28) * 58) % 256;
+    const b = (x + (i % 28) * 58) % 256
     if (b == 0) {
-      return "#444";
+      return "#444"
     }
     if (b == 255) {
-      return "transparent";
+      return "transparent"
     }
-    const h = Math.floor(((b % 64) * 360) / 64);
-    const l = [53, 15, 35, 75][Math.floor(b / 64)];
-    return `hsl(${h}, ${sat}%, ${l}%)`;
-  });
+    const h = Math.floor(((b % 64) * 360) / 64)
+    const l = [53, 15, 35, 75][Math.floor(b / 64)]
+    return `hsl(${h}, ${sat}%, ${l}%)`
+  })
 
-  const rot = (id[28] % 6) * 3;
+  const rot = (id[28] % 6) * 3
 
-  return { c, r, rroot3o2, ro2, rroot3o4, ro4, r3o4, z, rot, scheme, palette };
-};
+  return { c, r, rroot3o2, ro2, rroot3o4, ro4, r3o4, z, rot, scheme, palette }
+}
 
 /*
     A generic identity icon, taken from
@@ -178,20 +180,20 @@ export const SCHEMA: { [index: string]: Scheme } = {
     colors: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 8, 6, 7, 5, 3, 4, 2, 11],
     freq: 128,
   },
-};
+}
 
 export const findScheme = (d: number): Scheme => {
-  let out = 0;
+  let out = 0
   // eslint-disable-next-line @typescript-eslint/no-shadow
   const schema = Object.values(SCHEMA).find((schema): boolean => {
-    out += schema.freq;
+    out += schema.freq
 
-    return d < out;
-  });
+    return d < out
+  })
 
   if (!schema) {
-    throw new Error("Unable to find a valid schema.");
+    throw new Error("Unable to find a valid schema.")
   }
 
-  return schema;
-};
+  return schema
+}

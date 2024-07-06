@@ -1,4 +1,4 @@
-import "@polkadot-ui/core/css/loaders/Cube/index.css";
+import "@polkadot-ui/core/css/loaders/Cube/index.css"
 
 export const Cube = () => (
   <div className="loader-cube-stage">
@@ -22,4 +22,4 @@ export const Cube = () => (
       </div>
     </div>
   </div>
-);
+)

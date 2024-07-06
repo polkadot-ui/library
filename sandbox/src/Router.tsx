@@ -1,13 +1,13 @@
-import { Route, Routes } from "react-router-dom";
-import { routes } from "./config/routes";
-import { Menu } from "./components/Menu";
-import { Header } from "./components/Header";
-import { useUi } from "./contexts/UI";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Route, Routes } from "react-router-dom"
+import { routes } from "./config/routes"
+import { Menu } from "./components/Menu"
+import { Header } from "./components/Header"
+import { useUi } from "./contexts/UI"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
 export const Router = () => {
-  const { sideMenuOpen } = useUi();
-  console.log(sideMenuOpen);
+  const { sideMenuOpen } = useUi()
+  console.log(sideMenuOpen)
 
   return (
     <>
@@ -51,14 +51,14 @@ export const Router = () => {
         </div>
       </div>
     </>
-  );
-};
+  )
+}
 
 const ToggleMenu = () => {
-  const { setSideMenu, sideMenuOpen } = useUi();
+  const { setSideMenu, sideMenuOpen } = useUi()
 
   if (sideMenuOpen) {
-    return <></>;
+    return <></>
   }
 
   return (
@@ -69,5 +69,5 @@ const ToggleMenu = () => {
     >
       <FontAwesomeIcon icon={"bars"}></FontAwesomeIcon>{" "}
     </button>
-  );
-};
+  )
+}

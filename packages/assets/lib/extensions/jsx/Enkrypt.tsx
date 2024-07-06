@@ -26,6 +26,6 @@ export const Enkrypt = () => (
       </radialGradient>
     </defs>
   </svg>
-);
+)
 
-export default Enkrypt;
+export default Enkrypt

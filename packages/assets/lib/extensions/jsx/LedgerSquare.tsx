@@ -11,6 +11,6 @@ export const LedgerSquare = () => (
       fill="currentColor"
     />
   </svg>
-);
+)
 
-export default LedgerSquare;
+export default LedgerSquare

@@ -233,6 +233,6 @@ const StakeWorld = () => (
       d="M81.67 331.85a5.48 5.48 0 0 1-2.89-.41 3.75 3.75 0 0 1 2.89.41Z"
     />
   </svg>
-);
+)
 
-export default StakeWorld;
+export default StakeWorld

@@ -1,26 +1,26 @@
-import { ReactNode } from "react";
-import { Components } from "../pages/Components";
+import { ReactNode } from "react"
+import { Components } from "../pages/Components"
 
 type Routes = {
-  name: string;
-  path: string;
-  default?: boolean;
-  element: ReactNode;
-}[];
+  name: string
+  path: string
+  default?: boolean
+  element: ReactNode
+}[]
 
 type RouteCategories = ((RouteCategoryPath | RouteCategoryMulti) & {
-  name?: string;
-})[];
+  name?: string
+})[]
 
 interface RouteCategoryPath {
-  path: string;
+  path: string
 }
 
 export interface RouteCategoryMulti {
   paths: {
-    heading?: string;
-    paths: string[];
-  }[];
+    heading?: string
+    paths: string[]
+  }[]
 }
 
 const pages = [
@@ -30,7 +30,7 @@ const pages = [
     element: <Components />,
     default: true,
   },
-];
+]
 
 export const routes: Routes = [
   {
@@ -39,7 +39,7 @@ export const routes: Routes = [
     element: <Components />,
   },
   ...pages,
-];
+]
 
 export const routeCategories: RouteCategories = [
   {
@@ -50,10 +50,10 @@ export const routeCategories: RouteCategories = [
       },
     ],
   },
-];
+]
 
 export const nameFromRoute = (path: string): string | undefined =>
-  routes?.find((r) => r.path === path)?.name;
+  routes?.find((r) => r.path === path)?.name
 
 export const isDefaultRoute = (path: string): boolean =>
-  !!routes?.find((r) => r.default === true && r.path === path);
+  !!routes?.find((r) => r.default === true && r.path === path)

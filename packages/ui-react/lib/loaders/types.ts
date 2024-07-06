@@ -1,4 +1,4 @@
 export type LoaderProps = {
-  type?: "cube" | "line" | "dots";
-  text?: string;
-};
+  type?: "cube" | "line" | "dots"
+  text?: string
+}

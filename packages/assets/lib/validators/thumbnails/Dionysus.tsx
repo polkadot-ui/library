@@ -38,6 +38,6 @@ const Dionysus = () => (
       }}
     />
   </svg>
-);
+)
 
-export default Dionysus;
+export default Dionysus

@@ -1,32 +1,32 @@
-import minimist from "minimist";
-import * as packages from "./tasks/packages.mjs";
-import * as directory from "./tasks/directory.mjs";
+import minimist from "minimist"
+import * as packages from "./tasks/packages.mjs"
+import * as directory from "./tasks/directory.mjs"
 
-const args = minimist(process.argv.slice(2));
+const args = minimist(process.argv.slice(2))
 
-const { t: task, ...rest } = args;
+const { t: task, ...rest } = args
 
 switch (task) {
   case "packages:prebuild":
-    packages.prebuild();
-    break;
+    packages.prebuild()
+    break
 
   case "package:build":
-    packages.build(rest);
-    break;
+    packages.build(rest)
+    break
 
   case "packages:postbuild":
-    packages.postbuild();
-    break;
+    packages.postbuild()
+    break
 
   case "packages:patch":
-    packages.patch();
-    break;
+    packages.patch()
+    break
 
   case "directory:build":
-    directory.build();
-    break;
+    directory.build()
+    break
 
   default:
-    console.log("❌ No task provided.");
+    console.log("❌ No task provided.")
 }

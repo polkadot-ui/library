@@ -13,6 +13,6 @@ const Paranodes = () => (
       }}
     />
   </svg>
-);
+)
 
-export default Paranodes;
+export default Paranodes

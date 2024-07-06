@@ -23,6 +23,6 @@ const Metaspan = () => (
       }}
     />
   </svg>
-);
+)
 
-export default Metaspan;
+export default Metaspan

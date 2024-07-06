@@ -1,4 +1,4 @@
 export interface UIContextInterface {
-  setSideMenu: (v: boolean) => void;
-  sideMenuOpen: boolean;
+  setSideMenu: (v: boolean) => void
+  sideMenuOpen: boolean
 }

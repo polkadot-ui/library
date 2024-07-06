@@ -1,6 +1,6 @@
-import "@polkadot-ui/core/css/components/Card/index.css";
-import { CardProps } from "./types";
-import { valEmpty } from "../../utils";
+import "@polkadot-ui/core/css/components/Card/index.css"
+import { CardProps } from "./types"
+import { valEmpty } from "../../utils"
 
 export const Card = ({
   children,
@@ -15,4 +15,4 @@ export const Card = ({
   >
     {children}
   </div>
-);
+)

@@ -1,7 +1,7 @@
 {
   "name": "@polkadot-ui/react",
   "license": "MIT",
-  "version": "0.0.1-alpha.5",
+  "version": "0.0.1-alpha.6",
   "author": "Nikolaos Kontakis<wirednkod@gmail.com>",
   "type": "module",
   "description": "Functional React components for Polkadot dApps.",
@@ -22,6 +22,7 @@
   },
   "homepage": "https://polkadot.info",
   "scripts": {
+    "preinstall": "npx only-allow pnpm",
     "dev": "vite",
     "build": "tsc --p ./tsconfig-build.json && vite build && pnpm run prepare",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
@@ -31,8 +32,10 @@
   "peerDependencies": {
     "@noble/hashes": "^1.4.0",
     "@polkadot-api/substrate-bindings": "^0.5.0",
-    "@polkadot-ui/core": "^0.0.1-alpha.1",
-    "@polkadot-ui/utils": "^0.0.1-alpha.2",
+    "@polkadot-ui/core": "^0.0.1-alpha.2",
+    "@polkadot-ui/utils": "^0.0.1-alpha.5",
+    "@polkadot-ui/assets": "0.0.1-alpha.2",
+    "polkadot-api": "^0.9.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
@@ -51,6 +54,7 @@
     "eslint-plugin-react-hooks": "^4.6.2",
     "eslint-plugin-react-refresh": "^0.4.7",
     "glob": "^10.4.1",
+    "polkadot-api": "^0.9.1",
     "typescript": "^5.4.5",
     "vite": "^5.2.12",
     "vite-plugin-dts": "^3.9.1",

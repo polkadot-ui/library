@@ -201,6 +201,6 @@ const Crifferent = () => (
       }}
     />
   </svg>
-);
+)
 
-export default Crifferent;
+export default Crifferent

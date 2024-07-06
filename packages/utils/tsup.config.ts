@@ -1,4 +1,4 @@
-import { defineConfig } from "tsup";
+import { defineConfig } from "tsup"
 
 export default defineConfig({
   entry: ["lib/index.ts"],
@@ -7,4 +7,4 @@ export default defineConfig({
   clean: true,
   dts: true,
   format: ["cjs", "esm"],
-});
+})

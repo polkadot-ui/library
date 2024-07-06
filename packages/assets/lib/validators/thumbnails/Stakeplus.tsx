@@ -36,6 +36,6 @@ const Stakeplus = () => (
       }}
     />
   </svg>
-);
+)
 
-export default Stakeplus;
+export default Stakeplus

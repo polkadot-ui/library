@@ -2,22 +2,22 @@ import {
   ComponentBase,
   ComponentBaseWithClassName,
   DisplayFor,
-} from "../utils/types";
-import { ReactElement } from "react";
+} from "../utils/types"
+import { ReactElement } from "react"
 
 export type EntryProps = ComponentBase & {
   // the theme mode.
-  mode: "light" | "dark";
+  mode: "light" | "dark"
   // the active theme.
-  theme: string;
-};
+  theme: string
+}
 
 export type GridItemsAlignment =
   | "flex-start"
   | "center"
   | "flex-end"
   | "stretch"
-  | "baseline";
+  | "baseline"
 
 export type GridJustify =
   | "flex-start"
@@ -25,89 +25,89 @@ export type GridJustify =
   | "flex-end"
   | "space-between"
   | "space-around"
-  | "space-evenly";
+  | "space-evenly"
 
-export type GridSizes = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12;
+export type GridSizes = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12
 
 export type GridProps = ComponentBaseWithClassName & {
-  column?: boolean;
-  row?: boolean;
-  alignItems?: GridItemsAlignment;
-  expanded?: boolean;
-  justify?: GridJustify;
-  lg?: GridSizes;
-  md?: GridSizes;
-  sm?: GridSizes;
-};
+  column?: boolean
+  row?: boolean
+  alignItems?: GridItemsAlignment
+  expanded?: boolean
+  justify?: GridJustify
+  lg?: GridSizes
+  md?: GridSizes
+  sm?: GridSizes
+}
 
 export type SideProps = ComponentBase & {
   // whether the side menu should be open on smaller screens.
-  open: boolean;
+  open: boolean
   // whether side menu is in minimised state.
-  minimised: boolean;
+  minimised: boolean
   // optional width property to be applied to maximised side.
-  width?: string | number;
-};
+  width?: string | number
+}
 
 export type PageTitleProps = PageTitleTabsProps & {
   // title of the page.
-  title?: string;
+  title?: string
   // a button right next to the page title.
   button?: {
     // title of the button.
-    title: string;
+    title: string
     // function of the button when it is clicked.
-    onClick: () => void;
-  };
-};
+    onClick: () => void
+  }
+}
 
 export type PageTitleTabsProps = {
   // whether the title stick on the same position.
-  sticky?: boolean;
+  sticky?: boolean
   // an array of tab pages.
-  tabs?: Array<PageTitleTabProps>;
-};
+  tabs?: Array<PageTitleTabProps>
+}
 
 export type PageTitleTabProps = {
   // whether the title stick on the same position.
-  sticky?: boolean;
+  sticky?: boolean
   // title of the tab button.
-  title: string;
+  title: string
   // whether it is clicked.
-  active: boolean;
+  active: boolean
   // it leads to the corresponding tab page.
-  onClick: () => void;
+  onClick: () => void
   // a badge that can have a glance at before visting the tab page.
-  badge?: string | number;
-};
+  badge?: string | number
+}
 
 export type RowProps = ComponentBase & {
   // whether there is margin space vertically.
-  yMargin?: boolean;
-};
+  yMargin?: boolean
+}
 
 export type RowSectionProps = ComponentBase & {
   // the css order of the component for vertical layouts.
-  vLast?: boolean;
+  vLast?: boolean
   // true means padding on the left and false means padding on the right.
-  hLast?: boolean;
+  hLast?: boolean
   // true means the secondary element and  false means the primary one.
-  secondary?: boolean;
-};
+  secondary?: boolean
+}
 
 export type TxProps = {
   // whether there is margin on top.
-  margin?: boolean;
+  margin?: boolean
   // account type for the transaction signing.
-  label: string;
+  label: string
   // account id
-  name: string;
+  name: string
   // whether there is enough funds for the transaction.
-  notEnoughFunds: boolean;
+  notEnoughFunds: boolean
   // warning messgae.
-  dangerMessage: string;
+  dangerMessage: string
   // signing component.
-  SignerComponent: ReactElement;
+  SignerComponent: ReactElement
   // display for.
-  displayFor?: DisplayFor;
-};
+  displayFor?: DisplayFor
+}

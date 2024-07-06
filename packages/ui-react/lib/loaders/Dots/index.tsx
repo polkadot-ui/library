@@ -1,4 +1,4 @@
-import "@polkadot-ui/core/css/loaders/Dots/index.css";
+import "@polkadot-ui/core/css/loaders/Dots/index.css"
 
 export const Dots = () => (
   <div className="dots-loading">
@@ -8,4 +8,4 @@ export const Dots = () => (
     <div className="dot"></div>
     <div className="dot"></div>
   </div>
-);
+)

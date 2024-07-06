@@ -1,8 +1,8 @@
-import { getSs58AddressInfo } from "@polkadot-api/substrate-bindings";
-import { PolkiconProps } from "./types";
+import { getSs58AddressInfo } from "@polkadot-api/substrate-bindings"
+import { PolkiconProps } from "./types"
 
-import { getParams } from "./utils";
-import { useCallback, useEffect, useState } from "react";
+import { getParams } from "./utils"
+import { useCallback, useEffect, useState } from "react"
 
 export const Polkicon = ({
   size = "2rem",
@@ -14,17 +14,17 @@ export const Polkicon = ({
   style = {},
   className = "",
 }: PolkiconProps) => {
-  const [copySuccess, setCopySuccess] = useState(false);
-  const [message, setMessage] = useState<string | JSX.Element>(copyMsg);
-  const [s, setS] = useState<string | number>();
-  const [f, setF] = useState<string>();
-  const [p, setP] = useState<string>();
+  const [copySuccess, setCopySuccess] = useState(false)
+  const [message, setMessage] = useState<string | JSX.Element>(copyMsg)
+  const [s, setS] = useState<string | number>()
+  const [f, setF] = useState<string>()
+  const [p, setP] = useState<string>()
 
   useEffect(() => {
     const InfoText = (type: string, value: string | number) =>
       console.warn(
         `Polkicon: 'Size' expressed in '${type}' cannot be less than ${value}. Will be resized to minimum size.`
-      );
+      )
 
     if (
       typeof size === "string" &&
@@ -33,85 +33,85 @@ export const Polkicon = ({
     ) {
       throw new Error(
         "Providing a string for 'size' in Polkicon should be expressed either in 'px', 'rem' or 'em'"
-      );
+      )
     }
 
-    let sizeNumb: number;
-    let fontType: string;
+    let sizeNumb: number
+    let fontType: string
     if (typeof size === "string") {
-      fontType = size.replace(/[0-9.]/g, "");
+      fontType = size.replace(/[0-9.]/g, "")
       switch (fontType) {
         case "px":
-          sizeNumb = parseFloat(size);
-          break;
+          sizeNumb = parseFloat(size)
+          break
         case "rem":
-          sizeNumb = parseFloat(size) * 10;
-          break;
+          sizeNumb = parseFloat(size) * 10
+          break
       }
     } else if (typeof size === "number") {
-      sizeNumb = size;
+      sizeNumb = size
     }
 
     setS(
       fontType
         ? `${fontType === "px" ? sizeNumb + "px" : sizeNumb / 10 + "rem"}`
         : sizeNumb
-    );
+    )
     if (sizeNumb < 12) {
       InfoText(
         fontType || "number",
         fontType === "px" ? "12px" : fontType === "rem" ? "1.2rem" : 12
-      );
+      )
     }
 
     if (sizeNumb < 32) {
-      setP("0rem 0.5rem");
-      setF("0.5rem");
+      setP("0rem 0.5rem")
+      setF("0.5rem")
     } else if (sizeNumb >= 32 && sizeNumb < 64) {
-      setP("1rem 0.5rem");
-      setF("1rem");
+      setP("1rem 0.5rem")
+      setF("1rem")
     } else if (sizeNumb >= 64 && sizeNumb < 100) {
-      setP("2rem 1rem");
-      setF("1.5rem");
+      setP("2rem 1rem")
+      setF("1.5rem")
     } else if (sizeNumb >= 100) {
-      setP("3rem 1rem");
-      setF("2rem");
+      setP("3rem 1rem")
+      setF("2rem")
     }
-  }, [size]);
+  }, [size])
 
   const handleClick = useCallback(() => {
     const copyText = async (text: string) => {
       try {
-        await navigator.clipboard.writeText(text);
-        setCopySuccess(true);
-        setMessage(copyMsg);
+        await navigator.clipboard.writeText(text)
+        setCopySuccess(true)
+        setMessage(copyMsg)
       } catch (err) {
-        setCopySuccess(true);
-        setMessage("Failed!");
+        setCopySuccess(true)
+        setMessage("Failed!")
       }
-    };
-    copy && copyText(address);
-  }, [copy, address, copyMsg]);
+    }
+    copy && copyText(address)
+  }, [copy, address, copyMsg])
 
   useEffect(() => {
     if (copy && copySuccess) {
       setTimeout(() => {
-        setCopySuccess(false);
-      }, copyTimeout);
+        setCopySuccess(false)
+      }, copyTimeout)
     }
-  }, [copy, copySuccess, copyTimeout]);
+  }, [copy, copySuccess, copyTimeout])
 
   const { c, r, rroot3o2, ro2, rroot3o4, ro4, r3o4, z, rot, scheme, palette } =
-    getParams(address);
+    getParams(address)
 
-  const add = getSs58AddressInfo(address);
+  const add = getSs58AddressInfo(address)
   const colors = add.isValid
     ? scheme?.colors?.map(
         (_, i) => palette[scheme?.colors[i < 18 ? (i + rot) % 18 : 18]]
       )
-    : [];
+    : []
 
-  let i = 0;
+  let i = 0
 
   return !colors ? null : (
     <div
@@ -183,5 +183,5 @@ export const Polkicon = ({
         </p>
       )}
     </div>
-  );
-};
+  )
+}

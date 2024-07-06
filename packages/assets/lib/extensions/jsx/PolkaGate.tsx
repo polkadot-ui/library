@@ -16,6 +16,6 @@ export const PolkaGate = () => (
       fill="#fff"
     />
   </svg>
-);
+)
 
-export default PolkaGate;
+export default PolkaGate

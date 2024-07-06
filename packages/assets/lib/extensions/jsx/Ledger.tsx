@@ -11,6 +11,6 @@ export const Ledger = () => (
       fill="currentColor"
     />
   </svg>
-);
+)
 
-export default Ledger;
+export default Ledger

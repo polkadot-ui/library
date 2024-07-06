@@ -1,6 +1,7 @@
-import { useEffect, useState, createRef, useRef } from "react";
-import "@polkadot-ui/core/css/components/Odometer/index.css";
-import { OdometerProps, Digit, Status, DigitRef, Direction } from "./types";
+import { useEffect, useState, createRef, useRef } from "react"
+import { OdometerProps, Digit, Status, DigitRef, Direction } from "./types"
+
+import "@polkadot-ui/core/css/components/Odometer/index.css"
 
 export const Odometer = ({
   value,
@@ -24,96 +25,95 @@ export const Odometer = ({
     "7",
     "8",
     "9",
-  ]);
+  ])
 
   // Store the digits of the current value.
-  const [digits, setDigits] = useState<Digit[]>([]);
+  const [digits, setDigits] = useState<Digit[]>([])
 
   // Store digits of the previous value.
-  const [prevDigits, setPrevDigits] = useState<Digit[]>([]);
+  const [prevDigits, setPrevDigits] = useState<Digit[]>([])
 
   // Store the status of the odometer (transitioning or stable).
-  const [status, setStatus] = useState<Status>("inactive");
+  const [status, setStatus] = useState<Status>("inactive")
 
   // Store whether component has iniiialized.
-  const [initialized, setInitialized] = useState<boolean>(false);
+  const [initialized, setInitialized] = useState<boolean>(false)
 
   // Store ref of the odometer.
-  const [odometerRef] = useState(createRef<HTMLSpanElement>());
+  const [odometerRef] = useState(createRef<HTMLSpanElement>())
 
   // Store refs of each digit.
-  const [digitRefs, setDigitRefs] = useState<DigitRef[]>([]);
+  const [digitRefs, setDigitRefs] = useState<DigitRef[]>([])
 
   // Store refs of each `all` digit.
-  const [allDigitRefs, setAllDigitRefs] = useState<Record<string, DigitRef>>(
-    {}
-  );
+  const [allDigitRefs, setAllDigitRefs] = useState<Record<string, DigitRef>>({})
 
   // Keep track of active transitions.
-  const activeTransitionCounter = useRef<number>(0);
+  const activeTransitionCounter = useRef<number>(0)
 
   // Transition duration.
-  const DURATION_MS = 750;
-  const DURATION_SECS = `${DURATION_MS / 1000}s`;
+  const DURATION_MS = 750
+  const DURATION_SECS = `${DURATION_MS / 1000}s`
 
   // Phase 0: populate `allDigitRefs`.
   useEffect(() => {
     const all: Record<string, DigitRef> = Object.fromEntries(
       Object.values(allDigits).map((v) => [`d_${v}`, createRef()])
-    );
+    )
 
-    setAllDigitRefs(all);
-  }, [allDigits]);
+    setAllDigitRefs(all)
+  }, [allDigits])
 
   // Phase 1: new digits and refs are added to the odometer.
   useEffect(() => {
     if (Object.keys(allDigitRefs)) {
       value =
-        String(value) === "0" ? Number(value).toFixed(zeroDecimals) : value;
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+        String(value) === "0" ? Number(value).toFixed(zeroDecimals) : value
 
       const newDigits = value
         .toString()
         .split("")
         .map((v) => (v === "." ? "dot" : v))
-        .map((v) => (v === "," ? "comma" : v)) as Digit[];
+        .map((v) => (v === "," ? "comma" : v)) as Digit[]
 
-      setDigits(newDigits);
+      setDigits(newDigits)
 
       if (!initialized) {
-        setInitialized(true);
+        setInitialized(true)
       } else {
-        setStatus("new");
-        setPrevDigits(digits);
+        setStatus("new")
+        setPrevDigits(digits)
       }
-      setDigitRefs(Array(newDigits.length).fill(createRef()));
+      setDigitRefs(Array(newDigits.length).fill(createRef()))
     }
-  }, [value]);
+  }, [value])
 
   // Phase 2: set up digit transition.
   useEffect(() => {
     if (status === "new" && !digitRefs.find((d) => d.current === null)) {
-      setStatus("transition");
-      activeTransitionCounter.current++;
+      setStatus("transition")
+      activeTransitionCounter.current++
 
       setTimeout(() => {
-        activeTransitionCounter.current--;
+        activeTransitionCounter.current--
         if (activeTransitionCounter.current === 0) {
-          setStatus("inactive");
+          setStatus("inactive")
         }
-      }, DURATION_MS);
+      }, DURATION_MS)
     }
-  }, [status, digitRefs]);
+  }, [status, digitRefs])
 
-  const odometerCurrent: Element = odometerRef?.current;
+  const odometerCurrent: Element = odometerRef?.current
   let lineHeight = odometerCurrent
     ? window.getComputedStyle(odometerCurrent).lineHeight
-    : "inherit";
+    : "inherit"
 
   // Fallback line height to `1.1rem` if `normal`.
-  lineHeight = lineHeight === "normal" ? "1.1rem" : lineHeight;
+  lineHeight = lineHeight === "normal" ? "1.1rem" : lineHeight
 
   // Track whether decimal point has been found.
-  let foundDecimal = false;
+  let foundDecimal = false
 
   return (
     <>
@@ -137,23 +137,23 @@ export const Odometer = ({
           {spaceBefore ? <span style={{ paddingLeft: spaceBefore }} /> : null}
           {digits.map((d, i) => {
             if (d === "dot") {
-              foundDecimal = true;
+              foundDecimal = true
             }
 
             // If transitioning, get digits needed to animate.
-            let childDigits = null;
+            let childDigits = null
             if (status === "transition") {
-              const digitsToAnimate = [];
-              const digitIndex = allDigits.indexOf(digits[i]);
-              const prevDigitIndex = allDigits.indexOf(prevDigits[i]);
-              const difference = Math.abs(digitIndex - prevDigitIndex);
-              const delay = `${0.01 * (digits.length - i - 1)}s`;
+              const digitsToAnimate = []
+              const digitIndex = allDigits.indexOf(digits[i])
+              const prevDigitIndex = allDigits.indexOf(prevDigits[i])
+              const difference = Math.abs(digitIndex - prevDigitIndex)
+              const delay = `${0.01 * (digits.length - i - 1)}s`
               const direction: Direction =
-                digitIndex === prevDigitIndex ? "none" : "down";
-              const animClass = `slide-${direction}-${difference} `;
+                digitIndex === prevDigitIndex ? "none" : "down"
+              const animClass = `slide-${direction}-${difference} `
 
               // Push current prev digit to stop of stack.
-              digitsToAnimate.push(prevDigits[i]);
+              digitsToAnimate.push(prevDigits[i])
 
               // If transitioning between two digits, animate all digits in between.
               if (digitIndex < prevDigitIndex) {
@@ -162,14 +162,14 @@ export const Odometer = ({
                     { length: difference },
                     (_, k) => allDigits[prevDigitIndex - k - 1]
                   )
-                );
+                )
               } else {
                 digitsToAnimate.push(
                   ...Array.from(
                     { length: difference },
                     (_, k) => allDigits[k + prevDigitIndex + 1]
                   )
-                );
+                )
               }
 
               childDigits = (
@@ -202,7 +202,7 @@ export const Odometer = ({
                     </span>
                   ))}
                 </span>
-              );
+              )
             }
 
             return (
@@ -237,11 +237,11 @@ export const Odometer = ({
                 )}
                 {status === "transition" && childDigits}
               </span>
-            );
+            )
           })}
           {spaceAfter ? <span style={{ paddingRight: spaceAfter }} /> : null}
         </span>
       </span>
     </>
-  );
-};
+  )
+}

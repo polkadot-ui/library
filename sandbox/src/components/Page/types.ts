@@ -1,7 +1,7 @@
-import { CSSProperties, ReactNode } from "react";
+import { CSSProperties, ReactNode } from "react"
 
 export interface PageProps {
-  children: ReactNode;
-  className?: string;
-  style?: CSSProperties;
+  children: ReactNode
+  className?: string
+  style?: CSSProperties
 }

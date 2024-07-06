@@ -1,5 +1,5 @@
 export const POLKADOT_NETWORK_URL =
-  "https://raw.githubusercontent.com/polkadot-ui/polkadot_network_directory/master/chain_info/";
+  "https://raw.githubusercontent.com/polkadot-ui/polkadot_network_directory/master/chain_info/"
 
 export const NETWORKS = [
   "Acala",
@@ -41,4 +41,4 @@ export const NETWORKS = [
   "Westend_Asset_Hub",
   "Westend_BridgeHub",
   "Westend_Collectives",
-];
+]

@@ -15,6 +15,6 @@ const Stakely = () => (
       }}
     />
   </svg>
-);
+)
 
-export default Stakely;
+export default Stakely

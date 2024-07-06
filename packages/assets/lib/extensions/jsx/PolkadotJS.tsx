@@ -20,6 +20,6 @@ export const PolkadotJS = () => (
       </g>
     </g>
   </svg>
-);
+)
 
-export default PolkadotJS;
+export default PolkadotJS

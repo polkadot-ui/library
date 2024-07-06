@@ -1,17 +1,17 @@
-import { MouseEvent } from "react";
-import { AnyJson } from "./types";
+import { MouseEvent } from "react"
+import { AnyJson } from "./types"
 
 /* Returns ` t` if truthy, or an empty string otherwise. */
 export const valEmpty = (t: boolean | string | undefined, v: string) =>
-  t ? ` ${v}` : "";
+  t ? ` ${v}` : ""
 
 /* Returns ` v` if `t` is truthy, or ` w` otherwise. */
 export const valOr = (t: boolean | string | undefined, v: string, w: string) =>
-  t ? ` ${v}` : ` ${w}`;
+  t ? ` ${v}` : ` ${w}`
 
 /* Formats mouse handlers for buttons given its props. */
 export const onMouseHandlers = (props: AnyJson) => {
-  const { onClick, onMouseOver, onMouseMove, onMouseOut } = props;
+  const { onClick, onMouseOver, onMouseMove, onMouseOut } = props
   return {
     onClick:
       typeof onClick == "function"
@@ -29,7 +29,7 @@ export const onMouseHandlers = (props: AnyJson) => {
       typeof onMouseOut == "function"
         ? (e: MouseEvent<HTMLButtonElement>) => onMouseOut(e)
         : undefined,
-  };
-};
+  }
+}
 
-export * from "./types";
+export * from "./types"

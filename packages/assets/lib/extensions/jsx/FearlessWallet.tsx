@@ -42,6 +42,6 @@ export const FearlessWallet = () => (
       </filter>
     </defs>
   </svg>
-);
+)
 
-export default FearlessWallet;
+export default FearlessWallet
