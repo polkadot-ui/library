@@ -78,6 +78,6 @@ const Gatotech = () => (
       />
     </g>
   </svg>
-);
+)
 
-export default Gatotech;
+export default Gatotech

@@ -35,6 +35,6 @@ const VFValidierung = () => (
       />
     </g>
   </svg>
-);
+)
 
-export default VFValidierung;
+export default VFValidierung

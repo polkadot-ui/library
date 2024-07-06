@@ -29,6 +29,6 @@ const PythagorasCapitalInvestment = () => (
       d="m239.67 170.92 20.58 35.65 20.57 35.64h-82.31l20.58-35.64 20.58-35.65 20.58 35.65-20.58-35.65z"
     />
   </svg>
-);
+)
 
-export default PythagorasCapitalInvestment;
+export default PythagorasCapitalInvestment

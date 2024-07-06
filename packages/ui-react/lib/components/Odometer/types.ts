@@ -1,13 +1,13 @@
-import { MutableRefObject } from "react";
+import { MutableRefObject } from "react"
 
 export type OdometerProps = {
-  value: number | string;
-  wholeColor?: string;
-  decimalColor?: string;
-  spaceBefore?: string | number;
-  spaceAfter?: string | number;
-  zeroDecimals?: number;
-};
+  value: number | string
+  wholeColor?: string
+  decimalColor?: string
+  spaceBefore?: string | number
+  spaceAfter?: string | number
+  zeroDecimals?: number
+}
 
 export type Digit =
   | "comma"
@@ -21,10 +21,10 @@ export type Digit =
   | "6"
   | "7"
   | "8"
-  | "9";
+  | "9"
 
-export type DigitRef = MutableRefObject<HTMLSpanElement>;
+export type DigitRef = MutableRefObject<HTMLSpanElement>
 
-export type Status = "new" | "inactive" | "transition" | "finished";
+export type Status = "new" | "inactive" | "transition" | "finished"
 
-export type Direction = "down" | "none";
+export type Direction = "down" | "none"

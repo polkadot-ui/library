@@ -13,6 +13,6 @@ const CoinbaseCloud = () => (
       }}
     />
   </svg>
-);
+)
 
-export default CoinbaseCloud;
+export default CoinbaseCloud

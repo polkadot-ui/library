@@ -1,4 +1,4 @@
-import { ValidatorEntry } from "lib/types";
+import { ValidatorEntry } from "lib/types"
 
 export const ValidatorCommunity: ValidatorEntry[] = [
   {
@@ -674,4 +674,4 @@ export const ValidatorCommunity: ValidatorEntry[] = [
       ],
     },
   },
-];
+]

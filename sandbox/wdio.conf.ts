@@ -1,9 +1,9 @@
-import url from "url";
-import path from "path";
+import url from "url"
+import path from "path"
 
-import type { Options } from "@wdio/types";
+import type { Options } from "@wdio/types"
 
-const __dirname = url.fileURLToPath(new URL(".", import.meta.url));
+const __dirname = url.fileURLToPath(new URL(".", import.meta.url))
 
 export const config: Options.Testrunner = {
   //
@@ -312,4 +312,4 @@ export const config: Options.Testrunner = {
    */
   // onReload: function(oldSessionId, newSessionId) {
   // }
-};
+}

@@ -24,6 +24,6 @@ const TurboFlakes = () => (
       }}
     />
   </svg>
-);
+)
 
-export default TurboFlakes;
+export default TurboFlakes

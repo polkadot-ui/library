@@ -1,1 +1,1 @@
-export const errorLogPrefix = "@polkadot/utils";
+export const errorLogPrefix = "@polkadot/utils"

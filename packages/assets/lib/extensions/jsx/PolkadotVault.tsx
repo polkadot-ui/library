@@ -14,6 +14,6 @@ export const PolkadotVault = () => (
       fill="#e6007a"
     />
   </svg>
-);
+)
 
-export default PolkadotVault;
+export default PolkadotVault

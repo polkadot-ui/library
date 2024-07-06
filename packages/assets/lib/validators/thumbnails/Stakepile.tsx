@@ -107,6 +107,6 @@ const Stakepile = () => (
       }}
     />
   </svg>
-);
+)
 
-export default Stakepile;
+export default Stakepile

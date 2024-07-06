@@ -138,6 +138,6 @@ const HighStake = () => (
       }}
     />
   </svg>
-);
+)
 
-export default HighStake;
+export default HighStake

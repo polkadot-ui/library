@@ -27,6 +27,6 @@ export const NovaWallet = () => (
       fill="#fff"
     />
   </svg>
-);
+)
 
-export default NovaWallet;
+export default NovaWallet

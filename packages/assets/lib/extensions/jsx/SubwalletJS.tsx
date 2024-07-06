@@ -11,6 +11,6 @@ export const SubwalletJS = () => (
       fill="currentColor"
     ></path>
   </svg>
-);
+)
 
-export default SubwalletJS;
+export default SubwalletJS

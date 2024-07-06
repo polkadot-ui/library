@@ -1,25 +1,25 @@
-import { Fragment, useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Fragment, useState } from "react"
+import { Link, useLocation } from "react-router-dom"
 import {
   RouteCategoryMulti,
   nameFromRoute,
   isDefaultRoute,
-} from "../../config/routes";
-import { motion } from "framer-motion";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useUi } from "../../contexts/UI";
+} from "../../config/routes"
+import { motion } from "framer-motion"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { useUi } from "../../contexts/UI"
 interface Props {
-  name: string;
-  rest: RouteCategoryMulti;
-  i: number;
+  name: string
+  rest: RouteCategoryMulti
+  i: number
 }
 
 export const Category = ({ rest, name, i }: Props) => {
-  const { setSideMenu } = useUi();
-  const { pathname } = useLocation();
-  const initial = name !== "Experimental";
+  const { setSideMenu } = useUi()
+  const { pathname } = useLocation()
+  const initial = name !== "Experimental"
 
-  const [open, setOpen] = useState<boolean>(initial);
+  const [open, setOpen] = useState<boolean>(initial)
 
   return (
     <>
@@ -74,5 +74,5 @@ export const Category = ({ rest, name, i }: Props) => {
         ))}
       </motion.section>
     </>
-  );
-};
+  )
+}

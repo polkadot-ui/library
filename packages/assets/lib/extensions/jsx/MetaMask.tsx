@@ -94,6 +94,6 @@ export const MetaMask = () => (
       strokeLinejoin="round"
     />
   </svg>
-);
+)
 
-export default MetaMask;
+export default MetaMask

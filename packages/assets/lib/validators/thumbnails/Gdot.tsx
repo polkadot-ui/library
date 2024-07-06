@@ -15,6 +15,6 @@ const Gdot = () => (
       </g>
     </g>
   </svg>
-);
+)
 
-export default Gdot;
+export default Gdot

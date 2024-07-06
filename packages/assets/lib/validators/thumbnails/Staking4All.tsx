@@ -23,6 +23,6 @@ const Staking4All = () => (
       />
     </g>
   </svg>
-);
+)
 
-export default Staking4All;
+export default Staking4All

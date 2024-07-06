@@ -1,13 +1,13 @@
-import { useState, ReactNode, useContext, createContext } from "react";
-import * as defaults from "./defaults";
-import type { UIContextInterface } from "./types";
+import { useState, ReactNode, useContext, createContext } from "react"
+import * as defaults from "./defaults"
+import type { UIContextInterface } from "./types"
 
 export const UIProvider = ({ children }: { children: ReactNode }) => {
-  const [sideMenuOpen, setSideMenuOpen] = useState(false);
+  const [sideMenuOpen, setSideMenuOpen] = useState(false)
 
   const setSideMenu = (v: boolean) => {
-    setSideMenuOpen(v);
-  };
+    setSideMenuOpen(v)
+  }
 
   return (
     <UIContext.Provider
@@ -18,11 +18,11 @@ export const UIProvider = ({ children }: { children: ReactNode }) => {
     >
       {children}
     </UIContext.Provider>
-  );
-};
+  )
+}
 
 export const UIContext = createContext<UIContextInterface>(
   defaults.defaultUIContext
-);
+)
 
-export const useUi = () => useContext(UIContext);
+export const useUi = () => useContext(UIContext)

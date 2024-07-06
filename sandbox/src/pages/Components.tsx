@@ -3,27 +3,34 @@ import {
   Polkicon,
   Chart,
   AccountCard,
+  AccountProvider,
+  ExtensionProvider,
   IconProps,
-} from "@packages/ui-react/lib/components";
+  SelectedAccountType,
+} from "@packages/ui-react/lib/components"
 
-import { useState } from "react";
+import { useState } from "react"
 
 export const Components = () => {
   // Test Hello World
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(0)
 
   // Odometer Value
-  const [val, setVal] = useState<number>(1201903.456789);
-  const updateValue = () => setVal(Number((val + 17491.390013).toFixed(4)));
+  const [val, setVal] = useState<number>(1201903.456789)
+  const updateValue = () => setVal(Number((val + 17491.390013).toFixed(4)))
 
-  const [val2, setVal2] = useState<number>(1201903.456789);
-  const updateValue2 = () => setVal2(Number((val2 + 17491.390013).toFixed(4)));
+  const [val2, setVal2] = useState<number>(1201903.456789)
+  const updateValue2 = () => setVal2(Number((val2 + 17491.390013).toFixed(4)))
 
-  const address = "1f1yYj2bCFhJCTVdeWLDueUsrZynLAaj6jeMy18fjZ7Cr73";
-  const address2 = "13QqEYyFfeWmBVr3QvfhwpYrXoUFDgs7ViYhxv2fvLHe6mtT";
-  const address3 = "Ez9kY44SEGDVceyDzRkhd5hpmkqL489sbeyCHKGr3UcfCwM";
-  const address4 = "5EFJZfqfmDZktdFfKUJa3kCrJZrzXUP1tkyN5RNtQ1uqZwtY";
-  const invalid_address = "111111111111111111111111111111111111111111111111";
+  // Connect recipe
+  const [selectedAccount, setSelectedAccount] =
+    useState<SelectedAccountType>(null)
+
+  const address = "1f1yYj2bCFhJCTVdeWLDueUsrZynLAaj6jeMy18fjZ7Cr73"
+  const address2 = "13QqEYyFfeWmBVr3QvfhwpYrXoUFDgs7ViYhxv2fvLHe6mtT"
+  const address3 = "Ez9kY44SEGDVceyDzRkhd5hpmkqL489sbeyCHKGr3UcfCwM"
+  const address4 = "5EFJZfqfmDZktdFfKUJa3kCrJZrzXUP1tkyN5RNtQ1uqZwtY"
+  const invalid_address = "111111111111111111111111111111111111111111111111"
 
   // Account card options
   const iconProps: IconProps = {
@@ -32,7 +39,7 @@ export const Components = () => {
     gridSize: 1,
     justify: "space-around",
     address,
-  };
+  }
 
   // Chart colors
   const colors = [
@@ -40,7 +47,7 @@ export const Components = () => {
     { value: 200, color: "green" },
     { value: 300, color: "blue" },
     { value: 150, color: "purple" },
-  ];
+  ]
 
   return (
     <div className="page">
@@ -64,7 +71,7 @@ export const Components = () => {
 
       <div style={{ display: "flex" }}>
         <h1 style={{ margin: "1rem 0 0 0", display: "flex" }}>
-          <Odometer value={BigInt(val).toString()} />
+          <Odometer value={val} />
         </h1>
       </div>
       <div style={{ display: "flex" }}>
@@ -79,7 +86,7 @@ export const Components = () => {
 
       <div style={{ display: "flex" }}>
         <h3 style={{ margin: "1rem 0 0 0", display: "flex" }}>
-          <Odometer value={BigInt(val2).toString()} />
+          <Odometer value={val2} />
         </h3>
       </div>
       <div style={{ display: "flex" }}>
@@ -107,6 +114,28 @@ export const Components = () => {
           />
         </div>
       </div>
+
+      <h2>Connect "Recipe"</h2>
+      <p>A "recipe" allowing easily integration with wallet extensions.</p>
+      <div style={{ width: "100%" }}>
+        <div>
+          <ExtensionProvider setSelected={setSelectedAccount}>
+            <AccountProvider
+              selected={selectedAccount}
+              setSelected={setSelectedAccount}
+            />
+          </ExtensionProvider>
+        </div>
+      </div>
+      {selectedAccount && (
+        <>
+          <p>Account selected is: {selectedAccount?.address} </p>
+          <p>
+            ... of {selectedAccount?.extension} extension ... with Account's
+            name: {selectedAccount?.name}
+          </p>
+        </>
+      )}
 
       <h2>Polkicon</h2>
       <p>Light-weight, customisable Polkadot Icon.</p>
@@ -305,5 +334,5 @@ export const Components = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}

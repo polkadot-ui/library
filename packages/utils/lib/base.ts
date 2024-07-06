@@ -1,4 +1,4 @@
-import { AnyFunction, AnyJson } from "./types";
+import { AnyFunction, AnyJson } from "./types"
 
 /**
  * @name camelize
@@ -8,35 +8,35 @@ export const camelize = (str: string) => {
   const convertToString = (string: AnyJson) => {
     if (string) {
       if (typeof string === "string") {
-        return string;
+        return string
       }
-      return String(string);
+      return String(string)
     }
-    return "";
-  };
+    return ""
+  }
 
   const toWords = (inp: string) =>
     convertToString(inp).match(
       /[A-Z\xC0-\xD6\xD8-\xDE]?[a-z\xDF-\xF6\xF8-\xFF]+|[A-Z\xC0-\xD6\xD8-\xDE]+(?![a-z\xDF-\xF6\xF8-\xFF])|\d+/g
-    );
+    )
 
   const simpleCamelCase = (inp: string[]) => {
-    let result = "";
+    let result = ""
     for (let i = 0; i < inp?.length; i++) {
-      const currString = inp[i];
-      let tmpStr = currString.toLowerCase();
+      const currString = inp[i]
+      let tmpStr = currString.toLowerCase()
       if (i != 0) {
         tmpStr =
-          tmpStr.slice(0, 1).toUpperCase() + tmpStr.slice(1, tmpStr.length);
+          tmpStr.slice(0, 1).toUpperCase() + tmpStr.slice(1, tmpStr.length)
       }
-      result += tmpStr;
+      result += tmpStr
     }
-    return result;
-  };
+    return result
+  }
 
-  const w = toWords(str)?.map((a) => a.toLowerCase());
-  return simpleCamelCase(w);
-};
+  const w = toWords(str)?.map((a) => a.toLowerCase())
+  return simpleCamelCase(w)
+}
 
 /**
  * @name ellipsisFn
@@ -51,97 +51,97 @@ export const ellipsisFn = (
   amount = 6,
   position: "start" | "end" | "center" = "center"
 ) => {
-  const half = str.length / 2;
+  const half = str.length / 2
 
   // having an amount less than 4 is a bit extreme so we default there
   if (amount <= 4) {
     if (position === "center") {
-      return str.slice(0, 4) + "..." + str.slice(-4);
+      return str.slice(0, 4) + "..." + str.slice(-4)
     }
     if (position === "end") {
-      return str.slice(0, 4) + "...";
+      return str.slice(0, 4) + "..."
     }
-    return "..." + str.slice(-4);
+    return "..." + str.slice(-4)
   }
   // if the amount requested is in a "logical" amount - meaning that it can display the address
   // without repeating the same information twice - then go for it;
   if (position === "center") {
     return amount >= (str.length - 2) / 2
       ? str.slice(0, half - 3) + "..." + str.slice(-(half - 3))
-      : str.slice(0, amount) + "..." + str.slice(-amount);
+      : str.slice(0, amount) + "..." + str.slice(-amount)
   }
   // else, the user has been mistaskenly extreme, so just show the maximum possible amount
   if (amount >= str.length) {
     if (position === "end") {
-      return str.slice(0, str.length - 3) + "...";
+      return str.slice(0, str.length - 3) + "..."
     }
-    return "..." + str.slice(-(str.length - 3));
+    return "..." + str.slice(-(str.length - 3))
   } else {
     if (position === "end") {
-      return str.slice(0, amount) + "...";
+      return str.slice(0, amount) + "..."
     }
-    return "..." + str.slice(amount);
+    return "..." + str.slice(amount)
   }
-};
+}
 
 /**
  * @name greaterThanZero
  * @summary Returns whether a bigint is greater than zero.
  */
-export const greaterThanZero = (val: bigint) => val > 0;
+export const greaterThanZero = (val: bigint) => val > 0
 
 /**
  * @name isNotZero
  * @summary Returns whether a bigint is zero.
  */
-export const isNotZero = (val: bigint) => val !== 0n;
+export const isNotZero = (val: bigint) => val !== 0n
 
 /**
  * @name minDecimalPlaces
  * @summary Forces a number to have at least the provided decimal places.
  */
 export const minDecimalPlaces = (val: string, minDecimals: number): string => {
-  const whole = BigInt(rmCommas(val).split(".")[0] || 0);
-  const decimals = val.split(".")[1] || "";
-  const missingDecimals = BigInt(minDecimals) - BigInt(decimals.length);
+  const whole = BigInt(rmCommas(val).split(".")[0] || 0)
+  const decimals = val.split(".")[1] || ""
+  const missingDecimals = BigInt(minDecimals) - BigInt(decimals.length)
   return greaterThanZero(missingDecimals)
     ? `${whole}.${decimals.toString()}${"0".repeat(Number(missingDecimals))}`
-    : val;
-};
+    : val
+}
 
 /**
  * @name pageFromUri
  * @summary Use url variables to load the default components upon the first page visit.
  */
 export const pageFromUri = (pathname: string, fallback: string) => {
-  const lastUriItem = pathname.substring(pathname.lastIndexOf("/") + 1);
-  const page = lastUriItem.trim() === "" ? fallback : lastUriItem;
-  return page.trim();
-};
+  const lastUriItem = pathname.substring(pathname.lastIndexOf("/") + 1)
+  const page = lastUriItem.trim() === "" ? fallback : lastUriItem
+  return page.trim()
+}
 
 /**
  * @name rmCommas
  * @summary Removes the commas from a string.
  */
-export const rmCommas = (val: string): string => val.replace(/,/g, "");
+export const rmCommas = (val: string): string => val.replace(/,/g, "")
 
 /**
  * @name shuffle
  * @summary Shuffle a set of objects.
  */
 export const shuffle = <T>(array: Array<T>) => {
-  let currentIndex = array.length;
-  let randomIndex;
+  let currentIndex = array.length
+  let randomIndex
   while (currentIndex !== 0) {
-    randomIndex = Math.floor(Math.random() * currentIndex);
-    currentIndex--;
-    [array[currentIndex], array[randomIndex]] = [
+    randomIndex = Math.floor(Math.random() * currentIndex)
+    currentIndex--
+    ;[array[currentIndex], array[randomIndex]] = [
       array[randomIndex],
       array[currentIndex],
-    ];
+    ]
   }
-  return array;
-};
+  return array
+}
 
 /**
  * @name withTimeout
@@ -151,19 +151,19 @@ export const withTimeout = (
   ms: number,
   promise: AnyFunction,
   options?: {
-    onTimeout?: AnyFunction;
+    onTimeout?: AnyFunction
   }
 ) => {
   const timeout = new Promise((resolve) =>
     setTimeout(async () => {
       if (typeof options?.onTimeout === "function") {
-        options.onTimeout();
+        options.onTimeout()
       }
-      resolve(undefined);
+      resolve(undefined)
     }, ms)
-  );
-  return Promise.race([promise, timeout]);
-};
+  )
+  return Promise.race([promise, timeout])
+}
 
 /**
  * @name appendOrEmpty
@@ -172,7 +172,7 @@ export const withTimeout = (
 export const appendOrEmpty = (
   condition: boolean | string | undefined,
   value: string
-) => (condition ? ` ${value}` : "");
+) => (condition ? ` ${value}` : "")
 
 /**
  * @name appendOr
@@ -182,4 +182,4 @@ export const appendOr = (
   condition: boolean | string | undefined,
   value: string,
   fallback: string
-) => (condition ? ` ${value}` : ` ${fallback}`);
+) => (condition ? ` ${value}` : ` ${fallback}`)

@@ -1,13 +1,13 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useTheme } from "../../contexts/Theme";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { useTheme } from "../../contexts/Theme"
 
 export const Header = () => {
-  const { mode, toggleMode, theme, setTheme } = useTheme();
+  const { mode, toggleMode, theme, setTheme } = useTheme()
   const allThemes = [
     ["Polkadot", "polkadot-relay"],
     ["Kusama", "kusama-relay"],
     ["Westend", "westend-relay"],
-  ];
+  ]
 
   return (
     <div className="app-header">
@@ -56,5 +56,5 @@ export const Header = () => {
         </a>
       </section>
     </div>
-  );
-};
+  )
+}

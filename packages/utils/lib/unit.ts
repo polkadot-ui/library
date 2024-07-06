@@ -1,9 +1,9 @@
-import { decodeAddress, encodeAddress } from "@polkadot/keyring";
-import { hexToU8a, isHex, u8aToString, u8aUnwrapBytes } from "@polkadot/util";
-import type { MutableRefObject, RefObject } from "react";
-import { AnyJson, AnyObject, EvalMessages } from "./types";
-import { ellipsisFn } from "./base";
-import { errorLogPrefix } from "./config";
+import { decodeAddress, encodeAddress } from "@polkadot/keyring"
+import { hexToU8a, isHex, u8aToString, u8aUnwrapBytes } from "@polkadot/util"
+import type { MutableRefObject, RefObject } from "react"
+import { AnyJson, AnyObject, EvalMessages } from "./types"
+import { ellipsisFn } from "./base"
+import { errorLogPrefix } from "./config"
 
 /**
  * @name remToUnit
@@ -11,7 +11,7 @@ import { errorLogPrefix } from "./config";
  */
 export const remToUnit = (rem: string) =>
   Number(rem.slice(0, rem.length - 3)) *
-  parseFloat(getComputedStyle(document.documentElement).fontSize);
+  parseFloat(getComputedStyle(document.documentElement).fontSize)
 
 /**
  * @name planckToUnit
@@ -21,14 +21,14 @@ export const remToUnit = (rem: string) =>
  */
 export const planckToUnit = (val: bigint, units: number): number => {
   if (units < 0) {
-    throw new Error(`Argument out of range: ${units}`);
+    throw new Error(`Argument out of range: ${units}`)
   }
-  const str = val ? val.toString() : "";
-  const numb = str.slice(0, str.length - units);
-  const dec = str.slice(str.length - units);
-  const result = Number(numb + "." + dec);
-  return !isNaN(result) ? result : 0;
-};
+  const str = val ? val.toString() : ""
+  const numb = str.slice(0, str.length - units)
+  const dec = str.slice(str.length - units)
+  const result = Number(numb + "." + dec)
+  return !isNaN(result) ? result : 0
+}
 
 /**
  * @name unitToPlanck
@@ -40,25 +40,25 @@ export const planckToUnit = (val: bigint, units: number): number => {
 export const unitToPlanck = (val: string, units: number): bigint => {
   //make sure val and/or units are a positive number
   if (Number(val) < 0 || units < 0) {
-    throw new Error(`Param(s) cannot be negative`);
+    throw new Error(`Param(s) cannot be negative`)
   }
 
-  const init = val.replaceAll(",", ".");
+  const init = val.replaceAll(",", ".")
 
   if (init && !isNaN(Number(init)) && (init.match(/\./g) || []).length <= 1) {
-    const value = Number(!init.length || !init ? "0" : init);
-    return BigInt(value * 10 ** units);
+    const value = Number(!init.length || !init ? "0" : init)
+    return BigInt(value * 10 ** units)
   } else {
-    throw new Error(`Params are wrong`);
+    throw new Error(`Params are wrong`)
   }
-};
+}
 
 /**
  * @name capitalizeFirstLetter
  * @summary Capitalize the first letter of a string.
  */
 export const capitalizeFirstLetter = (string: string) =>
-  string.charAt(0).toUpperCase() + string.slice(1);
+  string.charAt(0).toUpperCase() + string.slice(1)
 
 /**
  * @name snakeToCamel
@@ -69,7 +69,7 @@ export const snakeToCamel = (str: string) =>
     .toLowerCase()
     .replace(/([-_][a-z])/g, (group) =>
       group.toUpperCase().replace("-", "").replace("_", "")
-    );
+    )
 
 /**
  * @name setStateWithRef
@@ -80,9 +80,9 @@ export const setStateWithRef = <T>(
   setState: (_state: T) => void,
   ref: MutableRefObject<T>
 ): void => {
-  setState(value);
-  ref.current = value;
-};
+  setState(value)
+  ref.current = value
+}
 
 /**
  * @name localStorageOrDefault
@@ -94,17 +94,17 @@ export const localStorageOrDefault = <T>(
   _default: T,
   parse = false
 ): T | string => {
-  const val: string | null = localStorage.getItem(key);
+  const val: string | null = localStorage.getItem(key)
 
   if (val === null) {
-    return _default;
+    return _default
   }
 
   if (parse) {
-    return JSON.parse(val) as T;
+    return JSON.parse(val) as T
   }
-  return val;
-};
+  return val
+}
 
 /**
  * @name isValidAddress
@@ -112,12 +112,12 @@ export const localStorageOrDefault = <T>(
  */
 export const isValidAddress = (address: string) => {
   try {
-    encodeAddress(isHex(address) ? hexToU8a(address) : decodeAddress(address));
-    return true;
+    encodeAddress(isHex(address) ? hexToU8a(address) : decodeAddress(address))
+    return true
   } catch (e) {
-    return false;
+    return false
   }
-};
+}
 
 /**
  * @name determinePoolDisplay
@@ -125,23 +125,23 @@ export const isValidAddress = (address: string) => {
  */
 export const determinePoolDisplay = (address: string, batchItem: AnyJson) => {
   // default display value
-  const defaultDisplay = ellipsisFn(address, 6);
+  const defaultDisplay = ellipsisFn(address, 6)
 
   // fallback to address on empty metadata string
-  let display = batchItem ?? defaultDisplay;
+  let display = batchItem ?? defaultDisplay
 
   // check if super identity has been byte encoded
-  const displayAsBytes = u8aToString(u8aUnwrapBytes(display));
+  const displayAsBytes = u8aToString(u8aUnwrapBytes(display))
   if (displayAsBytes !== "") {
-    display = displayAsBytes;
+    display = displayAsBytes
   }
   // if still empty string, default to clipped address
   if (display === "") {
-    display = defaultDisplay;
+    display = defaultDisplay
   }
 
-  return display;
-};
+  return display
+}
 
 /**
  * @name extractUrlValue
@@ -149,11 +149,11 @@ export const determinePoolDisplay = (address: string, batchItem: AnyJson) => {
  */
 export const extractUrlValue = (key: string, url?: string) => {
   if (typeof url === "undefined") {
-    url = window.location.href;
+    url = window.location.href
   }
-  const match = url.match(`[?&]${key}=([^&]+)`);
-  return match ? match[1] : null;
-};
+  const match = url.match(`[?&]${key}=([^&]+)`)
+  return match ? match[1] : null
+}
 
 /**
  * @name varToUrlHash
@@ -167,16 +167,16 @@ export const varToUrlHash = (
   val: string,
   addIfMissing: boolean
 ) => {
-  const hash = window.location.hash;
-  const [page, params] = hash.split("?");
-  const searchParams = new URLSearchParams(params);
+  const hash = window.location.hash
+  const [page, params] = hash.split("?")
+  const searchParams = new URLSearchParams(params)
 
   if (searchParams.get(key) === null && !addIfMissing) {
-    return;
+    return
   }
-  searchParams.set(key, val);
-  window.location.hash = `${page}?${searchParams.toString()}`;
-};
+  searchParams.set(key, val)
+  window.location.hash = `${page}?${searchParams.toString()}`
+}
 
 /**
  * @name removeVarFromUrlHash
@@ -185,16 +185,16 @@ export const varToUrlHash = (
  * exist.
  */
 export const removeVarFromUrlHash = (key: string) => {
-  const hash = window.location.hash;
-  const [page, params] = hash.split("?");
-  const searchParams = new URLSearchParams(params);
+  const hash = window.location.hash
+  const [page, params] = hash.split("?")
+  const searchParams = new URLSearchParams(params)
   if (searchParams.get(key) === null) {
-    return;
+    return
   }
-  searchParams.delete(key);
-  const paramsAsStr = searchParams.toString();
-  window.location.hash = `${page}${paramsAsStr ? `?${paramsAsStr}` : ``}`;
-};
+  searchParams.delete(key)
+  const paramsAsStr = searchParams.toString()
+  window.location.hash = `${page}${paramsAsStr ? `?${paramsAsStr}` : ``}`
+}
 
 /**
  * @name sortWithNull
@@ -204,22 +204,22 @@ export const sortWithNull =
   (ascending: boolean) => (a: AnyJson, b: AnyJson) => {
     // equal items sort equally
     if (a === b) {
-      return 0;
+      return 0
     }
     // nulls sort after anything else
     if (a === null) {
-      return 1;
+      return 1
     }
     if (b === null) {
-      return -1;
+      return -1
     }
     // otherwise, if we're ascending, lowest sorts first
     if (ascending) {
-      return a < b ? -1 : 1;
+      return a < b ? -1 : 1
     }
     // if descending, highest sorts first
-    return a < b ? 1 : -1;
-  };
+    return a < b ? 1 : -1
+  }
 
 /**
  * @name applyWidthAsPadding
@@ -232,29 +232,29 @@ export const applyWidthAsPadding = (
   if (containerRef.current && subjectRef.current) {
     containerRef.current.style.paddingRight = `${
       subjectRef.current.offsetWidth + remToUnit("1rem")
-    }px`;
+    }px`
   }
-};
+}
 
 /**
  * @name unescape
  * @summary Replaces \” with “
  */
-export const unescape = (val: string) => val.replace(/\\"/g, '"');
+export const unescape = (val: string) => val.replace(/\\"/g, '"')
 
 /**
  * @name inChrome
  * @summary Whether the application is rendering in Chrome.
  */
 export const inChrome = () => {
-  const isChromium = (window as AnyJson)?.chrome || null;
-  const winNav = (window as AnyJson)?.navigator || null;
-  const isOpera = typeof (window as AnyJson)?.opr !== "undefined";
-  const isIEedge = winNav?.userAgent.indexOf("Edg") > -1 || false;
-  const isIOSChrome = winNav?.userAgent.match("CriOS") || false;
+  const isChromium = (window as AnyJson)?.chrome || null
+  const winNav = (window as AnyJson)?.navigator || null
+  const isOpera = typeof (window as AnyJson)?.opr !== "undefined"
+  const isIEedge = winNav?.userAgent.indexOf("Edg") > -1 || false
+  const isIOSChrome = winNav?.userAgent.match("CriOS") || false
 
   if (isIOSChrome) {
-    return true;
+    return true
   }
   if (
     isChromium !== null &&
@@ -262,10 +262,10 @@ export const inChrome = () => {
     isOpera === false &&
     isIEedge === false
   ) {
-    return true;
+    return true
   }
-  return false;
-};
+  return false
+}
 
 /**
  * @name addedTo
@@ -288,7 +288,7 @@ export const addedTo = (
                 : staleItem[key] === freshItem[key]
             )
           )
-      );
+      )
 
 /**
  * @name removedFrom
@@ -311,7 +311,7 @@ export const removedFrom = (
                 : freshItem[key] === staleItem[key]
             )
           )
-      );
+      )
 
 /**
  * @name matchedProperties
@@ -331,7 +331,7 @@ export const matchedProperties = (
             !(key in x) || !(key in y) ? false : y[key] === x[key]
           )
         )
-      );
+      )
 
 /**
  * @name isValidHttpUrl
@@ -339,14 +339,14 @@ export const matchedProperties = (
  * @param string  - The string to check.
  */
 export const isValidHttpUrl = (string: string) => {
-  let url: URL;
+  let url: URL
   try {
-    url = new URL(string);
+    url = new URL(string)
   } catch (_) {
-    return false;
+    return false
   }
-  return url.protocol === "http:" || url.protocol === "https:";
-};
+  return url.protocol === "http:" || url.protocol === "https:"
+}
 
 /**
  * @name makeCancelable
@@ -354,27 +354,27 @@ export const isValidHttpUrl = (string: string) => {
  * @param promise  - The promise to make cancellable.
  */
 export const makeCancelable = (promise: Promise<AnyObject>) => {
-  let hasCanceled = false;
+  let hasCanceled = false
 
   const wrappedPromise = new Promise((resolve, reject) => {
     promise.then((val) =>
       hasCanceled ? reject(Error("Cancelled")) : resolve(val)
-    );
+    )
     promise.catch((error) =>
       hasCanceled ? reject(Error("Cancelled")) : reject(error)
-    );
-  });
+    )
+  })
 
   return {
     promise: wrappedPromise,
     cancel: () => {
-      hasCanceled = true;
+      hasCanceled = true
     },
-  };
-};
+  }
+}
 
 // Private for evalUnits
-const getSiValue = (si: number): bigint => BigInt(10) ** BigInt(si);
+const getSiValue = (si: number): bigint => BigInt(10) ** BigInt(si)
 
 const si = [
   { value: getSiValue(24), symbol: "y", isMil: true },
@@ -394,18 +394,18 @@ const si = [
   { value: getSiValue(18), symbol: "E" },
   { value: getSiValue(21), symbol: "Y" },
   { value: getSiValue(24), symbol: "Z" },
-];
+]
 
 const allowedSymbols = si
   .map((s) => s.symbol)
   .join(", ")
-  .replace(", ,", ",");
-const floats = new RegExp("^[+]?[0-9]*[.,]{1}[0-9]*$");
-const ints = new RegExp("^[+]?[0-9]+$");
+  .replace(", ,", ",")
+const floats = new RegExp("^[+]?[0-9]*[.,]{1}[0-9]*$")
+const ints = new RegExp("^[+]?[0-9]+$")
 const alphaFloats = new RegExp(
   "^[+]?[0-9]*[.,]{1}[0-9]*[" + allowedSymbols + "]{1}$"
-);
-const alphaInts = new RegExp("^[+]?[0-9]*[" + allowedSymbols + "]{1}$");
+)
+const alphaInts = new RegExp("^[+]?[0-9]*[" + allowedSymbols + "]{1}$")
 
 /**
  * A function that identifes integer/float(comma or dot)/expressions (such as 1k)
@@ -420,46 +420,46 @@ export const evalUnits = (
   chainDecimals: number
 ): [bigint | null, string] => {
   //sanitize input to remove + char if exists
-  input = input && input.replace("+", "");
+  input = input && input.replace("+", "")
   if (
     !floats.test(input) &&
     !ints.test(input) &&
     !alphaInts.test(input) &&
     !alphaFloats.test(input)
   ) {
-    return [null, EvalMessages.GIBBERISH];
+    return [null, EvalMessages.GIBBERISH]
   }
   // find the character from the alphanumerics
-  const symbol = input.replace(/[0-9.,]/g, "");
+  const symbol = input.replace(/[0-9.,]/g, "")
   // find the value from the si list
-  const siVal = si.find((s) => s.symbol === symbol);
-  const numberStr = input.replace(symbol, "").replace(",", ".");
-  let numeric: bigint = BigInt(0);
+  const siVal = si.find((s) => s.symbol === symbol)
+  const numberStr = input.replace(symbol, "").replace(",", ".")
+  let numeric: bigint = BigInt(0)
 
   if (!siVal) {
-    return [null, EvalMessages.SYMBOL_ERROR];
+    return [null, EvalMessages.SYMBOL_ERROR]
   }
-  const decimalsBn = BigInt(10) ** BigInt(chainDecimals);
-  const containDecimal = numberStr.includes(".");
-  const [decPart, fracPart] = numberStr.split(".");
-  const fracDecimals = fracPart?.length || 0;
-  const fracExp = BigInt(10) ** BigInt(fracDecimals);
+  const decimalsBn = BigInt(10) ** BigInt(chainDecimals)
+  const containDecimal = numberStr.includes(".")
+  const [decPart, fracPart] = numberStr.split(".")
+  const fracDecimals = fracPart?.length || 0
+  const fracExp = BigInt(10) ** BigInt(fracDecimals)
   numeric = containDecimal
     ? BigInt(BigInt(decPart) * BigInt(fracExp) + BigInt(fracPart))
-    : BigInt(numberStr);
-  numeric = numeric * decimalsBn;
+    : BigInt(numberStr)
+  numeric = numeric * decimalsBn
   if (containDecimal) {
     numeric = siVal.isMil
       ? numeric / siVal.value / fracExp
-      : (numeric * siVal.value) / fracExp;
+      : (numeric * siVal.value) / fracExp
   } else {
-    numeric = siVal.isMil ? numeric / siVal.value : numeric * siVal.value;
+    numeric = siVal.isMil ? numeric / siVal.value : numeric * siVal.value
   }
   if (numeric === BigInt(0)) {
-    return [null, EvalMessages.ZERO];
+    return [null, EvalMessages.ZERO]
   }
-  return [numeric, EvalMessages.SUCCESS];
-};
+  return [numeric, EvalMessages.SUCCESS]
+}
 
 /**
  * The transformToBaseUnit function is used to transform a given estimated
@@ -478,30 +478,30 @@ export const transformToBaseUnit = (
   if (!input) {
     throw new Error(
       `[${errorLogPrefix} | transformToBaseUnit] Input is not defined`
-    );
+    )
   }
-  const t = input.length - chainDecimals;
-  let s = "";
+  const t = input.length - chainDecimals
+  let s = ""
   // if chainDecimals are more than the estFee length
   if (t < 0) {
     // add 0 in front (1 less as we want the 0.)
     for (let i = 0; i < Math.abs(t) - 1; i++) {
-      s += "0";
+      s += "0"
     }
-    s = s + input;
+    s = s + input
     // remove trailing 0s
     for (let i = 0; i < s.length; i++) {
       if (s.slice(s.length - 1) !== "0") {
-        break;
+        break
       }
-      s = s.substring(0, s.length - 1);
+      s = s.substring(0, s.length - 1)
     }
-    s = "0." + s;
+    s = "0." + s
   } else {
-    s = (parseInt(input) / 10 ** chainDecimals).toString();
+    s = (parseInt(input) / 10 ** chainDecimals).toString()
   }
-  return parseFloat(s) !== 0 ? s : "0";
-};
+  return parseFloat(s) !== 0 ? s : "0"
+}
 
 /**
  * @name unimplemented
@@ -511,7 +511,7 @@ export const transformToBaseUnit = (
 // eslint-disable-next-line @typescript-eslint/no-unused-vars, no-unused-vars
 export const unimplemented = ({ ...props }) => {
   /* unimplemented */
-};
+}
 
 /**
  * Deep merge two objects.
@@ -524,24 +524,24 @@ export const mergeDeep = (
   ...sources: AnyObject[]
 ): AnyObject => {
   if (!sources.length) {
-    return target;
+    return target
   }
 
   const isObject = (item: AnyObject) =>
-    item && typeof item === "object" && !Array.isArray(item);
-  const source = sources.shift();
+    item && typeof item === "object" && !Array.isArray(item)
+  const source = sources.shift()
 
   if (isObject(target) && isObject(source)) {
     for (const key in source) {
       if (isObject(source[key])) {
         if (!target[key]) {
-          Object.assign(target, { [key]: {} });
+          Object.assign(target, { [key]: {} })
         }
-        mergeDeep(target[key], source[key]);
+        mergeDeep(target[key], source[key])
       } else {
-        Object.assign(target, { [key]: source[key] });
+        Object.assign(target, { [key]: source[key] })
       }
     }
   }
-  return mergeDeep(target, ...sources);
-};
+  return mergeDeep(target, ...sources)
+}

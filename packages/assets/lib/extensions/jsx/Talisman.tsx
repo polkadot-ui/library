@@ -18,6 +18,6 @@ export const Talisman = () => (
       fill="#FD4848"
     />
   </svg>
-);
+)
 
-export default Talisman;
+export default Talisman

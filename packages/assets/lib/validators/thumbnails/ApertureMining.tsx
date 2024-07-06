@@ -92,6 +92,6 @@ const ApertureMining = () => (
       />
     </g>
   </svg>
-);
+)
 
-export default ApertureMining;
+export default ApertureMining

@@ -1,6 +1,6 @@
-import { valEmpty } from "../../utils";
-import { GridProps } from "../common_types";
-import "@polkadot-ui/core/css/components/Grid/index.css";
+import { valEmpty } from "../../utils"
+import { GridProps } from "../common_types"
+import "@polkadot-ui/core/css/components/Grid/index.css"
 
 export const Grid = ({
   alignItems,
@@ -14,7 +14,7 @@ export const Grid = ({
   sm,
   style,
 }: GridProps) => {
-  const isRow: boolean = row || !column;
+  const isRow: boolean = row || !column
 
   const classes: string =
     // Clarify if its a column or a row
@@ -26,11 +26,11 @@ export const Grid = ({
     // In case of a column then style it
     valEmpty(!isRow && !!sm, "sm-" + sm) +
     valEmpty(!isRow && !!md, "md-" + md) +
-    valEmpty(!isRow && !!lg, "lg-" + lg);
+    valEmpty(!isRow && !!lg, "lg-" + lg)
 
   return (
     <div style={style} className={classes}>
       {children}
     </div>
-  );
-};
+  )
+}
