@@ -33,6 +33,8 @@ const Accounts: React.FC<{
                 address: account.address,
                 name: account.name,
                 extension: extension.name,
+                polkadotSigner: account.polkadotSigner,
+                type: account.type
               })
             }
             key={account.address}
