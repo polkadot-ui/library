@@ -98,7 +98,11 @@ export const AccountProvider: React.FC<
         <h4>Accounts</h4>
         {selected !== null ? (
           <button
-            style={{ cursor: "pointer", color: "red" }}
+            style={{
+              cursor: "pointer",
+              color: "firebrick",
+              fontWeight: "bold",
+            }}
             onClick={() => setSelected(null)}
             disabled={selected && Object.keys(selected).length === 0}
           >
