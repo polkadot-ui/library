@@ -79,8 +79,7 @@ export const ExtensionProvider: React.FC<
   if (availXts.length === 0) return <div>No extension detected</div>
 
   return (
-    <>
-      <h4>Extensions</h4>
+    <div style={{ display: "flex", flexDirection: "column" }}>
       <div
         style={{
           display: "flex",
@@ -91,12 +90,15 @@ export const ExtensionProvider: React.FC<
         {availXts.map((xtName) => {
           const ExtensionIcon = getExtensionIcon(xtName)
           return (
-            <div key={xtName} style={{ flex: "1 1 10rem" }}>
+            <div key={xtName} style={{ flex: "1 1 5rem" }}>
               <button
                 style={{
-                  padding: "2rem",
-                  width: "15rem",
-                  height: "10rem",
+                  display: "flex",
+                  padding: "1rem 0",
+                  flexDirection: "column",
+                  alignItems: "normal",
+                  width: "11rem",
+                  height: "9rem",
                   border: "0.1rem solid #8A8A8A",
                   borderRadius: "0.5rem",
                   background: selXts.has(xtName) ? "#CACACA" : "",
@@ -107,9 +109,17 @@ export const ExtensionProvider: React.FC<
                 key={xtName}
               >
                 {ExtensionIcon && <ExtensionIcon />}
-                {xtName === "subwallet-js"
-                  ? "Subwallet"
-                  : xtName.charAt(0).toUpperCase() + xtName.slice(1)}
+                <div
+                  style={{
+                    position: "relative",
+                    bottom: "-0.5rem",
+                    fontSize: "1rem",
+                  }}
+                >
+                  {xtName === "subwallet-js"
+                    ? "Subwallet"
+                    : xtName.charAt(0).toUpperCase() + xtName.slice(1)}
+                </div>
               </button>
             </div>
           )
@@ -118,6 +128,6 @@ export const ExtensionProvider: React.FC<
       <Provider value={[...selXts.values()]}>
         {selXts.size ? children : null}
       </Provider>
-    </>
+    </div>
   )
 }

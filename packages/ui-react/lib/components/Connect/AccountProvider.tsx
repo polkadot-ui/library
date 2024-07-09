@@ -4,7 +4,6 @@ import type { InjectedExtension } from "polkadot-api/pjs-signer"
 import { useSelectedExtensions } from "./hooks"
 import { SignerCtx } from "./signerCtx"
 
-import { ellipsisFn } from "@polkadot-ui/utils"
 import { getExtensionIcon } from "@polkadot-ui/assets/extensions"
 import type { SelectedAccountType } from "./types"
 
@@ -34,7 +33,7 @@ const Accounts: React.FC<{
                 name: account.name,
                 extension: extension.name,
                 polkadotSigner: account.polkadotSigner,
-                type: account.type
+                type: account.type,
               })
             }
             key={account.address}
@@ -64,15 +63,14 @@ const Accounts: React.FC<{
             <div style={{ display: "flex", width: "40%" }}>
               {account.name ?? account.address}
             </div>
-            {account.name && (
+            {/* {account.name && (
               <div style={{ display: "flex", width: "30%" }}>
                 {ellipsisFn(account.address)}
               </div>
-            )}
-
+            )} 
             <div style={{ display: "flex", width: "15%", color: "#6A6A6A" }}>
               {equalizer ? "Selected" : ""}
-            </div>
+            </div>*/}
           </button>
         )
       })}
@@ -90,7 +88,28 @@ export const AccountProvider: React.FC<
 
   return (
     <>
-      <h4 style={{ paddingTop: "1rem" }}>Accounts</h4>
+      <div
+        style={{
+          display: "flex",
+          paddingTop: "2rem",
+          justifyContent: "space-between",
+        }}
+      >
+        <h4>Accounts</h4>
+        {selected !== null ? (
+          <button
+            style={{
+              cursor: "pointer",
+              color: "firebrick",
+              fontWeight: "bold",
+            }}
+            onClick={() => setSelected(null)}
+            disabled={selected && Object.keys(selected).length === 0}
+          >
+            Disconnect
+          </button>
+        ) : null}
+      </div>
       {extensions.map((extension) => (
         <Accounts
           key={extension.name}
