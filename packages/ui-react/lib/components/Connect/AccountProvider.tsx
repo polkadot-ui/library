@@ -104,7 +104,7 @@ export const AccountProvider: React.FC<
               fontWeight: "bold",
             }}
             onClick={() => setSelected(null)}
-            disabled={selected && Object.keys(selected).length === 0}
+            disabled={!selected?.address}
           >
             Disconnect
           </button>
