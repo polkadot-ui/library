@@ -96,7 +96,7 @@ export const AccountProvider: React.FC<
         }}
       >
         <h4>Accounts</h4>
-        {selected !== null ? (
+        {selected?.address ? (
           <button
             style={{
               cursor: "pointer",
@@ -104,7 +104,6 @@ export const AccountProvider: React.FC<
               fontWeight: "bold",
             }}
             onClick={() => setSelected(null)}
-            disabled={!selected?.address}
           >
             Disconnect
           </button>
