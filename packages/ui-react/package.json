@@ -1,7 +1,7 @@
 {
   "name": "@polkadot-ui/react",
   "license": "MIT",
-  "version": "0.0.1-alpha.12",
+  "version": "0.0.1-alpha.13",
   "author": "Nikolaos Kontakis<wirednkod@gmail.com>",
   "type": "module",
   "description": "Functional React components for Polkadot dApps.",
@@ -20,7 +20,7 @@
   "publishConfig": {
     "directory": "dist"
   },
-  "homepage": "https://polkadot.info",
+  "homepage": "https://polkadot-ui.info",
   "scripts": {
     "preinstall": "npx only-allow pnpm",
     "dev": "vite",
