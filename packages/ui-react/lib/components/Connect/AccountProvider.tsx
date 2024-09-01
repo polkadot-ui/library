@@ -1,30 +1,36 @@
 import type { Dispatch, PropsWithChildren, SetStateAction } from "react"
 import React, { useSyncExternalStore } from "react"
-import type { InjectedExtension } from "polkadot-api/pjs-signer"
+import type {
+  InjectedExtension,
+  InjectedPolkadotAccount,
+} from "polkadot-api/pjs-signer"
 import { useSelectedExtensions } from "./hooks"
 import { SignerCtx } from "./signerCtx"
 
 import { getExtensionIcon } from "@polkadot-ui/assets/extensions"
-import type { SelectedAccountType } from "./types"
+import type { CommonConfigType, SelectedAccountType } from "./types"
 
 const Accounts: React.FC<{
   extension: InjectedExtension
   setSelectedAccount: React.Dispatch<React.SetStateAction<SelectedAccountType>>
   selectedAccount: SelectedAccountType
-}> = ({ extension, setSelectedAccount, selectedAccount }) => {
+  config: CommonConfigType
+}> = ({ extension, setSelectedAccount, selectedAccount, config }) => {
   const accounts = useSyncExternalStore(
     extension.subscribe,
     extension.getAccounts
   )
-
-  const ExtensionIcon = getExtensionIcon(extension.name)
+  const borderDesc = config?.border
+    ? config?.border?.size.concat(
+        ` ${config?.border?.type}`,
+        ` ${config?.border?.color}`
+      )
+    : "0.1rem solid #8A8A8A"
 
   return (
     <div style={{ display: "flex", flexDirection: "column" }}>
-      {accounts.map((account) => {
-        const concat = account.address
-        const equalizer = concat === selectedAccount?.address
-
+      {accounts.map((account: InjectedPolkadotAccount) => {
+        const ExtensionIcon = getExtensionIcon(extension.name)
         return (
           <button
             onClick={() =>
@@ -38,25 +44,23 @@ const Accounts: React.FC<{
             }
             key={account.address}
             style={{
-              border: "1px solid #8A8A8A",
-              borderRadius: "0.5rem",
-              margin: "0.3rem",
-              padding: "0.5rem",
               display: "flex",
-              justifyContent: "space-around",
+              padding: "1rem 0",
+              flexDirection: "row",
               alignItems: "center",
-              background: equalizer ? "#CACACA" : "",
+              width: "100%",
+              height: "5rem",
+              border: borderDesc,
+              borderRadius: "0.5rem",
+              margin: "0.5rem 0",
+              background:
+                account.address === selectedAccount?.address
+                  ? config?.selectedBgColor || "#CACACA"
+                  : config?.bgColor || "",
             }}
           >
             {ExtensionIcon && (
-              <div
-                style={{
-                  display: "flex",
-                  width: "1.5rem",
-                  height: "2rem",
-                  marginRight: "1rem",
-                }}
-              >
+              <div style={{ width: "5rem", height: "3rem" }}>
                 <ExtensionIcon />
               </div>
             )}
@@ -64,13 +68,13 @@ const Accounts: React.FC<{
               {account.name ?? account.address}
             </div>
             {/* {account.name && (
-              <div style={{ display: "flex", width: "30%" }}>
-                {ellipsisFn(account.address)}
-              </div>
-            )} 
-            <div style={{ display: "flex", width: "15%", color: "#6A6A6A" }}>
-              {equalizer ? "Selected" : ""}
-            </div>*/}
+        <div style={{ display: "flex", width: "30%" }}>
+          {ellipsisFn(account.address)}
+        </div>
+      )} 
+      <div style={{ display: "flex", width: "15%", color: "#6A6A6A" }}>
+        {equalizer ? "Selected" : ""}
+      </div>*/}
           </button>
         )
       })}
@@ -82,8 +86,9 @@ export const AccountProvider: React.FC<
   PropsWithChildren<{
     selected: SelectedAccountType
     setSelected: Dispatch<SetStateAction<SelectedAccountType>>
+    config?: CommonConfigType
   }>
-> = ({ children, selected, setSelected }) => {
+> = ({ children, selected, setSelected, config }) => {
   const extensions = useSelectedExtensions()
 
   return (
@@ -111,6 +116,7 @@ export const AccountProvider: React.FC<
       </div>
       {extensions.map((extension) => (
         <Accounts
+          config={config}
           key={extension.name}
           {...{ extension }}
           setSelectedAccount={setSelected}

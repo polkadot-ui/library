@@ -109,13 +109,13 @@ importers:
         version: 2.0.0
       tsup:
         specifier: ^8.1.0
-        version: 8.1.0(@microsoft/api-extractor@7.43.0(@types/node@20.14.13))(@swc/core@1.6.13)(postcss@8.4.38)(ts-node@10.9.2(@swc/core@1.6.13)(@types/node@20.14.13)(typescript@5.5.3))(typescript@5.5.3)
+        version: 8.1.0(@microsoft/api-extractor@7.43.0(@types/node@22.5.2))(@swc/core@1.6.13)(postcss@8.4.38)(ts-node@10.9.2(@swc/core@1.6.13)(@types/node@22.5.2)(typescript@5.5.3))(typescript@5.5.3)
       typescript:
         specifier: ^5.4.5
         version: 5.5.3
       vitest:
         specifier: ^1.6.0
-        version: 1.6.0(@types/node@20.14.13)(sass@1.77.6)
+        version: 1.6.0(@types/node@22.5.2)(sass@1.77.6)
       yaml:
         specifier: ^2.4.3
         version: 2.4.5
@@ -183,8 +183,8 @@ importers:
         specifier: ^10.4.1
         version: 10.4.3
       polkadot-api:
-        specifier: ^0.12.0
-        version: 0.12.0(@microsoft/api-extractor@7.43.0(@types/node@20.14.10))(@swc/core@1.6.13)(postcss@8.4.39)(rxjs@7.8.1)(smoldot@2.0.29)(yaml@2.4.5)
+        specifier: ^1.1.0
+        version: 1.1.0(@microsoft/api-extractor@7.43.0(@types/node@20.14.10))(@swc/core@1.6.13)(postcss@8.4.39)(rxjs@7.8.1)(smoldot@2.0.30)(yaml@2.4.5)
       typescript:
         specifier: ^5.4.5
         version: 5.5.3
@@ -255,13 +255,13 @@ importers:
         version: 7.15.0(eslint@8.57.0)(typescript@5.5.3)
       '@vitejs/plugin-react':
         specifier: ^4.3.0
-        version: 4.3.1(vite@5.3.3(@types/node@20.14.13)(sass@1.77.6))
+        version: 4.3.1(vite@5.3.3(@types/node@22.5.2)(sass@1.77.6))
       '@vitejs/plugin-react-swc':
         specifier: ^3.7.0
-        version: 3.7.0(vite@5.3.3(@types/node@20.14.13)(sass@1.77.6))
+        version: 3.7.0(vite@5.3.3(@types/node@22.5.2)(sass@1.77.6))
       '@wdio/browser-runner':
         specifier: ^8.38.1
-        version: 8.39.1(@babel/core@7.24.3)(@types/node@20.14.13)(esbuild@0.23.0)(rollup@4.19.1)(sass@1.77.6)(typescript@5.5.3)
+        version: 8.39.1(@babel/core@7.24.3)(@types/node@22.5.2)(esbuild@0.23.0)(rollup@4.19.1)(sass@1.77.6)(typescript@5.5.3)
       '@wdio/cli':
         specifier: ^8.38.2
         version: 8.39.1(typescript@5.5.3)
@@ -291,25 +291,25 @@ importers:
         version: 1.77.6
       ts-node:
         specifier: ^10.9.2
-        version: 10.9.2(@swc/core@1.6.13)(@types/node@20.14.13)(typescript@5.5.3)
+        version: 10.9.2(@swc/core@1.6.13)(@types/node@22.5.2)(typescript@5.5.3)
       typescript:
         specifier: ^5.4.5
         version: 5.5.3
       vite:
         specifier: ^5.2.12
-        version: 5.3.3(@types/node@20.14.13)(sass@1.77.6)
+        version: 5.3.3(@types/node@22.5.2)(sass@1.77.6)
       vite-plugin-checker:
         specifier: ^0.6.4
-        version: 0.6.4(eslint@8.57.0)(optionator@0.9.3)(stylelint@16.6.1(typescript@5.5.3))(typescript@5.5.3)(vite@5.3.3(@types/node@20.14.13)(sass@1.77.6))(vue-tsc@1.8.27(typescript@5.5.3))
+        version: 0.6.4(eslint@8.57.0)(optionator@0.9.3)(stylelint@16.6.1(typescript@5.5.3))(typescript@5.5.3)(vite@5.3.3(@types/node@22.5.2)(sass@1.77.6))(vue-tsc@1.8.27(typescript@5.5.3))
       vite-plugin-eslint:
         specifier: ^1.8.1
-        version: 1.8.1(eslint@8.57.0)(vite@5.3.3(@types/node@20.14.13)(sass@1.77.6))
+        version: 1.8.1(eslint@8.57.0)(vite@5.3.3(@types/node@22.5.2)(sass@1.77.6))
       vite-plugin-svgr:
         specifier: ^4.2.0
-        version: 4.2.0(rollup@4.19.1)(typescript@5.5.3)(vite@5.3.3(@types/node@20.14.13)(sass@1.77.6))
+        version: 4.2.0(rollup@4.19.1)(typescript@5.5.3)(vite@5.3.3(@types/node@22.5.2)(sass@1.77.6))
       vite-tsconfig-paths:
         specifier: ^4.3.2
-        version: 4.3.2(typescript@5.5.3)(vite@5.3.3(@types/node@20.14.13)(sass@1.77.6))
+        version: 4.3.2(typescript@5.5.3)(vite@5.3.3(@types/node@22.5.2)(sass@1.77.6))
 
 packages:
 
@@ -1231,12 +1231,12 @@ packages:
     resolution: {integrity: sha512-cq8o4cWH0ibXh9VGi5P20Tu9XF/0fFXl9EUinr9QfTM7a7p0oTA4iJRCQWppXR1Pg8dSM0UCItCkPwsk9qWWYA==}
     engines: {node: ^12.20.0 || ^14.18.0 || >=16.0.0}
 
-  '@polkadot-api/cli@0.7.0':
-    resolution: {integrity: sha512-p0oAb3wVS+D1QI01FiC9snPemvnTvzcQoifpqHDf0c3+b3cPMhWHOJEJ3B/AvgapUi2kF4z47Tq9DyyvL1Ogjw==}
+  '@polkadot-api/cli@0.8.0':
+    resolution: {integrity: sha512-IZGsvbMUgKL2gkVkp1ziMmtyLAN8vnGaV+Nxl5+fsalEHG+1BYK69KYk3hDzGrca3uT3rN3/CYdiVd5/Kywd4A==}
     hasBin: true
 
-  '@polkadot-api/codegen@0.7.2':
-    resolution: {integrity: sha512-+fggsHN9xdMXJs2jPSPrWIwySSvXQ6GboOJwQhMy79lHb3zp0QqZO5OjM2YP+KXv7sVs1OAjNsIa12cqAOyq5Q==}
+  '@polkadot-api/codegen@0.9.0':
+    resolution: {integrity: sha512-ERtZAfgKBp9iQ7JZD7ag+TO0G/Dt/RVoHeE3V6n1hNQKNxIOy7w12fw7yMPEieS5walvI+e8otsnB+GpoE/5FQ==}
 
   '@polkadot-api/json-rpc-provider-proxy@0.2.0':
     resolution: {integrity: sha512-0jtKSl2Zw2v5OJFMp30KXhpcKpwAj2FpMtHTMn4FDwcudL2Y1efiAJ9Zoc3Bk70OVWSovUHdU2WTBUVL/efw4Q==}
@@ -1244,52 +1244,55 @@ packages:
   '@polkadot-api/json-rpc-provider@0.0.2':
     resolution: {integrity: sha512-VWKs5iRDDEvaHwQ1M8eQbhCauPBp4ETFgaRCHmZIz7uPrWSxDCKqofruLZoNVM8QhVk6hjIo2kxm7yXpTqWigw==}
 
-  '@polkadot-api/known-chains@0.3.0':
-    resolution: {integrity: sha512-tgfhwEVaEsgQOEOdn4Mz8hP8+CrMvBs+rnW/IBzRVXWHaGg2VZOIz+QQL3S9D8RuBWrcXS7xm7TuYszdaRswTA==}
+  '@polkadot-api/json-rpc-provider@0.0.3':
+    resolution: {integrity: sha512-493nHN9RnLxNPMxQ3oekEFnRomAqWWh3j88FhANoPu5iINBG73l4ccB9QBPVs3JWXq4SwfLVmb6L15ryM69g/g==}
 
-  '@polkadot-api/logs-provider@0.0.3':
-    resolution: {integrity: sha512-va++/efBvcC0LuYrq1HZvtAwoyxyMsvA+ecLqwxo/lMymJFOQXV+bIgbMd7z+nNbUtGplCJVDFR5EK0EhxfKxQ==}
+  '@polkadot-api/known-chains@0.5.0':
+    resolution: {integrity: sha512-l13QuHNu+FcWSo1t/QbgBdVR1ztpYQYjDlJQ2X+b2LAodeusElvDQjFi2Fnl0TDX4fza5BA/YQsShwkXcslvYA==}
 
-  '@polkadot-api/metadata-builders@0.4.1':
-    resolution: {integrity: sha512-QvRp8l7FxuiZfPE6AUAbJgSenJOpAstJ8NYjkslD6HiOAxybVm7Jmpsbp8o6Rz3k9r+dE+2xdA3AmCtOzZyARQ==}
+  '@polkadot-api/logs-provider@0.0.4':
+    resolution: {integrity: sha512-9MGjXJmujtFA9HsgS4TejTDSD3unyOgMBSbYmz9iWcddCmw+0M5png+F2VW90Ua76kLzWnJ3V1mqFkTapgIipg==}
 
-  '@polkadot-api/metadata-compatibility@0.1.1':
-    resolution: {integrity: sha512-VcWjdHhznWcuceKeWkfmEgOds7i7SXSF6/786Yaxwac25lHDnZ1UJRlcLLg3Fl5zJWoSUyEZB8OlLgTB7jwTOw==}
+  '@polkadot-api/metadata-builders@0.6.0':
+    resolution: {integrity: sha512-Q+7oinRbGuWDaj1Xl4PYGcQMy/RIhPErHgDbqR2rFSDt1vjhd6l1XMBWq2uKpwHS4ZNWEvy3r6/I1QbDTLIj2w==}
 
-  '@polkadot-api/observable-client@0.5.0':
-    resolution: {integrity: sha512-ap7CMlM4vlELRTF4EN0i7vhYcM/RyNfVDdqu/ELAvOFE4+zZJVwDHbHQXb11Z2Mn4OZ+ihJO7RI0C6DHwZ9Wiw==}
+  '@polkadot-api/metadata-compatibility@0.1.3':
+    resolution: {integrity: sha512-27VTDfxlP5jBkGjJY+dNutT18q6XK1E9kI5ayfmm5sEZivvsS7oKJ34Pb5WTRoVI+V0YZIJtHjxN+K2zehn3yA==}
+
+  '@polkadot-api/observable-client@0.5.2':
+    resolution: {integrity: sha512-E1hRi2YkcOAHXpXT4HpzowjZoctrhuM/8rbuDQju+Xin/PbXpnzol5UOMyToXdyZM4vKa4tc89PJB0TkoANLbA==}
     peerDependencies:
-      '@polkadot-api/substrate-client': 0.2.0
+      '@polkadot-api/substrate-client': 0.2.1
       rxjs: '>=7.8.0'
 
-  '@polkadot-api/pjs-signer@0.3.2':
-    resolution: {integrity: sha512-1CROPAi49JcSPr3efnt2g43L221ArAIFQuni0w0cgwrubQlEWlbwF4UhgTkcpw2FRVDACFE5ubQUgmn9QsirUw==}
+  '@polkadot-api/pjs-signer@0.4.1':
+    resolution: {integrity: sha512-v3/EMHxrUqGRRWdgvqADV8fR6aiN2OP2gCvuT9Nvb8alQugZjmjDPl6Szar2jpAQmxSefYpVbCdNU+PmryqQqg==}
 
-  '@polkadot-api/polkadot-sdk-compat@1.0.1':
-    resolution: {integrity: sha512-QJwgJJZRBVzTF1RRbHudfRG6kQAei1mV2m57twqUWIFPgr63k05Hef1fnLq2u1Y1VYXbxgIinAuwTkOS+qbylA==}
+  '@polkadot-api/polkadot-sdk-compat@2.0.0':
+    resolution: {integrity: sha512-rxBDZyFLSH5kCe2TSUm3qSenVqoj3kx+djUYH3Cj0H032Lra/VOh4E9WLkGiPhF1fZsROGO2JQS2KFRXZovlkw==}
 
-  '@polkadot-api/polkadot-signer@0.1.2':
-    resolution: {integrity: sha512-wKn9mhE8dMXwdULlrwOH8Y/7AMDRBffYOm4lCb8iZ9/3zDJOw+g41W6W/YW6K8e8amwNCWwLye1w0G/sXi2yFw==}
+  '@polkadot-api/polkadot-signer@0.1.4':
+    resolution: {integrity: sha512-s7YfsE2wtt5J0+x+C4Ey/aRdmsZxp85SXay4614nJeHRndLVrGVMXby/BeZ6JchbyeyYg2+urmtfCvqMDiSS7g==}
 
-  '@polkadot-api/signer@0.1.2':
-    resolution: {integrity: sha512-5mCasdJWTz1JdZaJR50u8E7y+i3yypr89R52AAHk85NSuhO3NsunYZCSFiDUvKZ6zTG3httKssQdERiPJdahyA==}
+  '@polkadot-api/signer@0.1.4':
+    resolution: {integrity: sha512-XfQM/20W/pWxIHLHZbvZHGZEIT+uZceGjprEJ/iEUcFMxDPf8HA7cWfS24GsCEqU9GrjRd/igqZkA6LR+aLoGA==}
 
   '@polkadot-api/sm-provider@0.1.1':
     resolution: {integrity: sha512-55eA6cl4iDuEhO49tztDvWmFKRx9tGsNT16FbaoPMY4sEZ3yHWKbPf3Tjm4Set7huNELEVzjbBCnS0AoVkj9FA==}
     peerDependencies:
       smoldot: '>=2'
 
-  '@polkadot-api/smoldot@0.2.7':
-    resolution: {integrity: sha512-lo2t8yw0XDSHiQM46HyRoKcINy3NeiydR1bKt97eMNPECgDcO/WH9leretNIxQi9tPV4nW4wbZw4X8+3s9XAkg==}
+  '@polkadot-api/smoldot@0.3.2':
+    resolution: {integrity: sha512-Gw4Gw1rwzF+JhknBK+00rRedVtgOhdGnePNdkVoJHSxfsbv4J58H+xrkIBjAlJEbhwjFWUAwUQ1Z1BXSGKxaJg==}
 
   '@polkadot-api/substrate-bindings@0.6.0':
     resolution: {integrity: sha512-lGuhE74NA1/PqdN7fKFdE5C1gNYX357j1tWzdlPXI0kQ7h3kN0zfxNOpPUN7dIrPcOFZ6C0tRRVrBylXkI6xPw==}
 
-  '@polkadot-api/substrate-bindings@0.6.2':
-    resolution: {integrity: sha512-47XEbXeR2bL/3wsTGcCPFGoBkv2p1OYObr80JC7INizZ+qsvNokzziEmrKNXUPW66RqHmbpbYaNFF45JSNbPlQ==}
+  '@polkadot-api/substrate-bindings@0.6.3':
+    resolution: {integrity: sha512-Z/9B5Rhr478YgFLpo32sr8cY/zUeHj9DZnxX76OTJM+Kiq2rXfyYAONr8vAleJXxP7y1mUDBeII4nS9+uBbFXA==}
 
-  '@polkadot-api/substrate-client@0.2.0':
-    resolution: {integrity: sha512-lU5jszs54ytvTfyUF2ym6cPXH87xtPbc8Xp1cFuZmk1QR1Uv0ar6NesmZRS5etEXMCHZYoCEP6dDco9GKHW20A==}
+  '@polkadot-api/substrate-client@0.2.1':
+    resolution: {integrity: sha512-YyHn0JzqY75PHs6Y/fEMsMYTH6s4QWpGFqR+O14Qu7reo++a0sTl+pHfXDF16CIq4aGlQJ5wJGHtzWpgnW+INA==}
 
   '@polkadot-api/utils@0.1.0':
     resolution: {integrity: sha512-MXzWZeuGxKizPx2Xf/47wx9sr/uxKw39bVJUptTJdsaQn/TGq+z310mHzf1RCGvC1diHM8f593KrnDgc9oNbJA==}
@@ -1300,8 +1303,8 @@ packages:
   '@polkadot-api/wasm-executor@0.1.1':
     resolution: {integrity: sha512-OuxbAkSRNLtJtsWDzKx7TEYlRXI2ApT9LcEFckaAr6E4aKLQ5TgbDDXWUvwl4A3AnjoUQx7ltYcsb8qR8UpMAg==}
 
-  '@polkadot-api/ws-provider@0.1.1':
-    resolution: {integrity: sha512-LJAmub9EIX5KaVtPHDtjTMXIO5/MYzHNjVlsNlCp+chLvGtQGBTVGKPsPSGwJGmlxdvH/nLOaQt0QmoXoYekQQ==}
+  '@polkadot-api/ws-provider@0.2.0':
+    resolution: {integrity: sha512-R4B+tUR1H9j6AH2p4Dvv5+aV4/DC/TpKOqB1C5ON2Qvlc0TrH7x4HrZLn82Kq7iwUtnxkrU6esze2UgDGoVKPw==}
 
   '@polkadot-ui/assets@0.0.1-alpha.2':
     resolution: {integrity: sha512-E6RDLMP1SJs62YWRY4VJ8nPpYbjZGIgGQiZZO/rDfhRmm7qPPcmUfYXeI/4FQ21psjLVB6iBxbFS8FsqyFWp6w==}
@@ -1627,12 +1630,19 @@ packages:
   '@scure/base@1.1.7':
     resolution: {integrity: sha512-PPNYBslrLNNUQ/Yad37MHYsNQtK67EhWb6WtSvNLLPo7SdVZgkUjD6Dg+5On7zNwmskf8OX7I7Nx5oN+MIWE0g==}
 
+  '@sec-ant/readable-stream@0.4.1':
+    resolution: {integrity: sha512-831qok9r2t8AlxLko40y2ebgSDhenenCatLVeW/uBtnHPyhHOvG0C7TvfgecV+wHzIm5KUICgzmVpWS+IMEAeg==}
+
   '@sinclair/typebox@0.27.8':
     resolution: {integrity: sha512-+Fj43pSMwJs4KRrH/938Uf+uAELIgVBmQzg/q1YG10djyfA3TnrU8N8XzqCh/okZdszqBQTZf96idMfE5lnwTA==}
 
   '@sindresorhus/is@5.6.0':
     resolution: {integrity: sha512-TV7t8GKYaJWsn00tFDqBw8+Uqmr8A0fRU1tvTQhyZzGv0sJCGRQL3JGMI3ucuKo3XIZdUP+Lx7/gh2t3lewy7g==}
     engines: {node: '>=14.16'}
+
+  '@sindresorhus/merge-streams@4.0.0':
+    resolution: {integrity: sha512-tlqY9xq5ukxTUZBmoOp+m61cqwQD5pHJtFY3Mn8CA8ps6yghLH/Hw8UPdqg4OLmFW3IFlcXnQNmo/dh8HzXYIQ==}
+    engines: {node: '>=18'}
 
   '@substrate/ss58-registry@1.47.0':
     resolution: {integrity: sha512-6kuIJedRcisUJS2pgksEH2jZf3hfSIVzqtFzs/AyjTW3ETbMg5q1Bb7VWa0WYaT6dTrEXp/6UoXM5B9pSIUmcw==}
@@ -1948,8 +1958,8 @@ packages:
   '@types/node@20.14.10':
     resolution: {integrity: sha512-MdiXf+nDuMvY0gJKxyfZ7/6UFsETO7mGKF54MVD/ekJS6HdFtpZFBgrh6Pseu64XTb2MLyFPlbW6hj8HYRQNOQ==}
 
-  '@types/node@20.14.13':
-    resolution: {integrity: sha512-+bHoGiZb8UiQ0+WEtmph2IWQCjIqg8MDZMAV+ppRRhUZnquF5mQkP/9vpSwJClEiSM/C7fZZExPzfU0vJTyp8w==}
+  '@types/node@22.5.2':
+    resolution: {integrity: sha512-acJsPTEqYqulZS/Yp/S3GgeE6GZ0qYODUR8aVr/DkhHQ8l9nd4j5x1/ZJy9/gHrRlFMqkO6i0I3E27Alu4jjPg==}
 
   '@types/normalize-package-data@2.4.4':
     resolution: {integrity: sha512-37i+OaWTh9qeK4LSHPsyRC7NahnGotNuZvjLSgcPzblpHB3rrCJxAOgI5gCdKm7coonsaX1Of0ILiTcnZjbfxA==}
@@ -2867,6 +2877,10 @@ packages:
     resolution: {integrity: sha512-eS8dRJOckyo9maw9Tu5O5RUi/4inFLrnoLkBe3cPfDMx3WZioXtmOew4TXQaxq7Rhl4xjDtR7c6x8nNTxOvbFw==}
     engines: {node: '>=16.0.0'}
 
+  deepmerge-ts@7.1.0:
+    resolution: {integrity: sha512-q6bNsfNBtgr8ZOQqmZbl94MmYWm+QcDNIkqCxVWiw1vKvf+y/N2dZQKdnDXn4c5Ygt/y63tDof6OCN+2YwWVEg==}
+    engines: {node: '>=16.0.0'}
+
   defaults@1.0.4:
     resolution: {integrity: sha512-eFuaLoy/Rxalv2kr+lqMlUnrDWV+3j4pljOIJgLIhI058IQfWJ7vXhyEIHu+HtC738klGALYxOKDO0bQP3tg8A==}
 
@@ -2901,10 +2915,6 @@ packages:
   detect-newline@2.1.0:
     resolution: {integrity: sha512-CwffZFvlJffUg9zZA0uqrjQayUTC8ob94pnr5sFwaVv3IOmkfUHcWH+jXaQK3askE51Cqe8/9Ql/0uXNwqZ8Zg==}
     engines: {node: '>=0.10.0'}
-
-  detect-package-manager@3.0.2:
-    resolution: {integrity: sha512-8JFjJHutStYrfWwzfretQoyNGoZVW1Fsrp4JO9spa7h/fBfwgTMEIy4/LBzRDGsxwVPHU0q+T9YvwLDJoOApLQ==}
-    engines: {node: '>=12'}
 
   devtools-protocol@0.0.1147663:
     resolution: {integrity: sha512-hyWmRrexdhbZ1tcJUGpO95ivbRhWXz++F4Ko+n21AY5PNln2ovoJw+8ZMNDTtip+CNFQfrtLVh/w4009dXO/eQ==}
@@ -3447,6 +3457,10 @@ packages:
     resolution: {integrity: sha512-VyhnebXciFV2DESc+p6B+y0LjSm0krU4OgJN44qFAhBY0TJ+1V61tYD2+wHusZ6F9n5K+vl8k0sTy7PEfV4qpg==}
     engines: {node: '>=16.17'}
 
+  execa@9.3.1:
+    resolution: {integrity: sha512-gdhefCCNy/8tpH/2+ajP9IQc14vXchNdd0weyzSJEFURhRMGncQ+zKFxwjAufIewPEJm9BPOaJnvg2UtlH2gPQ==}
+    engines: {node: ^18.19.0 || >=20.5.0}
+
   expand-tilde@2.0.2:
     resolution: {integrity: sha512-A5EmesHW6rfnZ9ysHQjPdJRni0SRar0tjtG5MNtm9n5TUvsYU8oozprtRD4AqHxcZWWlVuAmQo2nWKfN9oyjTw==}
     engines: {node: '>=0.10.0'}
@@ -3532,6 +3546,10 @@ packages:
   figures@5.0.0:
     resolution: {integrity: sha512-ej8ksPF4x6e5wvK9yevct0UCXh8TTFlWGVLlgjZuoBH1HwjIfKE/IdL5mq89sFA7zELi1VhKpmtDnrs7zWyeyg==}
     engines: {node: '>=14'}
+
+  figures@6.1.0:
+    resolution: {integrity: sha512-d+l3qxjSesT4V7v2fh+QnmFnUWv9lSpjarhShNTgBOfA0ttejbQUAlHLitbjkoRiDulW0OPoQPYIGhIC8ohejg==}
+    engines: {node: '>=18'}
 
   file-entry-cache@6.0.1:
     resolution: {integrity: sha512-7Gps/XWymbLk2QLYK4NzpMOrYjMhdIxXuIvy2QBsLE6ljuodKvdkWs/cpyJJ3CVIVpH0Oi1Hvg1ovbMzLdFBBg==}
@@ -3723,6 +3741,10 @@ packages:
   get-stream@8.0.1:
     resolution: {integrity: sha512-VaUJspBffn/LMCJVoMvSAdmscJyS1auj5Zulnn5UoYcY531UWmdwhRWkcGKnGU93m5HSXP9LP2usOryrBtQowA==}
     engines: {node: '>=16'}
+
+  get-stream@9.0.1:
+    resolution: {integrity: sha512-kVCxPF3vQM/N0B1PmoqVUqgHP+EeVjmZSQn+1oCRPxd2P21P2F19lIgbR3HBosbB1PUhOAoctJnfEn2GbN2eZA==}
+    engines: {node: '>=18'}
 
   get-symbol-description@1.0.2:
     resolution: {integrity: sha512-g0QYk1dZBxGwk+Ngc+ltRH2IBp2f7zBkBMBJZCDerh6EhlhSR6+9irMCuT/09zD6qkarHUSn529sK/yL4S27mg==}
@@ -3948,6 +3970,10 @@ packages:
     resolution: {integrity: sha512-AXcZb6vzzrFAUE61HnN4mpLqd/cSIwNQjtNWR0euPm6y0iqx3G4gOXaIDdtdDwZmhwe82LA6+zinmW4UBWVePQ==}
     engines: {node: '>=16.17.0'}
 
+  human-signals@8.0.0:
+    resolution: {integrity: sha512-/1/GPCpDUCCYwlERiYjxoczfP0zfvZMU/OWgQPMya9AbAE24vseigFdhAMObpc8Q4lc/kjutPfUddDYyAmejnA==}
+    engines: {node: '>=18.18.0'}
+
   husky@9.0.11:
     resolution: {integrity: sha512-AB6lFlbwwyIqMdHYhwPe+kjOC3Oc5P3nThEoW/AaO2BX3vJDjWPFxYLxokUZOo6RNX20He3AaT8sESs9NJcmEw==}
     engines: {node: '>=18'}
@@ -4164,6 +4190,10 @@ packages:
     resolution: {integrity: sha512-LnQR4bZ9IADDRSkvpqMGvt/tEJWclzklNgSw48V5EAaAeDd6qGvN8ei6k5p0tvxSR171VmGyHuTiAOfxAbr8kA==}
     engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
 
+  is-stream@4.0.1:
+    resolution: {integrity: sha512-Dnz92NInDqYckGEUJv689RbRiTSEHCQ7wOVeALbkOz999YpqT46yMRIGtSNl2iCL1waAZSx40+h59NV/EwzV/A==}
+    engines: {node: '>=18'}
+
   is-string@1.0.7:
     resolution: {integrity: sha512-tE2UXzivje6ofPW7l23cjDOMa09gb7xlAqG6jG5ej6uPV32TlWP3NKPigtaGeHNu9fohccRYvIiZMfOOnOYUtg==}
     engines: {node: '>= 0.4'}
@@ -4175,9 +4205,6 @@ packages:
   is-typed-array@1.1.13:
     resolution: {integrity: sha512-uZ25/bUAlUY5fR4OKT4rZQEBrzQWYV9ZJYGGsUmEJ6thodVJ1HX64ePQ6Z0qPWP+m+Uq6e9UugrE38jeYsDSMw==}
     engines: {node: '>= 0.4'}
-
-  is-typedarray@1.0.0:
-    resolution: {integrity: sha512-cyA56iCMHAh5CdzjJIa4aohJyeO1YbwLi3Jc35MmRU6poroFjIGZzUzupGiRPOjgHg9TLu43xbpwXk523fMxKA==}
 
   is-unc-path@1.0.0:
     resolution: {integrity: sha512-mrGpVd0fs7WWLfVsStvgF6iEJnbjDFZh9/emhRDcGWTduTfNHd9CHeUwH3gYIjdbwo4On6hunkztwOaAw0yllQ==}
@@ -4912,6 +4939,10 @@ packages:
     resolution: {integrity: sha512-kHt7kzLoS9VBZfUsiKjv43mr91ea+U05EyKkEtqp7vNbHxmaVuEqN7XxeEVnGrMtYOAxGrDElSi96K7EgO1zCA==}
     engines: {node: '>=6'}
 
+  parse-ms@4.0.0:
+    resolution: {integrity: sha512-TXfryirbmq34y8QBwgqCVLi+8oA3oWx2eAnSn62ITyEhEYaWRlVZ2DvMM9eZbMs/RfxPu/PK/aBLyGj4IrqMHw==}
+    engines: {node: '>=18'}
+
   parse-node-version@1.0.1:
     resolution: {integrity: sha512-3YHlOa/JgH6Mnpr05jP9eDG254US9ek25LyIxZlDItp2iJtwyaXQb57lBYLdT3MowkUFYEV2XXNAYIPlESvJlA==}
     engines: {node: '>= 0.10'}
@@ -5002,8 +5033,8 @@ packages:
     resolution: {integrity: sha512-zMakqvIDyY40xHOvzXka0kUvf40nYIuwRE8dWhti2WtjQZ31xAgBZBhxsK7vK3QbRXS1Xms/LO7B5cuAsfB2Gg==}
     engines: {node: '>=10.13.0'}
 
-  polkadot-api@0.12.0:
-    resolution: {integrity: sha512-2qSK8pRzcRQtwuBA495VAR5Vah/A74TwSUOoC7Hpcsmren/kPl5Mq+8qnTkYkRn9u6QagfgwpmFqJu37yE2K9w==}
+  polkadot-api@1.1.0:
+    resolution: {integrity: sha512-WIfOS1xlqL6jYAOKvO7DVGFg4Hd1rVJ0N4tu3G2eQMzQq2yMrtVPA6QOKVlan6xtj9xfhXNmSTbMtsgFqLYmyA==}
     hasBin: true
     peerDependencies:
       rxjs: '>=7.8.0'
@@ -5120,6 +5151,10 @@ packages:
   pretty-ms@7.0.1:
     resolution: {integrity: sha512-973driJZvxiGOQ5ONsFhOF/DtzPMOMtgC11kCpUrPGMTgqp2q/1gwzCquocrN33is0VZ5GFHXZYMM9l6h67v2Q==}
     engines: {node: '>=10'}
+
+  pretty-ms@9.1.0:
+    resolution: {integrity: sha512-o1piW0n3tgKIKCwk2vpM/vOV13zjJzvP37Ioze54YlTHE06m4tjEbzg9WsKkvTuyYln2DHjo5pY4qrZGI0otpw==}
+    engines: {node: '>=18'}
 
   process-nextick-args@2.0.1:
     resolution: {integrity: sha512-3ouUOpQhtgrbOa17J7+uxOTpITYWaGP7/AhoR3+A+/1e9skrzelGi/dXzEYyvbxubEF6Wn2ypscTKiKJFFn1ag==}
@@ -5529,8 +5564,8 @@ packages:
     resolution: {integrity: sha512-94hK0Hh8rPqQl2xXc3HsaBoOXKV20MToPkcXvwbISWLEs+64sBq5kFgn2kJDHb1Pry9yrP0dxrCI9RRci7RXKg==}
     engines: {node: '>= 6.0.0', npm: '>= 3.0.0'}
 
-  smoldot@2.0.29:
-    resolution: {integrity: sha512-CKpRpFTcgP/9WL53X1iDSNq4/xjYd47XhYwZBhb92sAsCN8GNFeEnCdw568mvAt08wQt8UIMXXWo3hO/esDexg==}
+  smoldot@2.0.30:
+    resolution: {integrity: sha512-5/KaEdIlTHg4+Hs8YovrCkwI+Y9QsKtoyWkHRqz15kXMZFsePf+KdMAPpDgReINK+at6t+D+uEVrCkd+r9JpyQ==}
 
   snake-case@3.0.4:
     resolution: {integrity: sha512-LAOh4z89bGQvl9pFfNF8V146i7o7/CqFPbqzYgP+yYzDIDeS9HaNFtXABamRW+AQzEVODcvE79ljJ+8a9YSdMg==}
@@ -5696,6 +5731,10 @@ packages:
   strip-final-newline@3.0.0:
     resolution: {integrity: sha512-dOESqjYr96iWYylGObzd39EuNTa5VJxyvVAEm5Jnh7KGo75V43Hk1odPQkNDyXNmUR6k+gEiDVXnjB8HJ3crXw==}
     engines: {node: '>=12'}
+
+  strip-final-newline@4.0.0:
+    resolution: {integrity: sha512-aulFJcD6YK8V1G7iRB5tigAP4TsHBZZrOV8pjV++zdUwmeV8uzbY7yn6h9MswN62adStNZFuCIx4haBnRuMDaw==}
+    engines: {node: '>=18'}
 
   strip-json-comments@3.1.1:
     resolution: {integrity: sha512-6fPc+R4ihwqP6N/aIv2f1gMH8lOVtWQHoqC4yK6oSDVVocumAsfCqjkXnqiYMhmMwS/mEHLp7Vehlt3ql6lEig==}
@@ -5967,8 +6006,8 @@ packages:
       typescript:
         optional: true
 
-  tsup@8.2.3:
-    resolution: {integrity: sha512-6YNT44oUfXRbZuSMNmN36GzwPPIlD2wBccY7looM2fkTcxkf2NEmwr3OZuDZoySklnrIG4hoEtzy8yUXYOqNcg==}
+  tsup@8.2.4:
+    resolution: {integrity: sha512-akpCPePnBnC/CXgRrcy72ZSntgIEUa1jN0oJbbvpALWKNOz1B7aM+UVDWGRGIO/T/PZugAESWDJUAb5FD48o8Q==}
     engines: {node: '>=18'}
     hasBin: true
     peerDependencies:
@@ -6018,6 +6057,10 @@ packages:
     resolution: {integrity: sha512-ASMgM+Vf2cLwDMt1KXSkMUDSYCxtckDJs8zsaVF/mYteIsiARKCVtyXtcK38mIKbLTctZP8v6GMqdNaeI3fo7g==}
     engines: {node: '>=16'}
 
+  type-fest@4.26.0:
+    resolution: {integrity: sha512-OduNjVJsFbifKb57UqZ2EMP1i4u64Xwow3NYXUtBbD4vIwJdQd4+xl8YDou1dlm4DVrtwT/7Ky8z8WyCULVfxw==}
+    engines: {node: '>=16'}
+
   type@2.7.2:
     resolution: {integrity: sha512-dzlvlNlt6AXU7EBSfpAscydQ7gXB+pPGsPnfJnZpiNJBDj7IaJzQlBZYGdEi4R9HmPdBv2XmWJ6YUtoTa7lmCw==}
 
@@ -6036,9 +6079,6 @@ packages:
   typed-array-length@1.0.6:
     resolution: {integrity: sha512-/OxDN6OtAk5KBpGb28T+HZc2M+ADtvRxXrKKbUwtsLgdoxgX13hyy7ek6bFRl5+aBs2yZzB0c4CnQfAtVypW/g==}
     engines: {node: '>= 0.4'}
-
-  typedarray-to-buffer@3.1.5:
-    resolution: {integrity: sha512-zdu8XMNEDepKKR+XYOXAVPtWui0ly0NtohUscw+UmaHiAWT8hrV1rr//H6V+0DvJ3OQ19S979M0laLfX8rm82Q==}
 
   typescript@5.4.2:
     resolution: {integrity: sha512-+2/g0Fds1ERlP6JsakQQDXjZdZMM+rqpamFZJEKh4kwTIn3iDkgKtby0CeNd5ATNZ4Ry1ax15TMx0W2V+miizQ==}
@@ -6078,6 +6118,9 @@ packages:
 
   undici-types@5.26.5:
     resolution: {integrity: sha512-JlCMO+ehdEIKqlFxk6IfVoAUVmgz7cU7zD/h9XZ0qzeosSHmUJVOzSQvvYSYWXkFXC+IfLKSIffhv0sVZup6pA==}
+
+  undici-types@6.19.8:
+    resolution: {integrity: sha512-ve2KP6f/JnbPBFyobGHuerC9g1FYGn/F8n1LWTwNxCEzd6IfqTwUQcNXgEtmmQ6DlRrC1hrSrBnCZPokRrDHjw==}
 
   unicorn-magic@0.1.0:
     resolution: {integrity: sha512-lRfVq8fE8gz6QMBuDM6a+LO3IAzTi05H6gCVaUpir2E1Rwpo4ZUog45KpNXKC/Mn3Yb9UDuHumeFTo9iV/D9FQ==}
@@ -6461,19 +6504,16 @@ packages:
   wrappy@1.0.2:
     resolution: {integrity: sha512-l4Sp/DRseor9wL6EvV2+TuQn63dMkPjZ/sp9XkghTEbV9KlPS1xUsZ3u7/IQO4wxtcFB4bgpQPRcR3QCvezPcQ==}
 
-  write-file-atomic@3.0.3:
-    resolution: {integrity: sha512-AvHcyZ5JnSfq3ioSyjrBkH9yW4m7Ayk8/9My/DD9onKeu/94fwrMocemO2QAJFAlnnDN+ZDS+ZjAR5ua1/PV/Q==}
-
   write-file-atomic@5.0.1:
     resolution: {integrity: sha512-+QU2zd6OTD8XWIJCbffaiQeH9U73qIqafo1x6V1snCWYGJf6cVE0cDR4D8xRzcEnfI21IFrUPzPGtcPf8AC+Rw==}
     engines: {node: ^14.17.0 || ^16.13.0 || >=18.0.0}
 
-  write-json-file@5.0.0:
-    resolution: {integrity: sha512-ddSsCLa4aQ3kI21BthINo4q905/wfhvQ3JL3774AcRjBaiQmfn5v4rw77jQ7T6CmAit9VOQO+FsLyPkwxoB1fw==}
-    engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
+  write-json-file@6.0.0:
+    resolution: {integrity: sha512-MNHcU3f9WxnNyR6MxsYSj64Jz0+dwIpisWKWq9gqLj/GwmA9INg3BZ3vt70/HB3GEwrnDQWr4RPrywnhNzmUFA==}
+    engines: {node: '>=18'}
 
-  write-package@7.0.1:
-    resolution: {integrity: sha512-S7c5F2mpb5o+9pS1UfO3jcQb0OR25L7ZJT64cv3K0TkGh1VxJb+PNnL8b46KSJ6tmxIbA0xgHnrtBdVGeHmJ0A==}
+  write-package@7.1.0:
+    resolution: {integrity: sha512-DqUx8GI3r9BFWwU2DPKddL1E7xWfbFED82mLVhGXKlFEPe8IkBftzO7WfNwHtk7oGDHDeuH/o8VMpzzfMwmLUA==}
     engines: {node: '>=18'}
 
   ws@8.13.0:
@@ -6557,6 +6597,10 @@ packages:
   yocto-queue@1.0.0:
     resolution: {integrity: sha512-9bnSc/HEW2uRy67wc+T8UwauLuPJVn28jb+GtJY16iiKWyvmYJRXVT4UamsAEGQfPohgr2q4Tq0sQbQlxTfi1g==}
     engines: {node: '>=12.20'}
+
+  yoctocolors@2.1.1:
+    resolution: {integrity: sha512-GQHQqAopRhwU8Kt1DDM8NjibDXHC8eoh1erhGAJPEyveY9qqVeXvVikNKrDz69sHowPMorbPUrH/mx8c50eiBQ==}
+    engines: {node: '>=18'}
 
   z-schema@5.0.5:
     resolution: {integrity: sha512-D7eujBWkLa3p2sIpJA0d1pr7es+a7m0vFAnZLlCEKq/Ij2k0MLi9Br2UPxoxdYystm5K1yeBGzub0FlYUEWj2Q==}
@@ -7317,11 +7361,11 @@ snapshots:
     transitivePeerDependencies:
       - '@types/node'
 
-  '@microsoft/api-extractor-model@7.28.13(@types/node@20.14.13)':
+  '@microsoft/api-extractor-model@7.28.13(@types/node@22.5.2)':
     dependencies:
       '@microsoft/tsdoc': 0.14.2
       '@microsoft/tsdoc-config': 0.16.2
-      '@rushstack/node-core-library': 4.0.2(@types/node@20.14.13)
+      '@rushstack/node-core-library': 4.0.2(@types/node@22.5.2)
     transitivePeerDependencies:
       - '@types/node'
     optional: true
@@ -7344,15 +7388,15 @@ snapshots:
     transitivePeerDependencies:
       - '@types/node'
 
-  '@microsoft/api-extractor@7.43.0(@types/node@20.14.13)':
+  '@microsoft/api-extractor@7.43.0(@types/node@22.5.2)':
     dependencies:
-      '@microsoft/api-extractor-model': 7.28.13(@types/node@20.14.13)
+      '@microsoft/api-extractor-model': 7.28.13(@types/node@22.5.2)
       '@microsoft/tsdoc': 0.14.2
       '@microsoft/tsdoc-config': 0.16.2
-      '@rushstack/node-core-library': 4.0.2(@types/node@20.14.13)
+      '@rushstack/node-core-library': 4.0.2(@types/node@22.5.2)
       '@rushstack/rig-package': 0.5.2
-      '@rushstack/terminal': 0.10.0(@types/node@20.14.13)
-      '@rushstack/ts-command-line': 4.19.1(@types/node@20.14.13)
+      '@rushstack/terminal': 0.10.0(@types/node@22.5.2)
+      '@rushstack/ts-command-line': 4.19.1(@types/node@22.5.2)
       lodash: 4.17.21
       minimatch: 3.0.8
       resolve: 1.22.8
@@ -7399,37 +7443,33 @@ snapshots:
 
   '@pkgr/core@0.1.1': {}
 
-  '@polkadot-api/cli@0.7.0(@microsoft/api-extractor@7.43.0(@types/node@20.14.10))(@swc/core@1.6.13)(postcss@8.4.39)(smoldot@2.0.29)(yaml@2.4.5)':
+  '@polkadot-api/cli@0.8.0(@microsoft/api-extractor@7.43.0(@types/node@20.14.10))(@swc/core@1.6.13)(postcss@8.4.39)(smoldot@2.0.30)(yaml@2.4.5)':
     dependencies:
       '@commander-js/extra-typings': 12.1.0(commander@12.1.0)
-      '@polkadot-api/codegen': 0.7.2
-      '@polkadot-api/json-rpc-provider': 0.0.2
-      '@polkadot-api/json-rpc-provider-proxy': 0.2.0
-      '@polkadot-api/known-chains': 0.3.0
-      '@polkadot-api/metadata-builders': 0.4.1
-      '@polkadot-api/metadata-compatibility': 0.1.1
-      '@polkadot-api/observable-client': 0.5.0(@polkadot-api/substrate-client@0.2.0)(rxjs@7.8.1)
-      '@polkadot-api/polkadot-sdk-compat': 1.0.1
-      '@polkadot-api/sm-provider': 0.1.1(smoldot@2.0.29)
-      '@polkadot-api/smoldot': 0.2.7
-      '@polkadot-api/substrate-bindings': 0.6.2
-      '@polkadot-api/substrate-client': 0.2.0
+      '@polkadot-api/codegen': 0.9.0
+      '@polkadot-api/json-rpc-provider': 0.0.3
+      '@polkadot-api/known-chains': 0.5.0
+      '@polkadot-api/metadata-compatibility': 0.1.3
+      '@polkadot-api/observable-client': 0.5.2(@polkadot-api/substrate-client@0.2.1)(rxjs@7.8.1)
+      '@polkadot-api/polkadot-sdk-compat': 2.0.0
+      '@polkadot-api/sm-provider': 0.1.1(smoldot@2.0.30)
+      '@polkadot-api/smoldot': 0.3.2
+      '@polkadot-api/substrate-bindings': 0.6.3
+      '@polkadot-api/substrate-client': 0.2.1
       '@polkadot-api/utils': 0.1.1
       '@polkadot-api/wasm-executor': 0.1.1
-      '@polkadot-api/ws-provider': 0.1.1
-      '@types/node': 20.14.13
+      '@polkadot-api/ws-provider': 0.2.0
+      '@types/node': 22.5.2
       commander: 12.1.0
-      detect-package-manager: 3.0.2
+      execa: 9.3.1
       fs.promises.exists: 1.1.4
       ora: 8.0.1
       read-pkg: 9.0.1
       rxjs: 7.8.1
-      scale-ts: 1.6.0
       tsc-prog: 2.3.0(typescript@5.5.4)
-      tsup: 8.2.3(@microsoft/api-extractor@7.43.0(@types/node@20.14.10))(@swc/core@1.6.13)(postcss@8.4.39)(typescript@5.5.4)(yaml@2.4.5)
+      tsup: 8.2.4(@microsoft/api-extractor@7.43.0(@types/node@20.14.10))(@swc/core@1.6.13)(postcss@8.4.39)(typescript@5.5.4)(yaml@2.4.5)
       typescript: 5.5.4
-      write-package: 7.0.1
-      ws: 8.18.0
+      write-package: 7.1.0
     transitivePeerDependencies:
       - '@microsoft/api-extractor'
       - '@swc/core'
@@ -7442,75 +7482,72 @@ snapshots:
       - utf-8-validate
       - yaml
 
-  '@polkadot-api/codegen@0.7.2':
+  '@polkadot-api/codegen@0.9.0':
     dependencies:
-      '@polkadot-api/metadata-builders': 0.4.1
-      '@polkadot-api/metadata-compatibility': 0.1.1
-      '@polkadot-api/substrate-bindings': 0.6.2
+      '@polkadot-api/metadata-builders': 0.6.0
+      '@polkadot-api/metadata-compatibility': 0.1.3
+      '@polkadot-api/substrate-bindings': 0.6.3
       '@polkadot-api/utils': 0.1.1
 
   '@polkadot-api/json-rpc-provider-proxy@0.2.0': {}
 
   '@polkadot-api/json-rpc-provider@0.0.2': {}
 
-  '@polkadot-api/known-chains@0.3.0': {}
+  '@polkadot-api/json-rpc-provider@0.0.3': {}
 
-  '@polkadot-api/logs-provider@0.0.3':
-    dependencies:
-      '@polkadot-api/json-rpc-provider': 0.0.2
+  '@polkadot-api/known-chains@0.5.0': {}
 
-  '@polkadot-api/metadata-builders@0.4.1':
+  '@polkadot-api/logs-provider@0.0.4':
     dependencies:
-      '@polkadot-api/substrate-bindings': 0.6.2
+      '@polkadot-api/json-rpc-provider': 0.0.3
+
+  '@polkadot-api/metadata-builders@0.6.0':
+    dependencies:
+      '@polkadot-api/substrate-bindings': 0.6.3
       '@polkadot-api/utils': 0.1.1
 
-  '@polkadot-api/metadata-compatibility@0.1.1':
+  '@polkadot-api/metadata-compatibility@0.1.3':
     dependencies:
-      '@polkadot-api/metadata-builders': 0.4.1
-      '@polkadot-api/substrate-bindings': 0.6.2
-      '@polkadot-api/utils': 0.1.1
+      '@polkadot-api/metadata-builders': 0.6.0
+      '@polkadot-api/substrate-bindings': 0.6.3
 
-  '@polkadot-api/observable-client@0.5.0(@polkadot-api/substrate-client@0.2.0)(rxjs@7.8.1)':
+  '@polkadot-api/observable-client@0.5.2(@polkadot-api/substrate-client@0.2.1)(rxjs@7.8.1)':
     dependencies:
-      '@polkadot-api/metadata-builders': 0.4.1
-      '@polkadot-api/metadata-compatibility': 0.1.1
-      '@polkadot-api/substrate-bindings': 0.6.2
-      '@polkadot-api/substrate-client': 0.2.0
+      '@polkadot-api/metadata-builders': 0.6.0
+      '@polkadot-api/substrate-bindings': 0.6.3
+      '@polkadot-api/substrate-client': 0.2.1
       '@polkadot-api/utils': 0.1.1
       rxjs: 7.8.1
 
-  '@polkadot-api/pjs-signer@0.3.2':
+  '@polkadot-api/pjs-signer@0.4.1':
     dependencies:
-      '@polkadot-api/metadata-builders': 0.4.1
-      '@polkadot-api/polkadot-signer': 0.1.2
-      '@polkadot-api/substrate-bindings': 0.6.2
+      '@polkadot-api/metadata-builders': 0.6.0
+      '@polkadot-api/polkadot-signer': 0.1.4
+      '@polkadot-api/substrate-bindings': 0.6.3
       '@polkadot-api/utils': 0.1.1
 
-  '@polkadot-api/polkadot-sdk-compat@1.0.1':
+  '@polkadot-api/polkadot-sdk-compat@2.0.0':
     dependencies:
-      '@polkadot-api/json-rpc-provider': 0.0.2
+      '@polkadot-api/json-rpc-provider': 0.0.3
 
-  '@polkadot-api/polkadot-signer@0.1.2':
+  '@polkadot-api/polkadot-signer@0.1.4': {}
+
+  '@polkadot-api/signer@0.1.4':
     dependencies:
-      '@polkadot-api/metadata-builders': 0.4.1
-      '@polkadot-api/substrate-bindings': 0.6.2
+      '@polkadot-api/polkadot-signer': 0.1.4
+      '@polkadot-api/substrate-bindings': 0.6.3
       '@polkadot-api/utils': 0.1.1
 
-  '@polkadot-api/signer@0.1.2':
-    dependencies:
-      '@polkadot-api/polkadot-signer': 0.1.2
-      '@polkadot-api/substrate-bindings': 0.6.2
-      '@polkadot-api/utils': 0.1.1
-
-  '@polkadot-api/sm-provider@0.1.1(smoldot@2.0.29)':
+  '@polkadot-api/sm-provider@0.1.1(smoldot@2.0.30)':
     dependencies:
       '@polkadot-api/json-rpc-provider': 0.0.2
       '@polkadot-api/json-rpc-provider-proxy': 0.2.0
-      smoldot: 2.0.29
+      smoldot: 2.0.30
 
-  '@polkadot-api/smoldot@0.2.7':
+  '@polkadot-api/smoldot@0.3.2':
     dependencies:
-      smoldot: 2.0.29
+      '@types/node': 22.5.2
+      smoldot: 2.0.30
     transitivePeerDependencies:
       - bufferutil
       - utf-8-validate
@@ -7522,16 +7559,16 @@ snapshots:
       '@scure/base': 1.1.6
       scale-ts: 1.6.0
 
-  '@polkadot-api/substrate-bindings@0.6.2':
+  '@polkadot-api/substrate-bindings@0.6.3':
     dependencies:
       '@noble/hashes': 1.4.0
       '@polkadot-api/utils': 0.1.1
       '@scure/base': 1.1.7
       scale-ts: 1.6.0
 
-  '@polkadot-api/substrate-client@0.2.0':
+  '@polkadot-api/substrate-client@0.2.1':
     dependencies:
-      '@polkadot-api/json-rpc-provider': 0.0.2
+      '@polkadot-api/json-rpc-provider': 0.0.3
       '@polkadot-api/utils': 0.1.1
 
   '@polkadot-api/utils@0.1.0': {}
@@ -7540,9 +7577,9 @@ snapshots:
 
   '@polkadot-api/wasm-executor@0.1.1': {}
 
-  '@polkadot-api/ws-provider@0.1.1':
+  '@polkadot-api/ws-provider@0.2.0':
     dependencies:
-      '@polkadot-api/json-rpc-provider': 0.0.2
+      '@polkadot-api/json-rpc-provider': 0.0.3
       '@polkadot-api/json-rpc-provider-proxy': 0.2.0
       ws: 8.18.0
     transitivePeerDependencies:
@@ -7580,7 +7617,7 @@ snapshots:
       '@polkadot/wasm-util': 7.3.2(@polkadot/util@12.6.2)
       '@polkadot/x-bigint': 12.6.2
       '@polkadot/x-randomvalues': 12.6.2(@polkadot/util@12.6.2)(@polkadot/wasm-util@7.3.2(@polkadot/util@12.6.2))
-      '@scure/base': 1.1.6
+      '@scure/base': 1.1.7
       tslib: 2.6.2
 
   '@polkadot/util@12.6.2':
@@ -7815,7 +7852,7 @@ snapshots:
     optionalDependencies:
       '@types/node': 20.14.10
 
-  '@rushstack/node-core-library@4.0.2(@types/node@20.14.13)':
+  '@rushstack/node-core-library@4.0.2(@types/node@22.5.2)':
     dependencies:
       fs-extra: 7.0.1
       import-lazy: 4.0.0
@@ -7824,7 +7861,7 @@ snapshots:
       semver: 7.5.4
       z-schema: 5.0.5
     optionalDependencies:
-      '@types/node': 20.14.13
+      '@types/node': 22.5.2
     optional: true
 
   '@rushstack/rig-package@0.5.2':
@@ -7839,12 +7876,12 @@ snapshots:
     optionalDependencies:
       '@types/node': 20.14.10
 
-  '@rushstack/terminal@0.10.0(@types/node@20.14.13)':
+  '@rushstack/terminal@0.10.0(@types/node@22.5.2)':
     dependencies:
-      '@rushstack/node-core-library': 4.0.2(@types/node@20.14.13)
+      '@rushstack/node-core-library': 4.0.2(@types/node@22.5.2)
       supports-color: 8.1.1
     optionalDependencies:
-      '@types/node': 20.14.13
+      '@types/node': 22.5.2
     optional: true
 
   '@rushstack/ts-command-line@4.19.1(@types/node@20.14.10)':
@@ -7856,9 +7893,9 @@ snapshots:
     transitivePeerDependencies:
       - '@types/node'
 
-  '@rushstack/ts-command-line@4.19.1(@types/node@20.14.13)':
+  '@rushstack/ts-command-line@4.19.1(@types/node@22.5.2)':
     dependencies:
-      '@rushstack/terminal': 0.10.0(@types/node@20.14.13)
+      '@rushstack/terminal': 0.10.0(@types/node@22.5.2)
       '@types/argparse': 1.0.38
       argparse: 1.0.10
       string-argv: 0.3.2
@@ -7870,9 +7907,13 @@ snapshots:
 
   '@scure/base@1.1.7': {}
 
+  '@sec-ant/readable-stream@0.4.1': {}
+
   '@sinclair/typebox@0.27.8': {}
 
   '@sindresorhus/is@5.6.0': {}
+
+  '@sindresorhus/merge-streams@4.0.0': {}
 
   '@substrate/ss58-registry@1.47.0': {}
 
@@ -8148,9 +8189,9 @@ snapshots:
     dependencies:
       undici-types: 5.26.5
 
-  '@types/node@20.14.13':
+  '@types/node@22.5.2':
     dependencies:
-      undici-types: 5.26.5
+      undici-types: 6.19.8
 
   '@types/normalize-package-data@2.4.4': {}
 
@@ -8267,10 +8308,10 @@ snapshots:
 
   '@ungap/structured-clone@1.2.0': {}
 
-  '@vitejs/plugin-react-swc@3.7.0(vite@5.3.3(@types/node@20.14.13)(sass@1.77.6))':
+  '@vitejs/plugin-react-swc@3.7.0(vite@5.3.3(@types/node@22.5.2)(sass@1.77.6))':
     dependencies:
       '@swc/core': 1.6.13
-      vite: 5.3.3(@types/node@20.14.13)(sass@1.77.6)
+      vite: 5.3.3(@types/node@22.5.2)(sass@1.77.6)
     transitivePeerDependencies:
       - '@swc/helpers'
 
@@ -8285,14 +8326,14 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@vitejs/plugin-react@4.3.1(vite@5.3.3(@types/node@20.14.13)(sass@1.77.6))':
+  '@vitejs/plugin-react@4.3.1(vite@5.3.3(@types/node@22.5.2)(sass@1.77.6))':
     dependencies:
       '@babel/core': 7.24.7
       '@babel/plugin-transform-react-jsx-self': 7.24.7(@babel/core@7.24.7)
       '@babel/plugin-transform-react-jsx-source': 7.24.1(@babel/core@7.24.7)
       '@types/babel__core': 7.20.5
       react-refresh: 0.14.2
-      vite: 5.3.3(@types/node@20.14.13)(sass@1.77.6)
+      vite: 5.3.3(@types/node@22.5.2)(sass@1.77.6)
     transitivePeerDependencies:
       - supports-color
 
@@ -8377,7 +8418,7 @@ snapshots:
 
   '@vue/shared@3.4.21': {}
 
-  '@wdio/browser-runner@8.39.1(@babel/core@7.24.3)(@types/node@20.14.13)(esbuild@0.23.0)(rollup@4.19.1)(sass@1.77.6)(typescript@5.5.3)':
+  '@wdio/browser-runner@8.39.1(@babel/core@7.24.3)(@types/node@22.5.2)(esbuild@0.23.0)(rollup@4.19.1)(sass@1.77.6)(typescript@5.5.3)':
     dependencies:
       '@babel/plugin-proposal-class-properties': 7.18.6(@babel/core@7.24.3)
       '@originjs/vite-plugin-commonjs': 1.0.3
@@ -8405,9 +8446,9 @@ snapshots:
       recast: 0.23.6
       safe-stringify: 1.1.0
       source-map-support: 0.5.21
-      vite: 4.5.2(@types/node@20.14.13)(sass@1.77.6)
-      vite-plugin-istanbul: 6.0.0(vite@4.5.2(@types/node@20.14.13)(sass@1.77.6))
-      vite-plugin-top-level-await: 1.4.1(rollup@4.19.1)(vite@4.5.2(@types/node@20.14.13)(sass@1.77.6))
+      vite: 4.5.2(@types/node@22.5.2)(sass@1.77.6)
+      vite-plugin-istanbul: 6.0.0(vite@4.5.2(@types/node@22.5.2)(sass@1.77.6))
+      vite-plugin-top-level-await: 1.4.1(rollup@4.19.1)(vite@4.5.2(@types/node@22.5.2)(sass@1.77.6))
       webdriver: 8.39.0
       webdriverio: 8.39.1(typescript@5.5.3)
     transitivePeerDependencies:
@@ -9305,6 +9346,8 @@ snapshots:
 
   deepmerge-ts@5.1.0: {}
 
+  deepmerge-ts@7.1.0: {}
+
   defaults@1.0.4:
     dependencies:
       clone: 1.0.4
@@ -9336,10 +9379,6 @@ snapshots:
   detect-indent@7.0.1: {}
 
   detect-newline@2.1.0: {}
-
-  detect-package-manager@3.0.2:
-    dependencies:
-      execa: 5.1.1
 
   devtools-protocol@0.0.1147663: {}
 
@@ -10116,6 +10155,21 @@ snapshots:
       signal-exit: 4.1.0
       strip-final-newline: 3.0.0
 
+  execa@9.3.1:
+    dependencies:
+      '@sindresorhus/merge-streams': 4.0.0
+      cross-spawn: 7.0.3
+      figures: 6.1.0
+      get-stream: 9.0.1
+      human-signals: 8.0.0
+      is-plain-obj: 4.1.0
+      is-stream: 4.0.1
+      npm-run-path: 5.3.0
+      pretty-ms: 9.1.0
+      signal-exit: 4.1.0
+      strip-final-newline: 4.0.0
+      yoctocolors: 2.1.1
+
   expand-tilde@2.0.2:
     dependencies:
       homedir-polyfill: 1.0.3
@@ -10231,6 +10285,10 @@ snapshots:
     dependencies:
       escape-string-regexp: 5.0.0
       is-unicode-supported: 1.3.0
+
+  figures@6.1.0:
+    dependencies:
+      is-unicode-supported: 2.0.0
 
   file-entry-cache@6.0.1:
     dependencies:
@@ -10425,6 +10483,11 @@ snapshots:
   get-stream@6.0.1: {}
 
   get-stream@8.0.1: {}
+
+  get-stream@9.0.1:
+    dependencies:
+      '@sec-ant/readable-stream': 0.4.1
+      is-stream: 4.0.1
 
   get-symbol-description@1.0.2:
     dependencies:
@@ -10745,6 +10808,8 @@ snapshots:
 
   human-signals@5.0.0: {}
 
+  human-signals@8.0.0: {}
+
   husky@9.0.11: {}
 
   iconv-lite@0.4.24:
@@ -10934,6 +10999,8 @@ snapshots:
 
   is-stream@3.0.0: {}
 
+  is-stream@4.0.1: {}
+
   is-string@1.0.7:
     dependencies:
       has-tostringtag: 1.0.2
@@ -10945,8 +11012,6 @@ snapshots:
   is-typed-array@1.1.13:
     dependencies:
       which-typed-array: 1.1.15
-
-  is-typedarray@1.0.0: {}
 
   is-unc-path@1.0.0:
     dependencies:
@@ -11706,6 +11771,8 @@ snapshots:
 
   parse-ms@2.1.0: {}
 
+  parse-ms@4.0.0: {}
+
   parse-node-version@1.0.1: {}
 
   parse-passwd@1.0.0: {}
@@ -11772,25 +11839,25 @@ snapshots:
     dependencies:
       ansi-colors: 1.1.0
 
-  polkadot-api@0.12.0(@microsoft/api-extractor@7.43.0(@types/node@20.14.10))(@swc/core@1.6.13)(postcss@8.4.39)(rxjs@7.8.1)(smoldot@2.0.29)(yaml@2.4.5):
+  polkadot-api@1.1.0(@microsoft/api-extractor@7.43.0(@types/node@20.14.10))(@swc/core@1.6.13)(postcss@8.4.39)(rxjs@7.8.1)(smoldot@2.0.30)(yaml@2.4.5):
     dependencies:
-      '@polkadot-api/cli': 0.7.0(@microsoft/api-extractor@7.43.0(@types/node@20.14.10))(@swc/core@1.6.13)(postcss@8.4.39)(smoldot@2.0.29)(yaml@2.4.5)
-      '@polkadot-api/json-rpc-provider': 0.0.2
-      '@polkadot-api/known-chains': 0.3.0
-      '@polkadot-api/logs-provider': 0.0.3
-      '@polkadot-api/metadata-builders': 0.4.1
-      '@polkadot-api/metadata-compatibility': 0.1.1
-      '@polkadot-api/observable-client': 0.5.0(@polkadot-api/substrate-client@0.2.0)(rxjs@7.8.1)
-      '@polkadot-api/pjs-signer': 0.3.2
-      '@polkadot-api/polkadot-sdk-compat': 1.0.1
-      '@polkadot-api/polkadot-signer': 0.1.2
-      '@polkadot-api/signer': 0.1.2
-      '@polkadot-api/sm-provider': 0.1.1(smoldot@2.0.29)
-      '@polkadot-api/smoldot': 0.2.7
-      '@polkadot-api/substrate-bindings': 0.6.2
-      '@polkadot-api/substrate-client': 0.2.0
+      '@polkadot-api/cli': 0.8.0(@microsoft/api-extractor@7.43.0(@types/node@20.14.10))(@swc/core@1.6.13)(postcss@8.4.39)(smoldot@2.0.30)(yaml@2.4.5)
+      '@polkadot-api/json-rpc-provider': 0.0.3
+      '@polkadot-api/known-chains': 0.5.0
+      '@polkadot-api/logs-provider': 0.0.4
+      '@polkadot-api/metadata-builders': 0.6.0
+      '@polkadot-api/metadata-compatibility': 0.1.3
+      '@polkadot-api/observable-client': 0.5.2(@polkadot-api/substrate-client@0.2.1)(rxjs@7.8.1)
+      '@polkadot-api/pjs-signer': 0.4.1
+      '@polkadot-api/polkadot-sdk-compat': 2.0.0
+      '@polkadot-api/polkadot-signer': 0.1.4
+      '@polkadot-api/signer': 0.1.4
+      '@polkadot-api/sm-provider': 0.1.1(smoldot@2.0.30)
+      '@polkadot-api/smoldot': 0.3.2
+      '@polkadot-api/substrate-bindings': 0.6.3
+      '@polkadot-api/substrate-client': 0.2.1
       '@polkadot-api/utils': 0.1.1
-      '@polkadot-api/ws-provider': 0.1.1
+      '@polkadot-api/ws-provider': 0.2.0
       rxjs: 7.8.1
     transitivePeerDependencies:
       - '@microsoft/api-extractor'
@@ -11806,13 +11873,13 @@ snapshots:
 
   possible-typed-array-names@1.0.0: {}
 
-  postcss-load-config@4.0.2(postcss@8.4.38)(ts-node@10.9.2(@swc/core@1.6.13)(@types/node@20.14.13)(typescript@5.5.3)):
+  postcss-load-config@4.0.2(postcss@8.4.38)(ts-node@10.9.2(@swc/core@1.6.13)(@types/node@22.5.2)(typescript@5.5.3)):
     dependencies:
       lilconfig: 3.1.1
       yaml: 2.4.5
     optionalDependencies:
       postcss: 8.4.38
-      ts-node: 10.9.2(@swc/core@1.6.13)(@types/node@20.14.13)(typescript@5.5.3)
+      ts-node: 10.9.2(@swc/core@1.6.13)(@types/node@22.5.2)(typescript@5.5.3)
 
   postcss-load-config@6.0.1(postcss@8.4.39)(yaml@2.4.5):
     dependencies:
@@ -11890,6 +11957,10 @@ snapshots:
   pretty-ms@7.0.1:
     dependencies:
       parse-ms: 2.1.0
+
+  pretty-ms@9.1.0:
+    dependencies:
+      parse-ms: 4.0.0
 
   process-nextick-args@2.0.1: {}
 
@@ -12377,7 +12448,7 @@ snapshots:
 
   smart-buffer@4.2.0: {}
 
-  smoldot@2.0.29:
+  smoldot@2.0.30:
     dependencies:
       ws: 8.18.0
     transitivePeerDependencies:
@@ -12558,6 +12629,8 @@ snapshots:
   strip-final-newline@2.0.0: {}
 
   strip-final-newline@3.0.0: {}
+
+  strip-final-newline@4.0.0: {}
 
   strip-json-comments@3.1.1: {}
 
@@ -12844,14 +12917,14 @@ snapshots:
 
   ts-interface-checker@0.1.13: {}
 
-  ts-node@10.9.2(@swc/core@1.6.13)(@types/node@20.14.13)(typescript@5.5.3):
+  ts-node@10.9.2(@swc/core@1.6.13)(@types/node@22.5.2)(typescript@5.5.3):
     dependencies:
       '@cspotcode/source-map-support': 0.8.1
       '@tsconfig/node10': 1.0.9
       '@tsconfig/node12': 1.0.11
       '@tsconfig/node14': 1.0.3
       '@tsconfig/node16': 1.0.4
-      '@types/node': 20.14.13
+      '@types/node': 22.5.2
       acorn: 8.11.3
       acorn-walk: 8.3.2
       arg: 4.1.3
@@ -12881,7 +12954,7 @@ snapshots:
 
   tslib@2.6.2: {}
 
-  tsup@8.1.0(@microsoft/api-extractor@7.43.0(@types/node@20.14.13))(@swc/core@1.6.13)(postcss@8.4.38)(ts-node@10.9.2(@swc/core@1.6.13)(@types/node@20.14.13)(typescript@5.5.3))(typescript@5.5.3):
+  tsup@8.1.0(@microsoft/api-extractor@7.43.0(@types/node@22.5.2))(@swc/core@1.6.13)(postcss@8.4.38)(ts-node@10.9.2(@swc/core@1.6.13)(@types/node@22.5.2)(typescript@5.5.3))(typescript@5.5.3):
     dependencies:
       bundle-require: 4.0.2(esbuild@0.21.5)
       cac: 6.7.14
@@ -12891,14 +12964,14 @@ snapshots:
       execa: 5.1.1
       globby: 11.1.0
       joycon: 3.1.1
-      postcss-load-config: 4.0.2(postcss@8.4.38)(ts-node@10.9.2(@swc/core@1.6.13)(@types/node@20.14.13)(typescript@5.5.3))
+      postcss-load-config: 4.0.2(postcss@8.4.38)(ts-node@10.9.2(@swc/core@1.6.13)(@types/node@22.5.2)(typescript@5.5.3))
       resolve-from: 5.0.0
       rollup: 4.18.0
       source-map: 0.8.0-beta.0
       sucrase: 3.35.0
       tree-kill: 1.2.2
     optionalDependencies:
-      '@microsoft/api-extractor': 7.43.0(@types/node@20.14.13)
+      '@microsoft/api-extractor': 7.43.0(@types/node@22.5.2)
       '@swc/core': 1.6.13
       postcss: 8.4.38
       typescript: 5.5.3
@@ -12906,7 +12979,7 @@ snapshots:
       - supports-color
       - ts-node
 
-  tsup@8.2.3(@microsoft/api-extractor@7.43.0(@types/node@20.14.10))(@swc/core@1.6.13)(postcss@8.4.39)(typescript@5.5.4)(yaml@2.4.5):
+  tsup@8.2.4(@microsoft/api-extractor@7.43.0(@types/node@20.14.10))(@swc/core@1.6.13)(postcss@8.4.39)(typescript@5.5.4)(yaml@2.4.5):
     dependencies:
       bundle-require: 5.0.0(esbuild@0.23.0)
       cac: 6.7.14
@@ -12953,6 +13026,8 @@ snapshots:
 
   type-fest@4.13.1: {}
 
+  type-fest@4.26.0: {}
+
   type@2.7.2: {}
 
   typed-array-buffer@1.0.2:
@@ -12987,10 +13062,6 @@ snapshots:
       is-typed-array: 1.1.13
       possible-typed-array-names: 1.0.0
 
-  typedarray-to-buffer@3.1.5:
-    dependencies:
-      is-typedarray: 1.0.0
-
   typescript@5.4.2: {}
 
   typescript@5.5.3: {}
@@ -13023,6 +13094,8 @@ snapshots:
       undertaker-registry: 2.0.0
 
   undici-types@5.26.5: {}
+
+  undici-types@6.19.8: {}
 
   unicorn-magic@0.1.0: {}
 
@@ -13161,13 +13234,13 @@ snapshots:
       replace-ext: 2.0.0
       teex: 1.0.1
 
-  vite-node@1.6.0(@types/node@20.14.13)(sass@1.77.6):
+  vite-node@1.6.0(@types/node@22.5.2)(sass@1.77.6):
     dependencies:
       cac: 6.7.14
       debug: 4.3.4(supports-color@8.1.1)
       pathe: 1.1.2
       picocolors: 1.0.0
-      vite: 5.3.3(@types/node@20.14.13)(sass@1.77.6)
+      vite: 5.3.3(@types/node@22.5.2)(sass@1.77.6)
     transitivePeerDependencies:
       - '@types/node'
       - less
@@ -13178,7 +13251,7 @@ snapshots:
       - supports-color
       - terser
 
-  vite-plugin-checker@0.6.4(eslint@8.57.0)(optionator@0.9.3)(stylelint@16.6.1(typescript@5.5.3))(typescript@5.5.3)(vite@5.3.3(@types/node@20.14.13)(sass@1.77.6))(vue-tsc@1.8.27(typescript@5.5.3)):
+  vite-plugin-checker@0.6.4(eslint@8.57.0)(optionator@0.9.3)(stylelint@16.6.1(typescript@5.5.3))(typescript@5.5.3)(vite@5.3.3(@types/node@22.5.2)(sass@1.77.6))(vue-tsc@1.8.27(typescript@5.5.3)):
     dependencies:
       '@babel/code-frame': 7.24.2
       ansi-escapes: 4.3.2
@@ -13191,7 +13264,7 @@ snapshots:
       semver: 7.6.0
       strip-ansi: 6.0.1
       tiny-invariant: 1.3.3
-      vite: 5.3.3(@types/node@20.14.13)(sass@1.77.6)
+      vite: 5.3.3(@types/node@22.5.2)(sass@1.77.6)
       vscode-languageclient: 7.0.0
       vscode-languageserver: 7.0.0
       vscode-languageserver-textdocument: 1.0.11
@@ -13220,15 +13293,15 @@ snapshots:
       - rollup
       - supports-color
 
-  vite-plugin-eslint@1.8.1(eslint@8.57.0)(vite@5.3.3(@types/node@20.14.13)(sass@1.77.6)):
+  vite-plugin-eslint@1.8.1(eslint@8.57.0)(vite@5.3.3(@types/node@22.5.2)(sass@1.77.6)):
     dependencies:
       '@rollup/pluginutils': 4.2.1
       '@types/eslint': 8.56.6
       eslint: 8.57.0
       rollup: 2.79.1
-      vite: 5.3.3(@types/node@20.14.13)(sass@1.77.6)
+      vite: 5.3.3(@types/node@22.5.2)(sass@1.77.6)
 
-  vite-plugin-istanbul@6.0.0(vite@4.5.2(@types/node@20.14.13)(sass@1.77.6)):
+  vite-plugin-istanbul@6.0.0(vite@4.5.2(@types/node@22.5.2)(sass@1.77.6)):
     dependencies:
       '@istanbuljs/load-nyc-config': 1.1.0
       espree: 10.0.1
@@ -13236,7 +13309,7 @@ snapshots:
       picocolors: 1.0.0
       source-map: 0.7.4
       test-exclude: 6.0.0
-      vite: 4.5.2(@types/node@20.14.13)(sass@1.77.6)
+      vite: 4.5.2(@types/node@22.5.2)(sass@1.77.6)
     transitivePeerDependencies:
       - supports-color
 
@@ -13247,45 +13320,45 @@ snapshots:
       picocolors: 1.0.0
       vite: 5.3.3(@types/node@20.14.10)(sass@1.77.6)
 
-  vite-plugin-svgr@4.2.0(rollup@4.19.1)(typescript@5.5.3)(vite@5.3.3(@types/node@20.14.13)(sass@1.77.6)):
+  vite-plugin-svgr@4.2.0(rollup@4.19.1)(typescript@5.5.3)(vite@5.3.3(@types/node@22.5.2)(sass@1.77.6)):
     dependencies:
       '@rollup/pluginutils': 5.1.0(rollup@4.19.1)
       '@svgr/core': 8.1.0(typescript@5.5.3)
       '@svgr/plugin-jsx': 8.1.0(@svgr/core@8.1.0(typescript@5.5.3))
-      vite: 5.3.3(@types/node@20.14.13)(sass@1.77.6)
+      vite: 5.3.3(@types/node@22.5.2)(sass@1.77.6)
     transitivePeerDependencies:
       - rollup
       - supports-color
       - typescript
 
-  vite-plugin-top-level-await@1.4.1(rollup@4.19.1)(vite@4.5.2(@types/node@20.14.13)(sass@1.77.6)):
+  vite-plugin-top-level-await@1.4.1(rollup@4.19.1)(vite@4.5.2(@types/node@22.5.2)(sass@1.77.6)):
     dependencies:
       '@rollup/plugin-virtual': 3.0.2(rollup@4.19.1)
       '@swc/core': 1.4.8
       uuid: 9.0.1
-      vite: 4.5.2(@types/node@20.14.13)(sass@1.77.6)
+      vite: 4.5.2(@types/node@22.5.2)(sass@1.77.6)
     transitivePeerDependencies:
       - '@swc/helpers'
       - rollup
 
-  vite-tsconfig-paths@4.3.2(typescript@5.5.3)(vite@5.3.3(@types/node@20.14.13)(sass@1.77.6)):
+  vite-tsconfig-paths@4.3.2(typescript@5.5.3)(vite@5.3.3(@types/node@22.5.2)(sass@1.77.6)):
     dependencies:
       debug: 4.3.4(supports-color@8.1.1)
       globrex: 0.1.2
       tsconfck: 3.0.3(typescript@5.5.3)
     optionalDependencies:
-      vite: 5.3.3(@types/node@20.14.13)(sass@1.77.6)
+      vite: 5.3.3(@types/node@22.5.2)(sass@1.77.6)
     transitivePeerDependencies:
       - supports-color
       - typescript
 
-  vite@4.5.2(@types/node@20.14.13)(sass@1.77.6):
+  vite@4.5.2(@types/node@22.5.2)(sass@1.77.6):
     dependencies:
       esbuild: 0.18.20
       postcss: 8.4.38
       rollup: 3.29.4
     optionalDependencies:
-      '@types/node': 20.14.13
+      '@types/node': 22.5.2
       fsevents: 2.3.3
       sass: 1.77.6
 
@@ -13299,17 +13372,17 @@ snapshots:
       fsevents: 2.3.3
       sass: 1.77.6
 
-  vite@5.3.3(@types/node@20.14.13)(sass@1.77.6):
+  vite@5.3.3(@types/node@22.5.2)(sass@1.77.6):
     dependencies:
       esbuild: 0.21.5
       postcss: 8.4.39
       rollup: 4.18.0
     optionalDependencies:
-      '@types/node': 20.14.13
+      '@types/node': 22.5.2
       fsevents: 2.3.3
       sass: 1.77.6
 
-  vitest@1.6.0(@types/node@20.14.13)(sass@1.77.6):
+  vitest@1.6.0(@types/node@22.5.2)(sass@1.77.6):
     dependencies:
       '@vitest/expect': 1.6.0
       '@vitest/runner': 1.6.0
@@ -13328,11 +13401,11 @@ snapshots:
       strip-literal: 2.0.0
       tinybench: 2.6.0
       tinypool: 0.8.4
-      vite: 5.3.3(@types/node@20.14.13)(sass@1.77.6)
-      vite-node: 1.6.0(@types/node@20.14.13)(sass@1.77.6)
+      vite: 5.3.3(@types/node@22.5.2)(sass@1.77.6)
+      vite-node: 1.6.0(@types/node@22.5.2)(sass@1.77.6)
       why-is-node-running: 2.2.2
     optionalDependencies:
-      '@types/node': 20.14.13
+      '@types/node': 22.5.2
     transitivePeerDependencies:
       - less
       - lightningcss
@@ -13543,32 +13616,25 @@ snapshots:
 
   wrappy@1.0.2: {}
 
-  write-file-atomic@3.0.3:
-    dependencies:
-      imurmurhash: 0.1.4
-      is-typedarray: 1.0.0
-      signal-exit: 3.0.7
-      typedarray-to-buffer: 3.1.5
-
   write-file-atomic@5.0.1:
     dependencies:
       imurmurhash: 0.1.4
       signal-exit: 4.1.0
 
-  write-json-file@5.0.0:
+  write-json-file@6.0.0:
     dependencies:
       detect-indent: 7.0.1
       is-plain-obj: 4.1.0
       sort-keys: 5.0.0
-      write-file-atomic: 3.0.3
+      write-file-atomic: 5.0.1
 
-  write-package@7.0.1:
+  write-package@7.1.0:
     dependencies:
-      deepmerge-ts: 5.1.0
+      deepmerge-ts: 7.1.0
       read-pkg: 9.0.1
       sort-keys: 5.0.0
-      type-fest: 4.13.1
-      write-json-file: 5.0.0
+      type-fest: 4.26.0
+      write-json-file: 6.0.0
 
   ws@8.13.0: {}
 
@@ -13635,6 +13701,8 @@ snapshots:
   yocto-queue@0.1.0: {}
 
   yocto-queue@1.0.0: {}
+
+  yoctocolors@2.1.1: {}
 
   z-schema@5.0.5:
     dependencies:
