@@ -20,6 +20,7 @@ const Accounts: React.FC<{
     extension.subscribe,
     extension.getAccounts
   )
+
   const borderDesc = config?.border
     ? config?.border?.size.concat(
         ` ${config?.border?.type}`,
@@ -49,7 +50,7 @@ const Accounts: React.FC<{
               flexDirection: "row",
               alignItems: "center",
               width: "100%",
-              height: "5rem",
+              height: "3rem",
               border: borderDesc,
               borderRadius: "0.5rem",
               margin: "0.5rem 0",
@@ -60,7 +61,7 @@ const Accounts: React.FC<{
             }}
           >
             {ExtensionIcon && (
-              <div style={{ width: "5rem", height: "3rem" }}>
+              <div style={{ width: "4rem", height: "2rem" }}>
                 <ExtensionIcon />
               </div>
             )}
