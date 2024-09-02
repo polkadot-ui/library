@@ -27,3 +27,21 @@ export const useAvailableExtensions = (): string[] => {
 
   return useMemo(() => extensions?.split(",") ?? [], [extensions])
 }
+
+export const useLocalStorage = (key: string, defaultValue: string) => {
+  const [value, setValue] = useState(() => {
+    const getStorageValue = (key: string, defaultValue: string) => {
+      const saved = localStorage.getItem(key)
+      const initial = JSON.parse(saved)
+      return initial || defaultValue
+    }
+
+    return getStorageValue(key, defaultValue)
+  })
+
+  useEffect(() => {
+    localStorage.setItem(key, JSON.stringify(value))
+  }, [key, value])
+
+  return [value, setValue]
+}

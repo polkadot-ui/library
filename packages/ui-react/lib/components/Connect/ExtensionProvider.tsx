@@ -1,72 +1,18 @@
 import React, { FC } from "react"
-import type { InjectedExtension } from "polkadot-api/pjs-signer"
-import { connectInjectedExtension } from "polkadot-api/pjs-signer"
 import type { Dispatch, PropsWithChildren, SetStateAction } from "react"
 import { useEffect, useState, useSyncExternalStore } from "react"
 import { extensionCtx } from "./extensionCtx"
 import { getExtensionIcon } from "@polkadot-ui/assets/extensions"
-import { useAvailableExtensions } from "./hooks"
-import type { CommonConfigType, SelectedAccountType } from "./types"
+import { useAvailableExtensions, useLocalStorage } from "./hooks"
+import type {
+  CommonConfigType,
+  NameUrlType,
+  SelectedAccountType,
+} from "./types"
 import { Any } from "../../utils"
+import { getExtensionsStore, localStorageKey } from "./utils"
 
 const { Provider } = extensionCtx
-
-const getExtensionsStore = () => {
-  let connectedExtensions = new Map<string, InjectedExtension>()
-  const getSnapshot = () => connectedExtensions
-
-  const listeners = new Set<() => void>()
-  const update = () => {
-    connectedExtensions = new Map(connectedExtensions)
-    listeners.forEach((cb) => {
-      cb()
-    })
-  }
-  const subscribe = (cb: () => void) => {
-    listeners.add(cb)
-    return () => {
-      listeners.delete(cb)
-    }
-  }
-
-  let isRunning = false
-  const onToggleExtension = (
-    name: string,
-    setSelected: Dispatch<SetStateAction<SelectedAccountType>>
-  ) => {
-    if (isRunning) return
-
-    if (connectedExtensions.has(name)) {
-      connectedExtensions.delete(name)
-      setSelected(null)
-      return update()
-    }
-
-    isRunning = true
-    connectInjectedExtension(name)
-      .then(
-        (extension) => {
-          connectedExtensions.set(name, extension)
-          update()
-        },
-        () => {}
-      )
-      .finally(() => {
-        isRunning = false
-      })
-  }
-
-  return {
-    subscribe,
-    getSnapshot,
-    onToggleExtension,
-  }
-}
-
-type NameUrlType = {
-  name: string
-  url: string
-}
 
 const allExtensions: NameUrlType[] = [
   {
@@ -91,6 +37,7 @@ const allExtensions: NameUrlType[] = [
     url: "https://fearlesswallet.io/download",
   },
 ]
+
 const extensionsStore = getExtensionsStore()
 extensionsStore.subscribe(Function.prototype as Any)
 
@@ -105,12 +52,19 @@ export const ExtensionProvider: FC<
     config?: ConfigType & CommonConfigType
   }>
 > = ({ children, setSelected, config }) => {
+  const [value, setValue] = useLocalStorage(localStorageKey, "")
+
   const [nonInstalledXts, setNonInstalledXts] = useState<NameUrlType[]>([])
   const availXts = useAvailableExtensions()
+
   const selXts = useSyncExternalStore(
     extensionsStore.subscribe,
     extensionsStore.getSnapshot
   )
+
+  useEffect(() => {
+    extensionsStore.revive(value)
+  }, [value])
 
   useEffect(() => {
     setNonInstalledXts(
@@ -154,6 +108,16 @@ export const ExtensionProvider: FC<
                 }}
                 onClick={() => {
                   extensionsStore.onToggleExtension(xtName, setSelected)
+                  const a = value?.split(",")
+                  let b: string[]
+                  if (a.includes(xtName)) {
+                    const index = a.indexOf(xtName)
+                    if (index > -1) a.splice(index, 1)
+                    b = a
+                  } else {
+                    b = [...a, xtName]
+                  }
+                  setValue(b.join(","))
                 }}
                 key={xtName}
               >
@@ -174,7 +138,9 @@ export const ExtensionProvider: FC<
             </div>
           )
         })}
-        <p>{config?.notInstalled || "-- Not installed --"}</p>
+        {nonInstalledXts.length ? (
+          <p>{config?.notInstalled || "-- Not installed --"}</p>
+        ) : null}
         {nonInstalledXts.map(({ name, url }) => {
           const ExtensionIcon = getExtensionIcon(name)
           return (
