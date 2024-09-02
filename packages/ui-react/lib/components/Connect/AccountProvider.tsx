@@ -73,7 +73,7 @@ const Accounts: React.FC<{
               flexDirection: "row",
               alignItems: "center",
               width: "100%",
-              height: "5rem",
+              height: "4rem",
               border: borderDesc,
               borderRadius: "0.5rem",
               margin: "0.5rem 0",
@@ -124,7 +124,7 @@ export const AccountProvider: React.FC<
       <div
         style={{
           display: "flex",
-          paddingTop: "2rem",
+          paddingTop: "1rem",
           justifyContent: "space-between",
         }}
       >

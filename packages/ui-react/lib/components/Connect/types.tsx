@@ -1,3 +1,4 @@
+import { Any } from "../../utils"
 import { PolkadotSigner } from "polkadot-api"
 import { KeypairType } from "polkadot-api/pjs-signer"
 
@@ -9,11 +10,16 @@ export type SelectedAccountType = {
   polkadotSigner: PolkadotSigner
 } | null
 
+export type ConnectConfiguration = ConfigType & CommonConfigType
+
+export type ConfigType = {
+  notInstalled?: Any
+  downloadIcon?: Any
+}
+
 export type CommonConfigType = {
   bgColor?: string
   selectedBgColor?: string
-  hoverColor?: string
-  color?: string
   border?: {
     size: string
     type:

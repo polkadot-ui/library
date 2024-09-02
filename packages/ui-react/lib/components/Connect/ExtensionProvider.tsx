@@ -6,6 +6,7 @@ import { getExtensionIcon } from "@polkadot-ui/assets/extensions"
 import { useAvailableExtensions, useExtensionStorage } from "./hooks"
 import type {
   CommonConfigType,
+  ConfigType,
   NameUrlType,
   SelectedAccountType,
 } from "./types"
@@ -40,11 +41,6 @@ const allExtensions: NameUrlType[] = [
 
 const extensionsStore = getExtensionsStore()
 extensionsStore.subscribe(Function.prototype as Any)
-
-type ConfigType = {
-  notInstalled?: Any
-  downloadIcon?: Any
-}
 
 export const ExtensionProvider: FC<
   PropsWithChildren<{
@@ -102,7 +98,7 @@ export const ExtensionProvider: FC<
                   flexDirection: "row",
                   alignItems: "center",
                   width: "100%",
-                  height: "5rem",
+                  height: "4rem",
                   border: borderDesc,
                   borderRadius: "0.5rem",
                   background: selXts.has(xtName)
@@ -121,7 +117,6 @@ export const ExtensionProvider: FC<
                 <div
                   style={{
                     position: "relative",
-                    fontSize: "1.2rem",
                   }}
                 >
                   {xtName === "subwallet-js"
@@ -166,7 +161,6 @@ export const ExtensionProvider: FC<
                   <div
                     style={{
                       position: "relative",
-                      fontSize: "1.2rem",
                     }}
                   >
                     {name === "subwallet-js"
@@ -174,7 +168,7 @@ export const ExtensionProvider: FC<
                       : name.charAt(0).toUpperCase() + name.slice(1)}
                   </div>
                 </div>
-                <div style={{ paddingRight: "1rem" }}>
+                <div style={{ paddingRight: "3rem" }}>
                   {config?.downloadIcon || "Download"}
                 </div>
               </button>
