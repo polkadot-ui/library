@@ -5,4 +5,9 @@ export {
   useSelectedExtensions,
   useAvailableExtensions,
 } from "./hooks"
-export type { SelectedAccountType } from "./types"
+export type {
+  ConnectConfiguration,
+  ConfigType,
+  CommonConfigType,
+  SelectedAccountType,
+} from "./types"
