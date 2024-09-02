@@ -1,14 +1,15 @@
 import type { Dispatch, PropsWithChildren, SetStateAction } from "react"
-import React, { useSyncExternalStore } from "react"
+import React, { useEffect, useSyncExternalStore } from "react"
 import type {
   InjectedExtension,
   InjectedPolkadotAccount,
 } from "polkadot-api/pjs-signer"
-import { useSelectedExtensions } from "./hooks"
+import { useAccountStorage, useSelectedExtensions } from "./hooks"
 import { SignerCtx } from "./signerCtx"
 
 import { getExtensionIcon } from "@polkadot-ui/assets/extensions"
 import type { CommonConfigType, SelectedAccountType } from "./types"
+import { localStorageKeyAccount } from "./utils"
 
 const Accounts: React.FC<{
   extension: InjectedExtension
@@ -27,13 +28,36 @@ const Accounts: React.FC<{
       )
     : "0.1rem solid #8A8A8A"
 
+  const [accountLocalStorage, setAccountLocalStorage] = useAccountStorage(
+    localStorageKeyAccount,
+    ""
+  )
+
+  useEffect(() => {
+    const accounts = extension.getAccounts()
+
+    accounts.map((account) => {
+      if (account.address === accountLocalStorage) {
+        setSelectedAccount({
+          address: account.address,
+          name: account.name,
+          extension: extension.name,
+          polkadotSigner: account.polkadotSigner,
+          type: account.type,
+        })
+        return
+      }
+    })
+  }, [accountLocalStorage, extension, setSelectedAccount])
+
   return (
     <div style={{ display: "flex", flexDirection: "column" }}>
       {accounts.map((account: InjectedPolkadotAccount) => {
         const ExtensionIcon = getExtensionIcon(extension.name)
         return (
           <button
-            onClick={() =>
+            onClick={() => {
+              setAccountLocalStorage(account.address)
               setSelectedAccount({
                 address: account.address,
                 name: account.name,
@@ -41,7 +65,7 @@ const Accounts: React.FC<{
                 polkadotSigner: account.polkadotSigner,
                 type: account.type,
               })
-            }
+            }}
             key={account.address}
             style={{
               display: "flex",
@@ -90,6 +114,10 @@ export const AccountProvider: React.FC<
   }>
 > = ({ children, selected, setSelected, config }) => {
   const extensions = useSelectedExtensions()
+  const [, setAccountLocalStorage] = useAccountStorage(
+    localStorageKeyAccount,
+    ""
+  )
 
   return (
     <>
@@ -108,7 +136,10 @@ export const AccountProvider: React.FC<
               color: "firebrick",
               fontWeight: "bold",
             }}
-            onClick={() => setSelected(null)}
+            onClick={() => {
+              setSelected(null)
+              setAccountLocalStorage(null)
+            }}
           >
             Disconnect
           </button>

@@ -30,3 +30,8 @@ export type CommonConfigType = {
     color: string
   }
 }
+
+export type NameUrlType = {
+  name: string
+  url: string
+}
