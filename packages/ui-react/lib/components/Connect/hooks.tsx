@@ -28,7 +28,38 @@ export const useAvailableExtensions = (): string[] => {
   return useMemo(() => extensions?.split(",") ?? [], [extensions])
 }
 
-export const useLocalStorage = (key: string, defaultValue: string) => {
+export const useExtensionStorage = (key: string, defaultValue: string) => {
+  const [value, setLocal] = useState(() => {
+    const getStorageValue = (key: string, defaultValue: string) => {
+      const saved = localStorage.getItem(key)
+      const initial = JSON.parse(saved)
+      return initial || defaultValue
+    }
+
+    return getStorageValue(key, defaultValue)
+  })
+
+  const setValue = (name: string) => {
+    const a = value?.split(",")
+    let b: string[]
+    if (a.includes(name)) {
+      const index = a.indexOf(name)
+      if (index > -1) a.splice(index, 1)
+      b = a
+    } else {
+      b = [...a, name]
+    }
+    setLocal(b.join(","))
+  }
+
+  useEffect(() => {
+    localStorage.setItem(key, JSON.stringify(value))
+  }, [key, value])
+
+  return [value, setValue]
+}
+
+export const useAccountStorage = (key: string, defaultValue: string) => {
   const [value, setValue] = useState(() => {
     const getStorageValue = (key: string, defaultValue: string) => {
       const saved = localStorage.getItem(key)

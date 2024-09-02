@@ -3,14 +3,14 @@ import type { Dispatch, PropsWithChildren, SetStateAction } from "react"
 import { useEffect, useState, useSyncExternalStore } from "react"
 import { extensionCtx } from "./extensionCtx"
 import { getExtensionIcon } from "@polkadot-ui/assets/extensions"
-import { useAvailableExtensions, useLocalStorage } from "./hooks"
+import { useAvailableExtensions, useExtensionStorage } from "./hooks"
 import type {
   CommonConfigType,
   NameUrlType,
   SelectedAccountType,
 } from "./types"
 import { Any } from "../../utils"
-import { getExtensionsStore, localStorageKey } from "./utils"
+import { getExtensionsStore, localStorageKeyExtensions } from "./utils"
 
 const { Provider } = extensionCtx
 
@@ -52,7 +52,10 @@ export const ExtensionProvider: FC<
     config?: ConfigType & CommonConfigType
   }>
 > = ({ children, setSelected, config }) => {
-  const [value, setValue] = useLocalStorage(localStorageKey, "")
+  const [extensionLocalStorage, setExtensionLocalStorage] = useExtensionStorage(
+    localStorageKeyExtensions,
+    ""
+  )
 
   const [nonInstalledXts, setNonInstalledXts] = useState<NameUrlType[]>([])
   const availXts = useAvailableExtensions()
@@ -63,8 +66,8 @@ export const ExtensionProvider: FC<
   )
 
   useEffect(() => {
-    extensionsStore.revive(value)
-  }, [value])
+    extensionsStore.revive(extensionLocalStorage)
+  }, [extensionLocalStorage])
 
   useEffect(() => {
     setNonInstalledXts(
@@ -108,16 +111,7 @@ export const ExtensionProvider: FC<
                 }}
                 onClick={() => {
                   extensionsStore.onToggleExtension(xtName, setSelected)
-                  const a = value?.split(",")
-                  let b: string[]
-                  if (a.includes(xtName)) {
-                    const index = a.indexOf(xtName)
-                    if (index > -1) a.splice(index, 1)
-                    b = a
-                  } else {
-                    b = [...a, xtName]
-                  }
-                  setValue(b.join(","))
+                  setExtensionLocalStorage(xtName)
                 }}
                 key={xtName}
               >

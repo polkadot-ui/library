@@ -4,12 +4,18 @@ import {
 } from "polkadot-api/pjs-signer"
 import { Dispatch, SetStateAction } from "react"
 import { SelectedAccountType } from "./types"
+import { Any } from "../../utils"
 
 const { location } = window
 
-export const localStorageKey = "@polkadot-ui/react/".concat(
+export const localStorageKeyExtensions = "@polkadot-ui/react|".concat(
   location.href,
   "|extensions"
+)
+
+export const localStorageKeyAccount = "@polkadot-ui/react|".concat(
+  location.href,
+  "|account"
 )
 
 export const getExtensionsStore = () => {
@@ -27,6 +33,7 @@ export const getExtensionsStore = () => {
           connectInjectedExtension(name).then(
             (extension) => {
               connectedExtensions.set(name, extension)
+
               update()
             },
             () => {}
@@ -34,15 +41,14 @@ export const getExtensionsStore = () => {
         )
       })
 
-    const doAllSequentually = async (promiseArr) => {
+    const doAllSequentually = async (promiseArr: string | Any[]) => {
       for (let i = 0; i < promiseArr?.length; i++) {
-        const val = await promiseArr[i]()
-        console.log(val)
+        typeof promiseArr[i] === "function" && (await promiseArr[i]())
         return
       }
     }
 
-    doAllSequentually(promises).then(() => console.log("finished"))
+    doAllSequentually(promises)
   }
 
   const getSnapshot = () => connectedExtensions
