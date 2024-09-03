@@ -7,6 +7,8 @@ import {
   SelectedAccountType,
   ConnectConfiguration,
   Connect,
+  useStoredAccount,
+  localStorageKeyAccount,
 } from "@packages/ui-react/lib/components"
 
 import { useState } from "react"
@@ -31,6 +33,10 @@ export const Components = () => {
   const address3 = "Ez9kY44SEGDVceyDzRkhd5hpmkqL489sbeyCHKGr3UcfCwM"
   const address4 = "5EFJZfqfmDZktdFfKUJa3kCrJZrzXUP1tkyN5RNtQ1uqZwtY"
   const invalid_address = "111111111111111111111111111111111111111111111111"
+
+  const account = useStoredAccount(localStorageKeyAccount, "")
+
+  console.log("ACCOUNT", account)
 
   // Account card options
   const iconProps: IconProps = {

@@ -5,6 +5,7 @@ export {
   useSelectedAccount,
   useSelectedExtensions,
   useAvailableExtensions,
+  useStoredAccount,
 } from "./hooks"
 export type {
   ConnectConfiguration,
@@ -12,3 +13,5 @@ export type {
   CommonConfigType,
   SelectedAccountType,
 } from "./types"
+
+export { localStorageKeyAccount } from "./utils"

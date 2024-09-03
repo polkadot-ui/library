@@ -59,7 +59,7 @@ export const useExtensionStorage = (key: string, defaultValue: string) => {
   return [value, setValue]
 }
 
-export const useAccountStorage = (key: string, defaultValue: string) => {
+export const useStoredAccount = (key: string, defaultValue: string) => {
   const [value, setValue] = useState(() => {
     const getStorageValue = (key: string, defaultValue: string) => {
       const saved = localStorage.getItem(key)
