@@ -191,10 +191,6 @@ export const AccountProvider: React.FC<
   }>
 > = ({ children, selected, setSelected, config }) => {
   const extensions = useSelectedExtensions()
-  const [, setAccountLocalStorage] = useAccountStorage(
-    localStorageKeyAccount,
-    ""
-  )
 
   return (
     <>
@@ -206,21 +202,6 @@ export const AccountProvider: React.FC<
         }}
       >
         <h4>Accounts</h4>
-        {selected?.address ? (
-          <button
-            style={{
-              cursor: "pointer",
-              color: "firebrick",
-              fontWeight: "bold",
-            }}
-            onClick={() => {
-              setSelected(null)
-              setAccountLocalStorage(null)
-            }}
-          >
-            Disconnect
-          </button>
-        ) : null}
       </div>
       {extensions.map((extension) => (
         <Accounts
