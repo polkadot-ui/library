@@ -63,7 +63,7 @@ export const useAccountStorage = (key: string, defaultValue: string) => {
   const [value, setValue] = useState(() => {
     const getStorageValue = (key: string, defaultValue: string) => {
       const saved = localStorage.getItem(key)
-      const initial = JSON.parse(saved)
+      const initial = saved ? JSON.parse(saved) : ""
       return initial || defaultValue
     }
 

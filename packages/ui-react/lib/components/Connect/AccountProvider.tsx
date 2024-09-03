@@ -1,5 +1,11 @@
+import { Any } from "../../utils"
 import type { Dispatch, PropsWithChildren, SetStateAction } from "react"
-import React, { useEffect, useSyncExternalStore } from "react"
+import React, {
+  useEffect,
+  useMemo,
+  useState,
+  useSyncExternalStore,
+} from "react"
 import type {
   InjectedExtension,
   InjectedPolkadotAccount,
@@ -8,7 +14,11 @@ import { useAccountStorage, useSelectedExtensions } from "./hooks"
 import { SignerCtx } from "./signerCtx"
 
 import { getExtensionIcon } from "@polkadot-ui/assets/extensions"
-import type { CommonConfigType, SelectedAccountType } from "./types"
+import type {
+  CommonConfigType,
+  ConnectConfiguration,
+  SelectedAccountType,
+} from "./types"
 import { localStorageKeyAccount } from "./utils"
 
 const Accounts: React.FC<{
@@ -21,12 +31,6 @@ const Accounts: React.FC<{
     extension.subscribe,
     extension.getAccounts
   )
-  const borderDesc = config?.border
-    ? config?.border?.size.concat(
-        ` ${config?.border?.type}`,
-        ` ${config?.border?.color}`
-      )
-    : "0.1rem solid #8A8A8A"
 
   const [accountLocalStorage, setAccountLocalStorage] = useAccountStorage(
     localStorageKeyAccount,
@@ -53,56 +57,129 @@ const Accounts: React.FC<{
   return (
     <div style={{ display: "flex", flexDirection: "column" }}>
       {accounts.map((account: InjectedPolkadotAccount) => {
-        const ExtensionIcon = getExtensionIcon(extension.name)
         return (
-          <button
-            onClick={() => {
-              setAccountLocalStorage(account.address)
-              setSelectedAccount({
-                address: account.address,
-                name: account.name,
-                extension: extension.name,
-                polkadotSigner: account.polkadotSigner,
-                type: account.type,
-              })
-            }}
-            key={account.address}
-            style={{
-              display: "flex",
-              padding: "1rem 0",
-              flexDirection: "row",
-              alignItems: "center",
-              width: "100%",
-              height: "4rem",
-              border: borderDesc,
-              borderRadius: "0.5rem",
-              margin: "0.5rem 0",
-              background:
-                account.address === selectedAccount?.address
-                  ? config?.selectedBgColor || "#CACACA"
-                  : config?.bgColor || "",
-            }}
-          >
-            {ExtensionIcon && (
-              <div style={{ width: "5rem", height: "3rem" }}>
-                <ExtensionIcon />
-              </div>
-            )}
-            <div style={{ display: "flex", width: "40%" }}>
-              {account.name ?? account.address}
-            </div>
-            {/* {account.name && (
-        <div style={{ display: "flex", width: "30%" }}>
-          {ellipsisFn(account.address)}
-        </div>
-      )} 
-      <div style={{ display: "flex", width: "15%", color: "#6A6A6A" }}>
-        {equalizer ? "Selected" : ""}
-      </div>*/}
-          </button>
+          <Account
+            extensionName={extension.name}
+            setAccountLocalStorage={setAccountLocalStorage}
+            setSelectedAccount={setSelectedAccount}
+            selectedAccount={selectedAccount}
+            account={account}
+            config={config}
+          />
         )
       })}
     </div>
+  )
+}
+
+const Account: React.FC<{
+  extensionName: string
+  setAccountLocalStorage: Any
+  selectedAccount: SelectedAccountType
+  setSelectedAccount: React.Dispatch<React.SetStateAction<SelectedAccountType>>
+  account: InjectedPolkadotAccount
+  config: ConnectConfiguration
+}> = ({
+  extensionName,
+  setAccountLocalStorage,
+  selectedAccount,
+  setSelectedAccount,
+  account,
+  config,
+}) => {
+  const borderDesc = config?.border
+    ? config?.border?.size.concat(
+        ` ${config?.border?.type}`,
+        ` ${config?.border?.color}`
+      )
+    : ""
+
+  const ExtensionIcon = getExtensionIcon(extensionName)
+  const compareAddress = useMemo(
+    () => account.address === selectedAccount?.address,
+    [account.address, selectedAccount?.address]
+  )
+  const [hovered, setHovered] = useState<boolean>(false)
+  const [bg, setBg] = useState<string>(
+    compareAddress ? config?.bg?.selected || "#CACACA" : config?.bg?.color || ""
+  )
+
+  useEffect(() => {
+    if (hovered) {
+      setBg(config?.hover?.bg || "#ECECEC")
+    } else {
+      setBg(
+        compareAddress
+          ? config?.bg?.selected || "#CACACA"
+          : config?.bg?.color || ""
+      )
+    }
+  }, [
+    compareAddress,
+    config?.bg?.color,
+    config?.bg?.selected,
+    config?.hover?.bg,
+    hovered,
+  ])
+
+  return (
+    <button
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+      onClick={() => {
+        if (compareAddress) {
+          setAccountLocalStorage(null)
+          setSelectedAccount(null)
+        } else {
+          setAccountLocalStorage(account.address)
+          setSelectedAccount({
+            address: account.address,
+            name: account.name,
+            extension: extensionName,
+            polkadotSigner: account.polkadotSigner,
+            type: account.type,
+          })
+        }
+      }}
+      key={account.address}
+      style={{
+        justifyContent: compareAddress ? "space-between" : "initial",
+        display: "flex",
+        padding: "1rem 0",
+        flexDirection: "row",
+        alignItems: "center",
+        width: "100%",
+        border: borderDesc,
+        borderRadius: "0.5rem",
+        margin: "0.5rem 0",
+        background: bg,
+      }}
+    >
+      <div style={{ display: "flex", alignItems: "center" }}>
+        {ExtensionIcon && (
+          <div
+            style={{
+              width: `${config?.icon?.width || 5}rem`,
+              height: `${config?.icon?.height || 2}rem`,
+            }}
+          >
+            <ExtensionIcon />
+          </div>
+        )}
+        <div
+          style={{
+            position: "relative",
+          }}
+        >
+          {account.name ?? account.address}
+        </div>
+      </div>
+      {account.address === selectedAccount?.address ? (
+        <div style={{ paddingRight: "3rem" }}>
+          {config?.disconnectIcon || "Disconnect"}
+        </div>
+      ) : null}
+    </button>
   )
 }
 

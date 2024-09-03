@@ -9,12 +9,12 @@ import { Any } from "../../utils"
 const { location } = window
 
 export const localStorageKeyExtensions = "@polkadot-ui/react|".concat(
-  location.href,
+  location.hostname,
   "|extensions"
 )
 
 export const localStorageKeyAccount = "@polkadot-ui/react|".concat(
-  location.href,
+  location.hostname,
   "|account"
 )
 
