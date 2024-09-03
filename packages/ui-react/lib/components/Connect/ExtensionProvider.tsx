@@ -55,7 +55,7 @@ export const ExtensionProvider: FC<
   const [nonInstalledXts, setNonInstalledXts] = useState<NameUrlType[]>([])
   const availXts = useAvailableExtensions()
 
-  const selXts = useSyncExternalStore(
+  const selectedExtensions = useSyncExternalStore(
     extensionsStore.subscribe,
     extensionsStore.getSnapshot
   )
@@ -79,14 +79,14 @@ export const ExtensionProvider: FC<
           gap: "1rem",
         }}
       >
-        {availXts.map((xtName) => {
+        {availXts.map((name: string) => {
           return (
             <ExtButton
-              name={xtName}
+              name={name}
               config={config}
               setSelected={setSelected}
               setExtensionLocalStorage={setExtensionLocalStorage}
-              selXts={selXts}
+              extensions={selectedExtensions}
             />
           )
         })}
@@ -100,14 +100,14 @@ export const ExtensionProvider: FC<
               config={config}
               setSelected={setSelected}
               setExtensionLocalStorage={setExtensionLocalStorage}
-              selXts={selXts}
+              extensions={selectedExtensions}
               url={url}
             />
           )
         })}
       </div>
-      <Provider value={[...selXts.values()]}>
-        {selXts.size ? children : null}
+      <Provider value={[...selectedExtensions.values()]}>
+        {selectedExtensions.size ? children : null}
       </Provider>
     </div>
   )
@@ -119,26 +119,67 @@ const ExtButton: React.FC<
     config: ConnectConfiguration
     setSelected: Dispatch<SetStateAction<SelectedAccountType>>
     setExtensionLocalStorage: Any
-    selXts: Any
+    extensions: Any
     url?: string
   }
-> = ({ name, config, setSelected, setExtensionLocalStorage, selXts, url }) => {
+> = ({
+  name,
+  config,
+  setSelected,
+  setExtensionLocalStorage,
+  extensions,
+  url,
+}) => {
   const borderDesc = config?.border
     ? config?.border?.size.concat(
         ` ${config?.border?.type}`,
         ` ${config?.border?.color}`
       )
-    : "0.1rem solid #8A8A8A"
+    : ""
 
-  const background = selXts.has(name)
-    ? config?.bg?.selected || "#CACACA"
-    : config?.bg?.color || ""
+  const [accounts, setAccounts] = useState<number>(0)
+
+  const [hovered, setHovered] = useState<boolean>(false)
+  const [bg, setBg] = useState<string>(
+    extensions.has(name)
+      ? config?.bg?.selected || "#CACACA"
+      : config?.bg?.color || ""
+  )
+
+  useEffect(() => {
+    if (hovered) {
+      setBg(config?.hover?.bg || "#ECECEC")
+    } else {
+      setBg(
+        extensions.has(name)
+          ? config?.bg?.selected || "#CACACA"
+          : config?.bg?.color || ""
+      )
+    }
+  }, [
+    config?.bg?.color,
+    config?.bg?.selected,
+    config?.hover?.bg,
+    extensions,
+    hovered,
+    name,
+  ])
+
+  useEffect(() => {
+    if (extensions.has(name)) {
+      setAccounts(extensions.get(name).getAccounts().length)
+    } else {
+      setAccounts(0)
+    }
+  }, [extensions, name])
 
   const ExtensionIcon = getExtensionIcon(name)
 
   return (
     <div key={name} style={{ width: "100%" }}>
       <button
+        onMouseEnter={() => setHovered(true)}
+        onMouseLeave={() => setHovered(false)}
         style={{
           justifyContent: url ? "space-between" : "initial",
           display: "flex",
@@ -148,7 +189,7 @@ const ExtButton: React.FC<
           width: "100%",
           border: borderDesc,
           borderRadius: "0.5rem",
-          background: background,
+          background: bg,
         }}
         onClick={() => {
           if (url) {
@@ -176,7 +217,10 @@ const ExtButton: React.FC<
           >
             {name === "subwallet-js"
               ? "Subwallet"
-              : name.charAt(0).toUpperCase() + name.slice(1)}
+              : name.charAt(0).toUpperCase() + name.slice(1)}{" "}
+            {accounts
+              ? `| ${accounts} account${accounts > 1 ? "s" : ""}`
+              : null}
           </div>
         </div>
         {url ? (

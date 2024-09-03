@@ -15,6 +15,7 @@ export type ConnectConfiguration = ConfigType & CommonConfigType
 export type ConfigType = {
   notInstalled?: Any
   downloadIcon?: Any
+  disconnectIcon?: Any
 }
 
 export type CommonConfigType = {
@@ -23,6 +24,7 @@ export type CommonConfigType = {
     selected?: string
   }
   hover?: {
+    bg?: string
     color?: string
   }
   icon?: {
