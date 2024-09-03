@@ -181,7 +181,7 @@ const ExtButton: React.FC<
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
         style={{
-          justifyContent: url ? "space-between" : "initial",
+          justifyContent: "space-between",
           display: "flex",
           padding: "1rem 0",
           flexDirection: "row",
@@ -218,16 +218,20 @@ const ExtButton: React.FC<
             {name === "subwallet-js"
               ? "Subwallet"
               : name.charAt(0).toUpperCase() + name.slice(1)}{" "}
-            {accounts
-              ? `| ${accounts} account${accounts > 1 ? "s" : ""}`
-              : null}
+            <span style={{ color: config?.accountColor || "green" }}>
+              {accounts
+                ? `| ${accounts} account${accounts > 1 ? "s" : ""}`
+                : null}
+            </span>
           </div>
         </div>
-        {url ? (
-          <div style={{ paddingRight: "3rem" }}>
-            {config?.downloadIcon || "Download"}
-          </div>
-        ) : null}
+        <div style={{ paddingRight: "3rem" }}>
+          {url
+            ? config?.downloadIcon || "Download"
+            : extensions.has(name)
+              ? config?.disconnectIcon || "Disconnect"
+              : ""}
+        </div>
       </button>
     </div>
   )

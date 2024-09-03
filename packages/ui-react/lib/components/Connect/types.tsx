@@ -16,6 +16,7 @@ export type ConfigType = {
   notInstalled?: Any
   downloadIcon?: Any
   disconnectIcon?: Any
+  accountColor?: string
 }
 
 export type CommonConfigType = {

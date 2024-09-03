@@ -3,11 +3,10 @@ import {
   Polkicon,
   Chart,
   AccountCard,
-  AccountProvider,
-  ExtensionProvider,
   IconProps,
   SelectedAccountType,
   ConnectConfiguration,
+  Connect,
 } from "@packages/ui-react/lib/components"
 
 import { useState } from "react"
@@ -127,16 +126,11 @@ export const Components = () => {
       <p>A "recipe" allowing easily integration with wallet extensions.</p>
       <div style={{ width: "100%" }}>
         <div>
-          <ExtensionProvider
+          <Connect
+            selected={selectedAccount}
             setSelected={setSelectedAccount}
             config={connectConfig}
-          >
-            <AccountProvider
-              config={connectConfig}
-              selected={selectedAccount}
-              setSelected={setSelectedAccount}
-            />
-          </ExtensionProvider>
+          />
         </div>
       </div>
       {selectedAccount && (
