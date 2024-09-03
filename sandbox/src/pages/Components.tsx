@@ -7,6 +7,7 @@ import {
   ExtensionProvider,
   IconProps,
   SelectedAccountType,
+  ConnectConfiguration,
 } from "@packages/ui-react/lib/components"
 
 import { useState } from "react"
@@ -48,6 +49,13 @@ export const Components = () => {
     { value: 300, color: "blue" },
     { value: 150, color: "purple" },
   ]
+
+  const connectConfig: ConnectConfiguration = {
+    icon: {
+      width: 4,
+      height: 2,
+    },
+  }
 
   return (
     <div className="page">
@@ -119,8 +127,12 @@ export const Components = () => {
       <p>A "recipe" allowing easily integration with wallet extensions.</p>
       <div style={{ width: "100%" }}>
         <div>
-          <ExtensionProvider setSelected={setSelectedAccount}>
+          <ExtensionProvider
+            setSelected={setSelectedAccount}
+            config={connectConfig}
+          >
             <AccountProvider
+              config={connectConfig}
               selected={selectedAccount}
               setSelected={setSelectedAccount}
             />

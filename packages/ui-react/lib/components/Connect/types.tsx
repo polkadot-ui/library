@@ -18,8 +18,17 @@ export type ConfigType = {
 }
 
 export type CommonConfigType = {
-  bgColor?: string
-  selectedBgColor?: string
+  bg?: {
+    color?: string
+    selected?: string
+  }
+  hover?: {
+    color?: string
+  }
+  icon?: {
+    width: number
+    height: number
+  }
   border?: {
     size: string
     type:

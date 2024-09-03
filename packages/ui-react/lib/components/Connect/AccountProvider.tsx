@@ -73,18 +73,22 @@ const Accounts: React.FC<{
               flexDirection: "row",
               alignItems: "center",
               width: "100%",
-              height: "4rem",
               border: borderDesc,
               borderRadius: "0.5rem",
               margin: "0.5rem 0",
               background:
                 account.address === selectedAccount?.address
-                  ? config?.selectedBgColor || "#CACACA"
-                  : config?.bgColor || "",
+                  ? config?.bg?.selected || "#CACACA"
+                  : config?.bg?.color || "",
             }}
           >
             {ExtensionIcon && (
-              <div style={{ width: "5rem", height: "3rem" }}>
+              <div
+                style={{
+                  width: `${config?.icon?.width || 5}rem`,
+                  height: `${config?.icon?.height || 2}rem`,
+                }}
+              >
                 <ExtensionIcon />
               </div>
             )}
