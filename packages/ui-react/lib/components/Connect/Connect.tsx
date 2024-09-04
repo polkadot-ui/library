@@ -1,6 +1,6 @@
 import { Dispatch, SetStateAction } from "react"
-import { AccountProvider } from "./AccountProvider"
-import { ExtensionProvider } from "./ExtensionProvider"
+import { Accounts } from "./Accounts"
+import { Extensions } from "./Extensions"
 import { SelectedAccountType, ConnectConfiguration } from "./types"
 
 export const Connect: React.FC<{
@@ -9,12 +9,8 @@ export const Connect: React.FC<{
   config?: ConnectConfiguration
 }> = ({ setSelected, selected, config }) => {
   return (
-    <ExtensionProvider setSelected={setSelected} config={config}>
-      <AccountProvider
-        selected={selected}
-        setSelected={setSelected}
-        config={config}
-      />
-    </ExtensionProvider>
+    <Extensions setSelected={setSelected} config={config}>
+      <Accounts selected={selected} setSelected={setSelected} config={config} />
+    </Extensions>
   )
 }

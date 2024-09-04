@@ -41,7 +41,7 @@ const allExtensions: NameUrlType[] = [
 const extensionsStore = getExtensionsStore()
 extensionsStore.subscribe(Function.prototype as Any)
 
-export const ExtensionProvider: FC<
+export const Extensions: FC<
   PropsWithChildren<{
     setSelected: Dispatch<SetStateAction<SelectedAccountType>>
     config?: ConnectConfiguration

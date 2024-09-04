@@ -1,5 +1,5 @@
-export { AccountProvider } from "./AccountProvider"
-export { ExtensionProvider } from "./ExtensionProvider"
+export { Accounts } from "./Accounts"
+export { Extensions } from "./Extensions"
 export { Connect } from "./Connect"
 export {
   useSelectedAccount,

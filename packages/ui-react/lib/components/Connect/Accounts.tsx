@@ -21,7 +21,7 @@ import type {
 } from "./types"
 import { localStorageKeyAccount } from "./utils"
 
-const Accounts: React.FC<{
+const AccountsList: React.FC<{
   extension: InjectedExtension
   setSelectedAccount: React.Dispatch<React.SetStateAction<SelectedAccountType>>
   selectedAccount: SelectedAccountType
@@ -183,7 +183,7 @@ const Account: React.FC<{
   )
 }
 
-export const AccountProvider: React.FC<
+export const Accounts: React.FC<
   PropsWithChildren<{
     selected: SelectedAccountType
     setSelected: Dispatch<SetStateAction<SelectedAccountType>>
@@ -204,7 +204,7 @@ export const AccountProvider: React.FC<
         <h4>Accounts</h4>
       </div>
       {extensions.map((extension) => (
-        <Accounts
+        <AccountsList
           config={config}
           key={extension.name}
           {...{ extension }}
