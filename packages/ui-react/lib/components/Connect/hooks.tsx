@@ -110,7 +110,9 @@ export const useConnect = (extensionLocalStorage: string) => {
   useEffect(() => {
     const acc: InjectedPolkadotAccount[] = []
     for (const [, value] of connectExtensions) {
-      acc.push(...value.getAccounts())
+      value.subscribe(() => {
+        acc.push(...value.getAccounts())
+      })
     }
     setConnectAccounts(acc)
   }, [connectExtensions])
