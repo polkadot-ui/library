@@ -56,9 +56,10 @@ const AccountsList: React.FC<{
 
   return (
     <div style={{ display: "flex", flexDirection: "column" }}>
-      {accounts.map((account: InjectedPolkadotAccount) => {
+      {accounts.map((account: InjectedPolkadotAccount, i: number) => {
         return (
           <Account
+            key={extension.name + i}
             extensionName={extension.name}
             setAccountLocalStorage={setAccountLocalStorage}
             setSelectedAccount={setSelectedAccount}
@@ -141,7 +142,7 @@ const Account: React.FC<{
           })
         }
       }}
-      key={account.address}
+      key={account.address + "|" + account.name}
       style={{
         justifyContent: compareAddress ? "space-between" : "initial",
         display: "flex",
@@ -183,7 +184,7 @@ const Account: React.FC<{
   )
 }
 
-export const Accounts: React.FC<
+export const ConnectAccounts: React.FC<
   PropsWithChildren<{
     selected: SelectedAccountType
     setSelected: Dispatch<SetStateAction<SelectedAccountType>>

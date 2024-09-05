@@ -1,7 +1,10 @@
 import { useContext, useEffect, useMemo, useState } from "react"
 import { SelectedAccountCtx } from "./accountCtx"
 import { extensionCtx } from "./extensionCtx"
-import { getInjectedExtensions } from "polkadot-api/pjs-signer"
+import {
+  InjectedPolkadotAccount,
+  getInjectedExtensions,
+} from "polkadot-api/pjs-signer"
 import { Any } from "../../utils"
 
 const getJoinedInjectedExtensions = () => getInjectedExtensions()?.join(",")
@@ -57,6 +60,14 @@ export const useExtensionStorage = (key: string, defaultValue: string) => {
   }, [key, value])
 
   return [value, setValue]
+}
+
+export const useExtensionAccounts = () => {
+  const [extensionAccounts, setExtensionAccounts] = useState<
+    InjectedPolkadotAccount[]
+  >([])
+
+  return [extensionAccounts, setExtensionAccounts]
 }
 
 export const useStoredAccount = (key: string, defaultValue: string) => {

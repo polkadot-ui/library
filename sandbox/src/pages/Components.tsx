@@ -7,9 +7,13 @@ import {
   SelectedAccountType,
   ConnectConfiguration,
   Connect,
+  ConnectExtensions,
+  ConnectAccountsProvider,
+  ConnectAccounts,
   useStoredAccount,
   localStorageKeyAccount,
 } from "@packages/ui-react/lib/components"
+import { Any } from "@packages/ui-react/lib/utils"
 
 import { useState } from "react"
 
@@ -35,8 +39,10 @@ export const Components = () => {
   const invalid_address = "111111111111111111111111111111111111111111111111"
 
   const account = useStoredAccount(localStorageKeyAccount, "")
-
   console.log("ACCOUNT", account)
+
+  const [selectedExtensions, setSelectedExtensions] =
+    useState<Map<string, Any>>()
 
   // Account card options
   const iconProps: IconProps = {
@@ -130,7 +136,52 @@ export const Components = () => {
 
       <h2>Connect "Recipe"</h2>
       <p>A "recipe" allowing easily integration with wallet extensions.</p>
+
       <div style={{ width: "100%" }}>
+        <h1 style={{ margin: "5rem 0" }}>Only extensions</h1>
+        <div style={{ border: "1px solid #ccc", padding: "1rem" }}>
+          <Connect
+            type="extensions"
+            setSelected={setSelectedAccount}
+            config={connectConfig}
+            onSelectExtensions={(ext) => {
+              for (const [key, value] of ext) {
+                console.log("Extension", key, "accounts", value.getAccounts())
+              }
+            }}
+          />
+        </div>
+      </div>
+      <div
+        style={{
+          width: "100%",
+          paddingTop: "10rem",
+          display: "flex",
+          justifyContent: "space-between",
+        }}
+      >
+        <div style={{ width: "45%" }}>
+          <ConnectExtensions
+            setSelected={setSelectedAccount}
+            config={connectConfig}
+            onSelectExtensions={(ext) => {
+              setSelectedExtensions(ext)
+            }}
+          />
+        </div>
+        <div style={{ width: "45%" }}>
+          {selectedExtensions && (
+            <ConnectAccountsProvider value={[...selectedExtensions.values()]}>
+              <ConnectAccounts
+                selected={selectedAccount}
+                setSelected={setSelectedAccount}
+                config={connectConfig}
+              ></ConnectAccounts>
+            </ConnectAccountsProvider>
+          )}
+        </div>
+      </div>
+      <div style={{ width: "100%", paddingTop: "10rem" }}>
         <div>
           <Connect
             selected={selectedAccount}
