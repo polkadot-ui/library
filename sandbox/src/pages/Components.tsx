@@ -12,7 +12,10 @@ import {
   ConnectAccounts,
   useStoredAccount,
   localStorageKeyAccount,
+  localStorageKeyExtensions,
+  useConnect,
 } from "@packages/ui-react/lib/components"
+import { useExtensionStorage } from "@packages/ui-react/lib/components/Connect/hooks"
 import { Any } from "@packages/ui-react/lib/utils"
 
 import { useState } from "react"
@@ -40,6 +43,16 @@ export const Components = () => {
 
   const account = useStoredAccount(localStorageKeyAccount, "")
   console.log("ACCOUNT", account)
+
+  const [extensionLocalStorage] = useExtensionStorage(
+    localStorageKeyExtensions,
+    ""
+  )
+  const { connectExtensions, connectAccounts } = useConnect(
+    extensionLocalStorage
+  )
+
+  console.log("!!!", connectExtensions, connectAccounts)
 
   const [selectedExtensions, setSelectedExtensions] =
     useState<Map<string, Any>>()

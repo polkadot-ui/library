@@ -1,4 +1,10 @@
-import { useContext, useEffect, useMemo, useState } from "react"
+import {
+  useContext,
+  useEffect,
+  useMemo,
+  useState,
+  useSyncExternalStore,
+} from "react"
 import { SelectedAccountCtx } from "./accountCtx"
 import { extensionCtx } from "./extensionCtx"
 import {
@@ -6,6 +12,7 @@ import {
   getInjectedExtensions,
 } from "polkadot-api/pjs-signer"
 import { Any } from "../../utils"
+import { getExtensionsStore } from "./utils"
 
 const getJoinedInjectedExtensions = () => getInjectedExtensions()?.join(",")
 
@@ -86,4 +93,31 @@ export const useStoredAccount = (key: string, defaultValue: string) => {
   }, [key, value])
 
   return [value, setValue]
+}
+
+const extensionsStore = getExtensionsStore()
+
+export const useConnect = (extensionLocalStorage: string) => {
+  const [connectAccounts, setConnectAccounts] = useState<
+    InjectedPolkadotAccount[]
+  >([])
+
+  const connectExtensions = useSyncExternalStore(
+    extensionsStore.subscribe,
+    extensionsStore.getSnapshot
+  )
+
+  useEffect(() => {
+    const acc: InjectedPolkadotAccount[] = []
+    for (const [, value] of connectExtensions) {
+      acc.push(...value.getAccounts())
+    }
+    setConnectAccounts(acc)
+  }, [connectExtensions])
+
+  useEffect(() => {
+    extensionsStore.revive(extensionLocalStorage)
+  }, [extensionLocalStorage])
+
+  return { connectExtensions, connectAccounts }
 }

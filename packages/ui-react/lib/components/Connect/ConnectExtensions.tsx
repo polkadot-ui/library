@@ -89,12 +89,12 @@ export const ConnectExtensions: FC<
 
   getConnectedAccounts && getConnectedAccounts(extensionAccounts)
 
-  // Receive the accounts
-  onSelectExtensions && onSelectExtensions(selectedExtensions)
-
   useEffect(() => {
     extensionsStore.revive(extensionLocalStorage)
   }, [extensionLocalStorage])
+
+  // Receive the accounts
+  onSelectExtensions && onSelectExtensions(selectedExtensions)
 
   useEffect(() => {
     setNonInstalledXts(
