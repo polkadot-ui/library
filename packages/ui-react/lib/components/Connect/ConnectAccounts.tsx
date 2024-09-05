@@ -21,7 +21,7 @@ import type {
 } from "./types"
 import { localStorageKeyAccount } from "./utils"
 
-const Accounts: React.FC<{
+const AccountsList: React.FC<{
   extension: InjectedExtension
   setSelectedAccount: React.Dispatch<React.SetStateAction<SelectedAccountType>>
   selectedAccount: SelectedAccountType
@@ -56,9 +56,10 @@ const Accounts: React.FC<{
 
   return (
     <div style={{ display: "flex", flexDirection: "column" }}>
-      {accounts.map((account: InjectedPolkadotAccount) => {
+      {accounts.map((account: InjectedPolkadotAccount, i: number) => {
         return (
           <Account
+            key={extension.name + i}
             extensionName={extension.name}
             setAccountLocalStorage={setAccountLocalStorage}
             setSelectedAccount={setSelectedAccount}
@@ -141,7 +142,7 @@ const Account: React.FC<{
           })
         }
       }}
-      key={account.address}
+      key={account.address + "|" + account.name}
       style={{
         justifyContent: compareAddress ? "space-between" : "initial",
         display: "flex",
@@ -183,7 +184,7 @@ const Account: React.FC<{
   )
 }
 
-export const AccountProvider: React.FC<
+export const ConnectAccounts: React.FC<
   PropsWithChildren<{
     selected: SelectedAccountType
     setSelected: Dispatch<SetStateAction<SelectedAccountType>>
@@ -204,7 +205,7 @@ export const AccountProvider: React.FC<
         <h4>Accounts</h4>
       </div>
       {extensions.map((extension) => (
-        <Accounts
+        <AccountsList
           config={config}
           key={extension.name}
           {...{ extension }}

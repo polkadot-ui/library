@@ -11,6 +11,10 @@ import type {
 } from "./types"
 import { Any } from "../../utils"
 import { getExtensionsStore, localStorageKeyExtensions } from "./utils"
+import {
+  InjectedExtension,
+  InjectedPolkadotAccount,
+} from "polkadot-api/pjs-signer"
 
 const { Provider } = extensionCtx
 
@@ -41,12 +45,20 @@ const allExtensions: NameUrlType[] = [
 const extensionsStore = getExtensionsStore()
 extensionsStore.subscribe(Function.prototype as Any)
 
-export const ExtensionProvider: FC<
+export const ConnectExtensions: FC<
   PropsWithChildren<{
     setSelected: Dispatch<SetStateAction<SelectedAccountType>>
     config?: ConnectConfiguration
+    onSelectExtensions?: (ext: Map<string, InjectedExtension>) => void
+    getConnectedAccounts?: (acc: InjectedPolkadotAccount[]) => void
   }>
-> = ({ children, setSelected, config }) => {
+> = ({
+  children,
+  setSelected,
+  config,
+  onSelectExtensions,
+  getConnectedAccounts,
+}) => {
   const [extensionLocalStorage, setExtensionLocalStorage] = useExtensionStorage(
     localStorageKeyExtensions,
     ""
@@ -59,6 +71,26 @@ export const ExtensionProvider: FC<
     extensionsStore.subscribe,
     extensionsStore.getSnapshot
   )
+
+  // This is for returning aggregated accounts of all selected extensions' accounts in one array
+  // Can be calculated with the `onSelectExtensions` by the user. Its good to have but
+  // maybe a bit unnecessary
+  const [extensionAccounts, setExtensionAccounts] = useState<
+    InjectedPolkadotAccount[]
+  >([])
+
+  useEffect(() => {
+    const acc: InjectedPolkadotAccount[] = []
+    for (const [, value] of selectedExtensions) {
+      acc.push(...value.getAccounts())
+    }
+    setExtensionAccounts(acc)
+  }, [selectedExtensions])
+
+  getConnectedAccounts && getConnectedAccounts(extensionAccounts)
+
+  // Receive the accounts
+  onSelectExtensions && onSelectExtensions(selectedExtensions)
 
   useEffect(() => {
     extensionsStore.revive(extensionLocalStorage)
@@ -106,9 +138,11 @@ export const ExtensionProvider: FC<
           )
         })}
       </div>
-      <Provider value={[...selectedExtensions.values()]}>
-        {selectedExtensions.size ? children : null}
-      </Provider>
+      {children && (
+        <Provider value={[...selectedExtensions.values()]}>
+          {selectedExtensions.size ? children : null}
+        </Provider>
+      )}
     </div>
   )
 }

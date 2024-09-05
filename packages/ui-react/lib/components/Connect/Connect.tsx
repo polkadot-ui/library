@@ -1,20 +1,49 @@
 import { Dispatch, SetStateAction } from "react"
-import { AccountProvider } from "./AccountProvider"
-import { ExtensionProvider } from "./ExtensionProvider"
+import { ConnectAccounts } from "./ConnectAccounts"
+import { ConnectExtensions } from "./ConnectExtensions"
 import { SelectedAccountType, ConnectConfiguration } from "./types"
+import {
+  InjectedExtension,
+  InjectedPolkadotAccount,
+} from "polkadot-api/pjs-signer"
 
 export const Connect: React.FC<{
-  selected: SelectedAccountType
+  selected?: SelectedAccountType
   setSelected: Dispatch<SetStateAction<SelectedAccountType>>
   config?: ConnectConfiguration
-}> = ({ setSelected, selected, config }) => {
-  return (
-    <ExtensionProvider setSelected={setSelected} config={config}>
-      <AccountProvider
-        selected={selected}
-        setSelected={setSelected}
-        config={config}
-      />
-    </ExtensionProvider>
-  )
+  type?: "onepage" | "extensions"
+  onSelectExtensions?: (ext: Map<string, InjectedExtension>) => void
+  getConnectedAccounts?: (acc: InjectedPolkadotAccount[]) => void
+}> = ({
+  setSelected,
+  selected,
+  config,
+  type = "onepage",
+  onSelectExtensions,
+  getConnectedAccounts,
+}) => {
+  switch (type) {
+    case "extensions": {
+      return (
+        <ConnectExtensions
+          setSelected={setSelected}
+          config={config}
+          onSelectExtensions={onSelectExtensions}
+          getConnectedAccounts={getConnectedAccounts}
+        />
+      )
+    }
+    default:
+    case "onepage": {
+      return (
+        <ConnectExtensions setSelected={setSelected} config={config}>
+          <ConnectAccounts
+            selected={selected}
+            setSelected={setSelected}
+            config={config}
+          />
+        </ConnectExtensions>
+      )
+    }
+  }
 }
