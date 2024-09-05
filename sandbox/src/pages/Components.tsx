@@ -156,33 +156,46 @@ export const Components = () => {
         style={{
           width: "100%",
           paddingTop: "10rem",
-          display: "flex",
-          justifyContent: "space-between",
         }}
       >
-        <div style={{ width: "45%" }}>
-          <ConnectExtensions
-            setSelected={setSelectedAccount}
-            config={connectConfig}
-            onSelectExtensions={(ext) => {
-              setSelectedExtensions(ext)
-            }}
-          />
-        </div>
-        <div style={{ width: "45%" }}>
-          {selectedExtensions && (
-            <ConnectAccountsProvider value={[...selectedExtensions.values()]}>
-              <ConnectAccounts
-                selected={selectedAccount}
-                setSelected={setSelectedAccount}
-                config={connectConfig}
-              ></ConnectAccounts>
-            </ConnectAccountsProvider>
-          )}
+        <h1 style={{ margin: "5rem 0" }}>
+          Separate Extensions component from Accounts component
+        </h1>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+          }}
+        >
+          <div
+            style={{ width: "45%", border: "1px solid #ccc", padding: "1rem" }}
+          >
+            <ConnectExtensions
+              setSelected={setSelectedAccount}
+              config={connectConfig}
+              onSelectExtensions={(ext) => {
+                setSelectedExtensions(ext)
+              }}
+            />
+          </div>
+          <div
+            style={{ width: "45%", border: "1px solid #ccc", padding: "1rem" }}
+          >
+            {selectedExtensions && (
+              <ConnectAccountsProvider value={[...selectedExtensions.values()]}>
+                <ConnectAccounts
+                  selected={selectedAccount}
+                  setSelected={setSelectedAccount}
+                  config={connectConfig}
+                ></ConnectAccounts>
+              </ConnectAccountsProvider>
+            )}
+          </div>
         </div>
       </div>
       <div style={{ width: "100%", paddingTop: "10rem" }}>
-        <div>
+        <h1 style={{ margin: "5rem 0" }}>As 1 component</h1>
+        <div style={{ border: "1px solid #ccc", padding: "1rem" }}>
           <Connect
             selected={selectedAccount}
             setSelected={setSelectedAccount}
