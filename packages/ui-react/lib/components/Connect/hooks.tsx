@@ -12,7 +12,11 @@ import {
   getInjectedExtensions,
 } from "polkadot-api/pjs-signer"
 import { Any } from "../../utils"
-import { getExtensionsStore } from "./utils"
+import {
+  getExtensionsStore,
+  localStorageKeyAccount,
+  localStorageKeyExtensions,
+} from "./utils"
 
 const getJoinedInjectedExtensions = () => getInjectedExtensions()?.join(",")
 
@@ -97,29 +101,45 @@ export const useStoredAccount = (key: string, defaultValue: string) => {
 
 const extensionsStore = getExtensionsStore()
 
-export const useConnect = (extensionLocalStorage: string) => {
-  const [connectAccounts, setConnectAccounts] = useState<
+export const useConnect = () => {
+  const [extensionLocalStorage] = useExtensionStorage(
+    localStorageKeyExtensions,
+    ""
+  )
+
+  const [accountLocalStorage] = useExtensionStorage(localStorageKeyAccount, "")
+
+  const [connectedAccounts, setConnectedAccounts] = useState<
     InjectedPolkadotAccount[]
   >([])
 
-  const connectExtensions = useSyncExternalStore(
+  const [connectedAccount, setConnectedAccount] =
+    useState<InjectedPolkadotAccount>()
+  const connectedExtensions = useSyncExternalStore(
     extensionsStore.subscribe,
     extensionsStore.getSnapshot
   )
 
   useEffect(() => {
     const acc: InjectedPolkadotAccount[] = []
-    for (const [, value] of connectExtensions) {
-      value.subscribe(() => {
-        acc.push(...value.getAccounts())
-      })
+    for (const [, value] of connectedExtensions) {
+      acc.push(...value.getAccounts())
     }
-    setConnectAccounts(acc)
-  }, [connectExtensions])
+    setConnectedAccounts(acc)
+  }, [connectedExtensions])
+
+  useEffect(() => {
+    const account = connectedAccounts.filter(
+      (a) => a.address === accountLocalStorage
+    )
+    if (account.length) {
+      setConnectedAccount(account[0])
+    }
+  }, [accountLocalStorage, connectedAccounts])
 
   useEffect(() => {
     extensionsStore.revive(extensionLocalStorage)
   }, [extensionLocalStorage])
 
-  return { connectExtensions, connectAccounts }
+  return { connectedExtensions, connectedAccounts, connectedAccount }
 }
