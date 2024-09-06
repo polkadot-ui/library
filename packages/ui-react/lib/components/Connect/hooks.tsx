@@ -107,7 +107,10 @@ export const useConnect = () => {
     ""
   )
 
-  const [accountLocalStorage] = useExtensionStorage(localStorageKeyAccount, "")
+  const [accountLocalStorage, setAccountLocalStorage] = useExtensionStorage(
+    localStorageKeyAccount,
+    ""
+  )
 
   const [connectedAccounts, setConnectedAccounts] = useState<
     InjectedPolkadotAccount[]
@@ -134,8 +137,9 @@ export const useConnect = () => {
     )
     if (account.length) {
       setConnectedAccount(account[0])
+      setAccountLocalStorage(account[0])
     }
-  }, [accountLocalStorage, connectedAccounts])
+  }, [accountLocalStorage, connectedAccounts, setAccountLocalStorage])
 
   useEffect(() => {
     extensionsStore.revive(extensionLocalStorage)
