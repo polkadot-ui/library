@@ -2,14 +2,9 @@ import {
   SelectedAccountType,
   ConnectConfiguration,
   ConnectExtensions,
-  localStorageKeyExtensions,
-  localStorageKeyAccount,
   Polkicon,
 } from "@packages/ui-react/lib/components"
-import {
-  useConnect,
-  useExtensionStorage,
-} from "@packages/ui-react/lib/components/Connect/hooks"
+import { useConnect } from "@packages/ui-react/lib/components/Connect/hooks"
 import { Any } from "@packages/ui-react/lib/utils"
 
 import { useEffect, useState } from "react"
