@@ -10,12 +10,8 @@ import {
   ConnectExtensions,
   ConnectAccountsProvider,
   ConnectAccounts,
-  useStoredAccount,
-  localStorageKeyAccount,
-  localStorageKeyExtensions,
   useConnect,
 } from "@packages/ui-react/lib/components"
-import { useExtensionStorage } from "@packages/ui-react/lib/components/Connect/hooks"
 import { Any } from "@packages/ui-react/lib/utils"
 
 import { useState } from "react"
@@ -41,18 +37,12 @@ export const Components = () => {
   const address4 = "5EFJZfqfmDZktdFfKUJa3kCrJZrzXUP1tkyN5RNtQ1uqZwtY"
   const invalid_address = "111111111111111111111111111111111111111111111111"
 
-  const account = useStoredAccount(localStorageKeyAccount, "")
-  console.log("ACCOUNT", account)
+  const [isOpen, setIsOpen] = useState(false)
 
-  const [extensionLocalStorage] = useExtensionStorage(
-    localStorageKeyExtensions,
-    ""
-  )
-  const { connectExtensions, connectAccounts } = useConnect(
-    extensionLocalStorage
-  )
+  const { connectedExtensions, connectedAccounts, connectedAccount } =
+    useConnect()
 
-  console.log("!!!", connectExtensions, connectAccounts)
+  console.log("!!!", connectedExtensions, connectedAccounts, connectedAccount)
 
   const [selectedExtensions, setSelectedExtensions] =
     useState<Map<string, Any>>()
@@ -162,6 +152,7 @@ export const Components = () => {
                 console.log("Extension", key, "accounts", value.getAccounts())
               }
             }}
+            getConnectedAccounts={(acc) => console.log("acc", acc)}
           />
         </div>
       </div>
@@ -216,6 +207,36 @@ export const Components = () => {
           />
         </div>
       </div>
+
+      <div style={{ width: "100%", paddingTop: "10rem" }}>
+        <h1 style={{ margin: "5rem 0" }}>In a modal</h1>
+        <div style={{ border: "1px solid #ccc", padding: "1rem" }}>
+          <button onClick={() => setIsOpen(!isOpen)}>Open</button>
+        </div>
+      </div>
+      {isOpen ? (
+        <div
+          style={{
+            display: "flex",
+            position: "fixed",
+            background: "white",
+            top: "50%",
+            left: "50%",
+            width: "200px",
+            height: "200px",
+          }}
+        >
+          Here is the modal
+        </div>
+      ) : (
+        <div
+          style={{
+            display: "none",
+          }}
+        >
+          Modal is Closed. Toggle to open the Modal again
+        </div>
+      )}
       {selectedAccount && (
         <>
           <p>Account selected is: {selectedAccount?.address} </p>

@@ -1,5 +1,6 @@
 import { ReactNode } from "react"
 import { Components } from "../pages/Components"
+import { ConnectPage } from "../pages/ConnectPage"
 
 type Routes = {
   name: string
@@ -30,6 +31,12 @@ const pages = [
     element: <Components />,
     default: true,
   },
+  {
+    path: "connect",
+    name: "Connect",
+    element: <ConnectPage />,
+    default: true,
+  },
 ]
 
 export const routes: Routes = [
@@ -46,7 +53,7 @@ export const routeCategories: RouteCategories = [
     name: "Navigation",
     paths: [
       {
-        paths: ["components"],
+        paths: ["components", "connect"],
       },
     ],
   },
