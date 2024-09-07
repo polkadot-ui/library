@@ -1,8 +1,6 @@
 import {
   Connect,
   ConnectConfiguration,
-  ConnectExtensions,
-  Polkicon,
 } from "@packages/ui-react/lib/components"
 import { useState } from "react"
 
