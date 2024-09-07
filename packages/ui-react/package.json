@@ -1,7 +1,7 @@
 {
   "name": "@polkadot-ui/react",
   "license": "MIT",
-  "version": "0.0.1-alpha.28",
+  "version": "0.0.1-alpha.29",
   "author": "Nikolaos Kontakis<wirednkod@gmail.com>",
   "type": "module",
   "description": "Functional React components for Polkadot dApps.",
@@ -62,10 +62,5 @@
   },
   "sideEffects": [
     "**/*.css"
-  ],
-  "dependencies": {
-    "@react-rxjs/core": "^0.10.7",
-    "@react-rxjs/utils": "^0.9.7",
-    "rxjs": "^7.8.1"
-  }
+  ]
 }
