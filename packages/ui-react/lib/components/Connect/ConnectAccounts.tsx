@@ -14,17 +14,15 @@ import { useStoredAccount, useSelectedExtensions } from "./hooks"
 import { SignerCtx } from "./signerCtx"
 
 import { getExtensionIcon } from "@polkadot-ui/assets/extensions"
-import type {
-  CommonConfigType,
-  ConnectConfiguration,
-  SelectedAccountType,
-} from "./types"
+import type { CommonConfigType, ConnectConfiguration } from "./types"
 import { localStorageKeyAccount } from "./utils"
 
 const AccountsList: React.FC<{
   extension: InjectedExtension
-  setSelectedAccount: React.Dispatch<React.SetStateAction<SelectedAccountType>>
-  selectedAccount: SelectedAccountType
+  setSelectedAccount: React.Dispatch<
+    React.SetStateAction<InjectedPolkadotAccount>
+  >
+  selectedAccount: InjectedPolkadotAccount
   config: CommonConfigType
 }> = ({ extension, setSelectedAccount, selectedAccount, config }) => {
   const accounts = useSyncExternalStore(
@@ -45,7 +43,6 @@ const AccountsList: React.FC<{
         setSelectedAccount({
           address: account.address,
           name: account.name,
-          extension: extension.name,
           polkadotSigner: account.polkadotSigner,
           type: account.type,
         })
@@ -76,8 +73,10 @@ const AccountsList: React.FC<{
 const Account: React.FC<{
   extensionName: string
   setAccountLocalStorage: Any
-  selectedAccount: SelectedAccountType
-  setSelectedAccount: React.Dispatch<React.SetStateAction<SelectedAccountType>>
+  selectedAccount: InjectedPolkadotAccount
+  setSelectedAccount: React.Dispatch<
+    React.SetStateAction<InjectedPolkadotAccount>
+  >
   account: InjectedPolkadotAccount
   config: ConnectConfiguration
 }> = ({
@@ -136,7 +135,6 @@ const Account: React.FC<{
           setSelectedAccount({
             address: account.address,
             name: account.name,
-            extension: extensionName,
             polkadotSigner: account.polkadotSigner,
             type: account.type,
           })
@@ -186,34 +184,41 @@ const Account: React.FC<{
 
 export const ConnectAccounts: React.FC<
   PropsWithChildren<{
-    selected: SelectedAccountType
-    setSelected: Dispatch<SetStateAction<SelectedAccountType>>
+    selected: InjectedPolkadotAccount
+    setSelected: Dispatch<SetStateAction<InjectedPolkadotAccount>>
     config?: CommonConfigType
   }>
 > = ({ children, selected, setSelected, config }) => {
   const extensions = useSelectedExtensions()
 
+  const [extension, setExtension] = useState<InjectedExtension>()
+
+  useEffect(() => {
+    extensions.forEach((ext) => {
+      ext.getAccounts().forEach((acc) => {
+        if (acc?.address === selected?.address) {
+          setExtension(ext)
+        }
+      })
+    })
+  }, [extensions, selected])
+
   return (
     <>
-      <div
-        style={{
-          display: "flex",
-          paddingTop: "1rem",
-          justifyContent: "space-between",
-        }}
-      >
-        <h4>Accounts</h4>
-      </div>
-      {extensions.map((extension) => (
-        <AccountsList
-          config={config}
-          key={extension.name}
-          {...{ extension }}
-          setSelectedAccount={setSelected}
-          selectedAccount={selected}
-        />
-      ))}
-      <SignerCtx account={selected}>{children}</SignerCtx>
+      {extensions.map((extension) => {
+        return (
+          <AccountsList
+            config={config}
+            key={extension?.name}
+            {...{ extension }}
+            setSelectedAccount={setSelected}
+            selectedAccount={selected}
+          />
+        )
+      })}
+      <SignerCtx account={selected} extensionName={extension?.name}>
+        {children}
+      </SignerCtx>
     </>
   )
 }

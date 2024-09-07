@@ -1,6 +1,7 @@
 import { ReactNode } from "react"
 import { Components } from "../pages/Components"
 import { ConnectPage } from "../pages/ConnectPage"
+import { ComponentsTest } from "../pages/ComponentsTest"
 
 type Routes = {
   name: string
@@ -32,6 +33,12 @@ const pages = [
     default: true,
   },
   {
+    path: "componentsTest",
+    name: "componentsTest",
+    element: <ComponentsTest />,
+    default: true,
+  },
+  {
     path: "connect",
     name: "Connect",
     element: <ConnectPage />,
@@ -53,7 +60,7 @@ export const routeCategories: RouteCategories = [
     name: "Navigation",
     paths: [
       {
-        paths: ["components", "connect"],
+        paths: ["components", "componentsTest", "connect"],
       },
     ],
   },
