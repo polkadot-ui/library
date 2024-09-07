@@ -8,6 +8,7 @@ export * from "./Polkicon"
 // Recipes
 export * from "./AccountCard"
 export * from "./Connect"
+// export * from "./ConnectRx"
 
 // Types
 export * from "./common_types"
