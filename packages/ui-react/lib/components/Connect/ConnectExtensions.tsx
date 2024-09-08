@@ -4,11 +4,7 @@ import { useEffect, useState, useSyncExternalStore } from "react"
 import { extensionCtx } from "./extensionCtx"
 import { getExtensionIcon } from "@polkadot-ui/assets/extensions"
 import { useAvailableExtensions, useExtensionStorage } from "./hooks"
-import type {
-  ConnectConfiguration,
-  NameUrlType,
-  SelectedAccountType,
-} from "./types"
+import type { ConnectConfiguration, NameUrlType } from "./types"
 import { Any } from "../../utils"
 import { getExtensionsStore, localStorageKeyExtensions } from "./utils"
 import {
@@ -47,7 +43,7 @@ extensionsStore.subscribe(Function.prototype as Any)
 
 export const ConnectExtensions: FC<
   PropsWithChildren<{
-    setSelected: Dispatch<SetStateAction<SelectedAccountType>>
+    setSelected: Dispatch<SetStateAction<InjectedPolkadotAccount>>
     config?: ConnectConfiguration
     onSelectExtensions?: (ext: Map<string, InjectedExtension>) => void
     getConnectedAccounts?: (acc: InjectedPolkadotAccount[]) => void
@@ -151,7 +147,7 @@ const ExtButton: React.FC<
   PropsWithChildren & {
     name: string
     config: ConnectConfiguration
-    setSelected: Dispatch<SetStateAction<SelectedAccountType>>
+    setSelected: Dispatch<SetStateAction<InjectedPolkadotAccount>>
     setExtensionLocalStorage: Any
     extensions: Any
     url?: string

@@ -1,14 +1,4 @@
 import { Any } from "../../utils"
-import { PolkadotSigner } from "polkadot-api"
-import { KeypairType } from "polkadot-api/pjs-signer"
-
-export type SelectedAccountType = {
-  address: string
-  name?: string
-  type?: KeypairType
-  extension: string
-  polkadotSigner: PolkadotSigner
-} | null
 
 export type ConnectConfiguration = ConfigType & CommonConfigType
 
