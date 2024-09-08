@@ -1,9 +1,9 @@
 import {
   InjectedExtension,
+  InjectedPolkadotAccount,
   connectInjectedExtension,
 } from "polkadot-api/pjs-signer"
 import { Dispatch, SetStateAction } from "react"
-import { SelectedAccountType } from "./types"
 import { Any } from "../../utils"
 
 const { location } = window
@@ -72,7 +72,7 @@ export const getExtensionsStore = () => {
 
   const onToggleExtension = (
     name: string,
-    setSelected: Dispatch<SetStateAction<SelectedAccountType>>
+    setSelected: Dispatch<SetStateAction<InjectedPolkadotAccount>>
   ) => {
     if (isRunning) return
 

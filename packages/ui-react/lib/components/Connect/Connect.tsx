@@ -1,7 +1,7 @@
 import { Dispatch, SetStateAction, useState } from "react"
 import { ConnectAccounts } from "./ConnectAccounts"
 import { ConnectExtensions } from "./ConnectExtensions"
-import { SelectedAccountType, ConnectConfiguration } from "./types"
+import { ConnectConfiguration } from "./types"
 import {
   InjectedExtension,
   InjectedPolkadotAccount,
@@ -9,8 +9,8 @@ import {
 import { ConnectAccountsProvider } from "."
 
 export const Connect: React.FC<{
-  selected?: SelectedAccountType
-  setSelected: Dispatch<SetStateAction<SelectedAccountType>>
+  selected?: InjectedPolkadotAccount
+  setSelected: Dispatch<SetStateAction<InjectedPolkadotAccount>>
   config?: ConnectConfiguration
   type?: "onepage" | "extensions" | "split"
   onSelectExtensions?: (ext: Map<string, InjectedExtension>) => void
@@ -45,14 +45,14 @@ export const Connect: React.FC<{
             justifyContent: "space-between",
           }}
         >
-          <div style={{ width: "45%", padding: "1rem" }}>
+          <div style={{ width: "46%", padding: "1rem" }}>
             <ConnectExtensions
               setSelected={setSelected}
               config={config}
               onSelectExtensions={(ext) => setSplitExtension(ext)}
             />
           </div>
-          <div style={{ width: "45%", padding: "1rem" }}>
+          <div style={{ width: "46%", padding: "1rem" }}>
             {splitExtensions && (
               <ConnectAccountsProvider value={[...splitExtensions.values()]}>
                 <ConnectAccounts

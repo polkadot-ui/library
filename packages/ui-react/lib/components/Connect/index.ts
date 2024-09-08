@@ -14,7 +14,6 @@ export type {
   ConnectConfiguration,
   ConfigType,
   CommonConfigType,
-  SelectedAccountType,
 } from "./types"
 
 export { localStorageKeyAccount, localStorageKeyExtensions } from "./utils"

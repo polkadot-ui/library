@@ -4,7 +4,6 @@ import {
   Chart,
   AccountCard,
   IconProps,
-  SelectedAccountType,
   ConnectConfiguration,
   Connect,
   ConnectExtensions,
@@ -28,8 +27,7 @@ export const Components = () => {
   const updateValue2 = () => setVal2(Number((val2 + 17491.390013).toFixed(4)))
 
   // Connect recipe
-  const [selectedAccount, setSelectedAccount] =
-    useState<SelectedAccountType>(null)
+  const [selectedAccount, setSelectedAccount] = useState(null)
 
   const address = "1f1yYj2bCFhJCTVdeWLDueUsrZynLAaj6jeMy18fjZ7Cr73"
   const address2 = "13QqEYyFfeWmBVr3QvfhwpYrXoUFDgs7ViYhxv2fvLHe6mtT"
