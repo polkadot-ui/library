@@ -1,4 +1,5 @@
 import {
+  useCallback,
   useContext,
   useEffect,
   useMemo,
@@ -42,7 +43,7 @@ export const useAvailableExtensions = (): string[] => {
   return useMemo(() => extensions?.split(",") ?? [], [extensions])
 }
 
-export const useExtensionStorage = (key: string, defaultValue: string) => {
+export const useConnectLocalStorage = (key: string, defaultValue: string) => {
   const [value, setLocal] = useState(() => {
     const getStorageValue = (key: string, defaultValue: string) => {
       const saved = localStorage.getItem(key)
@@ -70,7 +71,11 @@ export const useExtensionStorage = (key: string, defaultValue: string) => {
     localStorage.setItem(key, JSON.stringify(value))
   }, [key, value])
 
-  return [value, setValue]
+  const removeItem = () => {
+    localStorage.removeItem(key)
+  }
+
+  return [value, setValue, removeItem]
 }
 
 export const useExtensionAccounts = () => {
@@ -81,36 +86,16 @@ export const useExtensionAccounts = () => {
   return [extensionAccounts, setExtensionAccounts]
 }
 
-export const useStoredAccount = (key: string, defaultValue: string) => {
-  const [value, setValue] = useState(() => {
-    const getStorageValue = (key: string, defaultValue: string) => {
-      const saved = localStorage.getItem(key)
-      const initial = saved ? JSON.parse(saved) : ""
-      return initial || defaultValue
-    }
-
-    return getStorageValue(key, defaultValue)
-  })
-
-  useEffect(() => {
-    localStorage.setItem(key, JSON.stringify(value))
-  }, [key, value])
-
-  return [value, setValue]
-}
-
 const extensionsStore = getExtensionsStore()
 
 export const useConnect = () => {
-  const [extensionLocalStorage] = useExtensionStorage(
+  const [extensionLocalStorage, , removeExtItem] = useConnectLocalStorage(
     localStorageKeyExtensions,
     ""
   )
 
-  const [accountLocalStorage, setAccountLocalStorage] = useExtensionStorage(
-    localStorageKeyAccount,
-    ""
-  )
+  const [accountLocalStorage, setAccountLocalStorage, remAccItem] =
+    useConnectLocalStorage(localStorageKeyAccount, "")
 
   const [connectedAccounts, setConnectedAccounts] = useState<
     InjectedPolkadotAccount[]
@@ -122,6 +107,12 @@ export const useConnect = () => {
     extensionsStore.subscribe,
     extensionsStore.getSnapshot
   )
+
+  const disconnectAll = useCallback(() => {
+    extensionsStore.disconnect(extensionLocalStorage)
+    removeExtItem()
+    remAccItem()
+  }, [extensionLocalStorage, removeExtItem, remAccItem])
 
   useEffect(() => {
     const acc: InjectedPolkadotAccount[] = []
@@ -145,5 +136,10 @@ export const useConnect = () => {
     extensionsStore.revive(extensionLocalStorage)
   }, [extensionLocalStorage])
 
-  return { connectedExtensions, connectedAccounts, connectedAccount }
+  return {
+    connectedExtensions,
+    connectedAccounts,
+    connectedAccount,
+    disconnectAll,
+  }
 }
