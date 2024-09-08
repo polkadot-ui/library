@@ -21,7 +21,12 @@ export const localStorageKeyAccount = "@polkadot-ui/react|".concat(
 export const getExtensionsStore = () => {
   let connectedExtensions = new Map<string, InjectedExtension>()
 
-  // restores from the
+  const doAllSequentually = async (promiseArr: string | Any[]) => {
+    for (let i = 0; i < promiseArr?.length; i++) {
+      typeof promiseArr[i] === "function" && (await promiseArr[i]())
+      return
+    }
+  }
   const revive = async (localStorage: string) => {
     const promises: Promise<void>[] = []
 
@@ -41,12 +46,27 @@ export const getExtensionsStore = () => {
         )
       })
 
-    const doAllSequentually = async (promiseArr: string | Any[]) => {
-      for (let i = 0; i < promiseArr?.length; i++) {
-        typeof promiseArr[i] === "function" && (await promiseArr[i]())
-        return
-      }
-    }
+    doAllSequentually(promises)
+  }
+
+  const disconnect = async (localStorage: string) => {
+    const promises: Promise<void>[] = []
+
+    localStorage
+      .split(",")
+      .filter((entry: string) => entry.trim() != "")
+      .forEach((name: string) => {
+        promises.push(
+          connectInjectedExtension(name).then(
+            (extension) => {
+              connectedExtensions.delete(name)
+              extension.disconnect()
+              update()
+            },
+            () => {}
+          )
+        )
+      })
 
     doAllSequentually(promises)
   }
@@ -101,5 +121,6 @@ export const getExtensionsStore = () => {
     subscribe,
     getSnapshot,
     onToggleExtension,
+    disconnect,
   }
 }

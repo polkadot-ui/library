@@ -37,8 +37,12 @@ export const Components = () => {
 
   const [isOpen, setIsOpen] = useState(false)
 
-  const { connectedExtensions, connectedAccounts, connectedAccount } =
-    useConnect()
+  const {
+    connectedExtensions,
+    connectedAccounts,
+    connectedAccount,
+    disconnectAll,
+  } = useConnect()
 
   console.log("!!!", connectedExtensions, connectedAccounts, connectedAccount)
 
@@ -137,7 +141,13 @@ export const Components = () => {
 
       <h2>Connect "Recipe"</h2>
       <p>A "recipe" allowing easily integration with wallet extensions.</p>
-
+      <button
+        onClick={() => {
+          disconnectAll()
+        }}
+      >
+        Disconnect
+      </button>
       <div style={{ width: "100%" }}>
         <h1 style={{ margin: "5rem 0" }}>Only extensions</h1>
         <div style={{ border: "1px solid #ccc", padding: "1rem" }}>

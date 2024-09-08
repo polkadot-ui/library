@@ -5,9 +5,8 @@ export {
   useSelectedAccount,
   useSelectedExtensions,
   useAvailableExtensions,
-  useStoredAccount,
   useConnect,
-  useExtensionStorage,
+  useConnectLocalStorage,
 } from "./hooks"
 export { Provider as ConnectAccountsProvider } from "./extensionCtx"
 export type {
