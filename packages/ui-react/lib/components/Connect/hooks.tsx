@@ -43,15 +43,33 @@ export const useAvailableExtensions = (): string[] => {
   return useMemo(() => extensions?.split(",") ?? [], [extensions])
 }
 
-export const useConnectLocalStorage = (key: string, defaultValue: string) => {
-  const [value, setLocal] = useState(() => {
-    const getStorageValue = (key: string, defaultValue: string) => {
-      const saved = localStorage.getItem(key)
-      const initial = JSON.parse(saved)
-      return initial || defaultValue
+export const useAccountLocalStorage = () => {
+  const [value, setValue] = useState(() => {
+    const getStorageValue = () => {
+      const saved = localStorage.getItem(localStorageKeyAccount)
+      const initial = saved ? JSON.parse(saved) : ""
+      return initial || ""
     }
 
-    return getStorageValue(key, defaultValue)
+    return getStorageValue()
+  })
+
+  useEffect(() => {
+    localStorage.setItem(localStorageKeyAccount, JSON.stringify(value))
+  }, [value])
+
+  return [value, setValue]
+}
+
+export const useExtLocalStorage = () => {
+  const [value, setLocal] = useState(() => {
+    const getStorageValue = () => {
+      const saved = localStorage.getItem(localStorageKeyExtensions)
+      const initial = JSON.parse(saved)
+      return initial || ""
+    }
+
+    return getStorageValue()
   })
 
   const setValue = (name: string) => {
@@ -60,19 +78,20 @@ export const useConnectLocalStorage = (key: string, defaultValue: string) => {
     if (a.includes(name)) {
       const index = a.indexOf(name)
       if (index > -1) a.splice(index, 1)
-      b = a
+      b = a.filter((c) => c)
     } else {
-      b = [...a, name]
+      b = [...a, name].filter((c) => c)
     }
+
     setLocal(b.join(","))
   }
 
   useEffect(() => {
-    localStorage.setItem(key, JSON.stringify(value))
-  }, [key, value])
+    localStorage.setItem(localStorageKeyExtensions, JSON.stringify(value))
+  }, [value])
 
   const removeItem = () => {
-    localStorage.removeItem(key)
+    localStorage.removeItem(localStorageKeyExtensions)
   }
 
   return [value, setValue, removeItem]
@@ -89,13 +108,10 @@ export const useExtensionAccounts = () => {
 const extensionsStore = getExtensionsStore()
 
 export const useConnect = () => {
-  const [extensionLocalStorage, , removeExtItem] = useConnectLocalStorage(
-    localStorageKeyExtensions,
-    ""
-  )
+  const [extensionLocalStorage, , removeExtItem] = useExtLocalStorage()
 
   const [accountLocalStorage, setAccountLocalStorage, remAccItem] =
-    useConnectLocalStorage(localStorageKeyAccount, "")
+    useAccountLocalStorage()
 
   const [connectedAccounts, setConnectedAccounts] = useState<
     InjectedPolkadotAccount[]

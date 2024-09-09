@@ -3,10 +3,10 @@ import type { Dispatch, PropsWithChildren, SetStateAction } from "react"
 import { useEffect, useState, useSyncExternalStore } from "react"
 import { extensionCtx } from "./extensionCtx"
 import { getExtensionIcon } from "@polkadot-ui/assets/extensions"
-import { useAvailableExtensions, useConnectLocalStorage } from "./hooks"
+import { useAvailableExtensions, useExtLocalStorage } from "./hooks"
 import type { ConnectConfiguration, NameUrlType } from "./types"
 import { Any } from "../../utils"
-import { getExtensionsStore, localStorageKeyExtensions } from "./utils"
+import { getExtensionsStore } from "./utils"
 import {
   InjectedExtension,
   InjectedPolkadotAccount,
@@ -55,8 +55,7 @@ export const ConnectExtensions: FC<
   onSelectExtensions,
   getConnectedAccounts,
 }) => {
-  const [extensionLocalStorage, setExtensionLocalStorage] =
-    useConnectLocalStorage(localStorageKeyExtensions, "")
+  const [extensionLocalStorage, setExtensionLocalStorage] = useExtLocalStorage()
 
   const [nonInstalledXts, setNonInstalledXts] = useState<NameUrlType[]>([])
   const availXts = useAvailableExtensions()
