@@ -19,12 +19,8 @@ export const remToUnit = (rem: string) =>
  * @description
  * Converts an on chain balance value in bigint planck to a decimal value in token unit
  */
-export const planckToUnit = (val?: bigint, units?: number): number => {
-  if (!val) {
-    throw new Error(`Value can not be undefined`)
-  }
-
-  if (!units || units < 0) {
+export const planckToUnit = (val: bigint, units: number): number => {
+  if (units < 0) {
     throw new Error(`Argument out of range: ${units}`)
   }
 
