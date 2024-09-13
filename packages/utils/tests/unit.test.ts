@@ -18,6 +18,22 @@ describe("Tests suite - planckToUnit Function", () => {
     expect(result).toEqual(expectedOutput)
   })
 
+  test("should correctly convert a BigInt to units", () => {
+    const inputValue = 100n
+    const units = 3
+    const expectedOutput = Number("0.1")
+    const result = fn.planckToUnit(inputValue, units)
+    expect(result).toEqual(expectedOutput)
+  })
+
+  test("should correctly convert a BigInt to units", () => {
+    const inputValue = 100n
+    const units = 9
+    const expectedOutput = Number("0.0000001")
+    const result = fn.planckToUnit(inputValue, units)
+    expect(result).toEqual(expectedOutput)
+  })
+
   test("should throw error when negative units", () => {
     const inputValue = 10000000n
     const units = -2
@@ -29,9 +45,9 @@ describe("Tests suite - planckToUnit Function", () => {
   test("should throw error when undefined value", () => {
     const inputValue = undefined
     const units = 2
-    const expectedOutput = Number("0")
-    const result = fn.planckToUnit(inputValue, units)
-    expect(result).toEqual(expectedOutput)
+    expect(() => fn.planckToUnit(inputValue, units)).toThrowError(
+      "Value can not be undefined"
+    )
   })
 })
 
