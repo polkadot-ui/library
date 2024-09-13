@@ -10,12 +10,11 @@ import type {
   InjectedExtension,
   InjectedPolkadotAccount,
 } from "polkadot-api/pjs-signer"
-import { useConnectLocalStorage, useSelectedExtensions } from "./hooks"
+import { useAccountLocalStorage, useSelectedExtensions } from "./hooks"
 import { SignerCtx } from "./signerCtx"
 
 import { getExtensionIcon } from "@polkadot-ui/assets/extensions"
 import type { CommonConfigType, ConnectConfiguration } from "./types"
-import { localStorageKeyAccount } from "./utils"
 
 const AccountsList: React.FC<{
   extension: InjectedExtension
@@ -30,10 +29,7 @@ const AccountsList: React.FC<{
     extension.getAccounts
   )
 
-  const [accountLocalStorage, setAccountLocalStorage] = useConnectLocalStorage(
-    localStorageKeyAccount,
-    ""
-  )
+  const [accountLocalStorage, setAccountLocalStorage] = useAccountLocalStorage()
 
   useEffect(() => {
     const accounts = extension.getAccounts()

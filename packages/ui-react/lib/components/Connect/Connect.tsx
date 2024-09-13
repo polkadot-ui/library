@@ -1,21 +1,11 @@
-import { Dispatch, SetStateAction, useState } from "react"
+import { useState } from "react"
 import { ConnectAccounts } from "./ConnectAccounts"
 import { ConnectExtensions } from "./ConnectExtensions"
-import { ConnectConfiguration } from "./types"
-import {
-  InjectedExtension,
-  InjectedPolkadotAccount,
-} from "polkadot-api/pjs-signer"
+import { ConnectIF } from "./types"
+import { InjectedExtension } from "polkadot-api/pjs-signer"
 import { ConnectAccountsProvider } from "."
 
-export const Connect: React.FC<{
-  selected?: InjectedPolkadotAccount
-  setSelected: Dispatch<SetStateAction<InjectedPolkadotAccount>>
-  config?: ConnectConfiguration
-  type?: "onepage" | "extensions" | "split"
-  onSelectExtensions?: (ext: Map<string, InjectedExtension>) => void
-  getConnectedAccounts?: (acc: InjectedPolkadotAccount[]) => void
-}> = ({
+export const Connect: React.FC<ConnectIF> = ({
   setSelected,
   selected,
   config,

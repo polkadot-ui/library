@@ -1,3 +1,8 @@
+import {
+  InjectedPolkadotAccount,
+  InjectedExtension,
+} from "polkadot-api/dist/reexports/pjs-signer"
+import { Dispatch, SetStateAction } from "react"
 import { Any } from "../../utils"
 
 export type ConnectConfiguration = ConfigType & CommonConfigType
@@ -42,4 +47,13 @@ export type CommonConfigType = {
 export type NameUrlType = {
   name: string
   url: string
+}
+
+export interface ConnectIF {
+  selected?: InjectedPolkadotAccount
+  setSelected: Dispatch<SetStateAction<InjectedPolkadotAccount>>
+  config?: ConnectConfiguration
+  type?: "onepage" | "extensions" | "split"
+  onSelectExtensions?: (ext: Map<string, InjectedExtension>) => void
+  getConnectedAccounts?: (acc: InjectedPolkadotAccount[]) => void
 }
