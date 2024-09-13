@@ -23,9 +23,10 @@ export const planckToUnit = (val: bigint, units: number): number => {
   if (units < 0) {
     throw new Error(`Argument out of range: ${units}`)
   }
-  const str = val ? val.toString() : ""
-  const numb = str.slice(0, str.length - units)
-  const dec = str.slice(str.length - units)
+
+  const str = val.toString().padStart(units + 1, "0")
+  const numb = str.slice(0, -units)
+  const dec = str.slice(-units)
   const result = Number(numb + "." + dec)
   return !isNaN(result) ? result : 0
 }
