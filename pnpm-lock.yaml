@@ -150,8 +150,8 @@ importers:
         specifier: ^0.0.1-alpha.2
         version: 0.0.1-alpha.2
       '@polkadot-ui/utils':
-        specifier: ^0.0.1-alpha.2
-        version: 0.0.1-alpha.5(@polkadot/keyring@12.6.2(@polkadot/util-crypto@12.6.2(@polkadot/util@12.6.2))(@polkadot/util@12.6.2))(@polkadot/util@12.6.2)
+        specifier: ^0.0.2
+        version: 0.0.2(@polkadot/keyring@12.6.2(@polkadot/util-crypto@12.6.2(@polkadot/util@12.6.2))(@polkadot/util@12.6.2))(@polkadot/util@12.6.2)
       '@types/node':
         specifier: ^20.14.1
         version: 20.14.10
@@ -1314,8 +1314,8 @@ packages:
   '@polkadot-ui/core@0.0.1-alpha.2':
     resolution: {integrity: sha512-gXEgPwN/fD+pSJVmgvFUE6PJWcp2I+v3Kp2kbRn78bLUwYIuc0pfURcuINK1rE/URyTjvKSmMqyfsERNAdp1iQ==}
 
-  '@polkadot-ui/utils@0.0.1-alpha.5':
-    resolution: {integrity: sha512-TEspLAZ3MafYYonySUOyFGob+hu6KmDIYXiVojjEe3kKQjQQ+Nl933xk1oo6wd+m1IbO74LXxx8Qze70FsOOvQ==}
+  '@polkadot-ui/utils@0.0.2':
+    resolution: {integrity: sha512-Zkr4othT6Xhks6AbPlbaBuD9IA9Qn4kagzo46aHeZBJnRruwea/PZhdb4Vrt2XAsgB5mXBgiPVoy85O8vibjhA==}
     peerDependencies:
       '@polkadot/keyring': ^12.6.2
       '@polkadot/util': ^12.6.2
@@ -7590,7 +7590,7 @@ snapshots:
 
   '@polkadot-ui/core@0.0.1-alpha.2': {}
 
-  '@polkadot-ui/utils@0.0.1-alpha.5(@polkadot/keyring@12.6.2(@polkadot/util-crypto@12.6.2(@polkadot/util@12.6.2))(@polkadot/util@12.6.2))(@polkadot/util@12.6.2)':
+  '@polkadot-ui/utils@0.0.2(@polkadot/keyring@12.6.2(@polkadot/util-crypto@12.6.2(@polkadot/util@12.6.2))(@polkadot/util@12.6.2))(@polkadot/util@12.6.2)':
     dependencies:
       '@polkadot/keyring': 12.6.2(@polkadot/util-crypto@12.6.2(@polkadot/util@12.6.2))(@polkadot/util@12.6.2)
       '@polkadot/util': 12.6.2
