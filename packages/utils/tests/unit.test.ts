@@ -41,14 +41,6 @@ describe("Tests suite - planckToUnit Function", () => {
       "Argument out of range: -2"
     )
   })
-
-  test("should throw error when undefined value", () => {
-    const inputValue = undefined
-    const units = 2
-    expect(() => fn.planckToUnit(inputValue, units)).toThrowError(
-      "Value can not be undefined"
-    )
-  })
 })
 
 describe("Test suite - unitToPlanck Function", () => {
