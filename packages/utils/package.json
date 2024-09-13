@@ -1,7 +1,7 @@
 {
   "name": "polkadot-ui-utils",
   "license": "MIT",
-  "version": "0.0.1-alpha.5",
+  "version": "0.0.2",
   "description": "Common utility functions to aid in Polkadot dApp development.",
   "keywords": [
     "Polkadot",
