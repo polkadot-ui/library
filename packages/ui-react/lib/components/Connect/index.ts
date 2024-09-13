@@ -1,5 +1,6 @@
 export { ConnectAccounts } from "./ConnectAccounts"
 export { ConnectExtensions } from "./ConnectExtensions"
+export { ConnectModal } from "./ConnectModal"
 export { Connect } from "./Connect"
 export {
   useSelectedAccount,
