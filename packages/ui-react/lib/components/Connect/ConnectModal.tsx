@@ -67,16 +67,16 @@ export const ConnectModal: FC<
             color: config?.modal?.titleColor || "#000",
             fontSize: "1.5rem",
             fontWeight: "bold",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-between",
           }}
         >
           <span>{title}</span>
           <span
             style={{
-              position: "absolute",
-              top: "2rem",
-              right: "2.5rem",
               transition: "all 200ms",
-              fontSize: "2.5rem",
+              fontSize: "2rem",
               fontWeight: "bold",
               textDecoration: "none",
               cursor: "pointer",
