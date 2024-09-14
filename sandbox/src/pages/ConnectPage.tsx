@@ -13,9 +13,11 @@ export const ConnectPage = () => {
       width: 4,
       height: 2,
     },
+    modal: {
+      width: "50vw",
+      top: "30vh",
+    },
   }
-
-  console.log(selectedAccount)
 
   return (
     <div className="page">
@@ -51,7 +53,7 @@ export const ConnectPage = () => {
             }}
           >
             <ConnectModal
-              title={"title"}
+              title={"Connect Wallet"}
               onClose={() => setIsOpen(false)}
               show={isOpen}
               type="split"

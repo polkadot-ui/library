@@ -15,6 +15,16 @@ export type ConfigType = {
 }
 
 export type CommonConfigType = {
+  modal?: {
+    areaColor?: string
+    bgColor?: string
+    titleColor?: string
+    borderRadius?: string
+    padding?: string
+    margin?: string
+    width?: string
+    top?: string
+  }
   bg?: {
     color?: string
     selected?: string

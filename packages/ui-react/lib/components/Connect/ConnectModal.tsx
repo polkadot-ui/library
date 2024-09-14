@@ -7,7 +7,7 @@ import { Connect } from "./Connect"
 export const ConnectModal: FC<
   PropsWithChildren &
     ConnectIF & {
-      title: string
+      title?: string
       show: boolean
       onClose: (a: boolean) => void
     }
@@ -43,37 +43,49 @@ export const ConnectModal: FC<
         bottom: 0,
         left: 0,
         right: 0,
-        background: "#ccc",
+        background: config?.modal?.areaColor || `rgba(82,82,82,0.9)`,
         transition: "opacity 500ms",
       }}
     >
       <div
         style={{
-          margin: "70px auto",
-          padding: "20px",
-          background: "#fff",
-          borderRadius: "5px",
+          display: "flex",
+          margin: config?.modal?.margin || "0 auto",
+          padding: config?.modal?.padding || "2rem",
+          background: config?.modal?.bgColor || "#fff",
+          borderRadius: config?.modal?.borderRadius || "1rem",
           position: "relative",
           transition: "all 5s ease-in-out",
+          height: "fit-content",
+          width: config?.modal?.width,
+          top: config?.modal?.top || "30%",
+          flexDirection: "column",
         }}
       >
-        <h2 style={{ marginTop: 0 }}>{title}</h2>
-        <span
+        <div
           style={{
-            position: "absolute",
-            top: "20px",
-            right: "30px",
-            transition: "all 200ms",
-            fontSize: "30px",
+            color: config?.modal?.titleColor || "#000",
+            fontSize: "1.5rem",
             fontWeight: "bold",
-            textDecoration: "none",
-            color: "#333",
-            cursor: "pointer",
           }}
-          onClick={closeHandler}
         >
-          &times;
-        </span>
+          <span>{title}</span>
+          <span
+            style={{
+              position: "absolute",
+              top: "2rem",
+              right: "2.5rem",
+              transition: "all 200ms",
+              fontSize: "2.5rem",
+              fontWeight: "bold",
+              textDecoration: "none",
+              cursor: "pointer",
+            }}
+            onClick={closeHandler}
+          >
+            &times;
+          </span>
+        </div>
         <Connect
           type={type}
           selected={selected}
