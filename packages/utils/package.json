@@ -1,7 +1,7 @@
 {
   "name": "polkadot-ui-utils",
   "license": "MIT",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Common utility functions to aid in Polkadot dApp development.",
   "keywords": [
     "Polkadot",
@@ -21,11 +21,11 @@
     "test:coverage": "vitest run --coverage"
   },
   "dependencies": {
-    "@polkadot/keyring": "^12.6.2",
-    "@polkadot/util": "^12.6.2"
+    "@polkadot/keyring": "^13.1.1",
+    "@polkadot/util": "^13.1.1"
   },
   "peerDependencies": {
-    "@polkadot/keyring": "^12.6.2",
-    "@polkadot/util": "^12.6.2"
+    "@polkadot/keyring": "^13.1.1",
+    "@polkadot/util": "^13.1.1"
   }
 }
