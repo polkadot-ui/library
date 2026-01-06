@@ -16,7 +16,7 @@
   "homepage": "https://polkadot-ui.info",
   "scripts": {
     "prepare": "husky",
-    "preinstall": "npx only-allow pnpm",
+    "preinstall": "node preinstall.js",
     "build": "pnpm  --parallel --filter \"./**\" build",
     "clear": "pnpm run --parallel clear && rm -rf node_modules coverage",
     "lint": "eslint './**' --fix && npx prettier --write . && npx stylelint '**/*.scss' --fix",
