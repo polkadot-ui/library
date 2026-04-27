@@ -22,10 +22,10 @@
   },
   "dependencies": {
     "@polkadot/keyring": "^13.1.1",
-    "@polkadot/util": "^13.1.1"
+    "@polkadot/util": "^14.0.3"
   },
   "peerDependencies": {
     "@polkadot/keyring": "^13.1.1",
-    "@polkadot/util": "^13.1.1"
+    "@polkadot/util": "^14.0.3"
   }
 }
