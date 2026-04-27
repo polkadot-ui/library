@@ -41,7 +41,7 @@
     "eslint-plugin-react-hooks": "^4.6.2",
     "eslint-plugin-unused-imports": "^3.2.0",
     "framer-motion": "^11.2.10",
-    "gulp": "^5.0.0",
+    "gulp": "^5.0.1",
     "gulp-livereload": "^4.0.2",
     "gulp-sass": "^5.1.0",
     "gulp-sourcemaps": "^3.0.0",
