@@ -30,7 +30,7 @@
     "prepare": "mkdir -p dist &&  cp README.md ./dist/. && cp package.json ./dist/. && cp LICENSE ./dist/."
   },
   "peerDependencies": {
-    "@noble/hashes": "^1.4.0",
+    "@noble/hashes": "^2.2.0",
     "@polkadot-api/substrate-bindings": "^0.6.0",
     "@polkadot-ui/assets": "0.0.1-alpha.2",
     "@polkadot-ui/core": "^0.0.1-alpha.2",
@@ -40,7 +40,7 @@
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "@noble/hashes": "^1.4.0",
+    "@noble/hashes": "^2.2.0",
     "@polkadot-api/substrate-bindings": "^0.6.0",
     "@polkadot-ui/core": "^0.0.1-alpha.2",
     "@polkadot-ui/utils": "^0.0.3",
